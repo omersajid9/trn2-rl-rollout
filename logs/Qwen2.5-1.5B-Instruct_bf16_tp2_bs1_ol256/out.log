@@ -76,3 +76,561 @@ INFO 06-29 08:28:57 [importing.py:68] Triton not installed or not compatible; ce
 (EngineCore_DP0 pid=430997) [2026-06-29 08:29:05] INFO neuronx_distributed_model_loader.py:1057: No neuron overrides are passed via additional_config: {}. Proceeding with defaults.
 (EngineCore_DP0 pid=430997) [2026-06-29 08:29:05] WARNING neuronx_distributed_model_loader.py:214: Exception: [Errno 2] No such file or directory: 'local-models/Qwen/Qwen2.5-1.5B-Instruct/neuron-compiled-artifacts/75160a2a50fa1d79dd77e8ef7f06e989/neuron_config.json'
 (EngineCore_DP0 pid=430997) [2026-06-29 08:29:05] WARNING neuronx_distributed_model_loader.py:215: Unable to find precompiled artifacts from local-models/Qwen/Qwen2.5-1.5B-Instruct/neuron-compiled-artifacts/75160a2a50fa1d79dd77e8ef7f06e989. Recompiling...
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_wrapper.py:167: neuronx-cc compiler_args are: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true' 
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_wrapper.py:167: neuronx-cc compiler_args are: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true' 
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO application_base.py:300: Saving the neuron_config to local-models/Qwen/Qwen2.5-1.5B-Instruct/neuron-compiled-artifacts/75160a2a50fa1d79dd77e8ef7f06e989/
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_builder.py:549: Generating HLOs for the following models: ['context_encoding_model', 'token_generation_model']
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.220: I neuronx_distributed/parallel_layers/parallel_state.py:638] > initializing tensor model parallel with size 2
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.220: I neuronx_distributed/parallel_layers/parallel_state.py:639] > initializing pipeline model parallel with size 1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.220: I neuronx_distributed/parallel_layers/parallel_state.py:640] > initializing context model parallel with size 1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.220: I neuronx_distributed/parallel_layers/parallel_state.py:641] > initializing data parallel with size 1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.220: I neuronx_distributed/parallel_layers/parallel_state.py:642] > initializing world size to 2
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:387] [rank_0_pp-1_tp-1_dp-1_cp-1] Chosen Logic for replica groups ret_logic=<PG_Group_Logic.LOGIC1: (<function ascending_ring_PG_group at 0x78480b6f4720>, 'Ascending Ring PG Group')>
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:666] [rank_0_pp-1_tp-1_dp-1_cp-1] tp_groups: replica_groups.tp_groups=[[0, 1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:667] [rank_0_pp-1_tp-1_dp-1_cp-1] dp_groups: replica_groups.dp_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:668] [rank_0_pp-1_tp-1_dp-1_cp-1] pp_groups: replica_groups.pp_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:669] [rank_0_pp-1_tp-1_dp-1_cp-1] cp_groups: replica_groups.cp_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:670] [rank_0_pp-1_tp-1_dp-1_cp-1] ep_model_groups: replica_groups.ep_model_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19.221: I neuronx_distributed/parallel_layers/parallel_state.py:671] [rank_0_pp-1_tp-1_dp-1_cp-1] ep_data_groups: replica_groups.ep_data_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_builder.py:575: Generating 4 hlos for key: context_encoding_model
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_builder.py:944: Minimal metadata will be added to HLO
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_builder.py:873: Started loading module context_encoding_model
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_builder.py:876: Finished loading module context_encoding_model in 0.09988665580749512 seconds
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:19] INFO model_builder.py:901: generating HLO: context_encoding_model, input example shape = torch.Size([1, 128])
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed/parallel_layers/layers.py:531: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+(EngineCore_DP0 pid=430997)   with torch.cuda.amp.autocast(enabled=False):
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed_inference/modules/attention/attention_base.py:1018: UserWarning: Flash attention disabled. For flash attn to be performant, LNC2 requires context_len >= 1024 to be divisible by 512, or context_len < 1024 to be divisible by 256
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=1, shape=torch.Size([1, 128]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=3, shape=torch.Size([1]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=5, shape=torch.Size([1]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=6, shape=torch.Size([1]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:21] INFO model_builder.py:915: Finished generating HLO for context_encoding_model in 1.673238754272461 seconds, input example shape = torch.Size([1, 128])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:21] INFO model_builder.py:901: generating HLO: context_encoding_model, input example shape = torch.Size([1, 256])
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=1, shape=torch.Size([1, 256]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:22] INFO model_builder.py:915: Finished generating HLO for context_encoding_model in 1.390317440032959 seconds, input example shape = torch.Size([1, 256])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:22] INFO model_builder.py:901: generating HLO: context_encoding_model, input example shape = torch.Size([1, 512])
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=1, shape=torch.Size([1, 512]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:23] INFO model_builder.py:915: Finished generating HLO for context_encoding_model in 1.4436101913452148 seconds, input example shape = torch.Size([1, 512])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:23] INFO model_builder.py:901: generating HLO: context_encoding_model, input example shape = torch.Size([1, 768])
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_neuronx/xla_impl/hlo_conversion.py:470: UserWarning: Received an input tensor that was unused or used in a non-static way when traced so the tensor will be ignored. (index=1, shape=torch.Size([1, 768]), dtype=torch.int32). The non-static usage could happen when the traced function expects the input tensor's shape to change (i.e., using the shape to do index slicing), which is not allowed by inference trace expecting static input shapes.
+(EngineCore_DP0 pid=430997)   warnings.warn(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:25] INFO model_builder.py:915: Finished generating HLO for context_encoding_model in 1.5544817447662354 seconds, input example shape = torch.Size([1, 768])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:25] INFO model_builder.py:575: Generating 4 hlos for key: token_generation_model
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:25] INFO model_builder.py:944: Minimal metadata will be added to HLO
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:25] INFO model_builder.py:873: Started loading module token_generation_model
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:25] INFO model_builder.py:876: Finished loading module token_generation_model in 0.08429908752441406 seconds
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:25] INFO model_builder.py:901: generating HLO: token_generation_model, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) (EngineCore_DP0 pid=430997) [2026-06-29 08:30:27] INFO model_builder.py:915: Finished generating HLO for token_generation_model in 1.566375732421875 seconds, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:27] INFO model_builder.py:901: generating HLO: token_generation_model, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:28] INFO model_builder.py:915: Finished generating HLO for token_generation_model in 1.485048770904541 seconds, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:28] INFO model_builder.py:901: generating HLO: token_generation_model, input example shape = torch.Size([1, 1])
+| Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:30] INFO model_builder.py:915: Finished generating HLO for token_generation_model in 1.828984260559082 seconds, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:30] INFO model_builder.py:901: generating HLO: token_generation_model, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:31] INFO model_builder.py:915: Finished generating HLO for token_generation_model in 1.4865682125091553 seconds, input example shape = torch.Size([1, 1])
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:31] INFO model_builder.py:600: Generated all HLOs in 12.771343469619751 seconds
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:31] INFO model_builder.py:632: Starting compilation for the priority HLO
+(EngineCore_DP0 pid=430997) [2026-06-29 08:30:31] INFO model_builder.py:635: 'token_generation_model' is the priority model with bucket rank 0
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/libneuronxla/neuron_cc_wrapper.py:287: SyntaxWarning: str format compiler_flags is discouraged as its handling involves repeated joining and splitting, which can easily make mistakes if something is quoted or escaped. Use list[str] instead. Refer to documentation of the Python subprocess module for details.
+(EngineCore_DP0 pid=430997)   warnings.warn(SyntaxWarning(
+....
+Compiler status PASS
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=75968, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=2374
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=False
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] Setting num_programs to 1 since 1, user specified num_programs 2
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) [INFO] [topk] +==================================================+
+(EngineCore_DP0 pid=430997) |          TopK Execution Strategy                 |
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Method:       rotational
+(EngineCore_DP0 pid=430997) | Input:        BxS=1, vocab=512, k=256
+(EngineCore_DP0 pid=430997) | Sharding:     n_prgs=1, per_lnc_BxS=1
+(EngineCore_DP0 pid=430997) +--------------------------------------------------+
+(EngineCore_DP0 pid=430997) | Tiling:       tile_size=1, n_tiles=1, tiled=False
+(EngineCore_DP0 pid=430997) | Stages:       n_stages=32, stage_free=16
+(EngineCore_DP0 pid=430997) | TopK:         local_k/stage=8, padded_k=256
+(EngineCore_DP0 pid=430997) | Output:       sorted=True
+(EngineCore_DP0 pid=430997) +==================================================+
+(EngineCore_DP0 pid=430997) 2026-06-29 08:31:32.000844:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_aca37a3a46c5be26f779+a3c98ac3.hlo_module.pb
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:32] INFO model_builder.py:678: Done compilation for the priority HLO in 60.86473894119263 seconds
+2026-06-29 08:31:33.385838: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:33] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+2026-06-29 08:31:33.552214: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:33] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+2026-06-29 08:31:33.673465: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:33] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+2026-06-29 08:31:33.784803: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:33] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+2026-06-29 08:31:33.903223: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:33] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+2026-06-29 08:31:34.064189: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+2026-06-29 08:31:34.222181: W hilo/hlo_passes/neuron_collective_permute_to_all_gather.cc:30] Platform Version: . Defaulting to 32 cores
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:1205: Updating the hlo module with optimized layout
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:1214: Done optimizing weight layout for all HLOs in 1.4908137321472168 seconds
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:708: Starting compilation for all HLOs
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/context_encoding_model/_tp0_bk0/log-neuron-cc.txt
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/libneuronxla/neuron_cc_wrapper.py:249: SyntaxWarning: str format compiler_flags is discouraged as its handling involves repeated joining and splitting, which can easily make mistakes if something is quoted or escaped. Use list[str] instead. Refer to documentation of the Python subprocess module for details.
+(EngineCore_DP0 pid=430997)   warnings.warn(SyntaxWarning(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/context_encoding_model/_tp0_bk1/log-neuron-cc.txt
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/context_encoding_model/_tp0_bk2/log-neuron-cc.txt
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/context_encoding_model/_tp0_bk3/log-neuron-cc.txt
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/token_generation_model/_tp0_bk1/log-neuron-cc.txt
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/libneuronxla/neuron_cc_wrapper.py:249: SyntaxWarning: str format compiler_flags is discouraged as its handling involves repeated joining and splitting, which can easily make mistakes if something is quoted or escaped. Use list[str] instead. Refer to documentation of the Python subprocess module for details.
+(EngineCore_DP0 pid=430997)   warnings.warn(SyntaxWarning(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:34] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/token_generation_model/_tp0_bk2/log-neuron-cc.txt
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/libneuronxla/neuron_cc_wrapper.py:249: SyntaxWarning: str format compiler_flags is discouraged as its handling involves repeated joining and splitting, which can easily make mistakes if something is quoted or escaped. Use list[str] instead. Refer to documentation of the Python subprocess module for details.
+(EngineCore_DP0 pid=430997)   warnings.warn(SyntaxWarning(
+(EngineCore_DP0 pid=430997) [2026-06-29 08:31:35] INFO model_builder.py:733: Neuron compiler flags: --enable-saturate-infinity --enable-mixed-precision-accumulation --auto-cast=none --model-type transformer -O1 --tensorizer-options='--enable-ccop-compute-overlap --cc-pipeline-tiling-factor=2 --vectorize-strided-dma' --internal-hlo2tensorizer-options='--verify-hlo=true' --internal-hlo2tensorizer-options='--verify-hlo=true'  --verbose=35 --logfile=/tmp/nxd_model/token_generation_model/_tp0_bk3/log-neuron-cc.txt
+.......
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:31:47.000207:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_ca758a9253bc4e8042e7+f094142b.hlo_module.pb
+
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:31:47.000434:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_3b5103ff8fb831640b34+73a68212.hlo_module.pb
+
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:31:48.000111:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_7455593f6b72aa6f3ce5+7e2d66dc.hlo_module.pb
+
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:31:48.000515:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_eaa0344d06ccda700bf4+c8d5867c.hlo_module.pb
+.........
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:32:52.000604:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_a664bc646dd6abf0ba76+3e22916e.hlo_module.pb
+..
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:32:56.000329:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_bde6ed6115fd6299c5fe+af076614.hlo_module.pb
+
+Compiler status PASS
+(EngineCore_DP0 pid=430997) 2026-06-29 08:32:57.000436:  430997  [INFO]: Compilation Successfully Completed for model.MODULE_a2a25f21a1ad37aaa430+b536b1c8.hlo_module.pb
+(EngineCore_DP0 pid=430997) [2026-06-29 08:32:57] INFO model_builder.py:769: Finished Compilation for all HLOs in 83.09885096549988 seconds
+.
+Compiler status PASS
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:12] INFO model_builder.py:1329: Done preparing weight layout transformation
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13] INFO model_builder.py:798: Finished building model in 173.82427549362183 seconds
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13] INFO application_base.py:249: SKIPPING pre-sharding the checkpoints. The checkpoints will be sharded during load time.
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13] INFO application_base.py:405: Sharding weights on load...
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13] INFO model_builder.py:823: Sharding weights for ranks: 0...1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:638] > initializing tensor model parallel with size 2
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:639] > initializing pipeline model parallel with size 1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:640] > initializing context model parallel with size 1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:641] > initializing data parallel with size 1
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:642] > initializing world size to 2
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:387] [rank_0_pp-1_tp-1_dp-1_cp-1] Chosen Logic for replica groups ret_logic=<PG_Group_Logic.LOGIC1: (<function ascending_ring_PG_group at 0x78480b6f4720>, 'Ascending Ring PG Group')>
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:666] [rank_0_pp-1_tp-1_dp-1_cp-1] tp_groups: replica_groups.tp_groups=[[0, 1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:667] [rank_0_pp-1_tp-1_dp-1_cp-1] dp_groups: replica_groups.dp_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:668] [rank_0_pp-1_tp-1_dp-1_cp-1] pp_groups: replica_groups.pp_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:669] [rank_0_pp-1_tp-1_dp-1_cp-1] cp_groups: replica_groups.cp_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:670] [rank_0_pp-1_tp-1_dp-1_cp-1] ep_model_groups: replica_groups.ep_model_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:13.264: I neuronx_distributed/parallel_layers/parallel_state.py:671] [rank_0_pp-1_tp-1_dp-1_cp-1] ep_data_groups: replica_groups.ep_data_groups=[[0], [1]]
+(EngineCore_DP0 pid=430997) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed/trace/trace.py:642: UserWarning: Removing redundant keys from checkpoint: ['layers.0.self_attn.k_proj.bias', 'layers.0.self_attn.k_proj.weight', 'layers.0.self_attn.o_proj.weight', 'layers.0.self_attn.q_proj.bias', 'layers.0.self_attn.q_proj.weight', 'layers.0.self_attn.v_proj.bias', 'layers.0.self_attn.v_proj.weight', 'layers.1.self_attn.k_proj.bias', 'layers.1.self_attn.k_proj.weight', 'layers.1.self_attn.o_proj.weight', 'layers.1.self_attn.q_proj.bias', 'layers.1.self_attn.q_proj.weight', 'layers.1.self_attn.v_proj.bias', 'layers.1.self_attn.v_proj.weight', 'layers.10.self_attn.k_proj.bias', 'layers.10.self_attn.k_proj.weight', 'layers.10.self_attn.o_proj.weight', 'layers.10.self_attn.q_proj.bias', 'layers.10.self_attn.q_proj.weight', 'layers.10.self_attn.v_proj.bias', 'layers.10.self_attn.v_proj.weight', 'layers.11.self_attn.k_proj.bias', 'layers.11.self_attn.k_proj.weight', 'layers.11.self_attn.o_proj.weight', 'layers.11.self_attn.q_proj.bias', 'layers.11.self_attn.q_proj.weight', 'layers.11.self_attn.v_proj.bias', 'layers.11.self_attn.v_proj.weight', 'layers.12.self_attn.k_proj.bias', 'layers.12.self_attn.k_proj.weight', 'layers.12.self_attn.o_proj.weight', 'layers.12.self_attn.q_proj.bias', 'layers.12.self_attn.q_proj.weight', 'layers.12.self_attn.v_proj.bias', 'layers.12.self_attn.v_proj.weight', 'layers.13.self_attn.k_proj.bias', 'layers.13.self_attn.k_proj.weight', 'layers.13.self_attn.o_proj.weight', 'layers.13.self_attn.q_proj.bias', 'layers.13.self_attn.q_proj.weight', 'layers.13.self_attn.v_proj.bias', 'layers.13.self_attn.v_proj.weight', 'layers.14.self_attn.k_proj.bias', 'layers.14.self_attn.k_proj.weight', 'layers.14.self_attn.o_proj.weight', 'layers.14.self_attn.q_proj.bias', 'layers.14.self_attn.q_proj.weight', 'layers.14.self_attn.v_proj.bias', 'layers.14.self_attn.v_proj.weight', 'layers.15.self_attn.k_proj.bias', 'layers.15.self_attn.k_proj.weight', 'layers.15.self_attn.o_proj.weight', 'layers.15.self_attn.q_proj.bias', 'layers.15.self_attn.q_proj.weight', 'layers.15.self_attn.v_proj.bias', 'layers.15.self_attn.v_proj.weight', 'layers.16.self_attn.k_proj.bias', 'layers.16.self_attn.k_proj.weight', 'layers.16.self_attn.o_proj.weight', 'layers.16.self_attn.q_proj.bias', 'layers.16.self_attn.q_proj.weight', 'layers.16.self_attn.v_proj.bias', 'layers.16.self_attn.v_proj.weight', 'layers.17.self_attn.k_proj.bias', 'layers.17.self_attn.k_proj.weight', 'layers.17.self_attn.o_proj.weight', 'layers.17.self_attn.q_proj.bias', 'layers.17.self_attn.q_proj.weight', 'layers.17.self_attn.v_proj.bias', 'layers.17.self_attn.v_proj.weight', 'layers.18.self_attn.k_proj.bias', 'layers.18.self_attn.k_proj.weight', 'layers.18.self_attn.o_proj.weight', 'layers.18.self_attn.q_proj.bias', 'layers.18.self_attn.q_proj.weight', 'layers.18.self_attn.v_proj.bias', 'layers.18.self_attn.v_proj.weight', 'layers.19.self_attn.k_proj.bias', 'layers.19.self_attn.k_proj.weight', 'layers.19.self_attn.o_proj.weight', 'layers.19.self_attn.q_proj.bias', 'layers.19.self_attn.q_proj.weight', 'layers.19.self_attn.v_proj.bias', 'layers.19.self_attn.v_proj.weight', 'layers.2.self_attn.k_proj.bias', 'layers.2.self_attn.k_proj.weight', 'layers.2.self_attn.o_proj.weight', 'layers.2.self_attn.q_proj.bias', 'layers.2.self_attn.q_proj.weight', 'layers.2.self_attn.v_proj.bias', 'layers.2.self_attn.v_proj.weight', 'layers.20.self_attn.k_proj.bias', 'layers.20.self_attn.k_proj.weight', 'layers.20.self_attn.o_proj.weight', 'layers.20.self_attn.q_proj.bias', 'layers.20.self_attn.q_proj.weight', 'layers.20.self_attn.v_proj.bias', 'layers.20.self_attn.v_proj.weight', 'layers.21.self_attn.k_proj.bias', 'layers.21.self_attn.k_proj.weight', 'layers.21.self_attn.o_proj.weight', 'layers.21.self_attn.q_proj.bias', 'layers.21.self_attn.q_proj.weight', 'layers.21.self_attn.v_proj.bias', 'layers.21.self_attn.v_proj.weight', 'layers.22.self_attn.k_proj.bias', 'layers.22.self_attn.k_proj.weight', 'layers.22.self_attn.o_proj.weight', 'layers.22.self_attn.q_proj.bias', 'layers.22.self_attn.q_proj.weight', 'layers.22.self_attn.v_proj.bias', 'layers.22.self_attn.v_proj.weight', 'layers.23.self_attn.k_proj.bias', 'layers.23.self_attn.k_proj.weight', 'layers.23.self_attn.o_proj.weight', 'layers.23.self_attn.q_proj.bias', 'layers.23.self_attn.q_proj.weight', 'layers.23.self_attn.v_proj.bias', 'layers.23.self_attn.v_proj.weight', 'layers.24.self_attn.k_proj.bias', 'layers.24.self_attn.k_proj.weight', 'layers.24.self_attn.o_proj.weight', 'layers.24.self_attn.q_proj.bias', 'layers.24.self_attn.q_proj.weight', 'layers.24.self_attn.v_proj.bias', 'layers.24.self_attn.v_proj.weight', 'layers.25.self_attn.k_proj.bias', 'layers.25.self_attn.k_proj.weight', 'layers.25.self_attn.o_proj.weight', 'layers.25.self_attn.q_proj.bias', 'layers.25.self_attn.q_proj.weight', 'layers.25.self_attn.v_proj.bias', 'layers.25.self_attn.v_proj.weight', 'layers.26.self_attn.k_proj.bias', 'layers.26.self_attn.k_proj.weight', 'layers.26.self_attn.o_proj.weight', 'layers.26.self_attn.q_proj.bias', 'layers.26.self_attn.q_proj.weight', 'layers.26.self_attn.v_proj.bias', 'layers.26.self_attn.v_proj.weight', 'layers.27.self_attn.k_proj.bias', 'layers.27.self_attn.k_proj.weight', 'layers.27.self_attn.o_proj.weight', 'layers.27.self_attn.q_proj.bias', 'layers.27.self_attn.q_proj.weight', 'layers.27.self_attn.v_proj.bias', 'layers.27.self_attn.v_proj.weight', 'layers.3.self_attn.k_proj.bias', 'layers.3.self_attn.k_proj.weight', 'layers.3.self_attn.o_proj.weight', 'layers.3.self_attn.q_proj.bias', 'layers.3.self_attn.q_proj.weight', 'layers.3.self_attn.v_proj.bias', 'layers.3.self_attn.v_proj.weight', 'layers.4.self_attn.k_proj.bias', 'layers.4.self_attn.k_proj.weight', 'layers.4.self_attn.o_proj.weight', 'layers.4.self_attn.q_proj.bias', 'layers.4.self_attn.q_proj.weight', 'layers.4.self_attn.v_proj.bias', 'layers.4.self_attn.v_proj.weight', 'layers.5.self_attn.k_proj.bias', 'layers.5.self_attn.k_proj.weight', 'layers.5.self_attn.o_proj.weight', 'layers.5.self_attn.q_proj.bias', 'layers.5.self_attn.q_proj.weight', 'layers.5.self_attn.v_proj.bias', 'layers.5.self_attn.v_proj.weight', 'layers.6.self_attn.k_proj.bias', 'layers.6.self_attn.k_proj.weight', 'layers.6.self_attn.o_proj.weight', 'layers.6.self_attn.q_proj.bias', 'layers.6.self_attn.q_proj.weight', 'layers.6.self_attn.v_proj.bias', 'layers.6.self_attn.v_proj.weight', 'layers.7.self_attn.k_proj.bias', 'layers.7.self_attn.k_proj.weight', 'layers.7.self_attn.o_proj.weight', 'layers.7.self_attn.q_proj.bias', 'layers.7.self_attn.q_proj.weight', 'layers.7.self_attn.v_proj.bias', 'layers.7.self_attn.v_proj.weight', 'layers.8.self_attn.k_proj.bias', 'layers.8.self_attn.k_proj.weight', 'layers.8.self_attn.o_proj.weight', 'layers.8.self_attn.q_proj.bias', 'layers.8.self_attn.q_proj.weight', 'layers.8.self_attn.v_proj.bias', 'layers.8.self_attn.v_proj.weight', 'layers.9.self_attn.k_proj.bias', 'layers.9.self_attn.k_proj.weight', 'layers.9.self_attn.o_proj.weight', 'layers.9.self_attn.q_proj.bias', 'layers.9.self_attn.q_proj.weight', 'layers.9.self_attn.v_proj.bias', 'layers.9.self_attn.v_proj.weight']
+(EngineCore_DP0 pid=430997)   warnings.warn(f"Removing redundant keys from checkpoint: {keys_to_delete}")
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:36] INFO model_builder.py:857: Done Sharding weights in 23.554373847000534
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:45] INFO application_base.py:421: Finished weights loading in 32.028127794998 seconds
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:45] INFO application_base.py:351: Warming up the model.
+2026-Jun-29 08:33:45.0505 430997:433312 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):232 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Jun-29 08:33:45.0507 430997:433312 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):376 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Jun-29 08:33:45.0510 430997:433312 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Jun-29 08:33:45.0512 430997:433312 [0] net_plugin.cc:97 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:45] INFO application_base.py:373: Warmup completed in 0.3758251667022705 seconds.
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:45] INFO neuronx_distributed_model_runner.py:566: Hardware sampling enabled: config=<neuronx_distributed_inference.models.config.OnDeviceSamplingConfig object at 0x7847e408f710>
+(EngineCore_DP0 pid=430997) INFO 06-29 08:33:45 [kv_cache_utils.py:1307] GPU KV cache size: 1,536 tokens
+(EngineCore_DP0 pid=430997) INFO 06-29 08:33:45 [kv_cache_utils.py:1312] Maximum concurrency for 768 tokens per request: 2.00x
+(EngineCore_DP0 pid=430997) INFO 06-29 08:33:45 [core.py:278] init engine (profile, create kv cache, warmup model) took 0.00 seconds
+(EngineCore_DP0 pid=430997) WARNING 06-29 08:33:46 [scheduler.py:166] Using custom scheduler class vllm_neuron.core.scheduler.ContinuousBatchingNeuronScheduler. This scheduler interface is not public and compatibility may not be maintained.
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:47] INFO platform_overrides.py:22: Skipping attention head divisibility check for Neuron platform
+(EngineCore_DP0 pid=430997) INFO 06-29 08:33:47 [vllm.py:689] Asynchronous scheduling is enabled.
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:47] WARNING platform.py:172: Could not import OpenAI serving modules for overrides: No module named 'vllm.entrypoints.openai.serving_engine'
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:47] INFO platform.py:268: Neuron engine client override applied successfully
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:47] INFO platform.py:390: The custom Neuron scheduler will disable chunked prefill and schedule requests using the continuous batching mechanism, prioritizing prefill over decode.
+(EngineCore_DP0 pid=430997) [2026-06-29 08:33:47] INFO platform.py:403: Neuron custom scheduler default: max_num_batched_tokens set to 131072. Override with --max-num-batched-tokens if needed.
