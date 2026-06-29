@@ -252,6 +252,10 @@ def process_log_folder(log_dir: Path):
     if not log_file.exists():
         print(f"  [skip] {log_dir.name}  (no run.log)")
         return
+    metric_file = log_dir / "metrics.json"
+    if not metric_file.exists():
+        print(f"  [skip] {log_dir.name}  (no metrics.json)")
+        return
 
     data = parse_log(log_file)
     if data is None:
