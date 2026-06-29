@@ -74,7 +74,7 @@ def dtype_abbrev(dtype: str) -> str:
     return _DTYPE_ABBREV.get(dtype.lower(), dtype)
 
 
-def setup_run_dir(cfg):
+def setup_run_dir(cfg, rerun = True):
     model_short = cfg.model.split("/")[-1]
     base_name = (
         f"{model_short}_{dtype_abbrev(cfg.dtype)}"
@@ -90,8 +90,9 @@ def setup_run_dir(cfg):
         candidate = logs_dir / f"{base_name} ({counter})"
         counter += 1
 
-    candidate.mkdir(parents=True)
-    return candidate, candidate / "run.log", candidate / "out.log", candidate / "metrics.json"
+    if rerun or counter == 1:
+        candidate.mkdir(parents=True)
+    return candidate, candidate / "run.log", candidate / "out.log", candidate / "metrics.json", counter
 
 
 def get_post(label):
@@ -222,6 +223,7 @@ async def async_generation(engine, output_len, batch_size: int, log_file) -> lis
 
     log(log_file, "GENERATION START")
     sampling_params = SamplingParams(
+        min_tokens  = output_len,
         max_tokens  = output_len,
         output_kind = RequestOutputKind.DELTA,
     )
@@ -276,9 +278,9 @@ def vllm_run(log_file, cfg):
 
     log(log_file, "PROGRAM ENDED")
     
-async def async_vllm_run(log_file, cfg):
+async def async_vllm_run(log_file, cfg, metrics_file):
     drop_caches(log_file)
-    time.sleep(10)
+    await asyncio.sleep(10)
 
     log(log_file, "PROGRAM STARTED")
     log(log_file, "VLLM_IMPORT START")
@@ -293,6 +295,46 @@ async def async_vllm_run(log_file, cfg):
     await asyncio.sleep(10)
 
     metrics = await async_generation(engine, cfg.output_len, cfg.max_num_seqs, log_file)
+    save_metrics(metrics_file, metrics)
+
+    engine.shutdown()
+    await asyncio.sleep(10)
+
+    drop_caches(log_file)
+    await asyncio.sleep(10)
+
+    log(log_file, "PROGRAM ENDED")
+    return metrics
+
+async def async_vllm_custom_run(log_file, cfg, metrics_file):
+    drop_caches(log_file)
+    await asyncio.sleep(10)
+
+    log(log_file, "PROGRAM STARTED")
+    log(log_file, "VLLM_IMPORT START")
+    import vllm
+    log(log_file, "VLLM_IMPORT DONE")
+
+    engine = async_engine(cfg, log_file)
+    await asyncio.sleep(10)
+
+    # warm up run
+    await async_warmup(engine, cfg.max_num_seqs, log_file)
+    await asyncio.sleep(10)
+
+    metrics = await async_generation(engine, cfg.output_len, cfg.max_num_seqs, log_file)
+    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len}_A"), metrics)
+
+    await asyncio.sleep(10)
+
+    metrics = await async_generation(engine, cfg.output_len + 1, cfg.max_num_seqs, log_file)
+    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len + 1}_B"), metrics)
+
+    await asyncio.sleep(10)
+
+    metrics = await async_generation(engine, cfg.output_len, cfg.max_num_seqs, log_file)
+    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len}_C"), metrics)
+
     engine.shutdown()
     await asyncio.sleep(10)
 
@@ -314,8 +356,12 @@ def set_output_file(out_log):
 
 
 def main():
+    rerun = False
     cfg = parse_args()
-    run_dir, log_file, out_file, metrics_file = setup_run_dir(cfg)
+    run_dir, log_file, out_file, metrics_file, counter = setup_run_dir(cfg, rerun)
+
+    if not rerun and counter > 1:
+        sys.exit(0)
     
     set_output_file(out_file)
 
@@ -343,8 +389,7 @@ def main():
 
     # vllm_run(log_file, cfg)
 
-    metrics = asyncio.run(async_vllm_run(log_file, cfg))
-    save_metrics(metrics_file, metrics)
+    asyncio.run(async_vllm_run(log_file, cfg, metrics_file))
 
     time.sleep(10)
     stop_memory_profiler(monitor, checker)
