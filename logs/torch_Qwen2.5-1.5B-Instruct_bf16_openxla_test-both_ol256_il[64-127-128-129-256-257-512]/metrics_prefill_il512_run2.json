@@ -1,0 +1,14 @@
+{
+  "input_tokens": 512,
+  "output_tokens": 0,
+  "ttft_ms": 511.18,
+  "tpt_ms": 0.0,
+  "total_time_ms": 511.18,
+  "total_compile_delta": 0,
+  "per_token_latencies_ms": [
+    511.176
+  ],
+  "per_step_compile_deltas": [
+    0
+  ]
+}
