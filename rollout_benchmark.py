@@ -22,7 +22,9 @@ DEFAULTS = {
     "enable_prefix_caching":  False,
     "enable_chunked_prefill": False,
     "disable_log_stats":      True,
-    "output_len": 256
+    "output_len":             256,
+    "input_lens":             [127, 128, 256],
+    "same_input_len":         False,
 }
 
 class Tee:
@@ -35,6 +37,8 @@ class Tee:
     def flush(self):
         for f in self._files:
             f.flush()
+    def isatty(self):
+        return False
             
 @dataclass
 class TokenMetrics:
@@ -45,6 +49,7 @@ class TokenMetrics:
     ttft_ms: float = 0.0
     tpt_ms: float = 0.0
     total_time_ms: float = 0.0
+    per_token_latencies_ms: list[float] = field(default_factory=list)
 
 
 def parse_args():
@@ -58,6 +63,11 @@ def parse_args():
     p.add_argument("--enable-prefix-caching", action="store_true", default=DEFAULTS["enable_prefix_caching"])
     p.add_argument("--enable-chunked-prefill", action="store_true", default=DEFAULTS["enable_chunked_prefill"])
     p.add_argument("--enable-log-stats", action="store_false", dest="disable_log_stats", default=DEFAULTS["disable_log_stats"])
+    p.add_argument("--input-lens", nargs="+", type=int, default=DEFAULTS["input_lens"],
+                   help="Prefill lengths to sweep (default: 127 128 256)")
+    p.add_argument("--same-input-len", action="store_true", default=DEFAULTS["same_input_len"],
+                   help="All requests in a batch share the same input length (uniform sweep); "
+                        "default is mixed: batch slots cycle through all --input-lens values")
     return p.parse_args()
 
 
@@ -76,11 +86,14 @@ def dtype_abbrev(dtype: str) -> str:
 
 def setup_run_dir(cfg, rerun = True):
     model_short = cfg.model.split("/")[-1]
+    il_tag = "ilsame" if cfg.same_input_len else "ilmixed"
+    il_vals = "-".join(str(x) for x in cfg.input_lens)
     base_name = (
         f"{model_short}_{dtype_abbrev(cfg.dtype)}"
         f"_tp{cfg.tensor_parallel_size}"
         f"_bs{cfg.max_num_seqs}"
         f"_ol{cfg.output_len}"
+        f"_{il_tag}[{il_vals}]"
     )
 
     logs_dir = Path("logs")
@@ -115,6 +128,7 @@ def save_metrics(metrics_file, metrics: list[TokenMetrics]):
                 "ttft_ms": round(m.ttft_ms, 2),
                 "tpt_ms": round(m.tpt_ms, 2),
                 "total_time_ms": round(m.total_time_ms, 2),
+                "per_token_latencies_ms": m.per_token_latencies_ms,
             }
             for m in metrics
         ],
@@ -132,6 +146,36 @@ def drop_caches(log_file):
     )
     log(log_file, "CACHE_DROP DONE")
 
+
+# INPUT-LENGTH HELPERS
+
+def build_token_corpus(model_name: str) -> list[int]:
+    """Tokenize the full prompts list into one long token sequence for slicing."""
+    from transformers import AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(model_name)
+    combined = " ".join(prompts)
+    return tok.encode(combined, add_special_tokens=False)
+
+def make_prompt_tokens(token_corpus: list[int], input_len: int) -> list[int]:
+    """Return exactly input_len token IDs, tiling the corpus if needed."""
+    tiled = token_corpus * ((input_len // len(token_corpus)) + 1)
+    return tiled[:input_len]
+
+def make_batch_prompts(token_corpus: list[int], input_lens: list[int],
+                       batch_size: int, current_len: int | None,
+                       same_input_len: bool) -> list[dict]:
+    """
+    Build batch_size prompt dicts for engine.generate().
+    same_input_len=True  → all slots get current_len tokens (uniform batch).
+    same_input_len=False → slots cycle through input_lens (heterogeneous batch).
+    """
+    if same_input_len:
+        ids = make_prompt_tokens(token_corpus, current_len)
+        return [{"prompt_token_ids": ids} for _ in range(batch_size)]
+    return [
+        {"prompt_token_ids": make_prompt_tokens(token_corpus, input_lens[i % len(input_lens)])}
+        for i in range(batch_size)
+    ]
 
 
 # SYNC GENERATION
@@ -169,7 +213,7 @@ def async_engine(cfg, log_file):
     log(log_file, "COMPILATION DONE")
     return engine
 
-async def _stream_one(engine, prompt: str, sampling_params, prompt_idx: int, batch_size: int) -> TokenMetrics:
+async def _stream_one(engine, prompt, sampling_params, prompt_idx: int, batch_size: int) -> TokenMetrics:
     m = TokenMetrics(prompt_idx=prompt_idx, batch_size=batch_size)
     token_times: list[float] = []
 
@@ -191,6 +235,7 @@ async def _stream_one(engine, prompt: str, sampling_params, prompt_idx: int, bat
     m.total_time_ms = (token_times[-1] - t0) * 1000 if token_times else 0.0
     if len(token_times) > 1:
         intervals = [token_times[i] - token_times[i - 1] for i in range(1, len(token_times))]
+        m.per_token_latencies_ms = [round(x * 1000, 3) for x in intervals]
         m.tpt_ms = sum(intervals) / len(intervals) * 1000
     return m
 
@@ -217,7 +262,8 @@ async def async_warmup(engine, batch_size: int, log_file) -> None:
     log(log_file, "WARMUP DONE")
 
 
-async def async_generation(engine, output_len, batch_size: int, log_file) -> list[TokenMetrics]:
+async def async_generation(engine, output_len, batch_size: int, log_file,
+                           batch_prompts=None) -> list[TokenMetrics]:
     from vllm import SamplingParams
     from vllm.sampling_params import RequestOutputKind
 
@@ -228,8 +274,9 @@ async def async_generation(engine, output_len, batch_size: int, log_file) -> lis
         output_kind = RequestOutputKind.DELTA,
     )
 
-    # Tile prompts to fill exactly batch_size concurrent slots
-    batch_prompts = [prompts[i % len(prompts)] for i in range(batch_size)]
+    if batch_prompts is None:
+        # Default: tile string prompts from the corpus to fill batch_size slots
+        batch_prompts = [prompts[i % len(prompts)] for i in range(batch_size)]
 
     results = await asyncio.gather(*[
         _stream_one(engine, prompt, sampling_params, idx, batch_size)
@@ -350,6 +397,60 @@ async def async_vllm_custom_run(log_file, cfg, metrics_file):
     return metrics
 
 
+async def async_input_len_run(log_file, cfg, metrics_file):
+    drop_caches(log_file)
+    await asyncio.sleep(10)
+
+    log(log_file, "PROGRAM STARTED")
+    log(log_file, "VLLM_IMPORT START")
+    import vllm
+    log(log_file, "VLLM_IMPORT DONE")
+
+    engine = async_engine(cfg, log_file)
+    await asyncio.sleep(10)
+
+    await async_warmup(engine, cfg.max_num_seqs, log_file)
+    await asyncio.sleep(10)
+
+    log(log_file, "TOKENIZER START")
+    token_corpus = build_token_corpus(cfg.model)
+    log(log_file, f"TOKENIZER DONE corpus_len={len(token_corpus)}")
+
+    if cfg.same_input_len:
+        # One generation run per input length; entire batch is uniform at that length.
+        for input_len in cfg.input_lens:
+            log(log_file, f"INPUT_LEN {input_len} START")
+            batch_prompts = make_batch_prompts(
+                token_corpus, cfg.input_lens, cfg.max_num_seqs, input_len, same_input_len=True
+            )
+            metrics = await async_generation(
+                engine, cfg.output_len, cfg.max_num_seqs, log_file, batch_prompts=batch_prompts
+            )
+            save_metrics(metrics_file.with_stem(f"metrics_il{input_len}"), metrics)
+            log(log_file, f"INPUT_LEN {input_len} DONE")
+            await asyncio.sleep(10)
+    else:
+        # Single generation run; batch slots cycle through all input_lens values.
+        log(log_file, f"INPUT_LEN mixed{cfg.input_lens} START")
+        batch_prompts = make_batch_prompts(
+            token_corpus, cfg.input_lens, cfg.max_num_seqs, None, same_input_len=False
+        )
+        metrics = await async_generation(
+            engine, cfg.output_len, cfg.max_num_seqs, log_file, batch_prompts=batch_prompts
+        )
+        save_metrics(metrics_file.with_stem("metrics_il_mixed"), metrics)
+        log(log_file, f"INPUT_LEN mixed DONE")
+        await asyncio.sleep(10)
+
+    engine.shutdown()
+    await asyncio.sleep(10)
+
+    drop_caches(log_file)
+    await asyncio.sleep(10)
+
+    log(log_file, "PROGRAM ENDED")
+
+
 def set_output_file(out_log):
     f = open(out_log, "w", encoding="utf-8")
     sys.stdout = Tee(sys.__stdout__, f)
@@ -381,6 +482,8 @@ def main():
         "enable_chunked_prefill": cfg.enable_chunked_prefill,
         "disable_log_stats": cfg.disable_log_stats,
         "output_len": cfg.output_len,
+        "input_lens": cfg.input_lens,
+        "same_input_len": cfg.same_input_len,
     }
     with open(run_dir / "config.json", "w", encoding="UTF-8") as f:
         json.dump(config_snapshot, f, indent=2)
@@ -393,8 +496,9 @@ def main():
     time.sleep(10)
 
     # vllm_run(log_file, cfg)
+    # asyncio.run(async_vllm_run(log_file, cfg, metrics_file))
 
-    asyncio.run(async_vllm_run(log_file, cfg, metrics_file))
+    asyncio.run(async_input_len_run(log_file, cfg, metrics_file))
 
     time.sleep(10)
     stop_memory_profiler(monitor, checker)
