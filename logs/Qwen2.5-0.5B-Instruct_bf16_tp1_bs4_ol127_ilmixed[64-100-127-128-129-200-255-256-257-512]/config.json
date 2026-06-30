@@ -1,0 +1,24 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "max_num_seqs": 4,
+  "max_model_len": 639,
+  "enable_prefix_caching": false,
+  "enable_chunked_prefill": false,
+  "disable_log_stats": true,
+  "output_len": 127,
+  "input_lens": [
+    64,
+    100,
+    127,
+    128,
+    129,
+    200,
+    255,
+    256,
+    257,
+    512
+  ],
+  "same_input_len": false
+}
