@@ -1,12 +1,12 @@
 {
-  "input_tokens": 512,
+  "input_tokens": 257,
   "output_tokens": 0,
-  "ttft_ms": 511.18,
+  "ttft_ms": 370.53,
   "tpt_ms": 0.0,
-  "total_time_ms": 511.18,
+  "total_time_ms": 370.53,
   "total_compile_delta": 0,
   "per_token_latencies_ms": [
-    511.176
+    370.535
   ],
   "per_step_compile_deltas": [
     0
