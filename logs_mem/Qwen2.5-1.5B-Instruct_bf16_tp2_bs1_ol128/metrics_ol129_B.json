@@ -1,0 +1,13 @@
+{
+  "batch_size": 1,
+  "prompts": [
+    {
+      "prompt_idx": 0,
+      "input_tokens": 435,
+      "output_tokens": 129,
+      "ttft_ms": 19.68,
+      "tpt_ms": 5.3,
+      "total_time_ms": 698.58
+    }
+  ]
+}

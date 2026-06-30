@@ -1,0 +1,18 @@
+Run directory : logs/Qwen2.5-0.5B-Instruct_bf16_tp2_bs4_ol512Run directory : logs/Qwen2.5-0.5B-Instruct_bf16_tp2_bs4_ol512
+
+Log file : logs/Qwen2.5-0.5B-Instruct_bf16_tp2_bs4_ol512/run.logLog file : logs/Qwen2.5-0.5B-Instruct_bf16_tp2_bs4_ol512/run.log
+
+Config : logs/Qwen2.5-0.5B-Instruct_bf16_tp2_bs4_ol512/config.jsonConfig : logs/Qwen2.5-0.5B-Instruct_bf16_tp2_bs4_ol512/config.json
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/ubuntu/inf2/run_benchmark.py", line 400, in <module>
+  File "/home/ubuntu/inf2/run_benchmark.py", line 400, in <module>
+        main()main()
+
+  File "/home/ubuntu/inf2/run_benchmark.py", line 388, in main
+  File "/home/ubuntu/inf2/run_benchmark.py", line 388, in main
+        time.sleep(10)time.sleep(10)
+
+KeyboardInterruptKeyboardInterrupt
+
