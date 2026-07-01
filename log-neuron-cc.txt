@@ -3614,3 +3614,47 @@ Total descriptors: 14848 (0.000221252 GB)
 2026-07-01T09:16:53Z USER 149337 [BackendPassManager]: Running neff_packager
 2026-07-01T09:16:53Z INFO 149337 [BackendPassManager]: Inputs to neff_packager: modules=2 functions=2 allocs=72779 blocks=2 instructions=282926 Max writers: 128 Max Readers: 15360
 2026-07-01T09:16:53Z WARNING 149337 [NeffFileWriter]: writeKelp missing file /home/ubuntu/trn2-rl-rollout/neuronxcc-eb6rycwg/metrics.json
+2026-07-01T09:20:07Z WARNING 149337 [NeffFileWriter]: writeKelp missing file /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronxcc/starfish/bin/../lib/MetricMetadata.json
+2026-07-01T09:20:07Z INFO 149337 [NeffFileWriter]: Neff will be written to: /tmp/tmpxg34h1xb/graph.neff
+2026-07-01T09:20:07Z USER 149337 [BackendPassManager]: neff_packager finished after 193.939 seconds
+2026-07-01T09:20:07Z INFO 149337 [BackendPassManager]: curr_vmrss:  2573mb, ru_maxrss:  31857mb (delta=0mb)
+2026-07-01T09:20:07Z INFO 149337 [BackendPassManager]: Output has 2 module(s), 2 function(s), 72779 memory location(s), 2 block(s), and 282926 instruction(s). Max writers: 128 Max Readers: 15360
+2026-07-01T09:20:07Z INFO 149337 [BackendDriver]: HBM scratchpad usage summary (post-allocation):
+┌───────┬───────────┬────────────────────────────────────────────────────────────┬─────────────┐
+│ Core  │ Subgraph  │ Description                                                │ Value       │
+├───────┼───────────┼────────────────────────────────────────────────────────────┼─────────────┤
+│ nc00  │ sg00      │ Peak scratchpad usage: local                               │ 0.000488 GB │
+│ nc00  │ sg00      │ Peak scratchpad usage: local and shared                    │ 0.000000 GB │
+│ nc00  │ sg00      │ Total size of allocated tensors: local                     │ 0.008545 GB │
+│ nc00  │ sg00      │ Total size of allocated tensors: shared                    │ 0.000000 GB │
+│ nc00  │ Max       │ Peak scratchpad usage: local                               │ 0.000488 GB │
+│ nc00  │ Max       │ Peak scratchpad usage: local and shared                    │ 0.000000 GB │
+│ nc00  │ Post-link │ Peak scratchpad usage after intermediate tensor allocation │ 0.000000 GB │
+│ nc00  │ Post-link │ Total size of allocated intermediate tensors               │ 0.000000 GB │
+├───────┼───────────┼────────────────────────────────────────────────────────────┼─────────────┤
+│ nc01  │ sg00      │ Peak scratchpad usage: local                               │ 0.000488 GB │
+│ nc01  │ sg00      │ Total size of allocated tensors: local                     │ 0.008545 GB │
+│ nc01  │ Max       │ Peak scratchpad usage: local                               │ 0.000488 GB │
+├───────┼───────────┼────────────────────────────────────────────────────────────┼─────────────┤
+│ Total │ Total     │ Peak scratchpad usage                                      │ 0.000488 GB │
+│ Total │ Total     │ Peak scratchpad usage (page-aligned)                       │ 0.500000 GB │
+└───────┴───────────┴────────────────────────────────────────────────────────────┴─────────────┘
+
+2026-07-01T09:20:07Z INFO 149337 [BackendDriver]: Peak scratchpad usage: 524288
+2026-07-01T09:20:07Z INFO 149337 [BackendDriver]: Backend completed successfully, tearing down.
+2026-07-01T09:20:07Z INFO 148781 [job.WalrusDriver.0]: VNCBackend: completed successfully.
+2026-07-01T09:20:07Z INFO 148781 [pipeline.Pipeline.0]: Finished job job.WalrusDriver.0
+2026-07-01T09:20:07Z INFO 148781 [pipeline.Pipeline.0]: Starting job job.NeffWrapper.0
+2026-07-01T09:20:07Z INFO 148781 [job.NeffWrapper.0]: Job NeffWrapper len(in_states) 1
+2026-07-01T09:20:07Z INFO 148781 [job.NeffWrapper.0]: Processing input #0
+2026-07-01T09:20:07Z INFO 148781 [job.NeffWrapper.0]: Start NeffWrapper
+2026-07-01T09:20:07Z INFO 148781 [job.NeffWrapper.0]: Executing: /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronxcc/starfish/bin/hlo-neff-wrapper --hlo /tmp/tmpxg34h1xb/model --neff /tmp/tmpxg34h1xb/graph.neff --io_transposes /home/ubuntu/trn2-rl-rollout/neuronxcc-eb6rycwg/io_transposes.json --output /tmp/tmpxg34h1xb/wrapped_neff.hlo --netlist /home/ubuntu/trn2-rl-rollout/neuronxcc-eb6rycwg/hlo_netlist.json
+2026-07-01T09:20:18Z INFO 148781 [job.NeffWrapper.0]: error: could not open input file /tmp/tmpxg34h1xb/model
+Error loading hlo file: Failed to input file
+Aborting...
+
+2026-07-01T09:20:19Z INFO 148781 [job.NeffWrapper.0]: Job #0 finished
+2026-07-01T09:20:19Z INFO 148781 [pipeline.Pipeline.0]: Finished job job.NeffWrapper.0
+2026-07-01T09:20:19Z INFO 148781 [pipeline.Pipeline.0]: Finished pipeline Pipeline
+2026-07-01T09:20:19Z INFO 148781 [pipeline.Pipeline.0]: Job #0 finished
+2026-07-01T09:20:20Z INFO 148769 [root]: Subcommand returned with exitcode=0
