@@ -5808,3 +5808,1209 @@
 >>> [MEM] 2026-07-01T09:09:59.417690+00:00 {"host_mem_used_gb": 94.86, "swap_used_gb": 0.0, "cpu_user_pct": 10.38, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
 
 >>> [MEM] 2026-07-01T09:10:00.418027+00:00 {"host_mem_used_gb": 94.88, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:01.418145+00:00 {"host_mem_used_gb": 94.91, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:02.418063+00:00 {"host_mem_used_gb": 94.96, "swap_used_gb": 0.0, "cpu_user_pct": 8.94, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:03.417634+00:00 {"host_mem_used_gb": 94.98, "swap_used_gb": 0.0, "cpu_user_pct": 12.56, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:04.417578+00:00 {"host_mem_used_gb": 95.0, "swap_used_gb": 0.0, "cpu_user_pct": 10.69, "cpu_system_pct": 2.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:05.417945+00:00 {"host_mem_used_gb": 95.04, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:06.418126+00:00 {"host_mem_used_gb": 95.06, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:07.418129+00:00 {"host_mem_used_gb": 95.09, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:08.417244+00:00 {"host_mem_used_gb": 95.11, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:09.417613+00:00 {"host_mem_used_gb": 95.16, "swap_used_gb": 0.0, "cpu_user_pct": 10.62, "cpu_system_pct": 2.51, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:10.418054+00:00 {"host_mem_used_gb": 95.17, "swap_used_gb": 0.0, "cpu_user_pct": 8.93, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:11.417371+00:00 {"host_mem_used_gb": 95.2, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:12.417455+00:00 {"host_mem_used_gb": 95.22, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:13.417819+00:00 {"host_mem_used_gb": 95.24, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:14.418946+00:00 {"host_mem_used_gb": 95.27, "swap_used_gb": 0.0, "cpu_user_pct": 10.52, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:15.418176+00:00 {"host_mem_used_gb": 95.29, "swap_used_gb": 0.0, "cpu_user_pct": 12.3, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:16.418197+00:00 {"host_mem_used_gb": 95.32, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:17.417192+00:00 {"host_mem_used_gb": 95.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.45, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:18.418495+00:00 {"host_mem_used_gb": 95.36, "swap_used_gb": 0.0, "cpu_user_pct": 8.67, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:19.417923+00:00 {"host_mem_used_gb": 95.39, "swap_used_gb": 0.0, "cpu_user_pct": 10.54, "cpu_system_pct": 1.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:20.417357+00:00 {"host_mem_used_gb": 95.41, "swap_used_gb": 0.0, "cpu_user_pct": 8.28, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:21.417428+00:00 {"host_mem_used_gb": 95.44, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:22.417562+00:00 {"host_mem_used_gb": 95.47, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:23.417950+00:00 {"host_mem_used_gb": 95.49, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:24.418104+00:00 {"host_mem_used_gb": 95.52, "swap_used_gb": 0.0, "cpu_user_pct": 10.03, "cpu_system_pct": 0.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:25.418123+00:00 {"host_mem_used_gb": 95.55, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:26.417994+00:00 {"host_mem_used_gb": 95.57, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:27.417660+00:00 {"host_mem_used_gb": 95.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:28.418122+00:00 {"host_mem_used_gb": 95.62, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:29.417648+00:00 {"host_mem_used_gb": 95.64, "swap_used_gb": 0.0, "cpu_user_pct": 10.53, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:30.418045+00:00 {"host_mem_used_gb": 95.66, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:31.418004+00:00 {"host_mem_used_gb": 95.69, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:32.417544+00:00 {"host_mem_used_gb": 95.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:33.417736+00:00 {"host_mem_used_gb": 95.75, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:34.417368+00:00 {"host_mem_used_gb": 95.77, "swap_used_gb": 0.0, "cpu_user_pct": 10.56, "cpu_system_pct": 1.01, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:35.417579+00:00 {"host_mem_used_gb": 95.8, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:36.418163+00:00 {"host_mem_used_gb": 95.83, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:37.417327+00:00 {"host_mem_used_gb": 95.85, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:38.417934+00:00 {"host_mem_used_gb": 95.89, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:39.417233+00:00 {"host_mem_used_gb": 95.91, "swap_used_gb": 0.0, "cpu_user_pct": 10.03, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:40.417550+00:00 {"host_mem_used_gb": 95.94, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:41.417565+00:00 {"host_mem_used_gb": 95.97, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:42.417226+00:00 {"host_mem_used_gb": 95.99, "swap_used_gb": 0.0, "cpu_user_pct": 8.78, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:43.417454+00:00 {"host_mem_used_gb": 96.02, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:44.417931+00:00 {"host_mem_used_gb": 96.05, "swap_used_gb": 0.0, "cpu_user_pct": 10.21, "cpu_system_pct": 1.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:45.418049+00:00 {"host_mem_used_gb": 96.06, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:46.417514+00:00 {"host_mem_used_gb": 96.09, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:47.418577+00:00 {"host_mem_used_gb": 96.12, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:48.417730+00:00 {"host_mem_used_gb": 96.15, "swap_used_gb": 0.0, "cpu_user_pct": 8.62, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:49.417903+00:00 {"host_mem_used_gb": 96.18, "swap_used_gb": 0.0, "cpu_user_pct": 10.35, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:50.418077+00:00 {"host_mem_used_gb": 96.21, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:51.418080+00:00 {"host_mem_used_gb": 96.23, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:52.417302+00:00 {"host_mem_used_gb": 96.27, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:53.417328+00:00 {"host_mem_used_gb": 96.29, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:54.417654+00:00 {"host_mem_used_gb": 96.32, "swap_used_gb": 0.0, "cpu_user_pct": 9.78, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:55.417667+00:00 {"host_mem_used_gb": 96.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.94, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:56.417682+00:00 {"host_mem_used_gb": 96.37, "swap_used_gb": 0.0, "cpu_user_pct": 8.33, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:57.418034+00:00 {"host_mem_used_gb": 96.4, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:58.417202+00:00 {"host_mem_used_gb": 96.43, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:10:59.418013+00:00 {"host_mem_used_gb": 96.46, "swap_used_gb": 0.0, "cpu_user_pct": 13.02, "cpu_system_pct": 1.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:00.418139+00:00 {"host_mem_used_gb": 96.48, "swap_used_gb": 0.0, "cpu_user_pct": 9.44, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:01.418227+00:00 {"host_mem_used_gb": 96.51, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:02.417490+00:00 {"host_mem_used_gb": 96.53, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:03.417728+00:00 {"host_mem_used_gb": 96.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:04.418098+00:00 {"host_mem_used_gb": 96.58, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:05.418168+00:00 {"host_mem_used_gb": 96.61, "swap_used_gb": 0.0, "cpu_user_pct": 10.03, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:06.417267+00:00 {"host_mem_used_gb": 96.65, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:07.417555+00:00 {"host_mem_used_gb": 96.68, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:08.417438+00:00 {"host_mem_used_gb": 96.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:09.417989+00:00 {"host_mem_used_gb": 96.73, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:10.417335+00:00 {"host_mem_used_gb": 96.76, "swap_used_gb": 0.0, "cpu_user_pct": 10.2, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:11.417566+00:00 {"host_mem_used_gb": 96.78, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:12.417676+00:00 {"host_mem_used_gb": 96.81, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:13.418065+00:00 {"host_mem_used_gb": 96.84, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:14.417885+00:00 {"host_mem_used_gb": 96.87, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:15.417317+00:00 {"host_mem_used_gb": 96.89, "swap_used_gb": 0.0, "cpu_user_pct": 10.37, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:16.417678+00:00 {"host_mem_used_gb": 96.92, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:17.417650+00:00 {"host_mem_used_gb": 96.94, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:18.417664+00:00 {"host_mem_used_gb": 96.97, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:19.417782+00:00 {"host_mem_used_gb": 97.0, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:20.418786+00:00 {"host_mem_used_gb": 97.02, "swap_used_gb": 0.0, "cpu_user_pct": 10.12, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:21.417772+00:00 {"host_mem_used_gb": 97.05, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:22.417820+00:00 {"host_mem_used_gb": 97.08, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:23.417961+00:00 {"host_mem_used_gb": 97.11, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:24.418132+00:00 {"host_mem_used_gb": 97.13, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:25.418138+00:00 {"host_mem_used_gb": 97.16, "swap_used_gb": 0.0, "cpu_user_pct": 10.03, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:26.418061+00:00 {"host_mem_used_gb": 97.19, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:27.417296+00:00 {"host_mem_used_gb": 97.22, "swap_used_gb": 0.0, "cpu_user_pct": 8.19, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:28.417671+00:00 {"host_mem_used_gb": 97.25, "swap_used_gb": 0.0, "cpu_user_pct": 8.78, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:29.417558+00:00 {"host_mem_used_gb": 97.27, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:30.417860+00:00 {"host_mem_used_gb": 97.29, "swap_used_gb": 0.0, "cpu_user_pct": 10.28, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:31.418023+00:00 {"host_mem_used_gb": 97.32, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:32.417258+00:00 {"host_mem_used_gb": 97.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:33.417164+00:00 {"host_mem_used_gb": 97.37, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:34.417575+00:00 {"host_mem_used_gb": 97.4, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:35.417321+00:00 {"host_mem_used_gb": 97.43, "swap_used_gb": 0.0, "cpu_user_pct": 14.04, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:36.417998+00:00 {"host_mem_used_gb": 97.45, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:37.417265+00:00 {"host_mem_used_gb": 97.47, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:38.417739+00:00 {"host_mem_used_gb": 97.5, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:39.417742+00:00 {"host_mem_used_gb": 97.54, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:40.417517+00:00 {"host_mem_used_gb": 97.56, "swap_used_gb": 0.0, "cpu_user_pct": 10.36, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:41.417790+00:00 {"host_mem_used_gb": 97.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:42.417436+00:00 {"host_mem_used_gb": 97.61, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:43.417119+00:00 {"host_mem_used_gb": 97.63, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:44.418075+00:00 {"host_mem_used_gb": 97.66, "swap_used_gb": 0.0, "cpu_user_pct": 8.5, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:45.418044+00:00 {"host_mem_used_gb": 97.69, "swap_used_gb": 0.0, "cpu_user_pct": 10.19, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:46.417241+00:00 {"host_mem_used_gb": 97.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:47.417603+00:00 {"host_mem_used_gb": 97.74, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:48.417457+00:00 {"host_mem_used_gb": 97.77, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:49.418127+00:00 {"host_mem_used_gb": 97.79, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:50.417465+00:00 {"host_mem_used_gb": 97.81, "swap_used_gb": 0.0, "cpu_user_pct": 10.19, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:51.417563+00:00 {"host_mem_used_gb": 97.85, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:52.418656+00:00 {"host_mem_used_gb": 97.87, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:53.417950+00:00 {"host_mem_used_gb": 97.9, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:54.417883+00:00 {"host_mem_used_gb": 97.92, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:55.417940+00:00 {"host_mem_used_gb": 97.95, "swap_used_gb": 0.0, "cpu_user_pct": 10.53, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:56.417247+00:00 {"host_mem_used_gb": 97.98, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:57.417432+00:00 {"host_mem_used_gb": 98.01, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:58.417457+00:00 {"host_mem_used_gb": 98.03, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:11:59.417714+00:00 {"host_mem_used_gb": 98.06, "swap_used_gb": 0.0, "cpu_user_pct": 8.59, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:00.417381+00:00 {"host_mem_used_gb": 98.09, "swap_used_gb": 0.0, "cpu_user_pct": 10.37, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:01.417561+00:00 {"host_mem_used_gb": 98.11, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:02.417749+00:00 {"host_mem_used_gb": 98.14, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:03.417466+00:00 {"host_mem_used_gb": 98.16, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:04.417561+00:00 {"host_mem_used_gb": 98.2, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:05.417302+00:00 {"host_mem_used_gb": 98.23, "swap_used_gb": 0.0, "cpu_user_pct": 10.28, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:06.417255+00:00 {"host_mem_used_gb": 98.25, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:07.417562+00:00 {"host_mem_used_gb": 98.28, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:08.417925+00:00 {"host_mem_used_gb": 98.3, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:09.417708+00:00 {"host_mem_used_gb": 98.33, "swap_used_gb": 0.0, "cpu_user_pct": 8.77, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:10.417866+00:00 {"host_mem_used_gb": 98.35, "swap_used_gb": 0.0, "cpu_user_pct": 9.61, "cpu_system_pct": 0.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:11.417710+00:00 {"host_mem_used_gb": 98.37, "swap_used_gb": 0.0, "cpu_user_pct": 9.36, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:12.417535+00:00 {"host_mem_used_gb": 98.4, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:13.417337+00:00 {"host_mem_used_gb": 98.43, "swap_used_gb": 0.0, "cpu_user_pct": 8.54, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:14.417734+00:00 {"host_mem_used_gb": 98.45, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:15.417363+00:00 {"host_mem_used_gb": 98.48, "swap_used_gb": 0.0, "cpu_user_pct": 8.94, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:16.417704+00:00 {"host_mem_used_gb": 98.51, "swap_used_gb": 0.0, "cpu_user_pct": 13.52, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:17.417732+00:00 {"host_mem_used_gb": 98.53, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:18.417738+00:00 {"host_mem_used_gb": 98.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:19.418314+00:00 {"host_mem_used_gb": 98.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:20.417976+00:00 {"host_mem_used_gb": 98.62, "swap_used_gb": 0.0, "cpu_user_pct": 8.77, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:21.417538+00:00 {"host_mem_used_gb": 98.65, "swap_used_gb": 0.0, "cpu_user_pct": 9.93, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:22.417914+00:00 {"host_mem_used_gb": 98.67, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:23.417927+00:00 {"host_mem_used_gb": 98.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:24.419031+00:00 {"host_mem_used_gb": 98.73, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:25.417629+00:00 {"host_mem_used_gb": 98.75, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:26.418120+00:00 {"host_mem_used_gb": 98.77, "swap_used_gb": 0.0, "cpu_user_pct": 10.19, "cpu_system_pct": 0.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:27.417623+00:00 {"host_mem_used_gb": 98.8, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:28.417527+00:00 {"host_mem_used_gb": 98.82, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:29.417722+00:00 {"host_mem_used_gb": 98.85, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:30.417531+00:00 {"host_mem_used_gb": 98.88, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:31.417953+00:00 {"host_mem_used_gb": 98.9, "swap_used_gb": 0.0, "cpu_user_pct": 10.1, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:32.418163+00:00 {"host_mem_used_gb": 98.93, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:33.417245+00:00 {"host_mem_used_gb": 98.95, "swap_used_gb": 0.0, "cpu_user_pct": 8.28, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:34.417656+00:00 {"host_mem_used_gb": 98.98, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:35.417569+00:00 {"host_mem_used_gb": 99.0, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:36.417245+00:00 {"host_mem_used_gb": 99.04, "swap_used_gb": 0.0, "cpu_user_pct": 10.29, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:37.417232+00:00 {"host_mem_used_gb": 99.06, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:38.417487+00:00 {"host_mem_used_gb": 99.09, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:39.417449+00:00 {"host_mem_used_gb": 99.12, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:40.417647+00:00 {"host_mem_used_gb": 99.15, "swap_used_gb": 0.0, "cpu_user_pct": 8.78, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:41.417607+00:00 {"host_mem_used_gb": 99.17, "swap_used_gb": 0.0, "cpu_user_pct": 10.18, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:42.417504+00:00 {"host_mem_used_gb": 97.36, "swap_used_gb": 0.0, "cpu_user_pct": 3.34, "cpu_system_pct": 6.02, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:43.417816+00:00 {"host_mem_used_gb": 98.51, "swap_used_gb": 0.0, "cpu_user_pct": 1.92, "cpu_system_pct": 6.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:44.418159+00:00 {"host_mem_used_gb": 99.17, "swap_used_gb": 0.0, "cpu_user_pct": 1.67, "cpu_system_pct": 7.36, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:45.418035+00:00 {"host_mem_used_gb": 100.8, "swap_used_gb": 0.0, "cpu_user_pct": 1.84, "cpu_system_pct": 6.6, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:46.417257+00:00 {"host_mem_used_gb": 100.8, "swap_used_gb": 0.0, "cpu_user_pct": 3.18, "cpu_system_pct": 9.28, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:47.417487+00:00 {"host_mem_used_gb": 102.52, "swap_used_gb": 0.0, "cpu_user_pct": 2, "cpu_system_pct": 6.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:48.417733+00:00 {"host_mem_used_gb": 104.23, "swap_used_gb": 0.0, "cpu_user_pct": 2.01, "cpu_system_pct": 6.43, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:49.417725+00:00 {"host_mem_used_gb": 102.39, "swap_used_gb": 0.0, "cpu_user_pct": 1.75, "cpu_system_pct": 7.35, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:50.417779+00:00 {"host_mem_used_gb": 103.27, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 6.68, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:51.417279+00:00 {"host_mem_used_gb": 104.91, "swap_used_gb": 0.0, "cpu_user_pct": 4.1, "cpu_system_pct": 7.19, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:52.417276+00:00 {"host_mem_used_gb": 106.63, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 6.35, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:53.417732+00:00 {"host_mem_used_gb": 98.16, "swap_used_gb": 0.0, "cpu_user_pct": 0.5, "cpu_system_pct": 4.6, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:54.418237+00:00 {"host_mem_used_gb": 79.65, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 6.35, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:55.417308+00:00 {"host_mem_used_gb": 81.63, "swap_used_gb": 0.0, "cpu_user_pct": 0.34, "cpu_system_pct": 9.14, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:56.418982+00:00 {"host_mem_used_gb": 83.63, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 9.62, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:57.417371+00:00 {"host_mem_used_gb": 85.41, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 7.11, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:58.417423+00:00 {"host_mem_used_gb": 87.14, "swap_used_gb": 0.0, "cpu_user_pct": 2.34, "cpu_system_pct": 6.52, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:12:59.417569+00:00 {"host_mem_used_gb": 88.87, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 6.77, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:00.417513+00:00 {"host_mem_used_gb": 90.58, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 6.18, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:01.418161+00:00 {"host_mem_used_gb": 92.3, "swap_used_gb": 0.0, "cpu_user_pct": 3.01, "cpu_system_pct": 7.35, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:02.418171+00:00 {"host_mem_used_gb": 94.03, "swap_used_gb": 0.0, "cpu_user_pct": 2.17, "cpu_system_pct": 6.27, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:03.418140+00:00 {"host_mem_used_gb": 95.74, "swap_used_gb": 0.0, "cpu_user_pct": 2.34, "cpu_system_pct": 6.69, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:04.418072+00:00 {"host_mem_used_gb": 97.46, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 6.19, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:05.418136+00:00 {"host_mem_used_gb": 99.11, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 6.77, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:06.417251+00:00 {"host_mem_used_gb": 100.44, "swap_used_gb": 0.0, "cpu_user_pct": 2.42, "cpu_system_pct": 7.36, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:07.417898+00:00 {"host_mem_used_gb": 101.77, "swap_used_gb": 0.0, "cpu_user_pct": 1.75, "cpu_system_pct": 7.27, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:08.417662+00:00 {"host_mem_used_gb": 103.11, "swap_used_gb": 0.0, "cpu_user_pct": 1.42, "cpu_system_pct": 7.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:09.417834+00:00 {"host_mem_used_gb": 93.89, "swap_used_gb": 0.0, "cpu_user_pct": 1.34, "cpu_system_pct": 7.78, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:10.418115+00:00 {"host_mem_used_gb": 77.12, "swap_used_gb": 0.0, "cpu_user_pct": 0.59, "cpu_system_pct": 8.12, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:11.417277+00:00 {"host_mem_used_gb": 78.75, "swap_used_gb": 0.0, "cpu_user_pct": 3.01, "cpu_system_pct": 7.87, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:12.417320+00:00 {"host_mem_used_gb": 80.4, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 6.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:13.417792+00:00 {"host_mem_used_gb": 82.06, "swap_used_gb": 0.0, "cpu_user_pct": 2.59, "cpu_system_pct": 6.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:14.417947+00:00 {"host_mem_used_gb": 83.74, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 6.18, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:15.417550+00:00 {"host_mem_used_gb": 85.43, "swap_used_gb": 0.0, "cpu_user_pct": 2.34, "cpu_system_pct": 6.1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:16.417215+00:00 {"host_mem_used_gb": 86.86, "swap_used_gb": 0.0, "cpu_user_pct": 4.18, "cpu_system_pct": 6.19, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:17.417147+00:00 {"host_mem_used_gb": 87.17, "swap_used_gb": 0.0, "cpu_user_pct": 7.18, "cpu_system_pct": 1.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:18.417504+00:00 {"host_mem_used_gb": 88.89, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 6.93, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:19.417409+00:00 {"host_mem_used_gb": 90.59, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 6.43, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:20.417849+00:00 {"host_mem_used_gb": 92.3, "swap_used_gb": 0.0, "cpu_user_pct": 2.34, "cpu_system_pct": 6.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:21.418035+00:00 {"host_mem_used_gb": 94.0, "swap_used_gb": 0.0, "cpu_user_pct": 2.51, "cpu_system_pct": 6.93, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:22.417609+00:00 {"host_mem_used_gb": 95.71, "swap_used_gb": 0.0, "cpu_user_pct": 2.59, "cpu_system_pct": 6.85, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:23.417467+00:00 {"host_mem_used_gb": 92.94, "swap_used_gb": 0.0, "cpu_user_pct": 3.59, "cpu_system_pct": 4.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:24.417998+00:00 {"host_mem_used_gb": 92.91, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:25.417292+00:00 {"host_mem_used_gb": 95.5, "swap_used_gb": 0.0, "cpu_user_pct": 1.59, "cpu_system_pct": 7.01, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:26.417697+00:00 {"host_mem_used_gb": 91.78, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 9.37, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [POST] 2026-07-01T09:13:26.768323+00:00 TRACE_COMPILE DONE b257 <<<
+
+>>> [POST] 2026-07-01T09:13:26.768468+00:00 TRACE_COMPILE START b512 <<<
+
+>>> [MEM] 2026-07-01T09:13:27.417800+00:00 {"host_mem_used_gb": 84.31, "swap_used_gb": 0.0, "cpu_user_pct": 2.76, "cpu_system_pct": 6.27, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:28.418800+00:00 {"host_mem_used_gb": 85.99, "swap_used_gb": 0.0, "cpu_user_pct": 23.75, "cpu_system_pct": 6.1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:29.418032+00:00 {"host_mem_used_gb": 87.95, "swap_used_gb": 0.0, "cpu_user_pct": 0.83, "cpu_system_pct": 8.1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:30.417478+00:00 {"host_mem_used_gb": 88.91, "swap_used_gb": 0.0, "cpu_user_pct": 4.61, "cpu_system_pct": 4.44, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:31.417940+00:00 {"host_mem_used_gb": 88.86, "swap_used_gb": 0.0, "cpu_user_pct": 8.19, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:32.417482+00:00 {"host_mem_used_gb": 88.82, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 2.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:33.417613+00:00 {"host_mem_used_gb": 88.88, "swap_used_gb": 0.0, "cpu_user_pct": 8.09, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:34.418013+00:00 {"host_mem_used_gb": 88.93, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:35.417185+00:00 {"host_mem_used_gb": 88.97, "swap_used_gb": 0.0, "cpu_user_pct": 7.87, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:36.417615+00:00 {"host_mem_used_gb": 89.02, "swap_used_gb": 0.0, "cpu_user_pct": 8.02, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:37.418142+00:00 {"host_mem_used_gb": 89.07, "swap_used_gb": 0.0, "cpu_user_pct": 8.59, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:38.417611+00:00 {"host_mem_used_gb": 89.17, "swap_used_gb": 0.0, "cpu_user_pct": 7.86, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:39.418040+00:00 {"host_mem_used_gb": 89.19, "swap_used_gb": 0.0, "cpu_user_pct": 7.94, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:40.417712+00:00 {"host_mem_used_gb": 89.25, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:41.417313+00:00 {"host_mem_used_gb": 89.29, "swap_used_gb": 0.0, "cpu_user_pct": 8.19, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:42.417826+00:00 {"host_mem_used_gb": 89.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 1.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:43.417873+00:00 {"host_mem_used_gb": 89.41, "swap_used_gb": 0.0, "cpu_user_pct": 7.92, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:44.417384+00:00 {"host_mem_used_gb": 89.46, "swap_used_gb": 0.0, "cpu_user_pct": 7.85, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:45.417854+00:00 {"host_mem_used_gb": 89.53, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:46.417188+00:00 {"host_mem_used_gb": 89.58, "swap_used_gb": 0.0, "cpu_user_pct": 7.86, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:47.418042+00:00 {"host_mem_used_gb": 89.62, "swap_used_gb": 0.0, "cpu_user_pct": 9.02, "cpu_system_pct": 1.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:48.417632+00:00 {"host_mem_used_gb": 89.67, "swap_used_gb": 0.0, "cpu_user_pct": 7.93, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:49.417511+00:00 {"host_mem_used_gb": 89.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.01, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:50.417786+00:00 {"host_mem_used_gb": 89.76, "swap_used_gb": 0.0, "cpu_user_pct": 7.93, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:51.418311+00:00 {"host_mem_used_gb": 89.81, "swap_used_gb": 0.0, "cpu_user_pct": 8.03, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:52.417828+00:00 {"host_mem_used_gb": 89.88, "swap_used_gb": 0.0, "cpu_user_pct": 14.2, "cpu_system_pct": 1.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:53.417260+00:00 {"host_mem_used_gb": 89.93, "swap_used_gb": 0.0, "cpu_user_pct": 8.28, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:54.417322+00:00 {"host_mem_used_gb": 89.98, "swap_used_gb": 0.0, "cpu_user_pct": 7.86, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:55.417600+00:00 {"host_mem_used_gb": 90.04, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:56.417989+00:00 {"host_mem_used_gb": 90.12, "swap_used_gb": 0.0, "cpu_user_pct": 7.94, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:57.417563+00:00 {"host_mem_used_gb": 90.43, "swap_used_gb": 0.0, "cpu_user_pct": 7.92, "cpu_system_pct": 2.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:58.418165+00:00 {"host_mem_used_gb": 91.05, "swap_used_gb": 0.0, "cpu_user_pct": 6.02, "cpu_system_pct": 2.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:13:59.417817+00:00 {"host_mem_used_gb": 93.22, "swap_used_gb": 0.0, "cpu_user_pct": 7.52, "cpu_system_pct": 6.6, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:00.417231+00:00 {"host_mem_used_gb": 88.81, "swap_used_gb": 0.0, "cpu_user_pct": 1.6, "cpu_system_pct": 6.55, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:01.417905+00:00 {"host_mem_used_gb": 88.78, "swap_used_gb": 0.0, "cpu_user_pct": 3.01, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:02.417174+00:00 {"host_mem_used_gb": 89.78, "swap_used_gb": 0.0, "cpu_user_pct": 6.86, "cpu_system_pct": 4.52, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:03.417336+00:00 {"host_mem_used_gb": 92.24, "swap_used_gb": 0.0, "cpu_user_pct": 4.25, "cpu_system_pct": 5.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:04.417796+00:00 {"host_mem_used_gb": 94.86, "swap_used_gb": 0.0, "cpu_user_pct": 3.92, "cpu_system_pct": 4.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:05.418037+00:00 {"host_mem_used_gb": 94.86, "swap_used_gb": 0.0, "cpu_user_pct": 8.95, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:06.418123+00:00 {"host_mem_used_gb": 94.83, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:07.417810+00:00 {"host_mem_used_gb": 94.85, "swap_used_gb": 0.0, "cpu_user_pct": 9.54, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:08.418197+00:00 {"host_mem_used_gb": 94.83, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:09.417903+00:00 {"host_mem_used_gb": 94.8, "swap_used_gb": 0.0, "cpu_user_pct": 8.79, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:10.417851+00:00 {"host_mem_used_gb": 94.78, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:11.417445+00:00 {"host_mem_used_gb": 94.75, "swap_used_gb": 0.0, "cpu_user_pct": 8.71, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:12.417547+00:00 {"host_mem_used_gb": 94.73, "swap_used_gb": 0.0, "cpu_user_pct": 9.21, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:13.417765+00:00 {"host_mem_used_gb": 94.69, "swap_used_gb": 0.0, "cpu_user_pct": 9.08, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:14.417402+00:00 {"host_mem_used_gb": 94.66, "swap_used_gb": 0.0, "cpu_user_pct": 8.54, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:15.417613+00:00 {"host_mem_used_gb": 94.65, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:16.417905+00:00 {"host_mem_used_gb": 94.62, "swap_used_gb": 0.0, "cpu_user_pct": 9.02, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:17.417928+00:00 {"host_mem_used_gb": 94.6, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:18.417831+00:00 {"host_mem_used_gb": 94.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.79, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:19.417447+00:00 {"host_mem_used_gb": 94.54, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:20.417494+00:00 {"host_mem_used_gb": 94.51, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:21.418113+00:00 {"host_mem_used_gb": 94.48, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:22.418155+00:00 {"host_mem_used_gb": 94.45, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:23.417497+00:00 {"host_mem_used_gb": 94.43, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:24.417220+00:00 {"host_mem_used_gb": 94.42, "swap_used_gb": 0.0, "cpu_user_pct": 9.37, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:25.417313+00:00 {"host_mem_used_gb": 94.39, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:26.417917+00:00 {"host_mem_used_gb": 94.37, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:27.418128+00:00 {"host_mem_used_gb": 94.34, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:28.417560+00:00 {"host_mem_used_gb": 94.32, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:29.417567+00:00 {"host_mem_used_gb": 94.3, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:30.417967+00:00 {"host_mem_used_gb": 94.27, "swap_used_gb": 0.0, "cpu_user_pct": 8.63, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:31.418279+00:00 {"host_mem_used_gb": 94.28, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:32.417496+00:00 {"host_mem_used_gb": 94.26, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:33.417867+00:00 {"host_mem_used_gb": 94.24, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:34.417577+00:00 {"host_mem_used_gb": 94.23, "swap_used_gb": 0.0, "cpu_user_pct": 13.71, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:35.417810+00:00 {"host_mem_used_gb": 94.21, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:36.417156+00:00 {"host_mem_used_gb": 94.17, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:37.417276+00:00 {"host_mem_used_gb": 94.41, "swap_used_gb": 0.0, "cpu_user_pct": 7.36, "cpu_system_pct": 1.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:38.417985+00:00 {"host_mem_used_gb": 94.52, "swap_used_gb": 0.0, "cpu_user_pct": 7.51, "cpu_system_pct": 1.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:39.417910+00:00 {"host_mem_used_gb": 94.45, "swap_used_gb": 0.0, "cpu_user_pct": 7.85, "cpu_system_pct": 2.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:40.417832+00:00 {"host_mem_used_gb": 94.5, "swap_used_gb": 0.0, "cpu_user_pct": 7.69, "cpu_system_pct": 1.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:41.417610+00:00 {"host_mem_used_gb": 94.68, "swap_used_gb": 0.0, "cpu_user_pct": 7.02, "cpu_system_pct": 1.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:42.417965+00:00 {"host_mem_used_gb": 94.77, "swap_used_gb": 0.0, "cpu_user_pct": 7.27, "cpu_system_pct": 1.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:43.417215+00:00 {"host_mem_used_gb": 94.86, "swap_used_gb": 0.0, "cpu_user_pct": 7.02, "cpu_system_pct": 1.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:44.417493+00:00 {"host_mem_used_gb": 95.01, "swap_used_gb": 0.0, "cpu_user_pct": 8.11, "cpu_system_pct": 2.01, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:45.417193+00:00 {"host_mem_used_gb": 94.94, "swap_used_gb": 0.0, "cpu_user_pct": 7.27, "cpu_system_pct": 1.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:46.417794+00:00 {"host_mem_used_gb": 95.14, "swap_used_gb": 0.0, "cpu_user_pct": 7.01, "cpu_system_pct": 1.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:47.418107+00:00 {"host_mem_used_gb": 95.13, "swap_used_gb": 0.0, "cpu_user_pct": 7.28, "cpu_system_pct": 1.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:48.417703+00:00 {"host_mem_used_gb": 95.11, "swap_used_gb": 0.0, "cpu_user_pct": 7.18, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:49.417864+00:00 {"host_mem_used_gb": 95.33, "swap_used_gb": 0.0, "cpu_user_pct": 8.38, "cpu_system_pct": 2.35, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:50.417224+00:00 {"host_mem_used_gb": 95.54, "swap_used_gb": 0.0, "cpu_user_pct": 7.1, "cpu_system_pct": 1.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:51.417989+00:00 {"host_mem_used_gb": 95.6, "swap_used_gb": 0.0, "cpu_user_pct": 7.36, "cpu_system_pct": 1.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:52.418156+00:00 {"host_mem_used_gb": 95.66, "swap_used_gb": 0.0, "cpu_user_pct": 7.1, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:53.417895+00:00 {"host_mem_used_gb": 95.64, "swap_used_gb": 0.0, "cpu_user_pct": 7.36, "cpu_system_pct": 2.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:54.418089+00:00 {"host_mem_used_gb": 95.79, "swap_used_gb": 0.0, "cpu_user_pct": 7.76, "cpu_system_pct": 2.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:55.417752+00:00 {"host_mem_used_gb": 95.62, "swap_used_gb": 0.0, "cpu_user_pct": 7.19, "cpu_system_pct": 2.01, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:56.417576+00:00 {"host_mem_used_gb": 95.89, "swap_used_gb": 0.0, "cpu_user_pct": 7.02, "cpu_system_pct": 1.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:57.417244+00:00 {"host_mem_used_gb": 95.98, "swap_used_gb": 0.0, "cpu_user_pct": 7.68, "cpu_system_pct": 1.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:58.417680+00:00 {"host_mem_used_gb": 95.98, "swap_used_gb": 0.0, "cpu_user_pct": 7.1, "cpu_system_pct": 1.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:14:59.417704+00:00 {"host_mem_used_gb": 96.05, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 2.51, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:00.417234+00:00 {"host_mem_used_gb": 96.11, "swap_used_gb": 0.0, "cpu_user_pct": 7.1, "cpu_system_pct": 1.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:01.418004+00:00 {"host_mem_used_gb": 96.1, "swap_used_gb": 0.0, "cpu_user_pct": 7.18, "cpu_system_pct": 2.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:02.417626+00:00 {"host_mem_used_gb": 97.86, "swap_used_gb": 0.0, "cpu_user_pct": 5.59, "cpu_system_pct": 3.01, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:03.418358+00:00 {"host_mem_used_gb": 99.71, "swap_used_gb": 0.0, "cpu_user_pct": 6.86, "cpu_system_pct": 2.68, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:04.417413+00:00 {"host_mem_used_gb": 100.36, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:05.418013+00:00 {"host_mem_used_gb": 100.48, "swap_used_gb": 0.0, "cpu_user_pct": 6.68, "cpu_system_pct": 2.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:06.417760+00:00 {"host_mem_used_gb": 102.89, "swap_used_gb": 0.0, "cpu_user_pct": 5.27, "cpu_system_pct": 3.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:07.417466+00:00 {"host_mem_used_gb": 100.38, "swap_used_gb": 0.0, "cpu_user_pct": 7.94, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:08.417642+00:00 {"host_mem_used_gb": 100.38, "swap_used_gb": 0.0, "cpu_user_pct": 8.18, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:09.417881+00:00 {"host_mem_used_gb": 100.37, "swap_used_gb": 0.0, "cpu_user_pct": 9.2, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:10.417926+00:00 {"host_mem_used_gb": 100.41, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:11.418211+00:00 {"host_mem_used_gb": 100.57, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:12.418135+00:00 {"host_mem_used_gb": 100.73, "swap_used_gb": 0.0, "cpu_user_pct": 8.19, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:13.417288+00:00 {"host_mem_used_gb": 97.12, "swap_used_gb": 0.0, "cpu_user_pct": 6.77, "cpu_system_pct": 2.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:14.417285+00:00 {"host_mem_used_gb": 96.6, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:15.417450+00:00 {"host_mem_used_gb": 96.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.78, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:16.417861+00:00 {"host_mem_used_gb": 99.66, "swap_used_gb": 0.0, "cpu_user_pct": 4.84, "cpu_system_pct": 4.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:17.418159+00:00 {"host_mem_used_gb": 99.84, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:18.417541+00:00 {"host_mem_used_gb": 97.12, "swap_used_gb": 0.0, "cpu_user_pct": 6.94, "cpu_system_pct": 2.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:19.417454+00:00 {"host_mem_used_gb": 98.0, "swap_used_gb": 0.0, "cpu_user_pct": 6.43, "cpu_system_pct": 2.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:20.417943+00:00 {"host_mem_used_gb": 98.06, "swap_used_gb": 0.0, "cpu_user_pct": 6.51, "cpu_system_pct": 2.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:21.417430+00:00 {"host_mem_used_gb": 98.15, "swap_used_gb": 0.0, "cpu_user_pct": 7.18, "cpu_system_pct": 2.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:22.418046+00:00 {"host_mem_used_gb": 98.34, "swap_used_gb": 0.0, "cpu_user_pct": 6.44, "cpu_system_pct": 2.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:23.417633+00:00 {"host_mem_used_gb": 98.37, "swap_used_gb": 0.0, "cpu_user_pct": 6.51, "cpu_system_pct": 2.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:24.417388+00:00 {"host_mem_used_gb": 98.46, "swap_used_gb": 0.0, "cpu_user_pct": 7.03, "cpu_system_pct": 2.43, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:25.417739+00:00 {"host_mem_used_gb": 98.54, "swap_used_gb": 0.0, "cpu_user_pct": 6.18, "cpu_system_pct": 2.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:26.417621+00:00 {"host_mem_used_gb": 98.75, "swap_used_gb": 0.0, "cpu_user_pct": 7.35, "cpu_system_pct": 3.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:27.417868+00:00 {"host_mem_used_gb": 98.55, "swap_used_gb": 0.0, "cpu_user_pct": 6.53, "cpu_system_pct": 1.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:28.417462+00:00 {"host_mem_used_gb": 98.85, "swap_used_gb": 0.0, "cpu_user_pct": 6.43, "cpu_system_pct": 2.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:29.417872+00:00 {"host_mem_used_gb": 98.89, "swap_used_gb": 0.0, "cpu_user_pct": 6.61, "cpu_system_pct": 2.18, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:30.417215+00:00 {"host_mem_used_gb": 99.0, "swap_used_gb": 0.0, "cpu_user_pct": 6.77, "cpu_system_pct": 2.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:31.417521+00:00 {"host_mem_used_gb": 99.25, "swap_used_gb": 0.0, "cpu_user_pct": 7.36, "cpu_system_pct": 2.43, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:32.417308+00:00 {"host_mem_used_gb": 99.21, "swap_used_gb": 0.0, "cpu_user_pct": 6.76, "cpu_system_pct": 2.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:33.417264+00:00 {"host_mem_used_gb": 99.35, "swap_used_gb": 0.0, "cpu_user_pct": 6.27, "cpu_system_pct": 2.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:34.418024+00:00 {"host_mem_used_gb": 99.43, "swap_used_gb": 0.0, "cpu_user_pct": 6.78, "cpu_system_pct": 2.6, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:35.417718+00:00 {"host_mem_used_gb": 99.53, "swap_used_gb": 0.0, "cpu_user_pct": 6.34, "cpu_system_pct": 2.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:36.418009+00:00 {"host_mem_used_gb": 99.78, "swap_used_gb": 0.0, "cpu_user_pct": 7.45, "cpu_system_pct": 2.93, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:37.418015+00:00 {"host_mem_used_gb": 99.71, "swap_used_gb": 0.0, "cpu_user_pct": 6.18, "cpu_system_pct": 2.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:38.417334+00:00 {"host_mem_used_gb": 99.83, "swap_used_gb": 0.0, "cpu_user_pct": 6.61, "cpu_system_pct": 2.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:39.417814+00:00 {"host_mem_used_gb": 99.96, "swap_used_gb": 0.0, "cpu_user_pct": 6.43, "cpu_system_pct": 2.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:40.418264+00:00 {"host_mem_used_gb": 100.11, "swap_used_gb": 0.0, "cpu_user_pct": 6.7, "cpu_system_pct": 2.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:41.417216+00:00 {"host_mem_used_gb": 100.12, "swap_used_gb": 0.0, "cpu_user_pct": 7.53, "cpu_system_pct": 2.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:42.417749+00:00 {"host_mem_used_gb": 103.57, "swap_used_gb": 0.0, "cpu_user_pct": 4.35, "cpu_system_pct": 4.85, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:43.417833+00:00 {"host_mem_used_gb": 106.49, "swap_used_gb": 0.0, "cpu_user_pct": 4.94, "cpu_system_pct": 3.51, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:44.417793+00:00 {"host_mem_used_gb": 109.19, "swap_used_gb": 0.0, "cpu_user_pct": 5.35, "cpu_system_pct": 3.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:45.417270+00:00 {"host_mem_used_gb": 111.06, "swap_used_gb": 0.0, "cpu_user_pct": 6.44, "cpu_system_pct": 2.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:46.417872+00:00 {"host_mem_used_gb": 110.52, "swap_used_gb": 0.0, "cpu_user_pct": 7.42, "cpu_system_pct": 2.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:47.417807+00:00 {"host_mem_used_gb": 113.59, "swap_used_gb": 0.0, "cpu_user_pct": 5.35, "cpu_system_pct": 3.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:48.417601+00:00 {"host_mem_used_gb": 116.47, "swap_used_gb": 0.0, "cpu_user_pct": 5.01, "cpu_system_pct": 5.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:49.417951+00:00 {"host_mem_used_gb": 109.23, "swap_used_gb": 0.0, "cpu_user_pct": 7.11, "cpu_system_pct": 6.52, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:50.417559+00:00 {"host_mem_used_gb": 109.25, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:51.417652+00:00 {"host_mem_used_gb": 109.55, "swap_used_gb": 0.0, "cpu_user_pct": 9.27, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:52.417367+00:00 {"host_mem_used_gb": 110.57, "swap_used_gb": 0.0, "cpu_user_pct": 6.09, "cpu_system_pct": 2.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:53.417928+00:00 {"host_mem_used_gb": 99.81, "swap_used_gb": 0.0, "cpu_user_pct": 7.26, "cpu_system_pct": 2, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:54.417569+00:00 {"host_mem_used_gb": 99.79, "swap_used_gb": 0.0, "cpu_user_pct": 8.85, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:55.418088+00:00 {"host_mem_used_gb": 99.79, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:56.418075+00:00 {"host_mem_used_gb": 99.77, "swap_used_gb": 0.0, "cpu_user_pct": 9.27, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:57.417812+00:00 {"host_mem_used_gb": 99.78, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:58.417210+00:00 {"host_mem_used_gb": 99.77, "swap_used_gb": 0.0, "cpu_user_pct": 8.79, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:15:59.417793+00:00 {"host_mem_used_gb": 99.76, "swap_used_gb": 0.0, "cpu_user_pct": 8.67, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:00.418159+00:00 {"host_mem_used_gb": 99.75, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:01.417265+00:00 {"host_mem_used_gb": 99.73, "swap_used_gb": 0.0, "cpu_user_pct": 12.46, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:02.417296+00:00 {"host_mem_used_gb": 99.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:03.417833+00:00 {"host_mem_used_gb": 99.71, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:04.417811+00:00 {"host_mem_used_gb": 99.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:05.418223+00:00 {"host_mem_used_gb": 99.71, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:06.418149+00:00 {"host_mem_used_gb": 99.71, "swap_used_gb": 0.0, "cpu_user_pct": 8.77, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:07.417787+00:00 {"host_mem_used_gb": 99.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:08.417800+00:00 {"host_mem_used_gb": 99.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:09.418022+00:00 {"host_mem_used_gb": 99.69, "swap_used_gb": 0.0, "cpu_user_pct": 8.45, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:10.418124+00:00 {"host_mem_used_gb": 99.69, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:11.417388+00:00 {"host_mem_used_gb": 99.68, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:12.417565+00:00 {"host_mem_used_gb": 99.67, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:13.418159+00:00 {"host_mem_used_gb": 99.67, "swap_used_gb": 0.0, "cpu_user_pct": 9.52, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:14.417654+00:00 {"host_mem_used_gb": 99.68, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:15.417808+00:00 {"host_mem_used_gb": 99.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:16.417802+00:00 {"host_mem_used_gb": 99.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:17.417888+00:00 {"host_mem_used_gb": 99.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:18.418108+00:00 {"host_mem_used_gb": 100.15, "swap_used_gb": 0.0, "cpu_user_pct": 6.85, "cpu_system_pct": 2.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:19.418211+00:00 {"host_mem_used_gb": 103.26, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 8.19, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:20.417734+00:00 {"host_mem_used_gb": 103.76, "swap_used_gb": 0.0, "cpu_user_pct": 15.23, "cpu_system_pct": 2.76, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:21.417517+00:00 {"host_mem_used_gb": 104.98, "swap_used_gb": 0.0, "cpu_user_pct": 16.28, "cpu_system_pct": 4.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:22.417973+00:00 {"host_mem_used_gb": 105.44, "swap_used_gb": 0.0, "cpu_user_pct": 15.55, "cpu_system_pct": 1.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:23.417349+00:00 {"host_mem_used_gb": 105.69, "swap_used_gb": 0.0, "cpu_user_pct": 16.21, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:24.417620+00:00 {"host_mem_used_gb": 105.68, "swap_used_gb": 0.0, "cpu_user_pct": 22.07, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:25.417333+00:00 {"host_mem_used_gb": 105.68, "swap_used_gb": 0.0, "cpu_user_pct": 16.9, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:26.417338+00:00 {"host_mem_used_gb": 105.67, "swap_used_gb": 0.0, "cpu_user_pct": 22.31, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:27.418086+00:00 {"host_mem_used_gb": 105.66, "swap_used_gb": 0.0, "cpu_user_pct": 19.92, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:28.417175+00:00 {"host_mem_used_gb": 105.66, "swap_used_gb": 0.0, "cpu_user_pct": 17.44, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:29.417625+00:00 {"host_mem_used_gb": 105.65, "swap_used_gb": 0.0, "cpu_user_pct": 19.95, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:30.417309+00:00 {"host_mem_used_gb": 105.64, "swap_used_gb": 0.0, "cpu_user_pct": 27.03, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:31.417786+00:00 {"host_mem_used_gb": 105.63, "swap_used_gb": 0.0, "cpu_user_pct": 18.3, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:32.418050+00:00 {"host_mem_used_gb": 105.63, "swap_used_gb": 0.0, "cpu_user_pct": 12.85, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:33.417274+00:00 {"host_mem_used_gb": 105.62, "swap_used_gb": 0.0, "cpu_user_pct": 27.05, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:34.418266+00:00 {"host_mem_used_gb": 105.61, "swap_used_gb": 0.0, "cpu_user_pct": 34.42, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:35.417662+00:00 {"host_mem_used_gb": 105.61, "swap_used_gb": 0.0, "cpu_user_pct": 19.65, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:36.417822+00:00 {"host_mem_used_gb": 105.6, "swap_used_gb": 0.0, "cpu_user_pct": 9.54, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:37.418614+00:00 {"host_mem_used_gb": 105.59, "swap_used_gb": 0.0, "cpu_user_pct": 30.54, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:38.417937+00:00 {"host_mem_used_gb": 105.59, "swap_used_gb": 0.0, "cpu_user_pct": 92.24, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:39.417396+00:00 {"host_mem_used_gb": 105.58, "swap_used_gb": 0.0, "cpu_user_pct": 45.18, "cpu_system_pct": 0.84, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:40.418103+00:00 {"host_mem_used_gb": 105.58, "swap_used_gb": 0.0, "cpu_user_pct": 17.62, "cpu_system_pct": 1.51, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:41.417366+00:00 {"host_mem_used_gb": 105.57, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:42.421839+00:00 {"host_mem_used_gb": 105.56, "swap_used_gb": 0.0, "cpu_user_pct": 25.15, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:43.417579+00:00 {"host_mem_used_gb": 105.55, "swap_used_gb": 0.0, "cpu_user_pct": 38.19, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:44.417929+00:00 {"host_mem_used_gb": 105.54, "swap_used_gb": 0.0, "cpu_user_pct": 31.83, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:45.418012+00:00 {"host_mem_used_gb": 105.54, "swap_used_gb": 0.0, "cpu_user_pct": 37.35, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:46.417922+00:00 {"host_mem_used_gb": 105.53, "swap_used_gb": 0.0, "cpu_user_pct": 34.87, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:47.417824+00:00 {"host_mem_used_gb": 105.52, "swap_used_gb": 0.0, "cpu_user_pct": 16.3, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:48.417311+00:00 {"host_mem_used_gb": 105.51, "swap_used_gb": 0.0, "cpu_user_pct": 13.81, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:49.418184+00:00 {"host_mem_used_gb": 105.51, "swap_used_gb": 0.0, "cpu_user_pct": 17.03, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:50.417713+00:00 {"host_mem_used_gb": 105.5, "swap_used_gb": 0.0, "cpu_user_pct": 13.72, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:51.417601+00:00 {"host_mem_used_gb": 105.49, "swap_used_gb": 0.0, "cpu_user_pct": 21.76, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:52.417703+00:00 {"host_mem_used_gb": 105.49, "swap_used_gb": 0.0, "cpu_user_pct": 16.56, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:53.417682+00:00 {"host_mem_used_gb": 105.53, "swap_used_gb": 0.0, "cpu_user_pct": 16.21, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:54.417945+00:00 {"host_mem_used_gb": 105.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:55.418218+00:00 {"host_mem_used_gb": 105.57, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:56.417756+00:00 {"host_mem_used_gb": 105.59, "swap_used_gb": 0.0, "cpu_user_pct": 10.62, "cpu_system_pct": 1.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:57.418146+00:00 {"host_mem_used_gb": 105.62, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:58.417620+00:00 {"host_mem_used_gb": 105.64, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:16:59.417503+00:00 {"host_mem_used_gb": 105.65, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:00.417638+00:00 {"host_mem_used_gb": 105.67, "swap_used_gb": 0.0, "cpu_user_pct": 8.28, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:01.418221+00:00 {"host_mem_used_gb": 105.7, "swap_used_gb": 0.0, "cpu_user_pct": 10.28, "cpu_system_pct": 1.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:02.417949+00:00 {"host_mem_used_gb": 105.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:03.417266+00:00 {"host_mem_used_gb": 105.74, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:04.417369+00:00 {"host_mem_used_gb": 105.76, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:05.417677+00:00 {"host_mem_used_gb": 105.78, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:06.417410+00:00 {"host_mem_used_gb": 105.8, "swap_used_gb": 0.0, "cpu_user_pct": 10.03, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:07.417468+00:00 {"host_mem_used_gb": 105.82, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:08.417932+00:00 {"host_mem_used_gb": 105.83, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:09.417844+00:00 {"host_mem_used_gb": 105.86, "swap_used_gb": 0.0, "cpu_user_pct": 8.94, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:10.417994+00:00 {"host_mem_used_gb": 105.88, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:11.418152+00:00 {"host_mem_used_gb": 105.91, "swap_used_gb": 0.0, "cpu_user_pct": 10.28, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:12.418241+00:00 {"host_mem_used_gb": 105.93, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:13.417237+00:00 {"host_mem_used_gb": 105.95, "swap_used_gb": 0.0, "cpu_user_pct": 8.54, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:14.417459+00:00 {"host_mem_used_gb": 105.97, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:15.417317+00:00 {"host_mem_used_gb": 105.99, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:16.417812+00:00 {"host_mem_used_gb": 106.02, "swap_used_gb": 0.0, "cpu_user_pct": 10.79, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:17.418056+00:00 {"host_mem_used_gb": 106.03, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:18.417703+00:00 {"host_mem_used_gb": 106.05, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:19.417717+00:00 {"host_mem_used_gb": 106.07, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:20.417383+00:00 {"host_mem_used_gb": 106.09, "swap_used_gb": 0.0, "cpu_user_pct": 11.98, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:21.417700+00:00 {"host_mem_used_gb": 106.1, "swap_used_gb": 0.0, "cpu_user_pct": 10.52, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:22.418147+00:00 {"host_mem_used_gb": 106.12, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:23.417351+00:00 {"host_mem_used_gb": 106.15, "swap_used_gb": 0.0, "cpu_user_pct": 8.37, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:24.417821+00:00 {"host_mem_used_gb": 106.16, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:25.417617+00:00 {"host_mem_used_gb": 106.18, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:26.417253+00:00 {"host_mem_used_gb": 106.19, "swap_used_gb": 0.0, "cpu_user_pct": 10.3, "cpu_system_pct": 1.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:27.417293+00:00 {"host_mem_used_gb": 106.22, "swap_used_gb": 0.0, "cpu_user_pct": 8.59, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:28.417666+00:00 {"host_mem_used_gb": 106.25, "swap_used_gb": 0.0, "cpu_user_pct": 8.46, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:29.417853+00:00 {"host_mem_used_gb": 106.26, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:30.418055+00:00 {"host_mem_used_gb": 106.28, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:31.417221+00:00 {"host_mem_used_gb": 106.3, "swap_used_gb": 0.0, "cpu_user_pct": 9.36, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:32.417338+00:00 {"host_mem_used_gb": 106.33, "swap_used_gb": 0.0, "cpu_user_pct": 9.29, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:33.417293+00:00 {"host_mem_used_gb": 106.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:34.417564+00:00 {"host_mem_used_gb": 106.38, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:35.417674+00:00 {"host_mem_used_gb": 106.4, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:36.417937+00:00 {"host_mem_used_gb": 106.43, "swap_used_gb": 0.0, "cpu_user_pct": 8.85, "cpu_system_pct": 1.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:37.417170+00:00 {"host_mem_used_gb": 106.45, "swap_used_gb": 0.0, "cpu_user_pct": 9.78, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:38.417540+00:00 {"host_mem_used_gb": 106.47, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:39.417310+00:00 {"host_mem_used_gb": 106.5, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:40.418805+00:00 {"host_mem_used_gb": 106.52, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:41.418106+00:00 {"host_mem_used_gb": 106.55, "swap_used_gb": 0.0, "cpu_user_pct": 8.69, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:42.418203+00:00 {"host_mem_used_gb": 106.58, "swap_used_gb": 0.0, "cpu_user_pct": 9.86, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:43.417471+00:00 {"host_mem_used_gb": 106.61, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:44.417384+00:00 {"host_mem_used_gb": 106.63, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:45.417680+00:00 {"host_mem_used_gb": 106.66, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:46.417612+00:00 {"host_mem_used_gb": 106.69, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:47.417910+00:00 {"host_mem_used_gb": 106.72, "swap_used_gb": 0.0, "cpu_user_pct": 10.28, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:48.418002+00:00 {"host_mem_used_gb": 106.74, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:49.418033+00:00 {"host_mem_used_gb": 106.77, "swap_used_gb": 0.0, "cpu_user_pct": 8.94, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:50.418147+00:00 {"host_mem_used_gb": 106.8, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:51.417317+00:00 {"host_mem_used_gb": 106.83, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:52.417659+00:00 {"host_mem_used_gb": 106.86, "swap_used_gb": 0.0, "cpu_user_pct": 10.02, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:53.417714+00:00 {"host_mem_used_gb": 106.88, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:54.417876+00:00 {"host_mem_used_gb": 106.91, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:55.417345+00:00 {"host_mem_used_gb": 106.93, "swap_used_gb": 0.0, "cpu_user_pct": 12.37, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:56.417299+00:00 {"host_mem_used_gb": 106.96, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:57.417566+00:00 {"host_mem_used_gb": 106.98, "swap_used_gb": 0.0, "cpu_user_pct": 10.46, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:58.417569+00:00 {"host_mem_used_gb": 107.02, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:17:59.417544+00:00 {"host_mem_used_gb": 107.05, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:00.417527+00:00 {"host_mem_used_gb": 107.07, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:01.417218+00:00 {"host_mem_used_gb": 107.09, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:02.417637+00:00 {"host_mem_used_gb": 107.12, "swap_used_gb": 0.0, "cpu_user_pct": 10.36, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:03.418251+00:00 {"host_mem_used_gb": 107.14, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:04.417575+00:00 {"host_mem_used_gb": 107.17, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:05.417925+00:00 {"host_mem_used_gb": 107.21, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:06.417204+00:00 {"host_mem_used_gb": 107.23, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:07.417238+00:00 {"host_mem_used_gb": 107.26, "swap_used_gb": 0.0, "cpu_user_pct": 10.45, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:08.417794+00:00 {"host_mem_used_gb": 107.28, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:09.417459+00:00 {"host_mem_used_gb": 107.31, "swap_used_gb": 0.0, "cpu_user_pct": 8.29, "cpu_system_pct": 0.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:10.417506+00:00 {"host_mem_used_gb": 107.33, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:11.417688+00:00 {"host_mem_used_gb": 107.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:12.418319+00:00 {"host_mem_used_gb": 107.38, "swap_used_gb": 0.0, "cpu_user_pct": 10.36, "cpu_system_pct": 1.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:13.418059+00:00 {"host_mem_used_gb": 107.41, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:14.417469+00:00 {"host_mem_used_gb": 107.44, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:15.417580+00:00 {"host_mem_used_gb": 107.46, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:16.418412+00:00 {"host_mem_used_gb": 107.49, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:17.417918+00:00 {"host_mem_used_gb": 107.51, "swap_used_gb": 0.0, "cpu_user_pct": 10.02, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:18.417981+00:00 {"host_mem_used_gb": 107.54, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:19.417202+00:00 {"host_mem_used_gb": 107.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:20.418048+00:00 {"host_mem_used_gb": 107.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:21.417984+00:00 {"host_mem_used_gb": 107.61, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:22.417273+00:00 {"host_mem_used_gb": 107.64, "swap_used_gb": 0.0, "cpu_user_pct": 10.13, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:23.417866+00:00 {"host_mem_used_gb": 107.66, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:24.417871+00:00 {"host_mem_used_gb": 107.69, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:25.417296+00:00 {"host_mem_used_gb": 107.72, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:26.417475+00:00 {"host_mem_used_gb": 107.75, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:27.418052+00:00 {"host_mem_used_gb": 107.77, "swap_used_gb": 0.0, "cpu_user_pct": 10.35, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:28.417522+00:00 {"host_mem_used_gb": 107.8, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:29.417970+00:00 {"host_mem_used_gb": 107.83, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:30.417234+00:00 {"host_mem_used_gb": 107.85, "swap_used_gb": 0.0, "cpu_user_pct": 12.47, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:31.417302+00:00 {"host_mem_used_gb": 107.88, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:32.417709+00:00 {"host_mem_used_gb": 107.91, "swap_used_gb": 0.0, "cpu_user_pct": 10.7, "cpu_system_pct": 1, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:33.417661+00:00 {"host_mem_used_gb": 107.94, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:34.417645+00:00 {"host_mem_used_gb": 107.96, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:35.417837+00:00 {"host_mem_used_gb": 107.99, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:36.417611+00:00 {"host_mem_used_gb": 108.01, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:37.418147+00:00 {"host_mem_used_gb": 108.04, "swap_used_gb": 0.0, "cpu_user_pct": 10.61, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:38.417273+00:00 {"host_mem_used_gb": 108.07, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:39.417220+00:00 {"host_mem_used_gb": 108.09, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:40.417280+00:00 {"host_mem_used_gb": 108.13, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:41.417275+00:00 {"host_mem_used_gb": 108.16, "swap_used_gb": 0.0, "cpu_user_pct": 8.76, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:42.417404+00:00 {"host_mem_used_gb": 108.18, "swap_used_gb": 0.0, "cpu_user_pct": 9.6, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:43.418024+00:00 {"host_mem_used_gb": 108.2, "swap_used_gb": 0.0, "cpu_user_pct": 8.95, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:44.418548+00:00 {"host_mem_used_gb": 108.23, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:45.418409+00:00 {"host_mem_used_gb": 108.26, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:46.417365+00:00 {"host_mem_used_gb": 108.28, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:47.417759+00:00 {"host_mem_used_gb": 108.31, "swap_used_gb": 0.0, "cpu_user_pct": 9.27, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:48.417251+00:00 {"host_mem_used_gb": 108.33, "swap_used_gb": 0.0, "cpu_user_pct": 9.45, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:49.417300+00:00 {"host_mem_used_gb": 108.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.85, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:50.417411+00:00 {"host_mem_used_gb": 108.38, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:51.417688+00:00 {"host_mem_used_gb": 108.41, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:52.417837+00:00 {"host_mem_used_gb": 108.44, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:53.417569+00:00 {"host_mem_used_gb": 108.46, "swap_used_gb": 0.0, "cpu_user_pct": 10.29, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:54.417650+00:00 {"host_mem_used_gb": 108.49, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:55.417691+00:00 {"host_mem_used_gb": 108.52, "swap_used_gb": 0.0, "cpu_user_pct": 8.61, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:56.417981+00:00 {"host_mem_used_gb": 108.55, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:57.417222+00:00 {"host_mem_used_gb": 108.58, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:58.417368+00:00 {"host_mem_used_gb": 108.6, "swap_used_gb": 0.0, "cpu_user_pct": 10.11, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:18:59.417480+00:00 {"host_mem_used_gb": 108.63, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:00.417543+00:00 {"host_mem_used_gb": 108.65, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:01.417871+00:00 {"host_mem_used_gb": 108.67, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:02.417879+00:00 {"host_mem_used_gb": 108.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:03.417558+00:00 {"host_mem_used_gb": 108.74, "swap_used_gb": 0.0, "cpu_user_pct": 10.79, "cpu_system_pct": 1.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:04.417538+00:00 {"host_mem_used_gb": 108.76, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:05.417911+00:00 {"host_mem_used_gb": 108.78, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:06.418102+00:00 {"host_mem_used_gb": 108.82, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:07.417224+00:00 {"host_mem_used_gb": 108.84, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:08.417840+00:00 {"host_mem_used_gb": 108.87, "swap_used_gb": 0.0, "cpu_user_pct": 14.64, "cpu_system_pct": 1.26, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:09.417952+00:00 {"host_mem_used_gb": 108.89, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:10.417461+00:00 {"host_mem_used_gb": 108.92, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:11.417892+00:00 {"host_mem_used_gb": 108.95, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:12.418203+00:00 {"host_mem_used_gb": 108.96, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:13.417514+00:00 {"host_mem_used_gb": 108.99, "swap_used_gb": 0.0, "cpu_user_pct": 10.27, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:14.417261+00:00 {"host_mem_used_gb": 109.02, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:15.417566+00:00 {"host_mem_used_gb": 109.05, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:16.417993+00:00 {"host_mem_used_gb": 109.07, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:17.417681+00:00 {"host_mem_used_gb": 109.1, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:18.417472+00:00 {"host_mem_used_gb": 109.13, "swap_used_gb": 0.0, "cpu_user_pct": 10.37, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:19.417778+00:00 {"host_mem_used_gb": 109.16, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:20.417613+00:00 {"host_mem_used_gb": 109.18, "swap_used_gb": 0.0, "cpu_user_pct": 8.94, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:21.418239+00:00 {"host_mem_used_gb": 109.22, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:22.417797+00:00 {"host_mem_used_gb": 109.24, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:23.417890+00:00 {"host_mem_used_gb": 109.27, "swap_used_gb": 0.0, "cpu_user_pct": 10.34, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:24.417669+00:00 {"host_mem_used_gb": 109.3, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:25.417915+00:00 {"host_mem_used_gb": 109.32, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:26.417825+00:00 {"host_mem_used_gb": 109.35, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:27.417271+00:00 {"host_mem_used_gb": 109.37, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:28.417258+00:00 {"host_mem_used_gb": 109.4, "swap_used_gb": 0.0, "cpu_user_pct": 10.61, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:29.417456+00:00 {"host_mem_used_gb": 109.43, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:30.417889+00:00 {"host_mem_used_gb": 109.46, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:31.417936+00:00 {"host_mem_used_gb": 109.49, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:32.417661+00:00 {"host_mem_used_gb": 109.52, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:33.417349+00:00 {"host_mem_used_gb": 109.54, "swap_used_gb": 0.0, "cpu_user_pct": 10.62, "cpu_system_pct": 1.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:34.417295+00:00 {"host_mem_used_gb": 109.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:35.417943+00:00 {"host_mem_used_gb": 109.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:36.417300+00:00 {"host_mem_used_gb": 109.61, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:37.418075+00:00 {"host_mem_used_gb": 109.64, "swap_used_gb": 0.0, "cpu_user_pct": 8.67, "cpu_system_pct": 0.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:38.418247+00:00 {"host_mem_used_gb": 109.67, "swap_used_gb": 0.0, "cpu_user_pct": 10.18, "cpu_system_pct": 0.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:39.417558+00:00 {"host_mem_used_gb": 109.7, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:40.417317+00:00 {"host_mem_used_gb": 109.73, "swap_used_gb": 0.0, "cpu_user_pct": 8.43, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:41.417817+00:00 {"host_mem_used_gb": 109.77, "swap_used_gb": 0.0, "cpu_user_pct": 8.86, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:42.417708+00:00 {"host_mem_used_gb": 109.79, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:43.417447+00:00 {"host_mem_used_gb": 109.82, "swap_used_gb": 0.0, "cpu_user_pct": 10.44, "cpu_system_pct": 1.09, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:44.417941+00:00 {"host_mem_used_gb": 109.85, "swap_used_gb": 0.0, "cpu_user_pct": 8.34, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:45.418193+00:00 {"host_mem_used_gb": 109.87, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:46.417468+00:00 {"host_mem_used_gb": 109.9, "swap_used_gb": 0.0, "cpu_user_pct": 8.6, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:47.418198+00:00 {"host_mem_used_gb": 109.92, "swap_used_gb": 0.0, "cpu_user_pct": 12.01, "cpu_system_pct": 0.83, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:48.418404+00:00 {"host_mem_used_gb": 109.94, "swap_used_gb": 0.0, "cpu_user_pct": 10.37, "cpu_system_pct": 0.75, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:49.417364+00:00 {"host_mem_used_gb": 109.97, "swap_used_gb": 0.0, "cpu_user_pct": 8.68, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:50.417249+00:00 {"host_mem_used_gb": 109.99, "swap_used_gb": 0.0, "cpu_user_pct": 8.28, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:51.417702+00:00 {"host_mem_used_gb": 110.02, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:52.417952+00:00 {"host_mem_used_gb": 110.04, "swap_used_gb": 0.0, "cpu_user_pct": 8.19, "cpu_system_pct": 0.25, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:53.418112+00:00 {"host_mem_used_gb": 110.06, "swap_used_gb": 0.0, "cpu_user_pct": 10.12, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:54.417357+00:00 {"host_mem_used_gb": 110.08, "swap_used_gb": 0.0, "cpu_user_pct": 8.77, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:55.417567+00:00 {"host_mem_used_gb": 110.11, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:56.417719+00:00 {"host_mem_used_gb": 110.14, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:57.418183+00:00 {"host_mem_used_gb": 110.17, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.58, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:58.417167+00:00 {"host_mem_used_gb": 110.18, "swap_used_gb": 0.0, "cpu_user_pct": 9.44, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:19:59.417227+00:00 {"host_mem_used_gb": 110.21, "swap_used_gb": 0.0, "cpu_user_pct": 9.36, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:20:00.417375+00:00 {"host_mem_used_gb": 110.24, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
+
+>>> [MEM] 2026-07-01T09:20:01.417327+00:00 {"host_mem_used_gb": 110.27, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.17, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 9.43, "3": 0.0}, "neuroncore_util_pct": {"0": 0, "1": 0, "2": 0, "3": 0}} <<<
