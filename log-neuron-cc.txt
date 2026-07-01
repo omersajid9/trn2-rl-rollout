@@ -1,0 +1,969 @@
+2026-07-01T08:08:48Z INFO 136150 [root]: /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/bin/neuronx-cc compile /tmp/tmpnggxb3fh/model --framework XLA --target trn2 --output /tmp/tmpnggxb3fh/graph.neff --verbose=35
+2026-07-01T08:08:49Z INFO 136150 [root]: NeuronX Compiler version 2.25.3371.0+f524f7f8 Python version 3.12.3 HWM version 2.25.0.3371++f524f7f8 NumPy version 2.2.6 Running on AMI ami-0bfa28859f98aa666 Running in region sae1-az2
+2026-07-01T08:08:49Z INFO 136165 [root]: XLA detected
+2026-07-01T08:08:49Z INFO 136165 [root]: Pipeline: HLOToTensorizer Frontend StaticIOTranspose WalrusDriver NeffWrapper
+2026-07-01T08:08:50Z INFO 136165 [root]: Intermediate files stored in /home/ubuntu/trn2-rl-rollout/neuronxcc-d6rxaou_, output in /home/ubuntu/trn2-rl-rollout
+2026-07-01T08:08:50Z INFO 136165 [pipeline.Pipeline.0]: Job Pipeline len(in_states) 1
+2026-07-01T08:08:50Z INFO 136165 [pipeline.Pipeline.0]: Processing input #0
+2026-07-01T08:08:50Z INFO 136165 [pipeline.Pipeline.0]: Running pipeline Pipeline.0
+2026-07-01T08:08:50Z INFO 136165 [pipeline.Pipeline.0]: Starting job job.HLOToTensorizer.0
+2026-07-01T08:08:50Z INFO 136165 [job.HLOToTensorizer.0]: Job HLOToTensorizer len(in_states) 1
+2026-07-01T08:08:50Z INFO 136165 [job.HLOToTensorizer.0]: Processing input #0
+2026-07-01T08:08:50Z INFO 136165 [job.HLOToTensorizer.0]: Executing: /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronxcc/starfish/bin/hlo2penguin --input /tmp/tmpnggxb3fh/model --out-dir ./ --output penguin.py --target-instance=trn2 --logical-nc-config=2 --verbose=error --logfile=/home/ubuntu/trn2-rl-rollout/log-neuron-cc.txt --ml-dtypes-version=0.5.4 --logfile-verbose=info --modular-flow-mac-target=200000000000 --emit-tensor-level-dropout-ops
+2026-07-01 08:08:54.178560: I hilo/hlo2penguin/lowering_utils/FrontendDriver.cc:1184] [INFO] Found memory bound graph
+2026-07-01 08:08:54.178742: I hilo/hlo_passes/InstructionHistogram.cc:100] [INFO] 
+Post-Partition Histogram before graph level optimizations - Total HLO instructions: 8582
+             reshape      1859  21.66% ################################################################
+           broadcast      1690  19.69% ##########################################################
+            constant      1386  16.15% ###############################################
+             convert       935  10.89% ################################
+            multiply       650   7.57% ######################
+           transpose       450   5.24% ###############
+                 add       309   3.60% ##########
+                 dot       254   2.96% ########
+             compare       141   1.64% ####
+              reduce       141   1.64% ####
+              select       141   1.64% ####
+               slice       113   1.32% ###
+         concatenate       113   1.32% ###
+              divide        85   0.99% ##
+               rsqrt        57   0.66% #
+               power        57   0.66% #
+              negate        56   0.65% #
+                iota        56   0.65% #
+         exponential        28   0.33% 
+            subtract        28   0.33% 
+                call        28   0.33% 
+           parameter         1   0.01% 
+              gather         1   0.01% 
+              cosine         1   0.01% 
+                sine         1   0.01% 
+               tuple         1   0.01% 
+
+
+2026-07-01 08:08:54.280871: I hilo/hlo_passes/NeuronHloVerifier.cc:1320] [WARNING] Operands of 32-bit integer type are implicitly converted to floating point types. This may cause accuracy issues.
+2026-07-01 08:09:22.120878: I hilo/hlo_passes/HloMacCount.cc:27] [INFO] HloMacCount has found 197420666880
+2026-07-01 08:09:22.121003: I hilo/hlo_passes/HloMacCount.cc:33] [INFO] Traffic has found 3087908881
+2026-07-01 08:09:22.121016: I hilo/hlo_passes/HloMacCount.cc:38] [INFO] AIF 127.867
+2026-07-01 08:09:22.121063: I hilo/hlo_passes/InstructionHistogram.cc:100] [INFO] 
+Post-Partition Histogram after graph level optimizations - Total HLO instructions: 3934
+             reshape       766  19.47% ################################################################
+             convert       654  16.62% ######################################################
+            multiply       425  10.80% ###################################
+           broadcast       353   8.97% #############################
+            constant       346   8.80% ############################
+                 add       281   7.14% #######################
+                 dot       253   6.43% #####################
+           transpose       170   4.32% ##############
+               slice       169   4.30% ##############
+              reduce       141   3.58% ###########
+         concatenate        85   2.16% #######
+               rsqrt        57   1.45% ####
+              negate        56   1.42% ####
+             compare        29   0.74% ##
+              select        29   0.74% ##
+         exponential        28   0.71% ##
+              divide        28   0.71% ##
+         custom-call        28   0.71% ##
+            subtract        28   0.71% ##
+                iota         3   0.08% 
+                sine         1   0.03% 
+               tuple         1   0.03% 
+              gather         1   0.03% 
+              cosine         1   0.03% 
+           parameter         1   0.03% 
+
+
+2026-07-01 08:09:22.121336: I hilo/hlo2penguin/utils/DumpDebugInfo.cc:89] [WARNING] Could not open file debug_info_hlo_partitions.json
+2026-07-01 08:09:23.973428: I hilo/MLIRPasses/Transforms/RemoveOptBarriers.cc:25] [INFO] Invoking RemoveOptimizationBarriers pass
+2026-07-01 08:09:23.979575: I hilo/MLIRPasses/Analysis/MLIRInstructionHistogram.cc:124] [INFO] 
+╔══════════════════════════════════════════════════════════════╗
+║                   MLIR Operation Histogram                   ║
+╚══════════════════════════════════════════════════════════════╝
+Operations: 4083
+
+Operation                     Count Percent Distribution
+-------------------------- -------- ------- ----------------------------------------
+stablehlo.reshape               767  18.79% ########################################
+stablehlo.convert               655  16.04% ##################################
+stablehlo.multiply              425  10.41% ######################
+stablehlo.add                   366   8.96% ###################
+stablehlo.broadcast_in_dim      355   8.69% ##################
+stablehlo.constant              350   8.57% ##################
+stablehlo.dot                   197   4.82% ##########
+stablehlo.transpose             170   4.16% ########
+stablehlo.slice                 169   4.14% ########
+stablehlo.reduce                141   3.45% #######
+stablehlo.concatenate            85   2.08% ####
+stablehlo.rsqrt                  57   1.40% ##
+stablehlo.negate                 56   1.37% ##
+stablehlo.dot_general            56   1.37% ##
+stablehlo.compare                29   0.71% #
+stablehlo.select                 29   0.71% #
+stablehlo.maximum                28   0.69% #
+stablehlo.subtract               28   0.69% #
+stablehlo.exponential            28   0.69% #
+stablehlo.custom_call            28   0.69% #
+stablehlo.divide                 28   0.69% #
+stablehlo.and                    28   0.69% #
+stablehlo.iota                    3   0.07% 
+func.func                         1   0.02% 
+stablehlo.gather                  1   0.02% 
+stablehlo.sine                    1   0.02% 
+stablehlo.cosine                  1   0.02% 
+builtin.module                    1   0.02% 
+
+
+
+2026-07-01T08:09:26Z INFO 136165 [job.HLOToTensorizer.0]: WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1782893332.710793  136179 main.cc:689] IR signature: 805be8b6ca524590613af75846dd5b02042691a65d3529fa8adab5c8015f48d8 for model
+Replaced 0 dropout sequences with OffloadedDropout
+HLO Ops used in computation: add broadcast compare concatenate constant convert cosine custom-call divide dot exponential gather iota multiply negate parameter reduce reshape rsqrt select sine slice subtract transpose tuple 
+
+2026-07-01T08:09:26Z INFO 136165 [job.HLOToTensorizer.0]: IR signature: f698c18327036193458428a0efab49c8a14cef2e77e7458e79aedaa8e85b1777 for sg0000/HLOToTensorizer
+2026-07-01T08:09:26Z INFO 136165 [job.HLOToTensorizer.0]: Job #0 finished
+2026-07-01T08:09:26Z INFO 136165 [pipeline.Pipeline.0]: Finished job job.HLOToTensorizer.0
+2026-07-01T08:09:26Z INFO 136165 [pipeline.Pipeline.0]: Starting job job.Frontend.0
+2026-07-01T08:09:26Z INFO 136165 [job.Frontend.0]: Job Frontend len(in_states) 1
+2026-07-01T08:09:26Z INFO 136165 [job.Frontend.0]: Processing input #0
+2026-07-01T08:09:26Z INFO 136165 [job.Frontend.0]: Start model loading
+2026-07-01T08:09:26Z INFO 136165 [job.Frontend.0]: Start tensorization
+2026-07-01T08:09:29Z INFO 136165 [job.Frontend.0]: Num jobs: 1
+2026-07-01T08:09:29Z USER 136165 [root/Tensorizer/Tensorizer]: Running Tensorizer
+2026-07-01T08:09:29Z INFO 136165 [Tensorizer]: Frontend did not find netlist info. Switching to flat flow.
+2026-07-01T08:09:29Z INFO 136165 [Tensorizer]: Building model from Penguin script "penguin.py"...
+2026-07-01T08:09:32Z INFO 136165 [Tensorizer]: Tensorizer options: --run-pg-layout-and-tiling --num-neuroncores-per-sengine=2 --num-neuroncores-per-sengine=2 --internal_dynamic_dma_scratch_size_per_partition=16384 --disable-bitcasted-transpose --dont-verify-after-all --fp32-cast=none --mm-transpose-type=fp32 --disable-expensive-checks --disable-max-stride-tiling --hbm-scratchpad-page-size-in-bytes=536870912 --enable-replication --max-local-tensor-tile-size-in-bytes=32768 --tensor-layout-p-order=0 --tensor-layout-b-order=1 --enable-advanced-delinearization --weight-coalescing-threshold=512 --enable-bir-converter=enable --accumulate-on-alu-dtype --enable-tritium-loopfusion --keep-remat-dma-transpose --enable-softmax-kernel --enable-isl-in-injective-check --enable-dge-on-io-dma --enable-dge-on-spill-reload-dma --enable-dge-on-indirect-dma --enable-dge-on-vector-indirect-dma --enable-dge-on-dst-reduce --keep-rng-tensor-op
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/DoNothing]: Running DoNothing
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/DoNothing]: Finished (changed=True)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/DoNothing]: DoNothing finished after 0.000 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/LegalizeOpLevelAlias]: Running LegalizeOpLevelAlias
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/LegalizeOpLevelAlias]: Finished (changed=False)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/LegalizeOpLevelAlias]: LegalizeOpLevelAlias finished after 0.014 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/OptimizeAliasedCopyChain]: Running OptimizeAliasedCopyChain
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/OptimizeAliasedCopyChain]: Finished (changed=False)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/OptimizeAliasedCopyChain]: OptimizeAliasedCopyChain finished after 0.005 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: Running AliasDependencyInduction
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: Finished (changed=False)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: AliasDependencyInduction finished after 0.042 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/ConcatDelinearizer]: Running ConcatDelinearizer
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/ConcatDelinearizer]: Finished (changed=False)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/ConcatDelinearizer]: ConcatDelinearizer finished after 0.001 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/TransformConvOp]: Running TransformConvOp
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/TransformConvOp]: Finished (changed=False)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/TransformConvOp]: TransformConvOp finished after 0.046 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/LowerTensorOp]: Running LowerTensorOp
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/LowerTensorOp]: Finished (changed=True)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/LowerTensorOp]: LowerTensorOp finished after 0.467 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyReset]: Running AliasDependencyReset
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: Running AliasDependencyElimination
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: Finished (changed=False)
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: AliasDependencyElimination finished after 0.001 seconds
+2026-07-01T08:09:32Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: Running AliasDependencyInduction
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: Finished (changed=False)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: AliasDependencyInduction finished after 0.261 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/AliasDependencyReset]: AliasDependencyReset finished after 0.265 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/LegalizeCCOpLayout]: Running LegalizeCCOpLayout
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/LegalizeCCOpLayout]: Finished (changed=False instance_count_change=+0)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/LegalizeCCOpLayout]: LegalizeCCOpLayout finished after 0.054 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/TensorOpSimplifier]: Running TensorOpSimplifier
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/TensorOpSimplifier]: Finished (changed=True)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/TensorOpSimplifier]: TensorOpSimplifier finished after 0.100 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/CanonicalizeIR]: Running CanonicalizeIR
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/CanonicalizeIR]: Finished (changed=False)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/CanonicalizeIR]: CanonicalizeIR finished after 0.030 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/ResolveComplicatePredicates]: Running ResolveComplicatePredicates
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/ResolveComplicatePredicates]: Finished (changed=False)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/ResolveComplicatePredicates]: ResolveComplicatePredicates finished after 0.024 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/AffinePredicateResolution]: Running AffinePredicateResolution
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/AffinePredicateResolution]: Finished (changed=False)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/AffinePredicateResolution]: AffinePredicateResolution finished after 0.024 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/EliminateDivs]: Running EliminateDivs
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/EliminateDivs]: Finished (changed=False)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/EliminateDivs]: EliminateDivs finished after 0.033 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/PerfectLoopNest]: Running PerfectLoopNest
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/PerfectLoopNest]: Finished (changed=False)
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/PerfectLoopNest]: PerfectLoopNest finished after 0.025 seconds
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier
+2026-07-01T08:09:33Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_0
+2026-07-01T08:09:34Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_0 finished after 1.385 seconds
+2026-07-01T08:09:34Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_1
+2026-07-01T08:09:35Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_1 finished after 0.817 seconds
+2026-07-01T08:09:35Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_2
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_2 finished after 0.801 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Finished (changed=True)
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier finished after 3.005 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/GenericAccessSimplifier]: Running GenericAccessSimplifier
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/GenericAccessSimplifier]: Finished (changed=False)
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/GenericAccessSimplifier]: GenericAccessSimplifier finished after 0.024 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/ExpandBatchNorm]: Running ExpandBatchNorm
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/ExpandBatchNorm]: Finished (changed=False)
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/ExpandBatchNorm]: ExpandBatchNorm finished after 0.046 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/TCTransform]: Running TCTransform
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/TCTransform]: Finished (changed=False)
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/TCTransform]: TCTransform finished after 0.058 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/CommuteConcat]: Running CommuteConcat
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/CommuteConcat]: Running CommuteConcat_iteration_0
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/CommuteConcat]: CommuteConcat_iteration_0 finished after 0.034 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/CommuteConcat]: Finished (changed=False)
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/CommuteConcat]: CommuteConcat finished after 0.034 seconds
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: Running TensorOpTransform
+2026-07-01T08:09:36Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: Running TensorOpTransform_iteration_0
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: TensorOpTransform_iteration_0 finished after 0.394 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: Running TensorOpTransform_iteration_1
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: TensorOpTransform_iteration_1 finished after 0.039 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: Finished (changed=True)
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/TensorOpTransform]: TensorOpTransform finished after 0.433 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/LateLowerTensorOp]: Running LateLowerTensorOp
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/LateLowerTensorOp]: Finished (changed=True)
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/LateLowerTensorOp]: LateLowerTensorOp finished after 0.161 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyReset]: Running AliasDependencyReset
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: Running AliasDependencyElimination
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: Finished (changed=False)
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: AliasDependencyElimination finished after 0.001 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: Running AliasDependencyInduction
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: Finished (changed=False)
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyInduction]: AliasDependencyInduction finished after 0.161 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/AliasDependencyReset]: AliasDependencyReset finished after 0.163 seconds
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: Running MemcpyElimination
+2026-07-01T08:09:37Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: Running MemcpyElimination_iteration_0
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: MemcpyElimination_iteration_0 finished after 1.755 seconds
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: Running MemcpyElimination_iteration_1
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: MemcpyElimination_iteration_1 finished after 0.097 seconds
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: Finished (changed=True)
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/MemcpyElimination]: MemcpyElimination finished after 1.853 seconds
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_0
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_0 finished after 0.476 seconds
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_1
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_1 finished after 0.140 seconds
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_2
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_2 finished after 0.093 seconds
+2026-07-01T08:09:39Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_0
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_0 finished after 0.154 seconds
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Finished (changed=True)
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion finished after 0.879 seconds
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Rematerialization]: Running Rematerialization
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Rematerialization]: Finished (changed=True)
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Rematerialization]: Rematerialization finished after 0.085 seconds
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_0
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_0 finished after 0.449 seconds
+2026-07-01T08:09:40Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_1
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_1 finished after 0.434 seconds
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Finished (changed=True)
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier finished after 0.884 seconds
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Running Delinearization
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Finished (changed=True)
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Delinearization finished after 0.146 seconds
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/DeadStoreElimination]: Running DeadStoreElimination
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/DeadStoreElimination]: Finished (changed=True)
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/DeadStoreElimination]: DeadStoreElimination finished after 0.514 seconds
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier
+2026-07-01T08:09:41Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_0
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_0 finished after 0.455 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_1
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_1 finished after 0.450 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Finished (changed=True)
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier finished after 0.907 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=True)
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.064 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Running Delinearization
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Finished (changed=True)
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Delinearization finished after 0.038 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_0
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_0 finished after 0.058 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_1
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_1 finished after 0.054 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_0
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_0 finished after 0.118 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Finished (changed=True)
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion finished after 0.233 seconds
+2026-07-01T08:09:42Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=False)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.040 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_0
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_0 finished after 0.422 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Finished (changed=False)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier finished after 0.422 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/ValueNumbering]: Running ValueNumbering
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/ValueNumbering]: Finished (changed=True)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/ValueNumbering]: ValueNumbering finished after 0.068 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=False)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.039 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/PadElimination]: Running PadElimination
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/PadElimination]: Finished (changed=False)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/PadElimination]: PadElimination finished after 0.006 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Running Delinearization
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Finished (changed=False)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Delinearization finished after 0.036 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_0
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_0 finished after 0.045 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Running LoopFusion_iteration_0
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion_iteration_0 finished after 0.082 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: Finished (changed=False)
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/LoopFusion]: LoopFusion finished after 0.130 seconds
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier
+2026-07-01T08:09:43Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_0
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_0 finished after 0.423 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier finished after 0.423 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.040 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/TCTransform]: Running TCTransform
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/TCTransform]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/TCTransform]: TCTransform finished after 0.027 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/RecognizeOpIdiom]: Running RecognizeOpIdiom
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/RecognizeOpIdiom]: Running RecognizeOpIdiom_iteration_0
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/RecognizeOpIdiom]: RecognizeOpIdiom_iteration_0 finished after 0.124 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/RecognizeOpIdiom]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/RecognizeOpIdiom]: RecognizeOpIdiom finished after 0.125 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/MaskPropagation]: Running MaskPropagation
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/MaskPropagation]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/MaskPropagation]: MaskPropagation finished after 0.061 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Recompute]: Running Recompute
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Recompute]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Recompute]: Recompute finished after 0.003 seconds
+2026-07-01T08:09:44Z INFO 136165 [Tensorizer]: After optimization: 677 statements
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DoNothing]: Running DoNothing
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DoNothing]: Finished (changed=True)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DoNothing]: DoNothing finished after 0.000 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/MutateDataType]: Running MutateDataType
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/MutateDataType]: Finished (changed=True)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/MutateDataType]: MutateDataType finished after 0.021 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Running Simplifier_iteration_0
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier_iteration_0 finished after 0.423 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/Simplifier]: Simplifier finished after 0.423 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Running DelinearIndices
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: DelinearIndices finished after 0.102 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/SimplifySlice]: Running SimplifySlice
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/SimplifySlice]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/SimplifySlice]: SimplifySlice finished after 0.013 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DeadCodeElimination]: Running DeadCodeElimination
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DeadCodeElimination]: Running DeadCodeElimination_iteration_0
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DeadCodeElimination]: DeadCodeElimination_iteration_0 finished after 0.014 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DeadCodeElimination]: Finished (changed=False)
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/DeadCodeElimination]: DeadCodeElimination finished after 0.014 seconds
+2026-07-01T08:09:44Z INFO 136165 [sg0000/Tensorizer/LateLowerReshapeOp]: Running LateLowerReshapeOp
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LateLowerReshapeOp]: Finished (changed=False)
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LateLowerReshapeOp]: LateLowerReshapeOp finished after 0.016 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/InferIntrinsicOnCC]: Running InferIntrinsicOnCC
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/InferIntrinsicOnCC]: Finished (changed=False)
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/InferIntrinsicOnCC]: InferIntrinsicOnCC finished after 0.293 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: Running ResolveAccessConflict
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: Running DeadCodeElimination_iteration_0
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: DeadCodeElimination_iteration_0 finished after 0.015 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: Running DeadCodeElimination_iteration_1
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: DeadCodeElimination_iteration_1 finished after 0.014 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: Finished (changed=True)
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/ResolveAccessConflict]: ResolveAccessConflict finished after 0.124 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=True)
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.046 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LocalLayoutOpt]: Running LocalLayoutOpt
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LocalLayoutOpt]: Finished (changed=False)
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LocalLayoutOpt]: LocalLayoutOpt finished after 0.257 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Running DelinearIndices
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Finished (changed=False)
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: DelinearIndices finished after 0.105 seconds
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/PGLayoutTilingPipeline]: Running PGLayoutTilingPipeline
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LayoutPreprocessingAndAnalysis]: Running LayoutPreprocessingAndAnalysis
+2026-07-01T08:09:45Z INFO 136165 [sg0000/Tensorizer/LayoutPreprocessing]: Running LayoutPreprocessing
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Running Delinearization
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Finished (changed=False)
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/Delinearization]: Delinearization finished after 0.037 seconds
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/LayoutPreprocessing]: Finished (changed=True)
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/LayoutPreprocessing]: LayoutPreprocessing finished after 0.369 seconds
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/LayoutRequirementAnalysis]: Running LayoutRequirementAnalysis
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/LayoutRequirementAnalysis]: LayoutRequirementAnalysis finished after 0.159 seconds
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/LayoutPreprocessingAndAnalysis]: LayoutPreprocessingAndAnalysis finished after 0.528 seconds
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/InferNonlocalTensors]: Running InferNonlocalTensors
+2026-07-01T08:09:46Z INFO 136165 [sg0000/Tensorizer/InferNonlocalTensors]: prefer_non_broadcast_par: True
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/InferNonlocalTensors]: Finished (changed=False)
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/InferNonlocalTensors]: InferNonlocalTensors finished after 1.838 seconds
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/InsertConflictResolutionOps]: Running InsertConflictResolutionOps
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Running DelinearIndices
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Finished (changed=False)
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: DelinearIndices finished after 0.110 seconds
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/InsertConflictResolutionOps]: Finished (changed=False)
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/InsertConflictResolutionOps]: InsertConflictResolutionOps finished after 0.111 seconds
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/PAGLayoutOpt]: Running PAGLayoutOpt
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/ParAxesAnnotation]: Running ParAxesAnnotation
+2026-07-01T08:09:48Z INFO 136165 [sg0000/Tensorizer/LayoutSearchAlgorithm]: prefer_non_broadcast_par: True
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/ParAxesAnnotation]: Finished (changed=True)
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/ParAxesAnnotation]: ParAxesAnnotation finished after 4.746 seconds
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/InsertLocalTransposes]: Running InsertLocalTransposes
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/InsertLocalTransposes]: Finished (changed=True)
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/InsertLocalTransposes]: InsertLocalTransposes finished after 0.262 seconds
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/PAGLayoutOpt]: PAGLayoutOpt finished after 5.017 seconds
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/ShardingPropagationAnalysis]: Running ShardingPropagationAnalysis
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/ShardingPropagationAnalysis]: ShardingPropagationAnalysis finished after 0.377 seconds
+2026-07-01T08:09:53Z INFO 136165 [sg0000/Tensorizer/InferShardAxis]: Running InferShardAxis
+2026-07-01T08:09:54Z INFO 136165 [sg0000/Tensorizer/ShardResult]: =================== Dumping Debug Info =====================
+2026-07-01T08:09:54Z INFO 136165 [sg0000/Tensorizer/ShardResult]: ------------------ Sharding summary ------------------
+total number of dags: 848
+total number of sharded dags: 370
+
+total bytes transferred from input, output, non local tensors: 304380
+total bytes transferred from input, output, non local tensors with 2x bandwidths: 0
+% bytes transferred with 2x bandwidths: 0.00
+
+NC0 GFLOPs: 170
+NC1 GFLOPs: 167
+% FLOPs sharded: 99.08
+
+
+Shard dim: 1536, Number of dags: 370
+Matmuls sharded with this dim: 
+[127,1536(s)] @ [1536(s),2,128] = [127,2,128] 		Number of occurrences: 28
+[127,1536(s)] @ [1536(s),2,2,64] = [127,2,2,64] 		Number of occurrences: 28
+[127,1536(s)] @ [1536(s),2,6,2,64] = [127,2,6,2,64] 		Number of occurrences: 28
+[127,1536(s)] @ [1536(s),8960] = [127,8960] 		Number of occurrences: 56
+[127,2,6,128] @ [2,6,128,1536(s)] = [127,1536(s)] 		Number of occurrences: 28
+[127,8960] @ [8960,1536(s)] = [127,1536(s)] 		Number of occurrences: 28
+[1536(s)] @ [1536(s),128,1187] = [128,1187] 		Number of occurrences: 1
+
+
+
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Running DelinearIndices
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: Finished (changed=False)
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/DelinearIndices]: DelinearIndices finished after 0.134 seconds
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/RemoveShardedPartitionAxes]: Running RemoveShardedPartitionAxes
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/RemoveShardedPartitionAxes]: Finished (changed=True)
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/RemoveShardedPartitionAxes]: RemoveShardedPartitionAxes finished after 0.306 seconds
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/InferShardAxis]: Finished (changed=True)
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/InferShardAxis]: InferShardAxis finished after 1.765 seconds
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/MaskPropagation]: Running MaskPropagation
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/MaskPropagation]: Finished (changed=False)
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/MaskPropagation]: MaskPropagation finished after 0.066 seconds
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/CanonicalizeDAGForPGTiling]: Running CanonicalizeDAGForPGTiling
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/CanonicalizeDAGForPGTiling]: Finished (changed=True)
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/CanonicalizeDAGForPGTiling]: CanonicalizeDAGForPGTiling finished after 0.225 seconds
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/PGTiling]: Running PGTiling
+2026-07-01T08:09:55Z INFO 136165 [sg0000/Tensorizer/AGOrderingAnalysisPass]: Running AGOrderingAnalysisPass
+2026-07-01T08:09:56Z INFO 136165 [sg0000/Tensorizer/AGOrderingAnalysisPass]: AGOrderingAnalysisPass finished after 1.195 seconds
+2026-07-01T08:09:56Z INFO 136165 [sg0000/Tensorizer/StaticTransposeLocalTensor]: Running StaticTransposeLocalTensor
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/StaticTransposeLocalTensor]: Finished (changed=True)
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/StaticTransposeLocalTensor]: StaticTransposeLocalTensor finished after 0.164 seconds
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/PComputeCutting]: Running PComputeCutting
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/PComputeCutting]: Finished (changed=True)
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/PComputeCutting]: PComputeCutting finished after 0.228 seconds
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/BFComputeCutting]: Running BFComputeCutting
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/BFComputeCutting]: Finished (changed=True)
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/BFComputeCutting]: BFComputeCutting finished after 0.269 seconds
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/LoopSplitting]: Running LoopSplitting
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/LoopSplitting]: Finished (changed=False)
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/LoopSplitting]: LoopSplitting finished after 0.034 seconds
+2026-07-01T08:09:57Z INFO 136165 [sg0000/Tensorizer/MacroGeneration]: Running MacroGeneration
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/MacroGeneration]: Finished (changed=True)
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/MacroGeneration]: MacroGeneration finished after 1.574 seconds
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/PGTiling]: PGTiling finished after 3.472 seconds
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertIOTransposes]: Running InsertIOTransposes
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertIOTransposes]: Finished (changed=True)
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertIOTransposes]: InsertIOTransposes finished after 0.042 seconds
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/DemoteLargeTensors]: Running DemoteLargeTensors
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/DemoteLargeTensors]: Number of tensors demoted to DRAM:  0
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/DemoteLargeTensors]: Finished (changed=False)
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/DemoteLargeTensors]: DemoteLargeTensors finished after 0.591 seconds
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: Running InsertOffloadedTransposes
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: OffloadedTranspose inserted:  0
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: Number of targeted loadstore instructions:  0
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: Number of targeted loadstore instructions improved by D2D:  0
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: Number of targeted loadstore instructions skipped due to the need of roundtrip lowering:  0
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: Number of targeted loadstore instructions skipped due to missing kernel support:  0
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: Finished (changed=False)
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/InsertOffloadedTransposes]: InsertOffloadedTransposes finished after 0.058 seconds
+2026-07-01T08:09:59Z INFO 136165 [sg0000/Tensorizer/DramToDramTranspose]: Running DramToDramTranspose
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/DramToDramTranspose]: Finished (changed=False)
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/DramToDramTranspose]: DramToDramTranspose finished after 0.105 seconds
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/PGLayoutTilingPipeline]: PGLayoutTilingPipeline finished after 14.236 seconds
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingProfiler]: Running TilingProfiler
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 
+20 MACROS WITH LARGEST INSTRUCTION COUNTS:
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 15360: matmul_128x128x1
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: --------- TilingProfiler Reported Statistics ---------
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: num_pf_transposes:  86
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   num_pf_transposes_for_io:  1
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   num_pf_transposes_for_intermediates:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   num_pf_transposes_for_nonlocal:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   num_pf_transposes_for_local:  85
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: pf_transpose_insts:  974
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   pf_transpose_insts_for_io:  10
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   pf_transpose_insts_for_intermediates:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   pf_transpose_insts_for_nonlocal:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]:   pf_transpose_insts_for_local:  964
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: matmult_insts_after_tiling:  104400
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: dma_insts_after_tiling:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: simd_insts_after_tiling:  6021
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: generic_insts_after_tiling:  4
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: batchnorm_insts_after_tiling:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: reduce_insts_after_tiling:  1188
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: extra_dram_tensors:  0
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: average_partition_utilization:  99.38570422206827
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: average_pe_utilization:  94.09794061302682
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: 
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingBottleneck]: Number of insts after tiling:  112587
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingProfiler]: Finished (changed=False)
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/TilingProfiler]: TilingProfiler finished after 0.250 seconds
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Running FlattenMacroLoop
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Finished (changed=True)
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: FlattenMacroLoop finished after 0.099 seconds
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: Running InferNeuronTensor
+2026-07-01T08:10:00Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: Running InferNeuronTensor_iteration_0
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: [InferNeuronTensor] Estimated Largest tile size SBUF tensor: t16407_pftranspose_21452 | Tensor size in bytes: 3072
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: [InferNeuronTensor] Estimated Mean SBUF tensor tile size: 605.2867256637168 bytes
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: InferNeuronTensor_iteration_0 finished after 1.332 seconds
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: Running InferNeuronTensor_iteration_1
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: [InferNeuronTensor] Estimated Largest tile size SBUF tensor: t16407_pftranspose_21452 | Tensor size in bytes: 3072
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: [InferNeuronTensor] Estimated Mean SBUF tensor tile size: 605.2867256637168 bytes
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: InferNeuronTensor_iteration_1 finished after 0.055 seconds
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: Finished (changed=True)
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/InferNeuronTensor]: InferNeuronTensor finished after 1.388 seconds
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier_iteration_0
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier_iteration_0 finished after 0.166 seconds
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Finished (changed=False)
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier finished after 0.167 seconds
+2026-07-01T08:10:01Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=True)
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.245 seconds
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/RewriteReplicationMatmul]: Running RewriteReplicationMatmul
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/RewriteReplicationMatmul]: Finished (changed=False)
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/RewriteReplicationMatmul]: RewriteReplicationMatmul finished after 0.029 seconds
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Running FlattenMacroLoop
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Finished (changed=True)
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: FlattenMacroLoop finished after 0.078 seconds
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/SimplifyMacroPredicates]: Running SimplifyMacroPredicates
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/SimplifyMacroPredicates]: Finished (changed=True)
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/SimplifyMacroPredicates]: SimplifyMacroPredicates finished after 0.588 seconds
+2026-07-01T08:10:02Z INFO 136165 [sg0000/Tensorizer/DataLocalityOpt]: Running DataLocalityOpt
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/DataLocalityOpt]: Finished (changed=True)
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/DataLocalityOpt]: DataLocalityOpt finished after 42.331 seconds
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/DMATilingProfiler]: Running DMATilingProfiler
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 
+20 MACROS WITH LARGEST INSTRUCTION COUNTS:
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 15360: matmul_128x128x1
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 2560: dma128x768
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 840: matmul_128x128x127
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: --------- TilingProfiler Reported Statistics ---------
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: num_pf_transposes:  86
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   num_pf_transposes_for_io:  1
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   num_pf_transposes_for_intermediates:  0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   num_pf_transposes_for_nonlocal:  0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   num_pf_transposes_for_local:  85
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: pf_transpose_insts:  974
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   pf_transpose_insts_for_io:  10
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   pf_transpose_insts_for_intermediates:  0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   pf_transpose_insts_for_nonlocal:  0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]:   pf_transpose_insts_for_local:  964
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: matmult_insts_after_tiling:  104400
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: dma_insts_after_tiling:  13708
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: simd_insts_after_tiling:  5906
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: generic_insts_after_tiling:  4
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: batchnorm_insts_after_tiling:  0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: reduce_insts_after_tiling:  1188
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: extra_dram_tensors:  0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: average_partition_utilization:  99.44077904580759
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: average_pe_utilization:  94.09794061302682
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: 
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/PostDLOTilingBottleneck]: Number of insts after tiling:  126180
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/DMATilingProfiler]: Finished (changed=False)
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/DMATilingProfiler]: DMATilingProfiler finished after 0.055 seconds
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier_iteration_0
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier_iteration_0 finished after 0.196 seconds
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Finished (changed=False)
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier finished after 0.197 seconds
+2026-07-01T08:10:45Z INFO 136165 [sg0000/Tensorizer/LegalizeSundaMacro]: Running LegalizeSundaMacro
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/LegalizeSundaMacro]: Finished (changed=True instance_count_change=+100564)
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/LegalizeSundaMacro]: LegalizeSundaMacro finished after 0.507 seconds
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/InsertImplicitShardAxisBeforeISel]: Running InsertImplicitShardAxisBeforeISel
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/InsertImplicitShardAxisBeforeISel]: Finished (changed=True)
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/InsertImplicitShardAxisBeforeISel]: InsertImplicitShardAxisBeforeISel finished after 0.295 seconds
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier_iteration_0
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier_iteration_0 finished after 0.265 seconds
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier_iteration_1
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier_iteration_1 finished after 0.259 seconds
+2026-07-01T08:10:46Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier_iteration_2
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier_iteration_2 finished after 0.257 seconds
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Finished (changed=True)
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier finished after 0.781 seconds
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/PerfectLoopNest]: Running PerfectLoopNest
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/PerfectLoopNest]: Finished (changed=False)
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/PerfectLoopNest]: PerfectLoopNest finished after 0.035 seconds
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Running FlattenMacroLoop
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Finished (changed=True)
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: FlattenMacroLoop finished after 0.159 seconds
+2026-07-01T08:10:47Z INFO 136165 [sg0000/Tensorizer/RewriteWeights]: Running RewriteWeights
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/RewriteWeights]: Finished (changed=True)
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/RewriteWeights]: RewriteWeights finished after 54.211 seconds
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/ReshapeWeights]: Running ReshapeWeights
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/ReshapeWeights]: Finished (changed=True)
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/ReshapeWeights]: ReshapeWeights finished after 0.020 seconds
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Running FlattenMacroLoop
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: Finished (changed=True)
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/FlattenMacroLoop]: FlattenMacroLoop finished after 0.134 seconds
+2026-07-01T08:11:41Z INFO 136165 [sg0000/Tensorizer/SimplifyMacroPredicates]: Running SimplifyMacroPredicates
+2026-07-01T08:11:42Z INFO 136165 [sg0000/Tensorizer/SimplifyMacroPredicates]: Finished (changed=True)
+2026-07-01T08:11:42Z INFO 136165 [sg0000/Tensorizer/SimplifyMacroPredicates]: SimplifyMacroPredicates finished after 1.039 seconds
+2026-07-01T08:11:42Z INFO 136165 [sg0000/Tensorizer/InferInitValue]: Running InferInitValue
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/InferInitValue]: Finished (changed=True)
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/InferInitValue]: InferInitValue finished after 0.428 seconds
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Running NeuronSimplifier_iteration_0
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier_iteration_0 finished after 0.265 seconds
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: Finished (changed=False)
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifier]: NeuronSimplifier finished after 0.266 seconds
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/SimplifyTensor]: Running SimplifyTensor
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/SimplifyTensor]: Running DeadCodeElimination_iteration_0
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/SimplifyTensor]: DeadCodeElimination_iteration_0 finished after 0.037 seconds
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/SimplifyTensor]: Finished (changed=True)
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/SimplifyTensor]: SimplifyTensor finished after 0.147 seconds
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/LICM]: Running LICM
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/LICM]: Finished (changed=False)
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/LICM]: LICM finished after 0.092 seconds
+2026-07-01T08:11:43Z INFO 136165 [sg0000/Tensorizer/SundaISel]: Running SundaISel
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/SundaISel]: Finished (changed=True)
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/SundaISel]: SundaISel finished after 1.281 seconds
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronAliasDependencyReset]: Running NeuronAliasDependencyReset
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: Running AliasDependencyElimination
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: Finished (changed=False)
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/AliasDependencyElimination]: AliasDependencyElimination finished after 0.001 seconds
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronAliasDependencyInduction]: Running NeuronAliasDependencyInduction
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronAliasDependencyInduction]: Finished (changed=False)
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronAliasDependencyInduction]: NeuronAliasDependencyInduction finished after 0.005 seconds
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronAliasDependencyReset]: NeuronAliasDependencyReset finished after 0.007 seconds
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/LowerComplexBroadcast]: Running LowerComplexBroadcast
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/LowerComplexBroadcast]: Finished (changed=False)
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/LowerComplexBroadcast]: LowerComplexBroadcast finished after 0.044 seconds
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronLoopInterchange]: Running NeuronLoopInterchange
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronLoopInterchange]: Finished (changed=True)
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronLoopInterchange]: NeuronLoopInterchange finished after 0.046 seconds
+2026-07-01T08:11:44Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: Running NeuronSimplifyPredicates
+2026-07-01T08:11:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: Finished (changed=False)
+2026-07-01T08:11:45Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: NeuronSimplifyPredicates finished after 0.901 seconds
+2026-07-01T08:11:45Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: Running NeuronLoopFusion
+2026-07-01T08:11:45Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: Running NeuronLoopFusion_iteration_0
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: NeuronLoopFusion_iteration_0 finished after 0.403 seconds
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: Running NeuronLoopFusion_iteration_1
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: NeuronLoopFusion_iteration_1 finished after 0.182 seconds
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: Running NeuronLoopFusion_iteration_2
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: NeuronLoopFusion_iteration_2 finished after 0.153 seconds
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: Finished (changed=True)
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopFusion]: NeuronLoopFusion finished after 0.739 seconds
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopInterchange]: Running NeuronLoopInterchange
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopInterchange]: Finished (changed=False)
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLoopInterchange]: NeuronLoopInterchange finished after 0.029 seconds
+2026-07-01T08:11:46Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: Running NeuronLICM
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: Finished (changed=True)
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: NeuronLICM finished after 0.453 seconds
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/FactorizeBlkDims]: Running FactorizeBlkDims
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/FactorizeBlkDims]: Finished (changed=True)
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/FactorizeBlkDims]: FactorizeBlkDims finished after 0.635 seconds
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Running NeuronInstComb
+2026-07-01T08:11:47Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Running NeuronInstComb_iteration_0
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: NeuronInstComb_iteration_0 finished after 0.761 seconds
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Running NeuronInstComb_iteration_1
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: NeuronInstComb_iteration_1 finished after 0.147 seconds
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Running NeuronInstComb_iteration_2
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: NeuronInstComb_iteration_2 finished after 0.136 seconds
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Finished (changed=True)
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: NeuronInstComb finished after 1.053 seconds
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronValueNumbering]: Running NeuronValueNumbering
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronValueNumbering]: Finished (changed=True)
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronValueNumbering]: NeuronValueNumbering finished after 0.123 seconds
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Running NeuronInstComb
+2026-07-01T08:11:48Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Running NeuronInstComb_iteration_0
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: NeuronInstComb_iteration_0 finished after 0.136 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: Finished (changed=True)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/NeuronInstComb]: NeuronInstComb finished after 0.152 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/EnforceAluDTAcc]: Running EnforceAluDTAcc
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/EnforceAluDTAcc]: Finished (changed=False)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/EnforceAluDTAcc]: EnforceAluDTAcc finished after 0.024 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/InferSharedMemLoc]: Running InferSharedMemLoc
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/InferSharedMemLoc]: Finished (changed=True)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/InferSharedMemLoc]: InferSharedMemLoc finished after 0.038 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: Running VectorizeDMA
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: Running VectorizeDMA_iteration_0
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: VectorizeDMA_iteration_0 finished after 0.282 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: Running VectorizeDMA_iteration_1
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: VectorizeDMA_iteration_1 finished after 0.031 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: Finished (changed=True)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/VectorizeDMA]: VectorizeDMA finished after 0.313 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: Running NeuronSimplifyPredicates
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: Finished (changed=True)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: NeuronSimplifyPredicates finished after 0.400 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/LegalizePartitionReduce]: Running LegalizePartitionReduce
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/LegalizePartitionReduce]: Finished (changed=True instance_count_change=-683)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/LegalizePartitionReduce]: LegalizePartitionReduce finished after 0.086 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/DeConcat]: Running DeConcat
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/DeConcat]: Running DeConcat_iteration_0
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/DeConcat]: DeConcat_iteration_0 finished after 0.022 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/DeConcat]: Finished (changed=False)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/DeConcat]: DeConcat finished after 0.022 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/FactorizeThreadAxesInFreeDims]: Running FactorizeThreadAxesInFreeDims
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/FactorizeThreadAxesInFreeDims]: Finished (changed=False)
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/FactorizeThreadAxesInFreeDims]: FactorizeThreadAxesInFreeDims finished after 0.028 seconds
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/PartialSimdFusion]: Running PartialSimdFusion
+2026-07-01T08:11:49Z INFO 136165 [sg0000/Tensorizer/PartialSimdFusion]: Running PartialSimdFusion_iteration_0
+2026-07-01T08:11:50Z INFO 136165 [sg0000/Tensorizer/PartialSimdFusion]: PartialSimdFusion_iteration_0 finished after 0.806 seconds
+2026-07-01T08:11:50Z INFO 136165 [sg0000/Tensorizer/PartialSimdFusion]: Finished (changed=True)
+2026-07-01T08:11:50Z INFO 136165 [sg0000/Tensorizer/PartialSimdFusion]: PartialSimdFusion finished after 0.806 seconds
+2026-07-01T08:11:50Z INFO 136165 [sg0000/Tensorizer/TritiumFusion]: Running TritiumFusion
+2026-07-01T08:11:51Z INFO 136165 [sg0000/Tensorizer/TritiumFusion]: Finished (changed=True)
+2026-07-01T08:11:51Z INFO 136165 [sg0000/Tensorizer/TritiumFusion]: TritiumFusion finished after 1.120 seconds
+2026-07-01T08:11:51Z INFO 136165 [sg0000/Tensorizer/CCOpFusion]: Running CCOpFusion
+2026-07-01T08:11:51Z INFO 136165 [sg0000/Tensorizer/CCOpFusion]: Running CCOpFusion_iteration_0
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/CCOpFusion]: CCOpFusion_iteration_0 finished after 0.641 seconds
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/CCOpFusion]: Finished (changed=True)
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/CCOpFusion]: CCOpFusion finished after 0.642 seconds
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/VectorizeMatMult]: Running VectorizeMatMult
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/VectorizeMatMult]: Finished (changed=False)
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/VectorizeMatMult]: VectorizeMatMult finished after 0.198 seconds
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/PartialLoopFusion]: Running PartialLoopFusion
+2026-07-01T08:11:52Z INFO 136165 [sg0000/Tensorizer/PartialLoopFusion]: Running PartialLoopFusion_iteration_0
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/PartialLoopFusion]: PartialLoopFusion_iteration_0 finished after 1.367 seconds
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/PartialLoopFusion]: Finished (changed=True)
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/PartialLoopFusion]: PartialLoopFusion finished after 1.368 seconds
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: Running NeuronLICM
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: Finished (changed=True)
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: NeuronLICM finished after 0.298 seconds
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LowerTranspose]: Running LowerTranspose
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LowerTranspose]: Finished (changed=True)
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LowerTranspose]: LowerTranspose finished after 0.094 seconds
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LowerBroadcast]: Running LowerBroadcast
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LowerBroadcast]: Finished (changed=True)
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LowerBroadcast]: LowerBroadcast finished after 0.058 seconds
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: Running LateNeuronInstComb
+2026-07-01T08:11:54Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: Running LateNeuronInstComb_iteration_0
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: LateNeuronInstComb_iteration_0 finished after 0.450 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: Running LateNeuronInstComb_iteration_1
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: LateNeuronInstComb_iteration_1 finished after 0.123 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: Finished (changed=True)
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LateNeuronInstComb]: LateNeuronInstComb finished after 0.579 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/SplitAccGrp]: Running SplitAccGrp
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/SplitAccGrp]: Finished (changed=False)
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/SplitAccGrp]: SplitAccGrp finished after 0.024 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/SpillPSum]: Running SpillPSum
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/SpillPSum]: Finished (changed=True)
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/SpillPSum]: SpillPSum finished after 0.354 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LowerIntrinsics]: Running LowerIntrinsics
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LowerIntrinsics]: Finished (changed=False)
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/LowerIntrinsics]: LowerIntrinsics finished after 0.029 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/InlineNativeKernels]: Running InlineNativeKernels
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/InlineNativeKernels]: Finished (changed=False)
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/InlineNativeKernels]: InlineNativeKernels finished after 0.026 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: Running NeuronLICM
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: Finished (changed=False)
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/NeuronLICM]: NeuronLICM finished after 0.133 seconds
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: Running InferPSumTensor
+2026-07-01T08:11:55Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: Running InferPSumTensor_iteration_0
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: InferPSumTensor_iteration_0 finished after 0.392 seconds
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: Running InferPSumTensor_iteration_1
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: InferPSumTensor_iteration_1 finished after 0.344 seconds
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: Finished (changed=True)
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/InferPSumTensor]: InferPSumTensor finished after 0.737 seconds
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/LegalizeType]: Running LegalizeType
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/LegalizeType]: Finished (changed=True)
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/LegalizeType]: LegalizeType finished after 0.077 seconds
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/WeightCoalescing]: Running WeightCoalescing
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/WeightCoalescing]: Finished (changed=False)
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/WeightCoalescing]: WeightCoalescing finished after 0.029 seconds
+2026-07-01T08:11:56Z INFO 136165 [sg0000/Tensorizer/LegalizeSundaAccess]: Running LegalizeSundaAccess
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/LegalizeSundaAccess]: Finished (changed=True instance_count_change=+5384)
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/LegalizeSundaAccess]: LegalizeSundaAccess finished after 0.856 seconds
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/RelaxPredicates]: Running RelaxPredicates
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/RelaxPredicates]: Finished (changed=False)
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/RelaxPredicates]: RelaxPredicates finished after 0.066 seconds
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/TensorInitialization]: Running TensorInitialization
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/TensorInitialization]: Finished (changed=False)
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/TensorInitialization]: TensorInitialization finished after 0.153 seconds
+2026-07-01T08:11:57Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: Running NeuronSimplifyPredicates
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: Finished (changed=True)
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/NeuronSimplifyPredicates]: NeuronSimplifyPredicates finished after 0.559 seconds
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/ExpandISAMacro]: Running ExpandISAMacro
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/ExpandISAMacro]: Finished (changed=False)
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/ExpandISAMacro]: ExpandISAMacro finished after 0.040 seconds
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/SimplifyNeuronTensor]: Running SimplifyNeuronTensor
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/SimplifyNeuronTensor]: Running DeadCodeElimination_iteration_0
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/SimplifyNeuronTensor]: DeadCodeElimination_iteration_0 finished after 0.016 seconds
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/SimplifyNeuronTensor]: Finished (changed=True)
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/SimplifyNeuronTensor]: SimplifyNeuronTensor finished after 0.173 seconds
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/DMALocalityOpt]: Running DMALocalityOpt
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/DMALocalityOpt]: Finished (changed=True)
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/DMALocalityOpt]: DMALocalityOpt finished after 0.018 seconds
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/DataStreaming]: Running DataStreaming
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/DataStreaming]: Finished (changed=True)
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/DataStreaming]: DataStreaming finished after 0.085 seconds
+2026-07-01T08:11:58Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: Running SFKVectorizer
+2026-07-01T08:12:01Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: Running VectorizeLoop_iteration_0
+2026-07-01T08:12:47Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: VectorizeLoop_iteration_0 finished after 46.562 seconds
+2026-07-01T08:12:47Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: Running VectorizeLoop_iteration_1
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: VectorizeLoop_iteration_1 finished after 11.223 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: Finished (changed=True)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/SFKVectorizer]: SFKVectorizer finished after 60.583 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/LateLegalizeInst]: Running LateLegalizeInst
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/LateLegalizeInst]: Finished (changed=False instance_count_change=+0)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/LateLegalizeInst]: LateLegalizeInst finished after 0.148 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/CoalesceCCOp]: Running CoalesceCCOp
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/CoalesceCCOp]: Finished (changed=False)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/CoalesceCCOp]: CoalesceCCOp finished after 0.035 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/SimpleAllReduceTiling]: Running SimpleAllReduceTiling
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/SimpleAllReduceTiling]: Finished (changed=False)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/SimpleAllReduceTiling]: SimpleAllReduceTiling finished after 0.032 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/InsertCoreBarrier]: Running InsertCoreBarrier
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/InsertCoreBarrier]: Finished (changed=False)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/InsertCoreBarrier]: InsertCoreBarrier finished after 0.049 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Running DMAProfiler
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Top 10 (estimated) latency DMAs:
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 4.253ms (768.000MiB, est bw: 189.366GB/s, 22.631% of tot. time) for             bfloat16<128 x 1536> TongaSB partitions[4] bfloat16 (2, 2, 8, 64, 128, 2, 768) %'dot.9478.45092'[i_shard_30601,T_i4958_1_0_23103_0,i4958_1_0_1,4i4958_0_0+i4958_0_1_0,i0.128,i3.2,i1.6+6i2.128] = load bfloat16<128 x 1536> weight bfloat16 (128, 3145728) %'constant.349-27067-32493-56489-56492'[i0.128,1572864i_shard_30601+786432T_i4958_1_0_23103_0+i1.6+98304i4958_1_0_1+6i2.128+6144i4958_0_0+768i3.2+1536i4958_0_1_0] # id=37529, src_id=None, , instances=2048 # dl = tensor_op_name: _dot.9478 | hlo_id: 9478 |  if -1024T_i4958_1_0_23103_0-128i4958_1_0_1-i2.128+1186 >= 0 [[i0.128];[i1.6, i2.128, i3.2]] -> [[i0.128];[i1.6, i2.128, i3.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.334-24306_local_24314'[c1_24309,c0_24308_0_0,c0_24308_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.334-24306-31837-55931'[i0.128,53760c1_24309+10752c0_24308_0_0+i1.768+1536c0_24308_0_1+768i2.2] # id=32717, src_id=None, , instances=70 # dl = tensor_op_name: _dot.832 | hlo_id: 832 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.335-24317_local_24325'[c1_24320,c0_24319_0_0,c0_24319_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.335-24317-31839-55933'[i0.128,53760c1_24320+10752c0_24319_0_0+i1.768+1536c0_24319_0_1+768i2.2] # id=32722, src_id=None, , instances=70 # dl = tensor_op_name: _dot.838 | hlo_id: 838 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.322-24407_local_24415'[c1_24410,c0_24409_0_0,c0_24409_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.322-24407-31861-55951'[i0.128,53760c1_24410+10752c0_24409_0_0+i1.768+1536c0_24409_0_1+768i2.2] # id=32894, src_id=None, , instances=70 # dl = tensor_op_name: _dot.1150 | hlo_id: 1150 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.323-24418_local_24426'[c1_24421,c0_24420_0_0,c0_24420_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.323-24418-31863-55953'[i0.128,53760c1_24421+10752c0_24420_0_0+i1.768+1536c0_24420_0_1+768i2.2] # id=32899, src_id=None, , instances=70 # dl = tensor_op_name: _dot.1156 | hlo_id: 1156 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.310-24508_local_24516'[c1_24511,c0_24510_0_0,c0_24510_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.310-24508-31885-55971'[i0.128,53760c1_24511+10752c0_24510_0_0+i1.768+1536c0_24510_0_1+768i2.2] # id=33071, src_id=None, , instances=70 # dl = tensor_op_name: _dot.1468 | hlo_id: 1468 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.311-24519_local_24527'[c1_24522,c0_24521_0_0,c0_24521_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.311-24519-31887-55973'[i0.128,53760c1_24522+10752c0_24521_0_0+i1.768+1536c0_24521_0_1+768i2.2] # id=33076, src_id=None, , instances=70 # dl = tensor_op_name: _dot.1474 | hlo_id: 1474 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.298-24609_local_24617'[c1_24612,c0_24611_0_0,c0_24611_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.298-24609-31909-55991'[i0.128,53760c1_24612+10752c0_24611_0_0+i1.768+1536c0_24611_0_1+768i2.2] # id=33248, src_id=None, , instances=70 # dl = tensor_op_name: _dot.1786 | hlo_id: 1786 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.299-24620_local_24628'[c1_24623,c0_24622_0_0,c0_24622_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.299-24620-31911-55993'[i0.128,53760c1_24623+10752c0_24622_0_0+i1.768+1536c0_24622_0_1+768i2.2] # id=33253, src_id=None, , instances=70 # dl = tensor_op_name: _dot.1792 | hlo_id: 1792 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Est. DMA time: 146.610us (26.250MiB, est bw: 187.744GB/s, 0.780% of tot. time) for         bfloat16<128 x 1536> TongaSB partitions[3] bfloat16 (2, 5, 7, 128, 2, 768) %'constant.286-24710_local_24718'[c1_24713,c0_24712_0_0,c0_24712_0_1,i0.128,i2.2,i1.768] = load bfloat16<128 x 1536> weight bfloat16 (128, 107520) %'constant.286-24710-31933-56011'[i0.128,53760c1_24713+10752c0_24712_0_0+i1.768+1536c0_24712_0_1+768i2.2] # id=33425, src_id=None, , instances=70 # dl = tensor_op_name: _dot.2104 | hlo_id: 2104 |  [[i0.128];[i1.768, i2.2]] -> [[i0.128];[i1.768, i2.2]]  
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: Finished (changed=False)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/DMAProfiler]: DMAProfiler finished after 0.040 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/OptimizeNKIKernels]: Running OptimizeNKIKernels
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/OptimizeNKIKernels]: Finished (changed=False)
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/OptimizeNKIKernels]: OptimizeNKIKernels finished after 0.032 seconds
+2026-07-01T08:12:59Z INFO 136165 [sg0000/Tensorizer/StaticProfiler]: Running StaticProfiler
+2026-07-01T08:13:00Z INFO 136165 [sg0000/Tensorizer/StaticProfiler]: Finished (changed=False)
+2026-07-01T08:13:00Z INFO 136165 [sg0000/Tensorizer/StaticProfiler]: StaticProfiler finished after 0.583 seconds
+2026-07-01T08:13:00Z INFO 136165 [sg0000/Tensorizer/SplitAPUnionSets]: Running SplitAPUnionSets
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/SplitAPUnionSets]: Finished (changed=True instance_count_change=+77004)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/SplitAPUnionSets]: SplitAPUnionSets finished after 1.399 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LateLegalizePostSplit]: Running LateLegalizePostSplit
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LateLegalizePostSplit]: Finished (changed=False instance_count_change=+0)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LateLegalizePostSplit]: LateLegalizePostSplit finished after 0.129 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/InferSharedMemLoc]: Running InferSharedMemLoc
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/InferSharedMemLoc]: Finished (changed=True)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/InferSharedMemLoc]: InferSharedMemLoc finished after 0.055 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LowerShardAxis]: Running LowerShardAxis
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LowerShardAxis]: Finished (changed=True)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LowerShardAxis]: LowerShardAxis finished after 0.118 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/DumpGraphAndMetadata]: Running DumpGraphAndMetadata
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/DumpGraphAndMetadata]: Finished (changed=False)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/DumpGraphAndMetadata]: DumpGraphAndMetadata finished after 0.084 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/ZeroSizeTensorElimination]: Running ZeroSizeTensorElimination
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/ZeroSizeTensorElimination]: Finished (changed=False)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/ZeroSizeTensorElimination]: ZeroSizeTensorElimination finished after 0.012 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LowerToSendRecv]: Running LowerToSendRecv
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LowerToSendRecv]: Finished (changed=True)
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/LowerToSendRecv]: LowerToSendRecv finished after 0.090 seconds
+2026-07-01T08:13:01Z INFO 136165 [sg0000/Tensorizer/BirCodeGenLoop]: Running BirCodeGenLoop
+2026-07-01T08:13:03Z INFO 136165 [sg0000/Tensorizer/BirCodeGenLoop]: Finished (changed=False)
+2026-07-01T08:13:03Z INFO 136165 [sg0000/Tensorizer/BirCodeGenLoop]: BirCodeGenLoop finished after 1.740 seconds
+2026-07-01T08:13:04Z INFO 136165 [Tensorizer]: BirCodeGen estimate #instances=124846 in sg0000
+2026-07-01T08:13:04Z INFO 136165 [Tensorizer]: IR signature: bb5631d757e5a6a6de35c9619ab54b351982d618a286dbbc746ff551ab65bbf2 for nc00/sg0000/TensorizerBIR
+2026-07-01T08:13:04Z INFO 136165 [sg0000/Tensorizer/BirCodeGenLoop]: Running BirCodeGenLoop
+2026-07-01T08:13:06Z INFO 136165 [sg0000/Tensorizer/BirCodeGenLoop]: Finished (changed=False)
+2026-07-01T08:13:06Z INFO 136165 [sg0000/Tensorizer/BirCodeGenLoop]: BirCodeGenLoop finished after 1.664 seconds
+2026-07-01T08:13:07Z INFO 136165 [Tensorizer]: BirCodeGen estimate #instances=124846 in sg0000
+2026-07-01T08:13:07Z INFO 136165 [Tensorizer]: IR signature: d5d47ba2aa8465d173f566f729e784bcb090a2755c67eb50d47ab0bf0ca775cf for nc01/sg0000/TensorizerBIR
+2026-07-01T08:13:07Z INFO 136165 [Tensorizer]: Weights total number of bytes: 4544100608
+2026-07-01T08:13:07Z INFO 136165 [Tensorizer]: Successfully built model.
+2026-07-01T08:13:07Z USER 136165 [root/Tensorizer/Tensorizer]: Tensorizer finished after 218.478 seconds
+2026-07-01T08:13:07Z INFO 136165 [job.Frontend.0]: End tensorization
+2026-07-01T08:13:07Z INFO 136165 [job.Frontend.0]: Network input: input0
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: ***************************************************************
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:  An Internal Compiler Error has occurred
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: ***************************************************************
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: 
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]: [Errno 28] No space left on device
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: 
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: Internal details:
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: Type: <class 'OSError'>
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/CommandDriver.py", line 360, in neuronxcc.driver.CommandDriver.CommandDriver.run_subcommand
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/commands/CompileCommand.py", line 1551, in neuronxcc.driver.commands.CompileCommand.CompileCommand.run
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/commands/CompileCommand.py", line 1486, in neuronxcc.driver.commands.CompileCommand.CompileCommand.runPipeline
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/commands/CompileCommand.py", line 1527, in neuronxcc.driver.commands.CompileCommand.CompileCommand.runPipeline
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/commands/CompileCommand.py", line 1529, in neuronxcc.driver.commands.CompileCommand.CompileCommand.runPipeline
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/MetricSaver.py", line 39, in neuronxcc.driver.MetricSaver.logMetrics
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: Context:
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]: Context:
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/commands/CompileCommand.py", line 1515, in neuronxcc.driver.commands.CompileCommand.CompileCommand.runPipeline
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/commands/CompileCommand.py", line 1518, in neuronxcc.driver.commands.CompileCommand.CompileCommand.runPipeline
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/Job.py", line 373, in neuronxcc.driver.Job.SingleInputJob.run
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/Job.py", line 402, in neuronxcc.driver.Job.SingleInputJob.runOnState
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/Pipeline.py", line 31, in neuronxcc.driver.Pipeline.Pipeline.runSingleInput
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/Job.py", line 373, in neuronxcc.driver.Job.SingleInputJob.run
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/Job.py", line 402, in neuronxcc.driver.Job.SingleInputJob.runOnState
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/jobs/Frontend.py", line 139, in neuronxcc.driver.jobs.Frontend.Frontend.runSingleInput
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/jobs/Frontend.py", line 125, in neuronxcc.driver.jobs.Frontend.Frontend.runXLAFrontend
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/jobs/support/Partitioning.py", line 334, in neuronxcc.driver.jobs.support.Partitioning.HhSubgraphs.write
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/jobs/support/Partitioning.py", line 202, in neuronxcc.driver.jobs.support.Partitioning.HhSubgraph.writeHhData
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "neuronxcc/driver/jobs/support/Partitioning.py", line 194, in neuronxcc.driver.jobs.support.Partitioning.HhSubgraph.dump_params
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuron_dtypes/__init__.py", line 107, in saveNp
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:     np.save(filename, value)
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 581, in save
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:     format.write_array(fid, arr, allow_pickle=allow_pickle,
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:   File "/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/numpy/lib/format.py", line 754, in write_array
+2026-07-01T08:13:07Z ERROR 136165 [neuronxcc.driver.CommandDriver]:     array.tofile(fp)
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]: 
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]: Diagnostic information:
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   NeuronX Compiler version 2.25.3371.0+f524f7f8
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   Python version 3.12.3
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   HWM version 2.25.0.3371++f524f7f8
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   NumPy version 2.2.6
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   Running on AMI ami-0bfa28859f98aa666
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]:   Running in region sae1-az2
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]: 
+2026-07-01T08:13:07Z USER 136165 [neuronxcc.driver.CommandDriver]: Diagnostic logs stored in /home/ubuntu/trn2-rl-rollout/log-neuron-cc.txt
+2026-07-01T08:13:07Z INFO 136165 [neuronxcc.driver.CommandDriver]: Artifacts stored in: /home/ubuntu/trn2-rl-rollout/neuronxcc-d6rxaou_
+2026-07-01T08:13:08Z INFO 136150 [root]: Subcommand returned with exitcode=70

@@ -14,16 +14,25 @@ from prompts import prompts
 
 
 DEFAULTS = {
-    "model":                  "Qwen/Qwen2.5-1.5B-Instruct",
+    "model": "/home/ubuntu/trn2-rl-rollout/local-models/Qwen/Qwen2.5-1.5B-Instruct",
     "dtype":                  "bfloat16",
     "tensor_parallel_size":   1,
     "max_num_seqs":           1,
-    "max_model_len":          768,
+    "max_model_len":          1024,
     "enable_prefix_caching":  False,
     "enable_chunked_prefill": False,
     "disable_log_stats":      True,
-    "output_len": 256
+    "output_len":             256,
+    "output_lens":            [64, 127, 128, 129, 255, 256, 257, 512],
+    "input_lens":             [64, 127, 128, 129, 255, 256, 257, 512],
+    "test":                   "both",
 }
+
+# Fixed output length used in the prefill sweep (keeps TTFT apples-to-apples).
+_PREFILL_OUTPUT_LEN = 1
+
+# Fixed input length used in the decode sweep.
+_DECODE_INPUT_LEN = 512
 
 class Tee:
     def __init__(self, *files):
@@ -55,6 +64,9 @@ def parse_args():
     p.add_argument("--max-num-seqs", type=int, default=DEFAULTS["max_num_seqs"])
     p.add_argument("--max-model-len", type=int, default=DEFAULTS["max_model_len"])
     p.add_argument("--output-len", type=int, default=DEFAULTS["output_len"])
+    p.add_argument("--output-lens", nargs="+", type=int, default=DEFAULTS["output_lens"])
+    p.add_argument("--input-lens",  nargs="+", type=int, default=DEFAULTS["input_lens"])
+    p.add_argument("--test", choices=["prefill", "decode", "both"], default=DEFAULTS["test"])
     p.add_argument("--enable-prefix-caching", action="store_true", default=DEFAULTS["enable_prefix_caching"])
     p.add_argument("--enable-chunked-prefill", action="store_true", default=DEFAULTS["enable_chunked_prefill"])
     p.add_argument("--enable-log-stats", action="store_false", dest="disable_log_stats", default=DEFAULTS["disable_log_stats"])
@@ -74,14 +86,26 @@ def dtype_abbrev(dtype: str) -> str:
     return _DTYPE_ABBREV.get(dtype.lower(), dtype)
 
 
-def setup_run_dir(cfg, rerun = True):
+def setup_run_dir(cfg, rerun=True, sweep=False):
     model_short = cfg.model.split("/")[-1]
-    base_name = (
-        f"{model_short}_{dtype_abbrev(cfg.dtype)}"
-        f"_tp{cfg.tensor_parallel_size}"
-        f"_bs{cfg.max_num_seqs}"
-        f"_ol{cfg.output_len}"
-    )
+    if sweep:
+        il_vals = "-".join(str(x) for x in cfg.input_lens)
+        ol_vals = "-".join(str(x) for x in cfg.output_lens)
+        base_name = (
+            f"{model_short}_{dtype_abbrev(cfg.dtype)}"
+            f"_tp{cfg.tensor_parallel_size}"
+            f"_bs{cfg.max_num_seqs}"
+            f"_test-{cfg.test}"
+            f"_ol[{ol_vals}]"
+            f"_il[{il_vals}]"
+        )
+    else:
+        base_name = (
+            f"{model_short}_{dtype_abbrev(cfg.dtype)}"
+            f"_tp{cfg.tensor_parallel_size}"
+            f"_bs{cfg.max_num_seqs}"
+            f"_ol{cfg.output_len}"
+        )
 
     logs_dir = Path("logs")
     candidate = logs_dir / base_name
@@ -132,6 +156,19 @@ def drop_caches(log_file):
     )
     log(log_file, "CACHE_DROP DONE")
 
+
+
+# ─── TOKEN CORPUS ─────────────────────────────────────────────────────────────
+
+def build_token_corpus(model_name: str) -> list[int]:
+    from transformers import AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(model_name)
+    return tok.encode(" ".join(prompts), add_special_tokens=False)
+
+
+def make_prompt_token_ids(token_corpus: list[int], input_len: int) -> list[int]:
+    tiled = token_corpus * ((input_len // len(token_corpus)) + 1)
+    return tiled[:input_len]
 
 
 # SYNC GENERATION
@@ -240,6 +277,73 @@ async def async_generation(engine, output_len, batch_size: int, log_file) -> lis
     return list(results)
 
 
+async def async_generation_sweep(engine, token_corpus: list[int], input_len: int,
+                                 output_len: int, batch_size: int, log_file) -> list[TokenMetrics]:
+    """Like async_generation but uses token IDs of a specific length as the prompt."""
+    from vllm import SamplingParams
+    from vllm.sampling_params import RequestOutputKind
+
+    log(log_file, "GENERATION START")
+    sampling_params = SamplingParams(
+        min_tokens  = output_len,
+        max_tokens  = output_len,
+        output_kind = RequestOutputKind.DELTA,
+    )
+
+    token_ids = make_prompt_token_ids(token_corpus, input_len)
+    prompt = {"prompt_token_ids": token_ids}
+
+    results = await asyncio.gather(*[
+        _stream_one(engine, prompt, sampling_params, idx, batch_size)
+        for idx in range(batch_size)
+    ])
+
+    log(log_file, "GENERATION DONE")
+    return list(results)
+
+
+# ─── TEST 1: PREFILL SWEEP ────────────────────────────────────────────────────
+#
+# For each input_len, run generate(token_ids, _PREFILL_OUTPUT_LEN) twice:
+#   run 1 = COLD, run 2 = WARM
+
+async def vllm_prefill_test(engine, token_corpus, cfg, log_file, run_dir):
+    log(log_file, "PREFILL_TEST START")
+    for input_len in cfg.input_lens:
+        for run_idx in (1, 2):
+            tag = "COLD" if run_idx == 1 else "WARM"
+            label = f"PREFILL_{input_len}_{tag}"
+            log(log_file, f"{label} START")
+            metrics = await async_generation_sweep(
+                engine, token_corpus, input_len, _PREFILL_OUTPUT_LEN, cfg.max_num_seqs, log_file,
+            )
+            log(log_file, f"{label} DONE")
+            metrics_path = run_dir / f"metrics_prefill_il{input_len}_run{run_idx}.json"
+            save_metrics(metrics_path, metrics)
+    log(log_file, "PREFILL_TEST DONE")
+
+
+# ─── TEST 2: DECODE SWEEP ─────────────────────────────────────────────────────
+#
+# For each output_len, run generate(token_ids_512, output_len) twice:
+#   run 1 = COLD, run 2 = WARM
+
+async def vllm_decode_test(engine, token_corpus, cfg, log_file, run_dir):
+    log(log_file, "DECODE_TEST START")
+    for output_len in cfg.output_lens:
+        for run_idx in (1, 2):
+            tag = "COLD" if run_idx == 1 else "WARM"
+            label = f"DECODE_{output_len}_{tag}"
+            log(log_file, f"{label} START")
+            metrics = await async_generation_sweep(
+                engine, token_corpus, _DECODE_INPUT_LEN, output_len, cfg.max_num_seqs, log_file,
+            )
+            log(log_file, f"{label} DONE")
+            metrics_path = run_dir / f"metrics_decode_il{_DECODE_INPUT_LEN}_ol{output_len}_run{run_idx}.json"
+            save_metrics(metrics_path, metrics)
+    log(log_file, "DECODE_TEST DONE")
+
+
 def start_memory_profiler(log_file):
     monitor = subprocess.Popen(
         ["neuron-monitor", "-c", "memory_config.conf"],
@@ -306,7 +410,7 @@ async def async_vllm_run(log_file, cfg, metrics_file):
     log(log_file, "PROGRAM ENDED")
     return metrics
 
-async def async_vllm_custom_run(log_file, cfg, metrics_file):
+async def async_vllm_custom_run(log_file, cfg, run_dir):
     drop_caches(log_file)
     await asyncio.sleep(10)
 
@@ -315,30 +419,23 @@ async def async_vllm_custom_run(log_file, cfg, metrics_file):
     import vllm
     log(log_file, "VLLM_IMPORT DONE")
 
+    log(log_file, "TOKENIZER START")
+    token_corpus = build_token_corpus(cfg.model)
+    log(log_file, "TOKENIZER DONE")
+
     engine = async_engine(cfg, log_file)
     await asyncio.sleep(10)
 
-    # warm up run
     await async_warmup(engine, cfg.max_num_seqs, log_file)
     await asyncio.sleep(10)
 
-    metrics = await async_generation(engine, cfg.output_len, cfg.max_num_seqs, log_file)
-    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len}_A"), metrics)
+    if cfg.test in ("prefill", "both"):
+        await vllm_prefill_test(engine, token_corpus, cfg, log_file, run_dir)
+        await asyncio.sleep(10)
 
-    await asyncio.sleep(10)
-
-    metrics = await async_generation(engine, cfg.output_len + 1, cfg.max_num_seqs, log_file)
-    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len + 1}_B"), metrics)
-
-    await asyncio.sleep(10)
-
-    metrics = await async_generation(engine, cfg.output_len, cfg.max_num_seqs, log_file)
-    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len}_C"), metrics)
-
-    await asyncio.sleep(10)
-
-    metrics = await async_generation(engine, cfg.output_len + 1, cfg.max_num_seqs, log_file)
-    save_metrics(metrics_file.with_stem(f"metrics_ol{cfg.output_len + 1}_D"), metrics)
+    if cfg.test in ("decode", "both"):
+        await vllm_decode_test(engine, token_corpus, cfg, log_file, run_dir)
+        await asyncio.sleep(10)
 
     engine.shutdown()
     await asyncio.sleep(10)
@@ -347,7 +444,6 @@ async def async_vllm_custom_run(log_file, cfg, metrics_file):
     await asyncio.sleep(10)
 
     log(log_file, "PROGRAM ENDED")
-    return metrics
 
 
 def set_output_file(out_log):
@@ -361,40 +457,42 @@ def set_output_file(out_log):
 
 
 def main():
-    rerun = False
+    rerun = True
     cfg = parse_args()
-    run_dir, log_file, out_file, metrics_file, counter = setup_run_dir(cfg, rerun)
+    run_dir, log_file, out_file, metrics_file, counter = setup_run_dir(cfg, rerun, sweep=True)
 
     if not rerun and counter > 1:
         sys.exit(0)
-    
+
     set_output_file(out_file)
 
-    # Save a config snapshot next to the log so every run is self-documenting
     config_snapshot = {
-        "model": cfg.model,
-        "dtype": cfg.dtype,
-        "tensor_parallel_size": cfg.tensor_parallel_size,
-        "max_num_seqs": cfg.max_num_seqs,
-        "max_model_len": cfg.max_model_len,
-        "enable_prefix_caching": cfg.enable_prefix_caching,
+        "model":                  cfg.model,
+        "dtype":                  cfg.dtype,
+        "tensor_parallel_size":   cfg.tensor_parallel_size,
+        "max_num_seqs":           cfg.max_num_seqs,
+        "max_model_len":          cfg.max_model_len,
+        "enable_prefix_caching":  cfg.enable_prefix_caching,
         "enable_chunked_prefill": cfg.enable_chunked_prefill,
-        "disable_log_stats": cfg.disable_log_stats,
-        "output_len": cfg.output_len,
+        "disable_log_stats":      cfg.disable_log_stats,
+        "output_len":             cfg.output_len,
+        "output_lens":            cfg.output_lens,
+        "input_lens":             cfg.input_lens,
+        "test":                   cfg.test,
+        "prefill_output_len":     _PREFILL_OUTPUT_LEN,
+        "decode_input_len":       _DECODE_INPUT_LEN,
     }
     with open(run_dir / "config.json", "w", encoding="UTF-8") as f:
         json.dump(config_snapshot, f, indent=2)
 
     print(f"Run directory : {run_dir}")
-    print(f"Log file : {log_file}")
-    print(f"Config : {run_dir / 'config.json'}")
+    print(f"Log file      : {log_file}")
+    print(f"Config        : {run_dir / 'config.json'}")
 
     monitor, checker = start_memory_profiler(log_file)
     time.sleep(10)
 
-    # vllm_run(log_file, cfg)
-
-    asyncio.run(async_vllm_run(log_file, cfg, metrics_file))
+    asyncio.run(async_vllm_custom_run(log_file, cfg, run_dir))
 
     time.sleep(10)
     stop_memory_profiler(monitor, checker)
