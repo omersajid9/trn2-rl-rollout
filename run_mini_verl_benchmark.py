@@ -62,7 +62,7 @@ import torch
 
 # Each unique input length in the sweep triggers a new dynamo recompilation.
 # The default limit (8) is too small for wide sweeps; raise it generously.
-torch._dynamo.config.recompile_limit = 64
+torch._dynamo.config.recompile_limit = 10000
 
 # mini_verl.platform.__init__ imports ray_resources → verl, which is not
 # installed in every venv.  Stub it out before the package __init__ runs so
