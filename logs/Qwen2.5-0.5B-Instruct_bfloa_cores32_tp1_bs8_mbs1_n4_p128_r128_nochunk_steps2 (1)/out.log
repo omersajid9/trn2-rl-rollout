@@ -1,0 +1,499 @@
+Run directory : logs/Qwen2.5-0.5B-Instruct_bfloa_cores32_tp1_bs8_mbs1_n4_p128_r128_nochunk_steps2 (1)Run directory : logs/Qwen2.5-0.5B-Instruct_bfloa_cores32_tp1_bs8_mbs1_n4_p128_r128_nochunk_steps2 (1)
+
+Log file      : logs/Qwen2.5-0.5B-Instruct_bfloa_cores32_tp1_bs8_mbs1_n4_p128_r128_nochunk_steps2 (1)/run.logLog file      : logs/Qwen2.5-0.5B-Instruct_bfloa_cores32_tp1_bs8_mbs1_n4_p128_r128_nochunk_steps2 (1)/run.log
+
+Config        : logs/Qwen2.5-0.5B-Instruct_bfloa_cores32_tp1_bs8_mbs1_n4_p128_r128_nochunk_steps2 (1)/config.jsonConfig        : logs/Qwen2.5-0.5B-Instruct_bfloa_cores32_tp1_bs8_mbs1_n4_p128_r128_nochunk_steps2 (1)/config.json
+
+2026-07-07 10:04:08,386	INFO worker.py:2012 -- Started a local Ray instance.
+/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[mini_verl.trainer_loop 10:04:10] device: 'auto' -> neuron[mini_verl.trainer_loop 10:04:10] device: 'auto' -> neuron
+
+[mini_verl.trainer_loop 10:04:10] config: {'device': 'auto', 'colocate': True, 'model': {'path': 'Qwen/Qwen2.5-0.5B-Instruct', 'dtype': 'bfloat16', 'attn_implementation': 'eager', 'trust_remote_code': False}, 'data': {'train_files': '/home/ubuntu/data/gsm8k/train.parquet', 'val_files': '${HOME}/data/gsm8k/test.parquet', 'train_batch_size': 8, 'max_prompt_length': 128, 'max_response_length': 128, 'prompt_key': 'prompt', 'truncation': 'error', 'shuffle': True, 'seed': 1}, 'rollout': {'n': 4, 'do_sample': True, 'temperature': 1.0, 'top_p': 1.0, 'top_k': 0, 'repetition_penalty': 1.0, 'ignore_eos': False, 'prefill_chunk_size': -1, 'cache_implementation': 'static', 'cpu_multinomial': False, 'sample_on_device': True, 'mem_snapshot': False, 'mem_snapshot_top_k': 10, 'parallel': {'n_nodes': 1, 'procs_per_node': 32, 'fsdp_size': -1, 'tp_size': 1, 'cp_size': 1, 'sp_size': 1, 'tp_shard_embeddings': True}}, 'actor': {'lr': 1e-06, 'ppo_mini_batch_size': 4, 'ppo_micro_batch_size': 1, 'log_prob_micro_batch_size': 1, 'clip_ratio': 0.2, 'clip_ratio_low': None, 'clip_ratio_high': None, 'clip_ratio_c': 3.0, 'entropy_coeff': 0.0, 'loss_agg_mode': 'token-mean', 'grad_clip': 1.0, 'use_kl_loss': True, 'kl_loss_coef': 0.001, 'kl_loss_type': 'low_var_kl', 'enable_gradient_checkpointing': True, 'mem_snapshot': False, 'mem_snapshot_top_k': 10, 'mixed_precision': {'model_dtype': 'float32', 'param_dtype': 'bfloat16', 'reduce_dtype': 'float32', 'buffer_dtype': 'float32'}, 'parallel': {'n_nodes': 1, 'procs_per_node': 32, 'fsdp_size': -1, 'tp_size': 1, 'cp_size': 1, 'sp_size': 1, 'tp_shard_embeddings': True}}, 'algo': {'adv_estimator': 'grpo', 'norm_adv_by_std_in_grpo': True, 'adv_epsilon': 1e-06, 'use_kl_in_reward': False, 'kl_penalty': 'kl', 'kl_coef': 0.001}, 'weight_sync': {'channel': 'host', 'bucket_size_mb': 512}, 'trainer': {'total_training_steps': 2, 'save_freq': -1, 'test_freq': -1, 'project_name': 'mini_verl_grpo', 'experiment_name': 'qwen2_0_5b_gsm8k', 'logger': ('console',), 'seed': 1, 'print_rollouts': 1, 'perf_warmup_steps': 3}}[mini_verl.trainer_loop 10:04:10] config: {'device': 'auto', 'colocate': True, 'model': {'path': 'Qwen/Qwen2.5-0.5B-Instruct', 'dtype': 'bfloat16', 'attn_implementation': 'eager', 'trust_remote_code': False}, 'data': {'train_files': '/home/ubuntu/data/gsm8k/train.parquet', 'val_files': '${HOME}/data/gsm8k/test.parquet', 'train_batch_size': 8, 'max_prompt_length': 128, 'max_response_length': 128, 'prompt_key': 'prompt', 'truncation': 'error', 'shuffle': True, 'seed': 1}, 'rollout': {'n': 4, 'do_sample': True, 'temperature': 1.0, 'top_p': 1.0, 'top_k': 0, 'repetition_penalty': 1.0, 'ignore_eos': False, 'prefill_chunk_size': -1, 'cache_implementation': 'static', 'cpu_multinomial': False, 'sample_on_device': True, 'mem_snapshot': False, 'mem_snapshot_top_k': 10, 'parallel': {'n_nodes': 1, 'procs_per_node': 32, 'fsdp_size': -1, 'tp_size': 1, 'cp_size': 1, 'sp_size': 1, 'tp_shard_embeddings': True}}, 'actor': {'lr': 1e-06, 'ppo_mini_batch_size': 4, 'ppo_micro_batch_size': 1, 'log_prob_micro_batch_size': 1, 'clip_ratio': 0.2, 'clip_ratio_low': None, 'clip_ratio_high': None, 'clip_ratio_c': 3.0, 'entropy_coeff': 0.0, 'loss_agg_mode': 'token-mean', 'grad_clip': 1.0, 'use_kl_loss': True, 'kl_loss_coef': 0.001, 'kl_loss_type': 'low_var_kl', 'enable_gradient_checkpointing': True, 'mem_snapshot': False, 'mem_snapshot_top_k': 10, 'mixed_precision': {'model_dtype': 'float32', 'param_dtype': 'bfloat16', 'reduce_dtype': 'float32', 'buffer_dtype': 'float32'}, 'parallel': {'n_nodes': 1, 'procs_per_node': 32, 'fsdp_size': -1, 'tp_size': 1, 'cp_size': 1, 'sp_size': 1, 'tp_shard_embeddings': True}}, 'algo': {'adv_estimator': 'grpo', 'norm_adv_by_std_in_grpo': True, 'adv_epsilon': 1e-06, 'use_kl_in_reward': False, 'kl_penalty': 'kl', 'kl_coef': 0.001}, 'weight_sync': {'channel': 'host', 'bucket_size_mb': 512}, 'trainer': {'total_training_steps': 2, 'save_freq': -1, 'test_freq': -1, 'project_name': 'mini_verl_grpo', 'experiment_name': 'qwen2_0_5b_gsm8k', 'logger': ('console',), 'seed': 1, 'print_rollouts': 1, 'perf_warmup_steps': 3}}
+
+[mini_verl.trainer_loop 10:04:10] building colocated actor+rollout pool (32 ranks, tp_size=1)[mini_verl.trainer_loop 10:04:10] building colocated actor+rollout pool (32 ranks, tp_size=1)
+
+[36m(pid=288750)[0m [W707 10:04:29.361840105 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288750)[0m [W707 10:04:29.361840105 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288750)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288750)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288750)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288750)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288750)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288750)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288750)[0m   dispatch key: PrivateUse1[36m(pid=288750)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288750)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288750)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288750)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288750)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288939)[0m [W707 10:04:29.772527390 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288939)[0m [W707 10:04:29.772527390 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288939)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288939)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288939)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288939)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288939)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288939)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288939)[0m   dispatch key: PrivateUse1[36m(pid=288939)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288939)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288939)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288939)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288939)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288746)[0m [W707 10:04:30.555890806 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288746)[0m [W707 10:04:30.555890806 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288746)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288746)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288746)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288746)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288746)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288746)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288746)[0m   dispatch key: PrivateUse1[36m(pid=288746)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288746)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288746)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288746)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288746)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288739)[0m [W707 10:04:30.980473690 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288739)[0m [W707 10:04:30.980473690 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288739)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288739)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288739)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288739)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288739)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288739)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288739)[0m   dispatch key: PrivateUse1[36m(pid=288739)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288739)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288739)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288739)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288739)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289184)[0m [W707 10:04:31.506208572 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289184)[0m [W707 10:04:31.506208572 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289184)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289184)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289184)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289184)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289184)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289184)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289184)[0m   dispatch key: PrivateUse1[36m(pid=289184)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289184)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289184)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289184)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289184)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289089)[0m [W707 10:04:31.655136530 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289089)[0m [W707 10:04:31.655136530 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289089)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289089)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289089)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289089)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289089)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289089)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289089)[0m   dispatch key: PrivateUse1[36m(pid=289089)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289089)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289089)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289089)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289089)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288740)[0m [W707 10:04:31.691626608 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288740)[0m [W707 10:04:31.691626608 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288740)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288740)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288740)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288740)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288740)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288740)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288740)[0m   dispatch key: PrivateUse1[36m(pid=288740)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288740)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288740)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288740)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288740)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288742)[0m [W707 10:04:31.680711613 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288742)[0m [W707 10:04:31.680711613 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288742)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288742)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288742)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288742)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288742)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288742)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288742)[0m   dispatch key: PrivateUse1[36m(pid=288742)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288742)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288742)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288742)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288742)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288744)[0m [W707 10:04:31.213531239 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288744)[0m [W707 10:04:31.213531239 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288744)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288744)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288744)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288744)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288744)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288744)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288744)[0m   dispatch key: PrivateUse1[36m(pid=288744)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288744)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288744)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288744)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288744)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289768)[0m [W707 10:04:32.543693842 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289768)[0m [W707 10:04:32.543693842 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289768)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289768)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289768)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289768)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289768)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289768)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289768)[0m   dispatch key: PrivateUse1[36m(pid=289768)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289768)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289768)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289768)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289768)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289004)[0m [W707 10:04:32.060891651 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289004)[0m [W707 10:04:32.060891651 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289004)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289004)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289004)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289004)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289004)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289004)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289004)[0m   dispatch key: PrivateUse1[36m(pid=289004)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289004)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289004)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289004)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289004)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288745)[0m [W707 10:04:33.332252113 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288745)[0m [W707 10:04:33.332252113 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288745)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288745)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288745)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288745)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288745)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288745)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288745)[0m   dispatch key: PrivateUse1[36m(pid=288745)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288745)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288745)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288745)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288745)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288748)[0m [W707 10:04:33.321279081 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288748)[0m [W707 10:04:33.321279081 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288748)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288748)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288748)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288748)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288748)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288748)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288748)[0m   dispatch key: PrivateUse1[36m(pid=288748)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288748)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288748)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288748)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288748)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288747)[0m [W707 10:04:33.572789751 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288747)[0m [W707 10:04:33.572789751 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288747)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288747)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288747)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288747)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288747)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288747)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288747)[0m   dispatch key: PrivateUse1[36m(pid=288747)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288747)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288747)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288747)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288747)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288741)[0m [W707 10:04:33.050893538 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288741)[0m [W707 10:04:33.050893538 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288741)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288741)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288741)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288741)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288741)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288741)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288741)[0m   dispatch key: PrivateUse1[36m(pid=288741)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288741)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288741)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288741)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288741)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289331)[0m [W707 10:04:33.132675298 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289331)[0m [W707 10:04:33.132675298 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289331)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289331)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289331)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289331)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289331)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289331)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289331)[0m   dispatch key: PrivateUse1[36m(pid=289331)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289331)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289331)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289331)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289331)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288743)[0m [W707 10:04:33.207768470 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288743)[0m [W707 10:04:33.207768470 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288743)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288743)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288743)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288743)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288743)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288743)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288743)[0m   dispatch key: PrivateUse1[36m(pid=288743)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288743)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288743)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288743)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288743)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289194)[0m [W707 10:04:33.201359151 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289194)[0m [W707 10:04:33.201359151 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289194)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289194)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289194)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289194)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289194)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289194)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289194)[0m   dispatch key: PrivateUse1[36m(pid=289194)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289194)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289194)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289194)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289194)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289469)[0m [W707 10:04:33.251231276 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289469)[0m [W707 10:04:33.251231276 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289469)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289469)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289469)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289469)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289469)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289469)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289469)[0m   dispatch key: PrivateUse1[36m(pid=289469)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289469)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289469)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289469)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289469)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288749)[0m [W707 10:04:33.264920389 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288749)[0m [W707 10:04:33.264920389 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288749)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288749)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288749)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288749)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288749)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288749)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288749)[0m   dispatch key: PrivateUse1[36m(pid=288749)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288749)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288749)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288749)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288749)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289238)[0m [W707 10:04:34.637581327 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289238)[0m [W707 10:04:34.637581327 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289238)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289238)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289238)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289238)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289238)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289238)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289238)[0m   dispatch key: PrivateUse1[36m(pid=289238)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289238)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289238)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289238)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289238)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289281)[0m [W707 10:04:34.595507209 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289281)[0m [W707 10:04:34.595507209 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289281)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289281)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289281)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289281)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289281)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289281)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289281)[0m   dispatch key: PrivateUse1[36m(pid=289281)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289281)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289281)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289281)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289281)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289330)[0m [W707 10:04:34.748516028 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289330)[0m [W707 10:04:34.748516028 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289330)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289330)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289330)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289330)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289330)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289330)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289330)[0m   dispatch key: PrivateUse1[36m(pid=289330)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289330)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289330)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289330)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289330)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289040)[0m [W707 10:04:34.863528632 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289040)[0m [W707 10:04:34.863528632 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289040)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289040)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289040)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289040)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289040)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289040)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289040)[0m   dispatch key: PrivateUse1[36m(pid=289040)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289040)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289040)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289040)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289040)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289767)[0m [W707 10:04:34.171320990 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289767)[0m [W707 10:04:34.171320990 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289767)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289767)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289767)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289767)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289767)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289767)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289767)[0m   dispatch key: PrivateUse1[36m(pid=289767)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289767)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289767)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289767)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289767)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289683)[0m [W707 10:04:35.427332195 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289683)[0m [W707 10:04:35.427332195 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289683)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289683)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289683)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289683)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289683)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289683)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289683)[0m   dispatch key: PrivateUse1[36m(pid=289683)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289683)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289683)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289683)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289683)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289613)[0m [W707 10:04:35.788269907 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289613)[0m [W707 10:04:35.788269907 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289613)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289613)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289613)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289613)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289613)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289613)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289613)[0m   dispatch key: PrivateUse1[36m(pid=289613)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289613)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289613)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289613)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289613)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289641)[0m [W707 10:04:35.814402224 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289641)[0m [W707 10:04:35.814402224 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289641)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289641)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289641)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289641)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289641)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289641)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289641)[0m   dispatch key: PrivateUse1[36m(pid=289641)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289641)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289641)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289641)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289641)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=288908)[0m [W707 10:04:35.118826961 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=288908)[0m [W707 10:04:35.118826961 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=288908)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=288908)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=288908)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=288908)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=288908)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=288908)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=288908)[0m   dispatch key: PrivateUse1[36m(pid=288908)[0m   dispatch key: PrivateUse1
+
+[36m(pid=288908)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=288908)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=288908)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=288908)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289574)[0m [W707 10:04:35.029726105 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289574)[0m [W707 10:04:35.029726105 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289574)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289574)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289574)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289574)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289574)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289574)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289574)[0m   dispatch key: PrivateUse1[36m(pid=289574)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289574)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289574)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289574)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289574)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289679)[0m [W707 10:04:35.188531396 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289679)[0m [W707 10:04:35.188531396 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289679)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289679)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289679)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289679)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289679)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289679)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289679)[0m   dispatch key: PrivateUse1[36m(pid=289679)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289679)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289679)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289679)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289679)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(pid=289340)[0m [W707 10:04:36.102138329 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.[36m(pid=289340)[0m [W707 10:04:36.102138329 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+
+[36m(pid=289340)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key[36m(pid=289340)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+
+[36m(pid=289340)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)[36m(pid=289340)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+
+[36m(pid=289340)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6[36m(pid=289340)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+
+[36m(pid=289340)[0m   dispatch key: PrivateUse1[36m(pid=289340)[0m   dispatch key: PrivateUse1
+
+[36m(pid=289340)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637[36m(pid=289340)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+
+[36m(pid=289340)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())[36m(pid=289340)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.384373 288746:288746 ERROR  TDRV:tdrv_init                               Unable to find a physical core for logical core 14 (max cores 8).[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.384373 288746:288746 ERROR  TDRV:tdrv_init                               Unable to find a physical core for logical core 14 (max cores 8).
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.396595 288746:288746 ERROR   NRT:nrt_init                                Failed to initialize devices, error:2[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.396595 288746:288746 ERROR   NRT:nrt_init                                Failed to initialize devices, error:2
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.398232 288746:288746 ERROR   NRT:nrt_infodump                            Neuron runtime information - please include in any support request:[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.398232 288746:288746 ERROR   NRT:nrt_infodump                            Neuron runtime information - please include in any support request:
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.408514 288746:288746 ERROR   NRT:nrt_infodump                            ------------->8------------[ cut here ]------------>8-------------[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.408514 288746:288746 ERROR   NRT:nrt_infodump                            ------------->8------------[ cut here ]------------>8-------------
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.410292 288746:288746 ERROR   NRT:nrt_infodump                            NRT version: 2.32.31.0 (0234f5ed2d8aa1bf537e2499c0f98834ea94ccbc)[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.410292 288746:288746 ERROR   NRT:nrt_infodump                            NRT version: 2.32.31.0 (0234f5ed2d8aa1bf537e2499c0f98834ea94ccbc)
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.417533 288746:288746 ERROR   NRT:nrt_infodump                            Embedded FW version: 1.22.0.0 (8d9f5a1c78551eb3823587d6bb9575f9011314da) loaded from "libnrtucode_extisa.so"[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.417533 288746:288746 ERROR   NRT:nrt_infodump                            Embedded FW version: 1.22.0.0 (8d9f5a1c78551eb3823587d6bb9575f9011314da) loaded from "libnrtucode_extisa.so"
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.421511 288746:288746 ERROR   NRT:nrt_infodump                            CCOM version: 2.32.28.0- (compat 92)[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.421511 288746:288746 ERROR   NRT:nrt_infodump                            CCOM version: 2.32.28.0- (compat 92)
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.429509 288746:288746 ERROR   NRT:nrt_infodump                            NCFW version: 2.32.7.0 (57f507416c18e8ea2f03cce342771283f3f50aa7)[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.429509 288746:288746 ERROR   NRT:nrt_infodump                            NCFW version: 2.32.7.0 (57f507416c18e8ea2f03cce342771283f3f50aa7)
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.431269 288746:288746 ERROR   NRT:nrt_infodump                            Instance ID: i-010f428d9743f5e27[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.431269 288746:288746 ERROR   NRT:nrt_infodump                            Instance ID: i-010f428d9743f5e27
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.439531 288746:288746 ERROR   NRT:nrt_infodump                            Cluster ID: N/A[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.439531 288746:288746 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.443516 288746:288746 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1015-aws #15~24.04.1-Ubuntu SMP Thu May  7 17:00:14 UTC 2026[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.443516 288746:288746 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1015-aws #15~24.04.1-Ubuntu SMP Thu May  7 17:00:14 UTC 2026
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.445411 288746:288746 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-33-126[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.445411 288746:288746 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-33-126
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.448623 288746:288746 ERROR   NRT:nrt_infodump                            Driver version: 2.28.0.0[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.448623 288746:288746 ERROR   NRT:nrt_infodump                            Driver version: 2.28.0.0
+
+[36m(ActorRolloutWorker pid=288746)[0m [36m(ActorRolloutWorker pid=288746)[0m 
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.451504 288746:288746 ERROR   NRT:nrt_infodump                            Failure: NRT_INVALID in nrt_init()[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.451504 288746:288746 ERROR   NRT:nrt_infodump                            Failure: NRT_INVALID in nrt_init()
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.454150 288746:288746 ERROR   NRT:nrt_infodump                            Visible cores: 7[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.454150 288746:288746 ERROR   NRT:nrt_infodump                            Visible cores: 7
+
+[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.457510 288746:288746 ERROR   NRT:nrt_infodump                            Environment:[36m(ActorRolloutWorker pid=288746)[0m 2026-Jul-07 10:04:40.457510 288746:288746 ERROR   NRT:nrt_infodump                            Environment:
+

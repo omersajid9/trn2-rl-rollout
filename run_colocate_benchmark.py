@@ -421,6 +421,26 @@ def run_one_cell(cell: CellConfig, log_file: Path, run_dir: Path) -> str:
     status = "ok"
     t0     = time.time()
     try:
+        # Pre-init Ray with neuron_cores declared so the NeuronResourcePool
+        # can place workers.  ray_trainer.main() checks is_initialized() and
+        # skips its own init when Ray is already up.
+        import ray as _ray
+        if not _ray.is_initialized():
+            _env: dict = {"TOKENIZERS_PARALLELISM": "false",
+                          "MINI_VERL_DEVICE": "neuron"}
+            for _k in ("NEURON_CC_FLAGS",
+                       "TORCH_NEURONX_NEFF_CACHE_DIR",
+                       "TORCH_NEURONX_NEFF_LOCAL_CACHE_DIR",
+                       "ACCELERATE_TORCH_DEVICE",
+                       "HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE"):
+                if _k in os.environ:
+                    _env[_k] = os.environ[_k]
+            _ray.init(
+                include_dashboard=False,
+                num_cpus=cell.cores,
+                resources={"neuron_cores": cell.cores},
+                runtime_env={"env_vars": _env},
+            )
         run_grpo(cfg)
     except Exception as e:
         status = f"failed:{type(e).__name__}"
