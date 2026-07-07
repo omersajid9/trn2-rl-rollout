@@ -1,0 +1,30 @@
+{
+  "cold": {
+    "tag": "COLD",
+    "batch_size": 1,
+    "prompts": [
+      {
+        "prompt_idx": 0,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 9.94,
+        "tpt_ms": 0.0,
+        "total_time_ms": 9.94
+      }
+    ]
+  },
+  "warm": {
+    "tag": "WARM",
+    "batch_size": 1,
+    "prompts": [
+      {
+        "prompt_idx": 0,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 8.41,
+        "tpt_ms": 0.0,
+        "total_time_ms": 8.41
+      }
+    ]
+  }
+}
