@@ -1,0 +1,58 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "max_num_seqs": 4,
+  "max_model_len": 1024,
+  "enable_prefix_caching": false,
+  "enable_chunked_prefill": false,
+  "disable_log_stats": true,
+  "output_len": 256,
+  "output_lens": [
+    64,
+    127,
+    128,
+    256,
+    257,
+    512
+  ],
+  "input_lens": [
+    64,
+    127,
+    128,
+    256,
+    257,
+    512
+  ],
+  "test": "both",
+  "prefill_output_len": 1,
+  "decode_input_len": 128,
+  "sweep_mode": "alternating",
+  "sweep_seed": 0,
+  "prefill_order": [
+    64,
+    127,
+    64,
+    128,
+    127,
+    256,
+    128,
+    257,
+    256,
+    512,
+    257
+  ],
+  "decode_order": [
+    64,
+    127,
+    64,
+    128,
+    127,
+    256,
+    128,
+    257,
+    256,
+    512,
+    257
+  ]
+}

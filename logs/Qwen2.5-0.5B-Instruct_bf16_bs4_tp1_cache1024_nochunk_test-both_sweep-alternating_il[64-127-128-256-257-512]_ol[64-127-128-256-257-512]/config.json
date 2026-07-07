@@ -1,0 +1,55 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dtype": "bfloat16",
+  "batch_size": 4,
+  "max_cache_len": 1024,
+  "prefill_chunk_size": 0,
+  "input_lens": [
+    64,
+    127,
+    128,
+    256,
+    257,
+    512
+  ],
+  "output_lens": [
+    64,
+    127,
+    128,
+    256,
+    257,
+    512
+  ],
+  "decode_input_len": 128,
+  "prefill_output_len": 1,
+  "tp_size": 1,
+  "test": "both",
+  "sweep_mode": "alternating",
+  "sweep_seed": 0,
+  "prefill_order": [
+    64,
+    127,
+    64,
+    128,
+    127,
+    256,
+    128,
+    257,
+    256,
+    512,
+    257
+  ],
+  "decode_order": [
+    64,
+    127,
+    64,
+    128,
+    127,
+    256,
+    128,
+    257,
+    256,
+    512,
+    257
+  ]
+}
