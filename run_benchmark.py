@@ -2,13 +2,14 @@ import argparse
 import asyncio
 import json
 import os
+import random
 import subprocess
-import time
-from datetime import datetime, timezone
-from pathlib import Path
 import sys
+import time
 import uuid
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from pathlib import Path
 
 from prompts import prompts
 
@@ -25,14 +26,63 @@ DEFAULTS = {
     "output_len":             256,
     "output_lens":            [64, 127, 128, 129, 255, 256, 257, 512],
     "input_lens":             [64, 127, 128, 129, 255, 256, 257, 512],
+    "decode_input_len":       512,
     "test":                   "both",
+    "sweep_mode":             "sequential",
+    "sweep_seed":             0,
 }
 
 # Fixed output length used in the prefill sweep (keeps TTFT apples-to-apples).
 _PREFILL_OUTPUT_LEN = 1
 
-# Fixed input length used in the decode sweep.
-_DECODE_INPUT_LEN = 512
+
+# ─── SWEEP ORDERERS ───────────────────────────────────────────────────────────
+
+def order_sequential(lengths: list[int], seed: int = 0) -> list[int]:
+    """Visit each length exactly once, in the order given."""
+    return list(lengths)
+
+
+def order_random(lengths: list[int], seed: int = 0) -> list[int]:
+    """Visit each length exactly once, in a reproducibly shuffled order."""
+    out = list(lengths)
+    random.Random(seed).shuffle(out)
+    return out
+
+
+def order_alternating(lengths: list[int], seed: int = 0) -> list[int]:
+    """Interleave new lengths with the previous one.
+
+    For [L0, L1, L2, L3, L4] produces:
+        L0, L1, L0, L2, L1, L3, L2, L4, L3
+
+    Each new length is immediately followed by a revisit of the previous so
+    the compiled graph for the prior shape stays warm before the next size.
+    """
+    if len(lengths) <= 1:
+        return list(lengths)
+    result = [lengths[0]]
+    for i in range(1, len(lengths)):
+        result.append(lengths[i])
+        result.append(lengths[i - 1])
+    return result
+
+
+SWEEP_ORDERERS = {
+    "sequential":  order_sequential,
+    "random":      order_random,
+    "alternating": order_alternating,
+}
+
+
+def build_sweep_order(lengths: list[int], mode: str, seed: int) -> list[int]:
+    return SWEEP_ORDERERS[mode](lengths, seed)
+
+
+def _visit_suffix(visit_count: int) -> str:
+    """Return '' for the first visit, '_v2' for the second, '_v3' for third, etc."""
+    return "" if visit_count == 1 else f"_v{visit_count}"
+
 
 class Tee:
     def __init__(self, *files):
@@ -66,7 +116,15 @@ def parse_args():
     p.add_argument("--output-len", type=int, default=DEFAULTS["output_len"])
     p.add_argument("--output-lens", nargs="+", type=int, default=DEFAULTS["output_lens"])
     p.add_argument("--input-lens",  nargs="+", type=int, default=DEFAULTS["input_lens"])
+    p.add_argument("--decode-input-len", type=int, default=DEFAULTS["decode_input_len"],
+                   help="Fixed input length used throughout the decode sweep.")
     p.add_argument("--test", choices=["prefill", "decode", "both"], default=DEFAULTS["test"])
+    p.add_argument("--sweep-mode", choices=list(SWEEP_ORDERERS), default=DEFAULTS["sweep_mode"],
+                   help="Order in which lengths are visited: sequential (default), "
+                        "random (shuffled with --sweep-seed), or alternating "
+                        "(each new length is followed by a revisit of the previous).")
+    p.add_argument("--sweep-seed", type=int, default=DEFAULTS["sweep_seed"],
+                   help="RNG seed for --sweep-mode random (no effect on other modes).")
     p.add_argument("--enable-prefix-caching", action="store_true", default=DEFAULTS["enable_prefix_caching"])
     p.add_argument("--enable-chunked-prefill", action="store_true", default=DEFAULTS["enable_chunked_prefill"])
     p.add_argument("--enable-log-stats", action="store_false", dest="disable_log_stats", default=DEFAULTS["disable_log_stats"])
@@ -96,6 +154,7 @@ def setup_run_dir(cfg, rerun=True, sweep=False):
             f"_tp{cfg.tensor_parallel_size}"
             f"_bs{cfg.max_num_seqs}"
             f"_test-{cfg.test}"
+            f"_sweep-{cfg.sweep_mode}"
             f"_ol[{ol_vals}]"
             f"_il[{il_vals}]"
         )
@@ -143,6 +202,29 @@ def save_metrics(metrics_file, metrics: list[TokenMetrics]):
             for m in metrics
         ],
     }
+    with open(metrics_file, "w", encoding="UTF-8") as f:
+        json.dump(payload, f, indent=2)
+
+
+def save_sweep_metrics(metrics_file, cold: list[TokenMetrics], warm: list[TokenMetrics]):
+    """Save COLD and WARM runs together in one file (mirrors run_mini_verl_benchmark.py)."""
+    def _ser(metrics, tag):
+        return {
+            "tag":        tag,
+            "batch_size": metrics[0].batch_size if metrics else 0,
+            "prompts": [
+                {
+                    "prompt_idx":    m.prompt_idx,
+                    "input_tokens":  m.input_tokens,
+                    "output_tokens": m.output_tokens,
+                    "ttft_ms":       round(m.ttft_ms, 2),
+                    "tpt_ms":        round(m.tpt_ms, 2),
+                    "total_time_ms": round(m.total_time_ms, 2),
+                }
+                for m in metrics
+            ],
+        }
+    payload = {"cold": _ser(cold, "COLD"), "warm": _ser(warm, "WARM")}
     with open(metrics_file, "w", encoding="UTF-8") as f:
         json.dump(payload, f, indent=2)
 
@@ -308,39 +390,70 @@ async def async_generation_sweep(engine, token_corpus: list[int], input_len: int
 #   run 1 = COLD, run 2 = WARM
 
 async def vllm_prefill_test(engine, token_corpus, cfg, log_file, run_dir):
+    """Prefill sweep ordered by cfg.sweep_mode.
+
+    Revisited input lengths get _v2, _v3, ... suffixes on labels and filenames.
+    """
     log(log_file, "PREFILL_TEST START")
-    for input_len in cfg.input_lens:
+    sweep_order = build_sweep_order(cfg.input_lens, cfg.sweep_mode, cfg.sweep_seed)
+    visit_counts: dict[int, int] = {}
+
+    for input_len in sweep_order:
+        visit_counts[input_len] = visit_counts.get(input_len, 0) + 1
+        vsuf = _visit_suffix(visit_counts[input_len])
+
+        cold = warm = None
         for run_idx in (1, 2):
             tag = "COLD" if run_idx == 1 else "WARM"
-            label = f"PREFILL_{input_len}_{tag}"
+            label = f"PREFILL_{input_len}_{tag}{vsuf}"
             log(log_file, f"{label} START")
             metrics = await async_generation_sweep(
                 engine, token_corpus, input_len, _PREFILL_OUTPUT_LEN, cfg.max_num_seqs, log_file,
             )
             log(log_file, f"{label} DONE")
-            metrics_path = run_dir / f"metrics_prefill_il{input_len}_run{run_idx}.json"
-            save_metrics(metrics_path, metrics)
+            if run_idx == 1:
+                cold = metrics
+            else:
+                warm = metrics
+        save_sweep_metrics(run_dir / f"metrics_prefill_il{input_len}{vsuf}.json", cold, warm)
+        await asyncio.sleep(2)
     log(log_file, "PREFILL_TEST DONE")
 
 
 # ─── TEST 2: DECODE SWEEP ─────────────────────────────────────────────────────
 #
-# For each output_len, run generate(token_ids_512, output_len) twice:
+# For each output_len, run generate(token_ids, output_len) twice:
 #   run 1 = COLD, run 2 = WARM
 
 async def vllm_decode_test(engine, token_corpus, cfg, log_file, run_dir):
+    """Decode sweep ordered by cfg.sweep_mode.
+
+    Revisited output lengths get _v2, _v3, ... suffixes on labels and filenames.
+    """
     log(log_file, "DECODE_TEST START")
-    for output_len in cfg.output_lens:
+    dil = cfg.decode_input_len
+    sweep_order = build_sweep_order(cfg.output_lens, cfg.sweep_mode, cfg.sweep_seed)
+    visit_counts: dict[int, int] = {}
+
+    for output_len in sweep_order:
+        visit_counts[output_len] = visit_counts.get(output_len, 0) + 1
+        vsuf = _visit_suffix(visit_counts[output_len])
+
+        cold = warm = None
         for run_idx in (1, 2):
             tag = "COLD" if run_idx == 1 else "WARM"
-            label = f"DECODE_{output_len}_{tag}"
+            label = f"DECODE_{output_len}_{tag}{vsuf}"
             log(log_file, f"{label} START")
             metrics = await async_generation_sweep(
-                engine, token_corpus, _DECODE_INPUT_LEN, output_len, cfg.max_num_seqs, log_file,
+                engine, token_corpus, dil, output_len, cfg.max_num_seqs, log_file,
             )
             log(log_file, f"{label} DONE")
-            metrics_path = run_dir / f"metrics_decode_il{_DECODE_INPUT_LEN}_ol{output_len}_run{run_idx}.json"
-            save_metrics(metrics_path, metrics)
+            if run_idx == 1:
+                cold = metrics
+            else:
+                warm = metrics
+        save_sweep_metrics(run_dir / f"metrics_decode_il{dil}_ol{output_len}{vsuf}.json", cold, warm)
+        await asyncio.sleep(2)
     log(log_file, "DECODE_TEST DONE")
 
 
@@ -480,7 +593,11 @@ def main():
         "input_lens":             cfg.input_lens,
         "test":                   cfg.test,
         "prefill_output_len":     _PREFILL_OUTPUT_LEN,
-        "decode_input_len":       _DECODE_INPUT_LEN,
+        "decode_input_len":       cfg.decode_input_len,
+        "sweep_mode":             cfg.sweep_mode,
+        "sweep_seed":             cfg.sweep_seed,
+        "prefill_order":          build_sweep_order(cfg.input_lens,  cfg.sweep_mode, cfg.sweep_seed),
+        "decode_order":           build_sweep_order(cfg.output_lens, cfg.sweep_mode, cfg.sweep_seed),
     }
     with open(run_dir / "config.json", "w", encoding="UTF-8") as f:
         json.dump(config_snapshot, f, indent=2)
