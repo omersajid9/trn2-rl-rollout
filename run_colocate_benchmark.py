@@ -134,6 +134,16 @@ class Tee:
             f.flush()
     def isatty(self):
         return False
+    def fileno(self):
+        # Ray and some stdlib code call fileno() on sys.stdout/stderr.
+        # Delegate to the first underlying file that supports it.
+        import io
+        for f in self._files:
+            try:
+                return f.fileno()
+            except (AttributeError, io.UnsupportedOperation):
+                continue
+        raise io.UnsupportedOperation("fileno")
 
 
 def log(log_file: Path, text: str) -> None:
@@ -171,8 +181,15 @@ def set_output_file(out_log: Path) -> None:
     f = open(out_log, "w", encoding="utf-8")
     sys.stdout = Tee(sys.__stdout__, f)
     sys.stderr = Tee(sys.__stderr__, f)
-    os.dup2(f.fileno(), sys.__stdout__.fileno())
-    os.dup2(f.fileno(), sys.__stderr__.fileno())
+    # Redirect the OS-level fd so subprocess output (e.g. Ray worker logs) also
+    # goes to the file.  Guarded: in some environments (IDE wrappers, test
+    # harnesses) sys.__stdout__ is not a real file and fileno() will raise.
+    try:
+        import io
+        os.dup2(f.fileno(), sys.__stdout__.fileno())
+        os.dup2(f.fileno(), sys.__stderr__.fileno())
+    except (AttributeError, io.UnsupportedOperation, OSError):
+        pass
 
 
 # ─── MEMORY LOGGER ────────────────────────────────────────────────────────────
