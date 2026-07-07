@@ -20,17 +20,19 @@ Run from trn2-rl-rollout/:
 
 import sys
 
-# Minimal args — override anything here before running the full grid.
+# Minimal args — use 32 cores (standard sweep config) with tiny batch/steps.
+# 32 cores = 8 FSDP trainer ranks + 8 DP rollout ranks (power-of-2, trn2-safe).
+# First run takes ~20–40 min (NEFF compilation); subsequent runs reuse cache.
 sys.argv = [
     "run_colocate_smoke.py",
     "--model",                 "Qwen/Qwen2.5-0.5B-Instruct",
-    "--cores",                 "4",
+    "--cores",                 "32",
     "--tp-size",               "1",
-    "--train-batch-size",      "4",
+    "--train-batch-size",      "8",
     "--ppo-micro-batch-size",  "1",
-    "--rollout-n",             "2",
-    "--max-prompt-length",     "64",
-    "--max-response-length",   "64",
+    "--rollout-n",             "4",
+    "--max-prompt-length",     "128",
+    "--max-response-length",   "128",
     "--prefill-chunk-size",    "-1",
     "--total-steps",           "2",
 ]

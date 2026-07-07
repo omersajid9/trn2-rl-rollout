@@ -48,14 +48,19 @@ export TORCH_NEURONX_NEFF_LOCAL_CACHE_DIR="${TORCH_NEURONX_NEFF_LOCAL_CACHE_DIR:
 cleanup() {
     echo "--- cleanup: killing stale monitors and workers ---"
     pkill -f neuron-monitor 2>/dev/null || true
-    # Kill stray Ray workers that may still hold NeuronCores after an OOM.
+    # Graceful Ray shutdown first, then force-kill lingering workers.
     "$PYTHON" -c "import ray; ray.init(ignore_reinit_error=True); ray.shutdown()" \
         2>/dev/null || true
+    # Send SIGTERM first, give workers 10 s to flush, then SIGKILL.
     pkill -f "ray::" 2>/dev/null || true
-    echo "--- cleanup: dropping compile artifacts ---"
+    sleep 10
+    pkill -9 -f "ray::" 2>/dev/null || true
+    # Also clear the local NRT lock dir so the next run doesn't hit stale locks.
+    echo "--- cleanup: dropping compile artifacts and locks ---"
     rm -rf /tmp/nxd_model/ /tmp/neuronxcc-*/
+    rm -rf /tmp/local_cache/ /tmp/ray/
     rm -rf ~/.cache/neuron/ /var/tmp/neuron-compile-cache/
-    sleep 5
+    sleep 10
 }
 
 # ─── MAIN GRID ────────────────────────────────────────────────────────────────
