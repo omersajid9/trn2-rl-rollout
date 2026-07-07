@@ -24,8 +24,14 @@ MODELS=(
     "Qwen/Qwen2.5-0.5B-Instruct"
     "Qwen/Qwen2.5-1.5B-Instruct"
 )
+# trn2.3xlarge has 4 NeuronCores (LNC-pair IDs 0-3, 96 GB HBM total).
+# world_size = procs_per_node must be a power-of-two topology-aligned value.
+# With 4 cores: TP=1 → fsdp=4 ranks; TP=2 → fsdp=2 ranks (2×2 grid).
 TP_SIZES=(1 2)
-BATCH_SIZES=(8 16 32)
+# OOM sweep: increase BS until we hit HBM limit.  With 0.5B fsdp=4 each shard
+# is ~250 MB; with 1.5B fsdp=4 each shard is ~750 MB.  KV-cache + optimizer
+# offloading during training means small batches can still OOM at high N.
+BATCH_SIZES=(4 8 16)
 PREFILL_CHUNKS=(-1 128)   # -1 = no chunk; 128 must divide MAX_PROMPT_LEN
 MBS_SIZES=(1 2)           # actor.ppo_micro_batch_size
 
@@ -34,7 +40,7 @@ PYTHON="/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/bin/python3"
 
 # ─── FIXED PARAMETERS ─────────────────────────────────────────────────────────
 DTYPE="bfloat16"
-CORES=32                  # NeuronCores per cell (actor == rollout in colocate)
+CORES=4                   # NeuronCores: trn2.3xlarge has 4 (IDs 0-3, 96 GB HBM)
 MAX_PROMPT_LEN=128        # keep prompt + response <= 512 (neuronx-cc compile limit)
 MAX_RESP_LEN=128
 ROLLOUT_N=4               # GRPO group size
