@@ -12,9 +12,6 @@ short_prompts = [
 
 
 
-# Each prompt is designed to be approximately 512 input tokens (~380 words at
-# ~1.35 tokens/word for dense technical English), matching the available input
-# budget of max_model_len(768) - output_len(256) = 512 tokens.
 prompts = [
     # 1 – Machine Learning: Backpropagation  (~374 words ≈ 505 tokens)
     ("You are a senior machine learning researcher. Provide a detailed, graduate-level technical "
