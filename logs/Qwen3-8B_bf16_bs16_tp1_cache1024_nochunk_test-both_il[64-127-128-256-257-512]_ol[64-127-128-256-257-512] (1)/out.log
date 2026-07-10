@@ -1,0 +1,26 @@
+Run directory : logs/Qwen3-8B_bf16_bs16_tp1_cache1024_nochunk_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512] (1)
+Log file      : logs/Qwen3-8B_bf16_bs16_tp1_cache1024_nochunk_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512] (1)/run.log
+Config        : logs/Qwen3-8B_bf16_bs16_tp1_cache1024_nochunk_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512] (1)/config.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-10 16:39:07,762:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:  31%|###       | 123/399 [00:00<00:00, 537.21it/s]Loading weights:  58%|#####7    | 231/399 [00:00<00:00, 680.96it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 1098.84it/s]
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 16:41:34] ===== memory snapshot [after_engine_create] device=neuron =====
+  live tensors: 401 allocations, 15.3 GiB total
+    by category: param=15.3 GiB (399)  other=512.0 B (2)
+    by dtype: bfloat16=15.3 GiB  float32=512.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+  pytorch allocator:  allocated=15.3 GiB  reserved=15.3 GiB  peak=15.3 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
