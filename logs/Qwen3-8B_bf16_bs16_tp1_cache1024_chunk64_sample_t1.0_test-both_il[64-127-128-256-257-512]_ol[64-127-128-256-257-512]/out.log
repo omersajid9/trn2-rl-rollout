@@ -1,0 +1,10 @@
+Run directory : logs/Qwen3-8B_bf16_bs16_tp1_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]
+Log file      : logs/Qwen3-8B_bf16_bs16_tp1_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/run.log
+Config        : logs/Qwen3-8B_bf16_bs16_tp1_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/config.json
+Sampling      : do_sample=True temperature=1.0 top_p=1.0 top_k=0
+TP size       : 1
+n_samples     : 1  (effective batch: 16)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-11 08:29:28,333:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:  10%|#         | 40/399 [00:00<00:01, 315.36it/s]Loading weights:  40%|###9      | 158/399 [00:00<00:00, 729.60it/s]Loading weights:  59%|#####8    | 234/399 [00:00<00:00, 664.45it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 895.47it/s]
