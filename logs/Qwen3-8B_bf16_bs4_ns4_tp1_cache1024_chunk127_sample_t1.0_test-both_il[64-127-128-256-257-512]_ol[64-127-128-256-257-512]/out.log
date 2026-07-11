@@ -1,16 +1,16 @@
-Run directory : logs/Qwen3-8B_bf16_bs4_ns4_tp1_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]
-Log file      : logs/Qwen3-8B_bf16_bs4_ns4_tp1_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/run.log
-Config        : logs/Qwen3-8B_bf16_bs4_ns4_tp1_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/config.json
+Run directory : logs/Qwen3-8B_bf16_bs4_ns4_tp1_cache1024_chunk127_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]
+Log file      : logs/Qwen3-8B_bf16_bs4_ns4_tp1_cache1024_chunk127_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/run.log
+Config        : logs/Qwen3-8B_bf16_bs4_ns4_tp1_cache1024_chunk127_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/config.json
 Sampling      : do_sample=True temperature=1.0 top_p=1.0 top_k=0
 TP size       : 1
 n_samples     : 4  (effective batch: 16)
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-WARNING:2026-07-11 10:15:13,422:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-11 10:24:36,624:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:  17%|#7        | 69/399 [00:00<00:00, 660.51it/s]Loading weights:  34%|###4      | 136/399 [00:00<00:00, 439.12it/s]Loading weights:  46%|####6     | 185/399 [00:00<00:00, 338.36it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 802.62it/s]
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   9%|8         | 34/399 [00:00<00:01, 337.22it/s]Loading weights:  17%|#7        | 68/399 [00:00<00:01, 316.97it/s]Loading weights:  26%|##5       | 103/399 [00:00<00:00, 321.04it/s]Loading weights:  41%|####      | 163/399 [00:00<00:00, 371.89it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 860.30it/s]
 /home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
   if isinstance(obj, torch.Tensor):
-[mini_verl.mem 10:17:39] ===== memory snapshot [after_engine_create] device=neuron =====
+[mini_verl.mem 10:27:04] ===== memory snapshot [after_engine_create] device=neuron =====
   live tensors: 401 allocations, 15.3 GiB total
     by category: param=15.3 GiB (399)  other=512.0 B (2)
     by dtype: bfloat16=15.3 GiB  float32=512.0 B
@@ -29,7 +29,7 @@ WARNING:2026-07-11 10:15:13,422:Warning: You are sending unauthenticated request
 ===============================================================
 /home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
   if isinstance(obj, torch.Tensor):
-[mini_verl.mem 10:18:23] ===== memory snapshot [after_warmup] device=neuron =====
+[mini_verl.mem 10:27:49] ===== memory snapshot [after_warmup] device=neuron =====
   live tensors: 509 allocations, 15.8 GiB total
     by category: param=15.3 GiB (399)  other=576.0 MiB (110)
     by dtype: bfloat16=15.8 GiB  float32=512.0 B  int64=288.0 B
@@ -48,21 +48,21 @@ WARNING:2026-07-11 10:15:13,422:Warning: You are sending unauthenticated request
   pytorch allocator:  allocated=15.8 GiB  reserved=15.9 GiB  peak=15.8 GiB
   neuron-monitor: n/a (cpu / binary missing)
 ========================================================
-  PREFILL_64_COLD  total_ms=12087.5  tps=1.3
-  PREFILL_64_WARM  total_ms=12125.9  tps=1.3
-  PREFILL_127_COLD  total_ms=11893.5  tps=1.3
-  PREFILL_127_WARM  total_ms=414.7  tps=38.6
-  PREFILL_128_COLD  total_ms=423.7  tps=37.8
-  PREFILL_128_WARM  total_ms=430.5  tps=37.2
-  PREFILL_256_COLD  total_ms=11425.2  tps=1.4
-  PREFILL_256_WARM  total_ms=778.5  tps=20.6
-  PREFILL_257_COLD  total_ms=12620.2  tps=1.3
-  PREFILL_257_WARM  total_ms=953.8  tps=16.8
-  PREFILL_512_COLD  total_ms=13423.0  tps=1.2
-  PREFILL_512_WARM  total_ms=1514.1  tps=10.6
+  PREFILL_64_COLD  total_ms=14121.1  tps=1.1
+  PREFILL_64_WARM  total_ms=14272.3  tps=1.1
+  PREFILL_127_COLD  total_ms=420.1  tps=38.1
+  PREFILL_127_WARM  total_ms=416.3  tps=38.4
+  PREFILL_128_COLD  total_ms=12099.1  tps=1.3
+  PREFILL_128_WARM  total_ms=775.3  tps=20.6
+  PREFILL_256_COLD  total_ms=11636.4  tps=1.4
+  PREFILL_256_WARM  total_ms=1118.9  tps=14.3
+  PREFILL_257_COLD  total_ms=1100.4  tps=14.5
+  PREFILL_257_WARM  total_ms=1119.1  tps=14.3
+  PREFILL_512_COLD  total_ms=13448.5  tps=1.2
+  PREFILL_512_WARM  total_ms=1816.9  tps=8.8
 /home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
   if isinstance(obj, torch.Tensor):
-[mini_verl.mem 10:20:05] ===== memory snapshot [after_prefill_sweep] device=neuron =====
+[mini_verl.mem 10:29:25] ===== memory snapshot [after_prefill_sweep] device=neuron =====
   live tensors: 617 allocations, 18.1 GiB total
     by category: param=15.3 GiB (399)  other=2.8 GiB (218)
     by dtype: bfloat16=18.1 GiB  int64=576.0 B  float32=512.0 B
@@ -81,36 +81,6 @@ WARNING:2026-07-11 10:15:13,422:Warning: You are sending unauthenticated request
   pytorch allocator:  allocated=18.1 GiB  reserved=18.1 GiB  peak=18.1 GiB
   neuron-monitor: n/a (cpu / binary missing)
 ===============================================================
-  DECODE_64_COLD  total_ms=19290.5  tps=53.1  tpt_ms=299.364  resp_tokens=64.0/64
-  DECODE_64_WARM  total_ms=4103.3  tps=249.6  tpt_ms=58.299  resp_tokens=64.0/64
-  DECODE_127_COLD  total_ms=7743.2  tps=262.4  tpt_ms=58.037  resp_tokens=127.0/127
-  DECODE_127_WARM  total_ms=7743.3  tps=262.4  tpt_ms=58.038  resp_tokens=127.0/127
-  DECODE_128_COLD  total_ms=7768.0  tps=263.6  tpt_ms=57.775  resp_tokens=128.0/128
-  DECODE_128_WARM  total_ms=7735.6  tps=264.7  tpt_ms=57.521  resp_tokens=128.0/128
-  DECODE_256_COLD  total_ms=15212.0  tps=269.3  tpt_ms=57.967  resp_tokens=256.0/256
-  DECODE_256_WARM  total_ms=15202.2  tps=269.4  tpt_ms=57.928  resp_tokens=256.0/256
-  DECODE_257_COLD  total_ms=15682.5  tps=262.2  tpt_ms=59.578  resp_tokens=257.0/257
-  DECODE_257_WARM  total_ms=15487.2  tps=265.5  tpt_ms=58.815  resp_tokens=257.0/257
-  DECODE_512_COLD  total_ms=30240.2  tps=270.9  tpt_ms=58.336  resp_tokens=512.0/512
-  DECODE_512_WARM  total_ms=29512.5  tps=277.6  tpt_ms=56.912  resp_tokens=512.0/512
-/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
-  if isinstance(obj, torch.Tensor):
-[mini_verl.mem 10:23:25] ===== memory snapshot [after_decode_sweep] device=neuron =====
-  live tensors: 617 allocations, 18.1 GiB total
-    by category: param=15.3 GiB (399)  other=2.8 GiB (218)
-    by dtype: bfloat16=18.1 GiB  int64=576.0 B  float32=512.0 B
-  top 10 (shape, local shape, dtype, category) groups by bytes:
-           bytes   count  dtype       cat     shape                 local shape
-         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
-         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
-         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
-         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
-         2.2 GiB      72  bfloat16    other   (16, 8, 1024, 128)    =
-       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
-       576.0 MiB      72  bfloat16    other   (4, 8, 1024, 128)     =
-       584.0 KiB      73  bfloat16    param   (4096)                =
-        18.0 KiB      72  bfloat16    param   (128)                 =
-         576.0 B      72  int64       other   (1)                   =
-  pytorch allocator:  allocated=18.1 GiB  reserved=18.1 GiB  peak=18.1 GiB
-  neuron-monitor: n/a (cpu / binary missing)
-==============================================================
+  DECODE_64_COLD  total_ms=20480.4  tps=50.0  tpt_ms=312.779  resp_tokens=64.0/64
+  DECODE_64_WARM  total_ms=4311.7  tps=237.5  tpt_ms=56.133  resp_tokens=64.0/64
+  DECODE_127_COLD  total_ms=7840.3  tps=259.2  tpt_ms=56.072  resp_tokens=127.0/127
