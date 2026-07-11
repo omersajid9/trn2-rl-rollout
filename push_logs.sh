@@ -4,9 +4,12 @@
 # so we must cd explicitly rather than relying on a working directory.
 cd /home/ubuntu/trn2-rl-rollout || exit 1
 
-# Stage everything inside the logs/ folder.
-# 'git add <path>' only stages changes under that path.
-git add logs run* push_logs.sh mem_check.py memory_config.conf make_plots.py prompts.py rollout_benchmark.py
+# Set git identity for automated commits.
+git config user.name "log-sync"
+git config user.email "log-sync@trn2"
+
+# Stage logs and supporting scripts.
+git add logs* run* push_logs.sh mem_check.py memory_config.conf make_plots.py prompts.py rollout_benchmark.py
 
 # Commit the staged changes.
 # '|| true' prevents the script from failing if there is nothing new to commit
