@@ -1,31 +1,35 @@
 #!/bin/bash
-# Run both benchmarks across a grid of (tp × model × batch_size × sweep_mode).
+# Run both benchmarks across a grid of (tp × model × batch_size × prefill_chunk_size).
 #
 # Loop order (outer → inner):
-#   tp  →  model  →  batch_size  →  sweep_mode
+#   tp  →  model  →  batch_size  →  prefill_chunk_size
 #
 # NOTE: run_mini_verl_benchmark.py does not accept --tensor-parallel-size, so
 # it is launched with identical args for every tp value.  This is intentional:
-# each (model, bs, sweep) triple is still cleanly bracketed by compilation
+# each (model, bs, chunk) triple is still cleanly bracketed by compilation
 # cleanups even though mini_verl's tp is not configurable here.
+#
+# Prefill chunk sizes tested:
+#   0   – no chunking (one NEFF per unique input_len; baseline)
+#   64  – fine-grained; all shapes are multiples of 64; least padding waste
+#   128 – balanced; aligns with Neuron 128-bucket convention; 4 unique shapes
+#   256 – coarsest; only 2 unique shapes (256, 512); most padding waste
 #
 # Each inner iteration:
 #   1. cleanup compilations
-#   2. run_mini_verl_benchmark.py
+#   2. run_mini_verl_benchmark.py  (once per prefill_chunk_size)
 #   3. cleanup compilations
-#   4. run_benchmark.py
+#   4. run_benchmark.py            (once, after all chunk-size runs)
 #   5. cleanup compilations
 
 set -uo pipefail
 
 # ─── SWEEP PARAMETERS ─────────────────────────────────────────────────────────
-TP_SIZES=(1 2)
+TP_SIZES=(1 2 4)
 MODELS=(
-    "Qwen/Qwen2.5-0.5B-Instruct"
-    "Qwen/Qwen2.5-1.5B-Instruct"
+    "Qwen/Qwen3-8B"
 )
-BATCH_SIZES=(1 4)
-SWEEP_MODES=("sequential" "random" "alternating")
+BATCH_SIZES=(1 4 8 16)
 
 # ─── PYTHON INTERPRETERS (one per venv) ───────────────────────────────────────
 PYTHON_MINI_VERL="/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/bin/python3"
@@ -39,6 +43,8 @@ MAX_CACHE_LEN=1024        # --max-cache-len  (mini_verl)
 MAX_MODEL_LEN=1024        # --max-model-len  (vllm)
 DECODE_INPUT_LEN=128
 
+PREFILL_CHUNK_SIZES=(0 64 100 128 200 256)
+
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 cleanup() {
     echo "--- cleanup: removing compilation artifacts ---"
@@ -51,49 +57,51 @@ cleanup() {
 for tp in "${TP_SIZES[@]}"; do
     for model in "${MODELS[@]}"; do
         for bs in "${BATCH_SIZES[@]}"; do
-            for sweep in "${SWEEP_MODES[@]}"; do
 
-                echo "========================================================================="
-                echo "  TP=$tp | Model=$model | BS=$bs | Sweep=$sweep"
-                echo "========================================================================="
+            echo "========================================================================="
+            echo "  TP=$tp | Model=$model | BS=$bs"
+            echo "========================================================================="
 
-                # 1. cleanup before mini_verl run
+            # 2. mini_verl benchmark — one run per prefill chunk size
+            for chunk in "${PREFILL_CHUNK_SIZES[@]}"; do
+
+                echo "--- run_mini_verl_benchmark (prefill_chunk_size=$chunk) ---"
+
+                # 1. cleanup before each mini_verl run
                 cleanup
 
-                # 2. mini_verl benchmark (no tp arg)
-                echo "--- run_mini_verl_benchmark ---"
                 "$PYTHON_MINI_VERL" run_mini_verl_benchmark.py \
-                    --model          "$model" \
-                    --dtype          "$DTYPE" \
-                    --batch-size     "$bs" \
-                    --max-cache-len  "$MAX_CACHE_LEN" \
-                    --input-lens     $INPUT_LENS \
-                    --output-lens    $OUTPUT_LENS \
-                    --decode-input-len "$DECODE_INPUT_LEN" \
-                    --test           both \
-                    --sweep-mode     "$sweep"
+                    --model               "$model" \
+                    --dtype               "$DTYPE" \
+                    --batch-size          "$bs" \
+                    --max-cache-len       "$MAX_CACHE_LEN" \
+                    --input-lens          $INPUT_LENS \
+                    --output-lens         $OUTPUT_LENS \
+                    --decode-input-len    "$DECODE_INPUT_LEN" \
+                    --prefill-chunk-size  "$chunk" \
+                    --test                both \
 
-                # 3. cleanup between the two benchmarks
-                cleanup
+            done  # prefill_chunk_size
 
-                # 4. vllm benchmark (passes tp)
-                echo "--- run_benchmark ---"
-                "$PYTHON_VLLM" run_benchmark.py \
-                    --model                "$model" \
-                    --dtype                "$DTYPE" \
-                    --tensor-parallel-size "$tp" \
-                    --max-num-seqs         "$bs" \
-                    --max-model-len        "$MAX_MODEL_LEN" \
-                    --input-lens           $INPUT_LENS \
-                    --output-lens          $OUTPUT_LENS \
-                    --decode-input-len     "$DECODE_INPUT_LEN" \
-                    --test                 both \
-                    --sweep-mode           "$sweep"
+            # 3. cleanup between mini_verl and vllm
+            cleanup
 
-                # 5. cleanup after
-                cleanup
+            # 4. vllm benchmark (passes tp; no prefill-chunk-size concept)
+            echo "--- run_benchmark ---"
+            "$PYTHON_VLLM" run_benchmark.py \
+                --model                "$model" \
+                --dtype                "$DTYPE" \
+                --tensor-parallel-size "$tp" \
+                --max-num-seqs         "$bs" \
+                --max-model-len        "$MAX_MODEL_LEN" \
+                --input-lens           $INPUT_LENS \
+                --output-lens          $OUTPUT_LENS \
+                --decode-input-len     "$DECODE_INPUT_LEN" \
+                --test                 both \
 
-            done  # sweep
+            # 5. cleanup after
+            cleanup
+
         done  # batch_size
     done  # model
 done  # tp

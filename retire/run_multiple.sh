@@ -8,7 +8,7 @@ MODELS=(
 DTYPE="bfloat16"
 BATCH_SIZES=(1 4)
 OUTPUT_LENS=(128 256 257 512)
-TP_SIZES=(1 2)
+TP_SIZES=(2 4)
 INPUT_BUDGET=512
 
 for model in "${MODELS[@]}"; do
