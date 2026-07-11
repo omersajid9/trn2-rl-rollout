@@ -27,3 +27,88 @@ WARNING:2026-07-11 09:15:47,199:Warning: You are sending unauthenticated request
   pytorch allocator:  allocated=15.3 GiB  reserved=15.3 GiB  peak=15.3 GiB
   neuron-monitor: n/a (cpu / binary missing)
 ===============================================================
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:20:44] ===== memory snapshot [after_warmup] device=neuron =====
+  live tensors: 509 allocations, 17.5 GiB total
+    by category: param=15.3 GiB (399)  other=2.3 GiB (110)
+    by dtype: bfloat16=17.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+         2.2 GiB      72  bfloat16    other   (16, 8, 1024, 128)    =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=17.5 GiB  reserved=17.6 GiB  peak=17.5 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+========================================================
+  PREFILL_64_COLD  total_ms=15383.0  tps=1.0
+  PREFILL_64_WARM  total_ms=1270.5  tps=12.6
+  PREFILL_127_COLD  total_ms=1266.5  tps=12.6
+  PREFILL_127_WARM  total_ms=1280.1  tps=12.5
+  PREFILL_128_COLD  total_ms=1271.1  tps=12.6
+  PREFILL_128_WARM  total_ms=1259.2  tps=12.7
+  PREFILL_256_COLD  total_ms=1263.2  tps=12.7
+  PREFILL_256_WARM  total_ms=1251.0  tps=12.8
+  PREFILL_257_COLD  total_ms=1262.3  tps=12.7
+  PREFILL_257_WARM  total_ms=1241.2  tps=12.9
+  PREFILL_512_COLD  total_ms=1257.2  tps=12.7
+  PREFILL_512_WARM  total_ms=1249.3  tps=12.8
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:21:36] ===== memory snapshot [after_prefill_sweep] device=neuron =====
+  live tensors: 509 allocations, 17.5 GiB total
+    by category: param=15.3 GiB (399)  other=2.3 GiB (110)
+    by dtype: bfloat16=17.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+         2.2 GiB      72  bfloat16    other   (16, 8, 1024, 128)    =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=17.5 GiB  reserved=17.6 GiB  peak=17.5 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+  DECODE_64_COLD  total_ms=5091.4  tps=201.1  tpt_ms=60.828  resp_tokens=64.0/64
+  DECODE_64_WARM  total_ms=5125.7  tps=199.8  tpt_ms=61.373  resp_tokens=64.0/64
+  DECODE_127_COLD  total_ms=8923.2  tps=227.7  tpt_ms=60.825  resp_tokens=127.0/127
+  DECODE_127_WARM  total_ms=8904.3  tps=228.2  tpt_ms=60.675  resp_tokens=127.0/127
+  DECODE_128_COLD  total_ms=8942.4  tps=229.0  tpt_ms=60.498  resp_tokens=128.0/128
+  DECODE_128_WARM  total_ms=8714.9  tps=235.0  tpt_ms=58.706  resp_tokens=128.0/128
+  DECODE_256_COLD  total_ms=16415.8  tps=249.5  tpt_ms=59.438  resp_tokens=256.0/256
+  DECODE_256_WARM  total_ms=16580.8  tps=247.0  tpt_ms=60.085  resp_tokens=256.0/256
+  DECODE_257_COLD  total_ms=16463.7  tps=249.8  tpt_ms=59.393  resp_tokens=257.0/257
+  DECODE_257_WARM  total_ms=16677.4  tps=246.6  tpt_ms=60.227  resp_tokens=257.0/257
+  DECODE_512_COLD  total_ms=32096.7  tps=255.2  tpt_ms=60.347  resp_tokens=512.0/512
+  DECODE_512_WARM  total_ms=31721.6  tps=258.2  tpt_ms=59.613  resp_tokens=512.0/512
+[mini_verl.mem 09:24:54] ===== memory snapshot [after_decode_sweep] device=neuron =====
+  live tensors: 509 allocations, 17.5 GiB total
+    by category: param=15.3 GiB (399)  other=2.3 GiB (110)
+    by dtype: bfloat16=17.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+         2.2 GiB      72  bfloat16    other   (16, 8, 1024, 128)    =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=17.5 GiB  reserved=17.6 GiB  peak=17.5 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+==============================================================
