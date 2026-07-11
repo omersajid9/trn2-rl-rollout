@@ -1,0 +1,41 @@
+Run directory : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk128_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]
+Log file      : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk128_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/run.log
+Config        : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk128_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/config.json
+Sampling      : do_sample=True temperature=1.0 top_p=1.0 top_k=0
+TP size       : 1
+n_samples     : 1  (effective batch: 1)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-11 06:01:31,503:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   8%|8         | 32/399 [00:00<00:01, 291.67it/s]Loading weights:  16%|#5        | 62/399 [00:00<00:01, 180.14it/s]Loading weights:  41%|####      | 162/399 [00:00<00:00, 443.15it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 817.88it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 775, in <module>
+    main()
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 768, in main
+    mini_verl_run(cfg, log_file, run_dir)
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 636, in mini_verl_run
+    engine, eos_token_id, pad_token_id = build_engine(cfg, log_file)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 379, in build_engine
+    model = model.to(device)
+            ^^^^^^^^^^^^^^^^
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3729, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1384, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/nn/modules/module.py", line 934, in _apply
+    module._apply(fn)
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/nn/modules/module.py", line 934, in _apply
+    module._apply(fn)
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/nn/modules/module.py", line 934, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/nn/modules/module.py", line 965, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1370, in convert
+    return t.to(
+           ^^^^^
+KeyboardInterrupt

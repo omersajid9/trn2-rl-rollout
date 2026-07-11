@@ -1,0 +1,111 @@
+Run directory : logs/Qwen3-8B_bf16_bs4_tp1_cache1024_chunk256_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512] (2)
+Log file      : logs/Qwen3-8B_bf16_bs4_tp1_cache1024_chunk256_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512] (2)/run.log
+Config        : logs/Qwen3-8B_bf16_bs4_tp1_cache1024_chunk256_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512] (2)/config.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-10 19:26:38,592:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:  12%|#2        | 48/399 [00:00<00:00, 477.29it/s]Loading weights:  24%|##4       | 96/399 [00:00<00:00, 369.52it/s]Loading weights:  34%|###3      | 135/399 [00:00<00:00, 344.88it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 1051.78it/s]
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 19:29:06] ===== memory snapshot [after_engine_create] device=neuron =====
+  live tensors: 401 allocations, 15.3 GiB total
+    by category: param=15.3 GiB (399)  other=512.0 B (2)
+    by dtype: bfloat16=15.3 GiB  float32=512.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+  pytorch allocator:  allocated=15.3 GiB  reserved=15.3 GiB  peak=15.3 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 19:29:51] ===== memory snapshot [after_warmup] device=neuron =====
+  live tensors: 509 allocations, 15.8 GiB total
+    by category: param=15.3 GiB (399)  other=576.0 MiB (110)
+    by dtype: bfloat16=15.8 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       576.0 MiB      72  bfloat16    other   (4, 8, 1024, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.8 GiB  reserved=15.9 GiB  peak=15.8 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+========================================================
+  PREFILL_64_COLD  total_ms=12031.9  tps=0.3
+  PREFILL_64_WARM  total_ms=197.4  tps=20.3
+  PREFILL_127_COLD  total_ms=214.1  tps=18.7
+  PREFILL_127_WARM  total_ms=211.6  tps=18.9
+  PREFILL_128_COLD  total_ms=227.3  tps=17.6
+  PREFILL_128_WARM  total_ms=230.1  tps=17.4
+  PREFILL_256_COLD  total_ms=211.7  tps=18.9
+  PREFILL_256_WARM  total_ms=202.8  tps=19.7
+  PREFILL_257_COLD  total_ms=11800.4  tps=0.3
+  PREFILL_257_WARM  total_ms=374.2  tps=10.7
+  PREFILL_512_COLD  total_ms=380.1  tps=10.5
+  PREFILL_512_WARM  total_ms=376.1  tps=10.6
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 19:30:40] ===== memory snapshot [after_prefill_sweep] device=neuron =====
+  live tensors: 509 allocations, 15.8 GiB total
+    by category: param=15.3 GiB (399)  other=576.0 MiB (110)
+    by dtype: bfloat16=15.8 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       576.0 MiB      72  bfloat16    other   (4, 8, 1024, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.8 GiB  reserved=15.9 GiB  peak=15.8 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+  DECODE_64_COLD  total_ms=2669.7  tps=95.9  tpt_ms=38.724
+  DECODE_64_WARM  total_ms=2697.3  tps=94.9  tpt_ms=39.161
+  DECODE_127_COLD  total_ms=5271.6  tps=96.4  tpt_ms=40.012
+  DECODE_127_WARM  total_ms=5583.0  tps=91.0  tpt_ms=42.484
+  DECODE_128_COLD  total_ms=5471.9  tps=93.6  tpt_ms=41.273
+  DECODE_128_WARM  total_ms=5419.3  tps=94.5  tpt_ms=40.860
+  DECODE_256_COLD  total_ms=10562.5  tps=96.9  tpt_ms=40.519
+  DECODE_256_WARM  total_ms=10445.0  tps=98.0  tpt_ms=40.058
+  DECODE_257_COLD  total_ms=10374.2  tps=99.1  tpt_ms=39.626
+  DECODE_257_WARM  total_ms=10372.8  tps=99.1  tpt_ms=39.620
+  DECODE_512_COLD  total_ms=20533.1  tps=99.7  tpt_ms=39.732
+  DECODE_512_WARM  total_ms=21033.3  tps=97.4  tpt_ms=40.711
+[mini_verl.mem 19:32:54] ===== memory snapshot [after_decode_sweep] device=neuron =====
+  live tensors: 509 allocations, 15.8 GiB total
+    by category: param=15.3 GiB (399)  other=576.0 MiB (110)
+    by dtype: bfloat16=15.8 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       576.0 MiB      72  bfloat16    other   (4, 8, 1024, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.8 GiB  reserved=15.9 GiB  peak=15.8 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+==============================================================

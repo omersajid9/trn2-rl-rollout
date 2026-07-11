@@ -1,0 +1,270 @@
+{
+  "cold": {
+    "tag": "COLD",
+    "batch_size": 16,
+    "prompts": [
+      {
+        "prompt_idx": 0,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 35.63,
+        "tpt_ms": 0.0,
+        "total_time_ms": 35.63
+      },
+      {
+        "prompt_idx": 1,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 67.99,
+        "tpt_ms": 0.0,
+        "total_time_ms": 67.99
+      },
+      {
+        "prompt_idx": 2,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 99.86,
+        "tpt_ms": 0.0,
+        "total_time_ms": 99.86
+      },
+      {
+        "prompt_idx": 3,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 132.09,
+        "tpt_ms": 0.0,
+        "total_time_ms": 132.09
+      },
+      {
+        "prompt_idx": 4,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 165.24,
+        "tpt_ms": 0.0,
+        "total_time_ms": 165.24
+      },
+      {
+        "prompt_idx": 5,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 197.06,
+        "tpt_ms": 0.0,
+        "total_time_ms": 197.06
+      },
+      {
+        "prompt_idx": 6,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 229.39,
+        "tpt_ms": 0.0,
+        "total_time_ms": 229.39
+      },
+      {
+        "prompt_idx": 7,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 261.3,
+        "tpt_ms": 0.0,
+        "total_time_ms": 261.3
+      },
+      {
+        "prompt_idx": 8,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 293.24,
+        "tpt_ms": 0.0,
+        "total_time_ms": 293.24
+      },
+      {
+        "prompt_idx": 9,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 326.04,
+        "tpt_ms": 0.0,
+        "total_time_ms": 326.04
+      },
+      {
+        "prompt_idx": 10,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 357.92,
+        "tpt_ms": 0.0,
+        "total_time_ms": 357.92
+      },
+      {
+        "prompt_idx": 11,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 390.45,
+        "tpt_ms": 0.0,
+        "total_time_ms": 390.45
+      },
+      {
+        "prompt_idx": 12,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 422.54,
+        "tpt_ms": 0.0,
+        "total_time_ms": 422.54
+      },
+      {
+        "prompt_idx": 13,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 454.86,
+        "tpt_ms": 0.0,
+        "total_time_ms": 454.86
+      },
+      {
+        "prompt_idx": 14,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 487.84,
+        "tpt_ms": 0.0,
+        "total_time_ms": 487.84
+      },
+      {
+        "prompt_idx": 15,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 520.36,
+        "tpt_ms": 0.0,
+        "total_time_ms": 520.36
+      }
+    ]
+  },
+  "warm": {
+    "tag": "WARM",
+    "batch_size": 16,
+    "prompts": [
+      {
+        "prompt_idx": 0,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 35.18,
+        "tpt_ms": 0.0,
+        "total_time_ms": 35.18
+      },
+      {
+        "prompt_idx": 1,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 66.95,
+        "tpt_ms": 0.0,
+        "total_time_ms": 66.95
+      },
+      {
+        "prompt_idx": 2,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 99.65,
+        "tpt_ms": 0.0,
+        "total_time_ms": 99.65
+      },
+      {
+        "prompt_idx": 3,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 131.67,
+        "tpt_ms": 0.0,
+        "total_time_ms": 131.67
+      },
+      {
+        "prompt_idx": 4,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 164.04,
+        "tpt_ms": 0.0,
+        "total_time_ms": 164.04
+      },
+      {
+        "prompt_idx": 5,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 196.52,
+        "tpt_ms": 0.0,
+        "total_time_ms": 196.52
+      },
+      {
+        "prompt_idx": 6,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 228.83,
+        "tpt_ms": 0.0,
+        "total_time_ms": 228.83
+      },
+      {
+        "prompt_idx": 7,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 261.47,
+        "tpt_ms": 0.0,
+        "total_time_ms": 261.47
+      },
+      {
+        "prompt_idx": 8,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 294.09,
+        "tpt_ms": 0.0,
+        "total_time_ms": 294.09
+      },
+      {
+        "prompt_idx": 9,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 325.67,
+        "tpt_ms": 0.0,
+        "total_time_ms": 325.67
+      },
+      {
+        "prompt_idx": 10,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 358.16,
+        "tpt_ms": 0.0,
+        "total_time_ms": 358.16
+      },
+      {
+        "prompt_idx": 11,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 390.61,
+        "tpt_ms": 0.0,
+        "total_time_ms": 390.61
+      },
+      {
+        "prompt_idx": 12,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 423.0,
+        "tpt_ms": 0.0,
+        "total_time_ms": 423.0
+      },
+      {
+        "prompt_idx": 13,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 455.2,
+        "tpt_ms": 0.0,
+        "total_time_ms": 455.2
+      },
+      {
+        "prompt_idx": 14,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 487.12,
+        "tpt_ms": 0.0,
+        "total_time_ms": 487.12
+      },
+      {
+        "prompt_idx": 15,
+        "input_tokens": 128,
+        "output_tokens": 1,
+        "ttft_ms": 518.85,
+        "tpt_ms": 0.0,
+        "total_time_ms": 518.85
+      }
+    ]
+  }
+}

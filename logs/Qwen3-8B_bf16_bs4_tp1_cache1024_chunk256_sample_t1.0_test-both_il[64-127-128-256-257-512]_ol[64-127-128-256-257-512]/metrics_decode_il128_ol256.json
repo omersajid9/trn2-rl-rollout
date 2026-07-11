@@ -1,0 +1,28 @@
+{
+  "batch_size": 4,
+  "n_samples": 1,
+  "runs": [
+    {
+      "run_idx": 1,
+      "tag": "COLD",
+      "input_len": 128,
+      "prompt_len": 256,
+      "output_len": 256,
+      "total_time_ms": 11861.97,
+      "tps": 86.33,
+      "tpt_ms": 45.691,
+      "response_tokens": 256.0
+    },
+    {
+      "run_idx": 2,
+      "tag": "WARM",
+      "input_len": 128,
+      "prompt_len": 256,
+      "output_len": 256,
+      "total_time_ms": 11660.01,
+      "tps": 87.82,
+      "tpt_ms": 44.899,
+      "response_tokens": 256.0
+    }
+  ]
+}

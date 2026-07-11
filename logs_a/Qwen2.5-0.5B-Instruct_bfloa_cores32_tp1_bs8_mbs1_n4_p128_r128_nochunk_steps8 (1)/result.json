@@ -1,0 +1,19 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dtype": "bfloat16",
+  "cores": 32,
+  "tp_size": 1,
+  "train_batch_size": 8,
+  "ppo_micro_batch_size": 1,
+  "rollout_n": 4,
+  "max_prompt_length": 128,
+  "max_response_length": 128,
+  "prefill_chunk_size": -1,
+  "total_steps": 8,
+  "train_files": "/home/ubuntu/data/gsm8k/train.parquet",
+  "status": "failed:RayTaskError(RuntimeError)",
+  "succeeded": false,
+  "oom_signature": null,
+  "breakdown_s": null,
+  "wall_clock_s": 38.8
+}
