@@ -1,0 +1,122 @@
+% ============================================================
+%  Prefill comparison tables: Qwen3-8B, warm and cold runs
+%
+%  Data sources:
+%    vllm_vs_miniverl-bs/         vLLM (sweep-sequential) +
+%                                 mini-verl generation c=0 (nochunk)
+%    miniverl-generation-prefill-chunk/  mini-verl generation c=128
+%    logs/                        mini-verl rollout c=0  (BS=1 only)
+%                                 mini-verl rollout c=128
+%
+%  vLLM row : TTFT in ms
+%  mini-verl rows : ratio = vLLM_TTFT / mini-verl_TTFT
+%    (ratio < 1 means mini-verl is slower than vLLM)
+% ============================================================
+
+% ── WARM TABLE ──────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} &
+        \textbf{IL=64} & \textbf{IL=127} & \textbf{IL=128} &
+        \textbf{IL=256} & \textbf{IL=257} & \textbf{IL=512} \\
+        \midrule
+        % ── BS = 1 ──
+        vLLM                         & 1 & 30.6 & 30.7 & 40.6 & 68.4 & 68.0 & 126.6 \\
+        mini-verl gen, $c{=}0$       &   & $0.36{\times}$ & $0.37{\times}$ & $0.58{\times}$ & $0.67{\times}$ & $0.62{\times}$ & $1.00{\times}$ \\
+        mini-verl rollout, $c{=}0$   &   & $0.46{\times}$ & $0.33{\times}$ & $0.42{\times}$ & $0.74{\times}$ & $0.56{\times}$ & $0.91{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $0.42{\times}$ & $0.39{\times}$ & $0.52{\times}$ & $0.53{\times}$ & $0.37{\times}$ & $0.58{\times}$ \\
+        \midrule
+        % ── BS = 4 ──
+        vLLM                         & 4 & 38.0 & 38.0 & 55.0 & 68.8 & 68.9 & 127.7 \\
+        mini-verl gen, $c{=}0$       &   & $0.33{\times}$ & $0.24{\times}$ & $0.35{\times}$ & $0.31{\times}$ & $0.22{\times}$ & $0.34{\times}$ \\
+        mini-verl gen, $c{=}128$     &   & $0.27{\times}$ & $0.25{\times}$ & $0.37{\times}$ & $0.26{\times}$ & $0.19{\times}$ & $0.28{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $0.25{\times}$ & $0.29{\times}$ & $0.41{\times}$ & $0.27{\times}$ & $0.20{\times}$ & $0.26{\times}$ \\
+        \midrule
+        % ── BS = 8 ──
+        vLLM                         & 8 & 31.7 & 31.9 & 55.3 & 70.2 & 69.5 & 128.0 \\
+        mini-verl gen, $c{=}0$       &   & $0.24{\times}$ & $0.13{\times}$ & $0.24{\times}$ & $0.19{\times}$ & $0.15{\times}$ & $0.20{\times}$ \\
+        mini-verl gen, $c{=}128$     &   & $0.15{\times}$ & $0.16{\times}$ & $0.28{\times}$ & $0.19{\times}$ & $0.12{\times}$ & $0.17{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $0.15{\times}$ & $0.14{\times}$ & $0.25{\times}$ & $0.18{\times}$ & $0.12{\times}$ & $0.17{\times}$ \\
+        \midrule
+        % ── BS = 16 ──
+        vLLM                         & 16 & 35.5 & 35.2 & 56.7 & 70.7 & 72.0 & 130.8 \\
+        mini-verl gen, $c{=}0$       &    & $0.15{\times}$ & $0.09{\times}$ & $0.15{\times}$ & $0.11{\times}$ & $0.08{\times}$ & $0.10{\times}$ \\
+        mini-verl gen, $c{=}128$     &    & $0.10{\times}$ & $0.10{\times}$ & $0.15{\times}$ & $0.10{\times}$ & $0.07{\times}$ & $0.10{\times}$ \\
+        mini-verl rollout, $c{=}128$ &    & $0.10{\times}$ & $0.09{\times}$ & $0.15{\times}$ & $0.10{\times}$ & $0.07{\times}$ & $0.10{\times}$ \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Warm} prefill comparison for Qwen3-8B.
+        The vLLM row reports TTFT (ms); mini-verl rows report
+        $\text{vLLM} / \text{mini-verl}$ (ratio ${<}1$ means mini-verl is
+        slower). For BS${=}1$ both rollout variants are shown; for
+        BS${>}1$ a generation $c{=}128$ run replaces the rollout $c{=}0$
+        run (which was not collected at those batch sizes).
+    }
+    \label{tab:qwen3-prefill-warm}
+\end{table}
+
+% ── COLD TABLE ──────────────────────────────────────────────────────────────
+%  "Cold" = first call after model load.
+%  For mini-verl, shapes not pre-compiled during engine warmup trigger
+%  on-demand XLA/Neuron compilation (~10–110 s).
+%  With chunk=128, only IL=127 and IL=128 are pre-compiled; all other
+%  IL values incur compilation.  With c=0 (nochunk) every call compiles.
+%  vLLM cold times are essentially identical to warm times.
+%
+%  This table shows absolute times in milliseconds for all rows so that
+%  both fast (< 500 ms) and compilation-bound (> 10,000 ms) entries are
+%  directly comparable.
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} &
+        \textbf{IL=64} & \textbf{IL=127} & \textbf{IL=128} &
+        \textbf{IL=256} & \textbf{IL=257} & \textbf{IL=512} \\
+        \midrule
+        % ── BS = 1 ──
+        vLLM                         & 1 & 32.2 & 32.2 & 42.5 & 69.7 & 69.8 & 127.9 \\
+        mini-verl gen, $c{=}0$       &   & 13199 & 12368 & 12475 & 11665 & 12738 & 43793 \\
+        mini-verl rollout, $c{=}0$   &   & 13128 & 12423 & 12635 & 11616 & 12726 & 12600 \\
+        mini-verl rollout, $c{=}128$ &   & 12249 & 105$^*$ & 76$^*$ & 11396 & 11507 & 10868 \\
+        \midrule
+        % ── BS = 4 ──
+        vLLM                         & 4 & 39.5 & 39.4 & 56.5 & 70.2 & 71.1 & 129.7 \\
+        mini-verl gen, $c{=}0$       &   & 50681 & 39364 & 37234 & 40486 & 52499 & 50295 \\
+        mini-verl gen, $c{=}128$     &   & 11895 & 145$^*$ & 156$^*$ & 11590 & 11848 & 11009 \\
+        mini-verl rollout, $c{=}128$ &   & 11740 & 138$^*$ & 134$^*$ & 11468 & 11772 & 11015 \\
+        \midrule
+        % ── BS = 8 ──
+        vLLM                         & 8 & 33.8 & 32.9 & 56.0 & 71.0 & 70.8 & 128.5 \\
+        mini-verl gen, $c{=}0$       &   & 38813 & 44715 & 40672 & 48549 & 67208 & 69175 \\
+        mini-verl gen, $c{=}128$     &   & 12143 & 217$^*$ & 218$^*$ & 11682 & 12029 & 11486 \\
+        mini-verl rollout, $c{=}128$ &   & 12006 & 220$^*$ & 229$^*$ & 11774 & 12041 & 11430 \\
+        \midrule
+        % ── BS = 16 ──
+        vLLM                         & 16 & 37.1 & 37.0 & 56.8 & 70.9 & 72.0 & 131.2 \\
+        mini-verl gen, $c{=}0$       &    & 43545 & 56315 & 49012 & 66217 & 108817 & 109832 \\
+        mini-verl gen, $c{=}128$     &    & 12480 & 380$^*$ & 378$^*$ & 12059 & 12388 & 11923 \\
+        mini-verl rollout, $c{=}128$ &    & 12432 & 376$^*$ & 374$^*$ & 11947 & 12340 & 11912 \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Cold} prefill latency (ms) for Qwen3-8B.
+        All values are absolute TTFT in milliseconds.
+        Large values (${\gg}1000$\,ms) reflect on-demand XLA/Neuron
+        compilation triggered on the first call to an uncompiled shape.
+        Entries marked ${}^*$ (IL\,=\,127 and IL\,=\,128 with $c{=}128$)
+        correspond to shapes pre-compiled during engine warmup, so their
+        cold latency is close to the warm latency.
+        vLLM cold times are within 1--2\,ms of its warm times.
+    }
+    \label{tab:qwen3-prefill-cold}
+\end{table}
