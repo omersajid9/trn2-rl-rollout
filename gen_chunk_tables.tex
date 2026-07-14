@@ -1,0 +1,181 @@
+% Ratio convention: row / baseline
+%   > 1 = slower than baseline
+%   < 1 = faster than baseline
+% Requires: \usepackage{booktabs,adjustbox}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{IL$=64$} & \textbf{IL$=127$} & \textbf{IL$=128$} & \textbf{IL$=256$} & \textbf{IL$=257$} & \textbf{IL$=512$} \\
+        \midrule
+        $c{=}0$ (nochunk) & 1 & 84 & 83 & 70 & 101 & 109 & 127 \\
+        $c{=}64$ & & 0.91{\times} & 1.35{\times} & 1.67{\times} & 1.87{\times} & 2.25{\times} & 2.75{\times} \\
+        $c{=}100$ & & 1.14{\times} & 1.46{\times} & 1.70{\times} & 1.75{\times} & 1.47{\times} & 2.45{\times} \\
+        $c{=}128$ & & 1.04{\times} & 0.81{\times} & 1.09{\times} & 1.20{\times} & 1.60{\times} & 1.80{\times} \\
+        $c{=}200$ & & 1.11{\times} & 1.08{\times} & 1.22{\times} & 1.79{\times} & 1.57{\times} & 1.81{\times} \\
+        $c{=}256$ & & 1.16{\times} & 1.13{\times} & 1.31{\times} & 1.03{\times} & 1.55{\times} & 1.47{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 4 & 115 & 158 & 158 & 221 & 315 & 377 \\
+        $c{=}64$ & & 1.11{\times} & 1.27{\times} & 1.23{\times} & 1.63{\times} & 1.35{\times} & 1.69{\times} \\
+        $c{=}100$ & & 1.14{\times} & 1.42{\times} & 1.44{\times} & 1.46{\times} & 1.04{\times} & 1.59{\times} \\
+        $c{=}128$ & & 1.24{\times} & 0.97{\times} & 0.95{\times} & 1.19{\times} & 1.17{\times} & 1.23{\times} \\
+        $c{=}200$ & & 1.57{\times} & 1.19{\times} & 1.21{\times} & 1.58{\times} & 1.13{\times} & 1.33{\times} \\
+        $c{=}256$ & & 1.69{\times} & 1.36{\times} & 1.25{\times} & 0.90{\times} & 1.26{\times} & 1.04{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 8 & 133 & 237 & 229 & 369 & 476 & 651 \\
+        $c{=}64$ & & 1.24{\times} & 1.09{\times} & 1.19{\times} & 1.30{\times} & 1.24{\times} & 1.41{\times} \\
+        $c{=}100$ & & 1.40{\times} & 1.51{\times} & 1.47{\times} & 1.35{\times} & 1.06{\times} & 1.48{\times} \\
+        $c{=}128$ & & 1.54{\times} & 0.83{\times} & 0.87{\times} & 1.00{\times} & 1.18{\times} & 1.13{\times} \\
+        $c{=}200$ & & 2.48{\times} & 1.42{\times} & 1.40{\times} & 1.67{\times} & 1.30{\times} & 1.38{\times} \\
+        $c{=}256$ & & 2.68{\times} & 1.55{\times} & 1.55{\times} & 0.95{\times} & 1.44{\times} & 1.04{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 16 & 232 & 386 & 367 & 631 & 926 & 1,254 \\
+        $c{=}64$ & & 1.00{\times} & 1.07{\times} & 1.14{\times} & 1.23{\times} & 1.04{\times} & 1.20{\times} \\
+        $c{=}100$ & & 1.42{\times} & 1.61{\times} & 1.67{\times} & 1.43{\times} & 0.97{\times} & 1.41{\times} \\
+        $c{=}128$ & & 1.58{\times} & 0.94{\times} & 1.05{\times} & 1.09{\times} & 1.10{\times} & 1.05{\times} \\
+        $c{=}200$ & & 2.56{\times} & 1.59{\times} & 1.62{\times} & 1.86{\times} & 1.27{\times} & 1.38{\times} \\
+        $c{=}256$ & & 2.83{\times} & 1.70{\times} & 1.81{\times} & 1.04{\times} & 1.36{\times} & 1.01{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Warm} prefill for mini-verl \emph{generation} (IL fixed). The $c{=}0$ row is the absolute TTFT (ms) baseline; chunked rows report $t_{\text{chunk}}/t_{\text{nochunk}}$ (${\!>}1$ = slower; ${\!<}1$ = faster due to fewer tokens computed per chunk).
+    }
+    \label{tab:gen-prefill-warm}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{IL$=64$} & \textbf{IL$=127$} & \textbf{IL$=128$} & \textbf{IL$=256$} & \textbf{IL$=257$} & \textbf{IL$=512$} \\
+        \midrule
+        $c{=}0$ (nochunk) & 1 & 13,199 & 12,368 & 12,475 & 11,665 & 12,738 & 43,793 \\
+        $c{=}64$ & & 1.00{\times} & 0.92{\times} & 0.01{\times} & 1.01{\times} & 0.86{\times} & 0.28{\times} \\
+        $c{=}100$ & & 7.08{\times} & 0.92{\times} & 0.01{\times} & 1.00{\times} & 0.01{\times} & 0.25{\times} \\
+        $c{=}128$ & & 0.91{\times} & 0.01{\times} & 0.01{\times} & 0.97{\times} & 0.90{\times} & 0.25{\times} \\
+        $c{=}200$ & & 4.48{\times} & 0.01{\times} & 0.01{\times} & 0.98{\times} & 0.01{\times} & 0.27{\times} \\
+        $c{=}256$ & & 0.92{\times} & 0.01{\times} & 0.01{\times} & 0.01{\times} & 0.91{\times} & 0.00{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 4 & 50,681 & 39,364 & 37,234 & 40,486 & 52,499 & 50,295 \\
+        $c{=}64$ & & 0.24{\times} & 0.29{\times} & 0.01{\times} & 0.30{\times} & 0.21{\times} & 0.25{\times} \\
+        $c{=}100$ & & 0.74{\times} & 0.30{\times} & 0.01{\times} & 0.29{\times} & 0.01{\times} & 0.23{\times} \\
+        $c{=}128$ & & 0.23{\times} & 0.00{\times} & 0.00{\times} & 0.29{\times} & 0.23{\times} & 0.22{\times} \\
+        $c{=}200$ & & 0.82{\times} & 0.00{\times} & 0.01{\times} & 0.29{\times} & 0.01{\times} & 0.24{\times} \\
+        $c{=}256$ & & 0.24{\times} & 0.01{\times} & 0.01{\times} & 0.01{\times} & 0.22{\times} & 0.01{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 8 & 38,813 & 44,715 & 40,672 & 48,549 & 67,208 & 69,175 \\
+        $c{=}64$ & & 0.31{\times} & 0.26{\times} & 0.01{\times} & 0.25{\times} & 0.17{\times} & 0.18{\times} \\
+        $c{=}100$ & & 1.06{\times} & 0.26{\times} & 0.01{\times} & 0.25{\times} & 0.01{\times} & 0.17{\times} \\
+        $c{=}128$ & & 0.31{\times} & 0.00{\times} & 0.01{\times} & 0.24{\times} & 0.18{\times} & 0.17{\times} \\
+        $c{=}200$ & & 1.33{\times} & 0.01{\times} & 0.01{\times} & 0.25{\times} & 0.01{\times} & 0.18{\times} \\
+        $c{=}256$ & & 0.32{\times} & 0.01{\times} & 0.01{\times} & 0.01{\times} & 0.18{\times} & 0.01{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 16 & 43,545 & 56,315 & 49,012 & 66,217 & 108,817 & 109,832 \\
+        $c{=}64$ & & 0.28{\times} & 0.21{\times} & 0.01{\times} & 0.19{\times} & 0.11{\times} & 0.12{\times} \\
+        $c{=}100$ & & 1.17{\times} & 0.21{\times} & 0.01{\times} & 0.19{\times} & 0.01{\times} & 0.11{\times} \\
+        $c{=}128$ & & 0.29{\times} & 0.01{\times} & 0.01{\times} & 0.18{\times} & 0.11{\times} & 0.11{\times} \\
+        $c{=}200$ & & 1.61{\times} & 0.01{\times} & 0.01{\times} & 0.19{\times} & 0.01{\times} & 0.12{\times} \\
+        $c{=}256$ & & 0.31{\times} & 0.01{\times} & 0.01{\times} & 0.01{\times} & 0.12{\times} & 0.01{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Cold} prefill for mini-verl \emph{generation}. The $c{=}0$ row is the absolute first-call latency (ms) baseline. Ratios ${\ll}1$ indicate shapes pre-compiled during engine warm-up (e.g.\ IL$\,{=}\,$128 with $c{=}128$ skips XLA compilation on the cold call).
+    }
+    \label{tab:gen-prefill-cold}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{OL$=64$} & \textbf{OL$=127$} & \textbf{OL$=128$} & \textbf{OL$=256$} & \textbf{OL$=257$} & \textbf{OL$=512$} \\
+        \midrule
+        $c{=}0$ (nochunk) & 1 & 2,370 & 4,702 & 4,700 & 9,306 & 9,478 & 18,583 \\
+        $c{=}64$ & & 1.02{\times} & 1.01{\times} & 1.01{\times} & 1.02{\times} & 1.04{\times} & 1.04{\times} \\
+        $c{=}100$ & & 1.03{\times} & 1.00{\times} & 1.00{\times} & 1.00{\times} & 0.99{\times} & 1.01{\times} \\
+        $c{=}128$ & & 1.00{\times} & 1.00{\times} & 1.00{\times} & 1.01{\times} & 0.99{\times} & 1.00{\times} \\
+        $c{=}200$ & & 1.00{\times} & 0.99{\times} & 0.99{\times} & 1.01{\times} & 1.00{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.01{\times} & 0.99{\times} & 1.01{\times} & 0.99{\times} & 0.99{\times} & 1.01{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 4 & 2,626 & 5,140 & 5,193 & 10,192 & 10,319 & 20,389 \\
+        $c{=}64$ & & 1.03{\times} & 1.03{\times} & 1.02{\times} & 1.01{\times} & 1.00{\times} & 1.00{\times} \\
+        $c{=}100$ & & 1.03{\times} & 1.00{\times} & 1.01{\times} & 1.02{\times} & 0.99{\times} & 1.00{\times} \\
+        $c{=}128$ & & 1.01{\times} & 1.00{\times} & 1.00{\times} & 1.01{\times} & 1.01{\times} & 1.00{\times} \\
+        $c{=}200$ & & 1.02{\times} & 1.01{\times} & 1.01{\times} & 1.01{\times} & 0.99{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.02{\times} & 0.99{\times} & 1.02{\times} & 1.02{\times} & 1.01{\times} & 0.99{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 8 & 2,815 & 5,433 & 5,489 & 10,817 & 10,837 & 21,819 \\
+        $c{=}64$ & & 1.01{\times} & 1.01{\times} & 1.00{\times} & 1.00{\times} & 1.02{\times} & 0.99{\times} \\
+        $c{=}100$ & & 1.06{\times} & 1.02{\times} & 1.02{\times} & 1.00{\times} & 1.01{\times} & 0.99{\times} \\
+        $c{=}128$ & & 1.01{\times} & 1.01{\times} & 1.01{\times} & 1.00{\times} & 1.00{\times} & 0.98{\times} \\
+        $c{=}200$ & & 1.06{\times} & 1.03{\times} & 1.02{\times} & 1.01{\times} & 1.01{\times} & 0.98{\times} \\
+        $c{=}256$ & & 1.04{\times} & 1.02{\times} & 1.03{\times} & 1.03{\times} & 1.02{\times} & 0.99{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 16 & 3,295 & 6,168 & 6,133 & 12,026 & 12,117 & 23,821 \\
+        $c{=}64$ & & 1.03{\times} & 1.03{\times} & 1.04{\times} & 1.02{\times} & 1.04{\times} & 1.03{\times} \\
+        $c{=}100$ & & 1.06{\times} & 1.04{\times} & 1.05{\times} & 1.02{\times} & 1.01{\times} & 1.01{\times} \\
+        $c{=}128$ & & 1.00{\times} & 1.00{\times} & 1.02{\times} & 1.00{\times} & 1.03{\times} & 1.00{\times} \\
+        $c{=}200$ & & 1.06{\times} & 1.03{\times} & 1.05{\times} & 1.03{\times} & 1.02{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.07{\times} & 1.03{\times} & 1.06{\times} & 1.01{\times} & 1.03{\times} & 1.02{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Warm} decode for mini-verl \emph{generation} (IL$\,{=}\,$128 fixed, OL varies). The $c{=}0$ row is the absolute total batch decode time (ms) baseline. Chunk size has negligible effect on decode; ratios ${\approx}1$.
+    }
+    \label{tab:gen-decode-warm}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{OL$=64$} & \textbf{OL$=127$} & \textbf{OL$=128$} & \textbf{OL$=256$} & \textbf{OL$=257$} & \textbf{OL$=512$} \\
+        \midrule
+        $c{=}0$ (nochunk) & 1 & 2,379 & 4,670 & 4,750 & 9,486 & 9,458 & 18,511 \\
+        $c{=}64$ & & 1.02{\times} & 1.01{\times} & 1.01{\times} & 1.00{\times} & 1.01{\times} & 1.08{\times} \\
+        $c{=}100$ & & 1.03{\times} & 1.02{\times} & 0.99{\times} & 0.98{\times} & 1.00{\times} & 1.01{\times} \\
+        $c{=}128$ & & 1.01{\times} & 1.01{\times} & 1.00{\times} & 1.00{\times} & 1.00{\times} & 1.00{\times} \\
+        $c{=}200$ & & 1.01{\times} & 1.01{\times} & 0.99{\times} & 0.99{\times} & 1.00{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.00{\times} & 1.00{\times} & 1.00{\times} & 1.00{\times} & 0.99{\times} & 1.00{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 4 & 2,632 & 5,197 & 5,234 & 10,124 & 10,279 & 20,451 \\
+        $c{=}64$ & & 1.03{\times} & 1.01{\times} & 1.02{\times} & 1.03{\times} & 1.00{\times} & 1.00{\times} \\
+        $c{=}100$ & & 1.02{\times} & 1.00{\times} & 1.01{\times} & 1.03{\times} & 1.00{\times} & 1.00{\times} \\
+        $c{=}128$ & & 1.02{\times} & 0.99{\times} & 0.99{\times} & 1.02{\times} & 1.01{\times} & 1.00{\times} \\
+        $c{=}200$ & & 1.00{\times} & 0.99{\times} & 1.01{\times} & 1.01{\times} & 1.01{\times} & 0.99{\times} \\
+        $c{=}256$ & & 1.03{\times} & 1.00{\times} & 1.01{\times} & 1.02{\times} & 1.01{\times} & 0.99{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 8 & 2,803 & 5,495 & 5,544 & 10,855 & 10,888 & 21,652 \\
+        $c{=}64$ & & 1.02{\times} & 0.99{\times} & 0.99{\times} & 1.00{\times} & 0.99{\times} & 0.99{\times} \\
+        $c{=}100$ & & 1.05{\times} & 1.01{\times} & 1.00{\times} & 1.00{\times} & 1.00{\times} & 1.00{\times} \\
+        $c{=}128$ & & 1.01{\times} & 0.99{\times} & 1.00{\times} & 0.99{\times} & 0.99{\times} & 0.99{\times} \\
+        $c{=}200$ & & 1.06{\times} & 1.02{\times} & 1.01{\times} & 1.01{\times} & 1.00{\times} & 0.99{\times} \\
+        $c{=}256$ & & 1.07{\times} & 1.01{\times} & 1.03{\times} & 1.03{\times} & 1.02{\times} & 1.00{\times} \\
+        \midrule
+        $c{=}0$ (nochunk) & 16 & 3,322 & 6,207 & 6,169 & 12,048 & 12,106 & 23,829 \\
+        $c{=}64$ & & 1.01{\times} & 1.04{\times} & 1.04{\times} & 1.04{\times} & 1.03{\times} & 1.03{\times} \\
+        $c{=}100$ & & 1.06{\times} & 1.03{\times} & 1.03{\times} & 1.02{\times} & 1.01{\times} & 1.00{\times} \\
+        $c{=}128$ & & 0.99{\times} & 1.00{\times} & 1.01{\times} & 0.99{\times} & 1.01{\times} & 1.03{\times} \\
+        $c{=}200$ & & 1.06{\times} & 1.03{\times} & 1.05{\times} & 1.02{\times} & 1.02{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.07{\times} & 1.03{\times} & 1.06{\times} & 1.02{\times} & 1.02{\times} & 1.01{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Cold} decode for mini-verl \emph{generation} (IL$\,{=}\,$128 fixed, OL varies). Cold and warm decode are nearly identical (no recompilation in decode). The $c{=}0$ row is the absolute baseline (ms).
+    }
+    \label{tab:gen-decode-cold}
+\end{table}
+

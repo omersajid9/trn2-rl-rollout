@@ -1,0 +1,124 @@
+% ============================================================
+%  Decode comparison tables: Qwen3-8B, warm and cold runs
+%  IL fixed at 128 for all decode experiments; columns sweep OL.
+%
+%  Data sources:
+%    vllm_vs_miniverl-bs/               vLLM (sweep-sequential) +
+%                                       mini-verl generation c=0 (nochunk)
+%    miniverl-generation-prefill-chunk/ mini-verl generation c=128
+%    logs/                              mini-verl rollout c=0  (BS=1 only)
+%                                       mini-verl rollout c=128
+%
+%  Metric: total wall-clock decode time (ms) for the full BS-prompt batch
+%    to generate OL tokens each (total_time_ms / total_ms in JSON / out.log).
+%
+%  vLLM row : absolute total decode time (ms)
+%  mini-verl rows : ratio = mini-verl / vLLM
+%    (ratio > 1  →  mini-verl is slower;
+%     ratio < 1  →  mini-verl is faster  [see BS=16])
+%
+%  NOTE: For BS=16 vLLM uses sequential continuous-batching submission,
+%  so later prompts slow down the first prompt's decode steps, inflating
+%  total_time_ms.  mini-verl processes all BS prompts as a true batch
+%  from the start, giving lower total decode time at BS=16.
+% ============================================================
+
+% ── WARM DECODE TABLE ───────────────────────────────────────────────────────
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} &
+        \textbf{OL=64} & \textbf{OL=127} & \textbf{OL=128} &
+        \textbf{OL=256} & \textbf{OL=257} & \textbf{OL=512} \\
+        \midrule
+        % ── BS = 1 ──
+        vLLM                         & 1 & 2137 & 4178 & 4214 & 8321 & 8319 & 16643 \\
+        mini-verl gen, $c{=}0$       &   & $1.11{\times}$ & $1.13{\times}$ & $1.12{\times}$ & $1.12{\times}$ & $1.14{\times}$ & $1.12{\times}$ \\
+        mini-verl rollout, $c{=}0$   &   & $1.12{\times}$ & $1.15{\times}$ & $1.14{\times}$ & $1.15{\times}$ & $1.15{\times}$ & $1.14{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $1.17{\times}$ & $1.17{\times}$ & $1.13{\times}$ & $1.14{\times}$ & $1.16{\times}$ & $1.16{\times}$ \\
+        \midrule
+        % ── BS = 4 ──
+        vLLM                         & 4 & 2493 & 4770 & 4792 & 9442 & 9471 & 19002 \\
+        mini-verl gen, $c{=}0$       &   & $1.05{\times}$ & $1.08{\times}$ & $1.08{\times}$ & $1.08{\times}$ & $1.09{\times}$ & $1.07{\times}$ \\
+        mini-verl gen, $c{=}128$     &   & $1.06{\times}$ & $1.07{\times}$ & $1.08{\times}$ & $1.09{\times}$ & $1.10{\times}$ & $1.07{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $1.14{\times}$ & $1.17{\times}$ & $1.15{\times}$ & $1.17{\times}$ & $1.14{\times}$ & $1.21{\times}$ \\
+        \midrule
+        % ── BS = 8 ──
+        vLLM                         & 8 & 2292 & 4183 & 4205 & 8252 & 8302 & 16640 \\
+        mini-verl gen, $c{=}0$       &   & $1.23{\times}$ & $1.30{\times}$ & $1.31{\times}$ & $1.31{\times}$ & $1.31{\times}$ & $1.31{\times}$ \\
+        mini-verl gen, $c{=}128$     &   & $1.24{\times}$ & $1.31{\times}$ & $1.31{\times}$ & $1.31{\times}$ & $1.31{\times}$ & $1.29{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $1.36{\times}$ & $1.45{\times}$ & $1.44{\times}$ & $1.47{\times}$ & $1.48{\times}$ & $1.46{\times}$ \\
+        \midrule
+        % ── BS = 16 ──
+        vLLM                         & 16 & 5311 & 9750 & 9820 & 19106 & 19322 & 38226 \\
+        mini-verl gen, $c{=}0$       &    & $0.62{\times}$ & $0.63{\times}$ & $0.62{\times}$ & $0.63{\times}$ & $0.63{\times}$ & $0.62{\times}$ \\
+        mini-verl gen, $c{=}128$     &    & $0.62{\times}$ & $0.64{\times}$ & $0.64{\times}$ & $0.63{\times}$ & $0.64{\times}$ & $0.62{\times}$ \\
+        mini-verl rollout, $c{=}128$ &    & $0.72{\times}$ & $0.78{\times}$ & $0.75{\times}$ & $0.77{\times}$ & $0.78{\times}$ & $0.77{\times}$ \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Warm} decode comparison for Qwen3-8B (IL$\,{=}\,$128 fixed).
+        The vLLM row reports total batch decode time (ms) to generate OL tokens
+        for all BS prompts.
+        mini-verl rows report $\text{mini-verl}\,/\,\text{vLLM}$ ratio
+        (${>}1$ means mini-verl is slower; ${<}1$ means faster).
+        At BS$\,{=}\,$16, mini-verl is faster because vLLM's sequential
+        continuous-batching submission inflates the first prompt's
+        decode time as later prompts join the batch.
+    }
+    \label{tab:qwen3-decode-warm}
+\end{table}
+
+% ── COLD DECODE TABLE ───────────────────────────────────────────────────────
+%  Unlike prefill, decode cold times are virtually identical to warm times
+%  (no XLA recompilation is triggered during decode steps).
+%  Ratios differ from warm by at most 0.03×.
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} &
+        \textbf{OL=64} & \textbf{OL=127} & \textbf{OL=128} &
+        \textbf{OL=256} & \textbf{OL=257} & \textbf{OL=512} \\
+        \midrule
+        % ── BS = 1 ──
+        vLLM                         & 1 & 2137 & 4186 & 4221 & 8327 & 8329 & 16646 \\
+        mini-verl gen, $c{=}0$       &   & $1.11{\times}$ & $1.12{\times}$ & $1.13{\times}$ & $1.14{\times}$ & $1.14{\times}$ & $1.11{\times}$ \\
+        mini-verl rollout, $c{=}0$   &   & $1.14{\times}$ & $1.14{\times}$ & $1.14{\times}$ & $1.14{\times}$ & $1.15{\times}$ & $1.16{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $1.14{\times}$ & $1.17{\times}$ & $1.14{\times}$ & $1.15{\times}$ & $1.16{\times}$ & $1.14{\times}$ \\
+        \midrule
+        % ── BS = 4 ──
+        vLLM                         & 4 & 2494 & 4762 & 4800 & 9440 & 9474 & 18981 \\
+        mini-verl gen, $c{=}0$       &   & $1.06{\times}$ & $1.09{\times}$ & $1.09{\times}$ & $1.07{\times}$ & $1.08{\times}$ & $1.08{\times}$ \\
+        mini-verl gen, $c{=}128$     &   & $1.07{\times}$ & $1.09{\times}$ & $1.08{\times}$ & $1.09{\times}$ & $1.10{\times}$ & $1.08{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $1.16{\times}$ & $1.15{\times}$ & $1.14{\times}$ & $1.15{\times}$ & $1.16{\times}$ & $1.14{\times}$ \\
+        \midrule
+        % ── BS = 8 ──
+        vLLM                         & 8 & 2295 & 4178 & 4204 & 8244 & 8303 & 16573 \\
+        mini-verl gen, $c{=}0$       &   & $1.22{\times}$ & $1.32{\times}$ & $1.32{\times}$ & $1.32{\times}$ & $1.31{\times}$ & $1.31{\times}$ \\
+        mini-verl gen, $c{=}128$     &   & $1.24{\times}$ & $1.30{\times}$ & $1.32{\times}$ & $1.30{\times}$ & $1.30{\times}$ & $1.29{\times}$ \\
+        mini-verl rollout, $c{=}128$ &   & $1.36{\times}$ & $1.44{\times}$ & $1.47{\times}$ & $1.50{\times}$ & $1.44{\times}$ & $1.48{\times}$ \\
+        \midrule
+        % ── BS = 16 ──
+        vLLM                         & 16 & 5363 & 9784 & 9824 & 19142 & 19254 & 38265 \\
+        mini-verl gen, $c{=}0$       &    & $0.62{\times}$ & $0.63{\times}$ & $0.63{\times}$ & $0.63{\times}$ & $0.63{\times}$ & $0.62{\times}$ \\
+        mini-verl gen, $c{=}128$     &    & $0.62{\times}$ & $0.63{\times}$ & $0.64{\times}$ & $0.62{\times}$ & $0.64{\times}$ & $0.64{\times}$ \\
+        mini-verl rollout, $c{=}128$ &    & $0.74{\times}$ & $0.77{\times}$ & $0.75{\times}$ & $0.77{\times}$ & $0.77{\times}$ & $0.76{\times}$ \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Cold} decode comparison for Qwen3-8B (IL$\,{=}\,$128 fixed).
+        Same metric and ratio convention as Table~\ref{tab:qwen3-decode-warm}.
+        Cold and warm decode times are nearly identical (differ by
+        ${<}\,0.03{\times}$) because decode steps do not trigger
+        XLA/Neuron recompilation.
+    }
+    \label{tab:qwen3-decode-cold}
+\end{table}

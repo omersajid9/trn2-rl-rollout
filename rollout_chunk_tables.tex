@@ -1,0 +1,185 @@
+% Ratio convention: row / baseline
+%   > 1 = slower than baseline
+%   < 1 = faster than baseline
+% Requires: \usepackage{booktabs,adjustbox}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{IL$=64$} & \textbf{IL$=127$} & \textbf{IL$=128$} & \textbf{IL$=256$} & \textbf{IL$=257$} & \textbf{IL$=512$} \\
+        \midrule
+        $c{=}128$ & 1 & 73 & 80 & 78 & 128 & 182 & 220 \\
+        $c{=}0$ (nochunk) & & 0.92{\times} & 1.17{\times} & 1.25{\times} & 0.73{\times} & 0.67{\times} & 0.63{\times} \\
+        $c{=}64$ & & 1.31{\times} & 1.55{\times} & 1.65{\times} & 1.44{\times} & 1.29{\times} & 1.61{\times} \\
+        $c{=}127$ & & 1.57{\times} & 1.08{\times} & 1.68{\times} & 1.62{\times} & 1.10{\times} & 1.34{\times} \\
+        $c{=}256$ & & 1.37{\times} & 1.24{\times} & 1.37{\times} & 0.86{\times} & 0.91{\times} & 0.75{\times} \\
+        $c{=}257$ & & 1.77{\times} & 1.46{\times} & 1.50{\times} & 1.03{\times} & 0.63{\times} & 0.95{\times} \\
+        $c{=}512$ & & 2.22{\times} & 1.79{\times} & 1.88{\times} & 1.22{\times} & 0.88{\times} & 0.66{\times} \\
+        \midrule
+        $c{=}128$ & 4 & 152 & 129 & 133 & 251 & 350 & 489 \\
+        $c{=}64$ & & 0.83{\times} & 1.51{\times} & 1.36{\times} & 1.43{\times} & 1.25{\times} & 1.37{\times} \\
+        $c{=}127$ & & 1.04{\times} & 1.17{\times} & 1.98{\times} & 1.56{\times} & 1.06{\times} & 1.27{\times} \\
+        $c{=}256$ & & 1.56{\times} & 1.56{\times} & 1.58{\times} & 0.79{\times} & 1.07{\times} & 0.79{\times} \\
+        $c{=}257$ & & 1.93{\times} & 2.40{\times} & 2.37{\times} & 1.14{\times} & 0.82{\times} & 1.17{\times} \\
+        $c{=}512$ & & 2.46{\times} & 2.92{\times} & 2.75{\times} & 1.39{\times} & 1.06{\times} & 0.73{\times} \\
+        \midrule
+        $c{=}128$ & 8 & 207 & 228 & 220 & 381 & 560 & 742 \\
+        $c{=}64$ & & 0.78{\times} & 1.13{\times} & 1.24{\times} & 1.27{\times} & 1.06{\times} & 1.22{\times} \\
+        $c{=}127$ & & 1.06{\times} & 0.97{\times} & 1.99{\times} & 1.58{\times} & 1.06{\times} & 1.33{\times} \\
+        $c{=}256$ & & 1.73{\times} & 1.56{\times} & 1.61{\times} & 0.92{\times} & 1.24{\times} & 0.94{\times} \\
+        $c{=}257$ & & 2.37{\times} & 2.17{\times} & 2.15{\times} & 1.27{\times} & 0.88{\times} & 1.24{\times} \\
+        $c{=}512$ & & 3.06{\times} & 2.82{\times} & 2.91{\times} & 1.68{\times} & 1.18{\times} & 0.89{\times} \\
+        \midrule
+        $c{=}128$ & 16 & 374 & 379 & 382 & 709 & 1,019 & 1,352 \\
+        $c{=}64$ & & 0.69{\times} & 1.17{\times} & 1.16{\times} & 1.13{\times} & 0.97{\times} & 1.12{\times} \\
+        $c{=}127$ & & 1.11{\times} & 1.09{\times} & 2.01{\times} & 1.58{\times} & 1.10{\times} & 1.35{\times} \\
+        $c{=}256$ & & 1.78{\times} & 1.75{\times} & 1.76{\times} & 0.93{\times} & 1.25{\times} & 0.94{\times} \\
+        $c{=}257$ & & 2.48{\times} & 2.49{\times} & 2.41{\times} & 1.31{\times} & 0.90{\times} & 1.33{\times} \\
+        $c{=}512$ & & 3.40{\times} & 3.38{\times} & 3.29{\times} & 1.77{\times} & 1.22{\times} & 0.92{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Warm} prefill for mini-verl \emph{rollout} ($c{=}128$ as absolute baseline, ms). Other rows report $t_{\text{chunk}}/t_{c=128}$. Ratios ${\!<}1$ mean that chunk size better matches IL (one fewer compilation boundary). The nochunk row is only available for BS$\,{=}\,1$.
+    }
+    \label{tab:rol-prefill-warm}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{IL$=64$} & \textbf{IL$=127$} & \textbf{IL$=128$} & \textbf{IL$=256$} & \textbf{IL$=257$} & \textbf{IL$=512$} \\
+        \midrule
+        $c{=}128$ & 1 & 12,249 & 105 & 76 & 11,396 & 11,507 & 10,868 \\
+        $c{=}0$ (nochunk) & & 1.07{\times} & 118.77{\times} & 165.60{\times} & 1.02{\times} & 1.11{\times} & 1.16{\times} \\
+        $c{=}64$ & & 1.07{\times} & 107.95{\times} & 1.77{\times} & 1.02{\times} & 0.94{\times} & 1.09{\times} \\
+        $c{=}127$ & & 0.99{\times} & 1.08{\times} & 148.30{\times} & 1.04{\times} & 0.02{\times} & 1.01{\times} \\
+        $c{=}256$ & & 0.98{\times} & 0.97{\times} & 1.56{\times} & 0.01{\times} & 0.99{\times} & 0.02{\times} \\
+        $c{=}257$ & & 1.00{\times} & 1.02{\times} & 1.84{\times} & 0.01{\times} & 0.01{\times} & 1.04{\times} \\
+        $c{=}512$ & & 0.96{\times} & 1.62{\times} & 2.32{\times} & 0.01{\times} & 0.02{\times} & 0.01{\times} \\
+        \midrule
+        $c{=}128$ & 4 & 11,740 & 138 & 134 & 11,468 & 11,772 & 11,015 \\
+        $c{=}64$ & & 1.02{\times} & 83.06{\times} & 1.61{\times} & 1.03{\times} & 0.93{\times} & 1.11{\times} \\
+        $c{=}127$ & & 1.03{\times} & 1.15{\times} & 85.99{\times} & 1.02{\times} & 0.03{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.02{\times} & 1.58{\times} & 1.69{\times} & 0.02{\times} & 0.99{\times} & 0.04{\times} \\
+        $c{=}257$ & & 1.05{\times} & 2.21{\times} & 2.38{\times} & 0.03{\times} & 0.03{\times} & 1.08{\times} \\
+        $c{=}512$ & & 1.05{\times} & 2.79{\times} & 2.91{\times} & 0.03{\times} & 0.03{\times} & 0.03{\times} \\
+        \midrule
+        $c{=}128$ & 8 & 12,006 & 220 & 229 & 11,774 & 12,041 & 11,430 \\
+        $c{=}64$ & & 0.98{\times} & 52.87{\times} & 1.22{\times} & 1.02{\times} & 0.93{\times} & 1.09{\times} \\
+        $c{=}127$ & & 1.08{\times} & 1.16{\times} & 50.75{\times} & 1.02{\times} & 0.05{\times} & 1.02{\times} \\
+        $c{=}256$ & & 1.03{\times} & 1.63{\times} & 1.53{\times} & 0.03{\times} & 1.00{\times} & 0.06{\times} \\
+        $c{=}257$ & & 1.10{\times} & 2.24{\times} & 2.11{\times} & 0.04{\times} & 0.04{\times} & 1.06{\times} \\
+        $c{=}512$ & & 1.11{\times} & 2.95{\times} & 2.93{\times} & 0.06{\times} & 0.06{\times} & 0.06{\times} \\
+        \midrule
+        $c{=}128$ & 16 & 12,432 & 376 & 374 & 11,947 & 12,340 & 11,912 \\
+        $c{=}64$ & & 0.95{\times} & 30.77{\times} & 1.17{\times} & 1.02{\times} & 0.93{\times} & 1.09{\times} \\
+        $c{=}127$ & & 1.17{\times} & 1.09{\times} & 33.00{\times} & 0.99{\times} & 0.09{\times} & 1.11{\times} \\
+        $c{=}256$ & & 1.07{\times} & 1.75{\times} & 1.77{\times} & 0.06{\times} & 1.02{\times} & 0.11{\times} \\
+        $c{=}257$ & & 1.18{\times} & 2.56{\times} & 2.47{\times} & 0.08{\times} & 0.08{\times} & 1.09{\times} \\
+        $c{=}512$ & & 1.24{\times} & 3.37{\times} & 3.39{\times} & 0.11{\times} & 0.10{\times} & 0.11{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Cold} prefill for mini-verl \emph{rollout} ($c{=}128$ as absolute baseline, ms). The baseline cold time is ${\sim}$12\,000\,ms (XLA compilation) except IL$\,{=}\,127$ and IL$\,{=}\,128$ which are pre-compiled. Ratios ${\ll}1$ show shapes that are pre-compiled for that chunk size.
+    }
+    \label{tab:rol-prefill-cold}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{OL$=64$} & \textbf{OL$=127$} & \textbf{OL$=128$} & \textbf{OL$=256$} & \textbf{OL$=257$} & \textbf{OL$=512$} \\
+        \midrule
+        $c{=}128$ & 1 & 2,492 & 4,891 & 4,781 & 9,509 & 9,616 & 19,275 \\
+        $c{=}0$ (nochunk) & & 0.96{\times} & 0.98{\times} & 1.01{\times} & 1.01{\times} & 0.99{\times} & 0.99{\times} \\
+        $c{=}64$ & & 1.00{\times} & 0.99{\times} & 1.03{\times} & 1.01{\times} & 1.01{\times} & 1.00{\times} \\
+        $c{=}127$ & & 0.98{\times} & 1.00{\times} & 1.03{\times} & 1.01{\times} & 1.01{\times} & 1.01{\times} \\
+        $c{=}256$ & & 0.99{\times} & 0.97{\times} & 1.02{\times} & 1.00{\times} & 1.00{\times} & 0.99{\times} \\
+        $c{=}257$ & & 1.00{\times} & 0.99{\times} & 1.01{\times} & 1.06{\times} & 1.04{\times} & 1.00{\times} \\
+        $c{=}512$ & & 0.99{\times} & 0.99{\times} & 1.01{\times} & 1.01{\times} & 0.99{\times} & 0.99{\times} \\
+        \midrule
+        $c{=}128$ & 4 & 2,830 & 5,575 & 5,509 & 11,004 & 10,816 & 22,969 \\
+        $c{=}64$ & & 1.01{\times} & 1.01{\times} & 0.99{\times} & 1.00{\times} & 1.04{\times} & 0.95{\times} \\
+        $c{=}127$ & & 1.04{\times} & 1.01{\times} & 1.04{\times} & 0.99{\times} & 1.02{\times} & 0.96{\times} \\
+        $c{=}256$ & & 1.00{\times} & 1.03{\times} & 1.06{\times} & 1.06{\times} & 1.03{\times} & 0.96{\times} \\
+        $c{=}257$ & & 1.05{\times} & 0.99{\times} & 1.02{\times} & 1.00{\times} & 1.03{\times} & 0.94{\times} \\
+        $c{=}512$ & & 1.08{\times} & 1.03{\times} & 1.03{\times} & 1.00{\times} & 1.06{\times} & 0.95{\times} \\
+        \midrule
+        $c{=}128$ & 8 & 3,119 & 6,054 & 6,040 & 12,170 & 12,262 & 24,277 \\
+        $c{=}64$ & & 1.04{\times} & 1.01{\times} & 1.03{\times} & 1.01{\times} & 1.02{\times} & 1.02{\times} \\
+        $c{=}127$ & & 1.07{\times} & 1.03{\times} & 1.06{\times} & 1.01{\times} & 1.03{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.08{\times} & 1.01{\times} & 1.06{\times} & 1.02{\times} & 0.99{\times} & 1.00{\times} \\
+        $c{=}257$ & & 1.12{\times} & 1.06{\times} & 1.11{\times} & 1.04{\times} & 1.04{\times} & 1.04{\times} \\
+        $c{=}512$ & & 1.17{\times} & 1.09{\times} & 1.07{\times} & 1.05{\times} & 1.02{\times} & 1.02{\times} \\
+        \midrule
+        $c{=}128$ & 16 & 3,838 & 7,593 & 7,388 & 14,640 & 15,094 & 29,301 \\
+        $c{=}64$ & & 1.12{\times} & 1.13{\times} & 1.17{\times} & 1.14{\times} & 1.10{\times} & 1.13{\times} \\
+        $c{=}127$ & & 1.16{\times} & 1.04{\times} & 1.08{\times} & 1.05{\times} & 1.00{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.22{\times} & 1.15{\times} & 1.16{\times} & 1.15{\times} & 1.13{\times} & 1.12{\times} \\
+        $c{=}257$ & & 1.18{\times} & 1.07{\times} & 1.08{\times} & 1.07{\times} & 1.02{\times} & 1.04{\times} \\
+        $c{=}512$ & & 1.34{\times} & 1.17{\times} & 1.18{\times} & 1.13{\times} & 1.10{\times} & 1.08{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Warm} decode for mini-verl \emph{rollout} (IL$\,{=}\,$128 fixed; $c{=}128$ as absolute baseline, ms). Chunk size has negligible effect on decode; ratios ${\approx}1$. The nochunk row is only available for BS$\,{=}\,1$.
+    }
+    \label{tab:rol-decode-warm}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcrrrrrr}
+        \toprule
+        \textbf{Backend} & \textbf{BS} & \textbf{OL$=64$} & \textbf{OL$=127$} & \textbf{OL$=128$} & \textbf{OL$=256$} & \textbf{OL$=257$} & \textbf{OL$=512$} \\
+        \midrule
+        $c{=}128$ & 1 & 2,430 & 4,879 & 4,821 & 9,607 & 9,679 & 18,925 \\
+        $c{=}0$ (nochunk) & & 1.00{\times} & 0.98{\times} & 1.00{\times} & 0.99{\times} & 0.99{\times} & 1.02{\times} \\
+        $c{=}64$ & & 1.02{\times} & 0.98{\times} & 1.01{\times} & 1.00{\times} & 1.01{\times} & 1.01{\times} \\
+        $c{=}127$ & & 1.02{\times} & 0.98{\times} & 1.01{\times} & 1.02{\times} & 1.00{\times} & 1.02{\times} \\
+        $c{=}256$ & & 1.01{\times} & 0.99{\times} & 1.01{\times} & 1.00{\times} & 0.99{\times} & 1.01{\times} \\
+        $c{=}257$ & & 1.03{\times} & 0.99{\times} & 1.01{\times} & 1.04{\times} & 1.04{\times} & 1.04{\times} \\
+        $c{=}512$ & & 1.02{\times} & 0.99{\times} & 1.01{\times} & 1.00{\times} & 0.99{\times} & 1.00{\times} \\
+        \midrule
+        $c{=}128$ & 4 & 2,888 & 5,488 & 5,495 & 10,833 & 11,031 & 21,697 \\
+        $c{=}64$ & & 1.01{\times} & 1.01{\times} & 1.01{\times} & 1.01{\times} & 1.00{\times} & 1.00{\times} \\
+        $c{=}127$ & & 1.00{\times} & 1.02{\times} & 1.05{\times} & 1.02{\times} & 1.03{\times} & 1.00{\times} \\
+        $c{=}256$ & & 1.01{\times} & 0.99{\times} & 1.09{\times} & 1.09{\times} & 1.04{\times} & 1.03{\times} \\
+        $c{=}257$ & & 1.01{\times} & 1.02{\times} & 1.01{\times} & 1.02{\times} & 1.02{\times} & 1.01{\times} \\
+        $c{=}512$ & & 1.04{\times} & 1.05{\times} & 1.05{\times} & 1.02{\times} & 1.07{\times} & 1.00{\times} \\
+        \midrule
+        $c{=}128$ & 8 & 3,129 & 6,035 & 6,164 & 12,385 & 11,932 & 24,456 \\
+        $c{=}64$ & & 1.05{\times} & 1.02{\times} & 1.03{\times} & 0.99{\times} & 1.03{\times} & 0.98{\times} \\
+        $c{=}127$ & & 1.08{\times} & 1.03{\times} & 1.02{\times} & 1.02{\times} & 1.03{\times} & 1.01{\times} \\
+        $c{=}256$ & & 1.07{\times} & 1.03{\times} & 1.03{\times} & 1.01{\times} & 1.02{\times} & 1.01{\times} \\
+        $c{=}257$ & & 1.10{\times} & 1.06{\times} & 1.05{\times} & 1.02{\times} & 1.07{\times} & 1.00{\times} \\
+        $c{=}512$ & & 1.15{\times} & 1.10{\times} & 1.07{\times} & 1.02{\times} & 1.04{\times} & 1.00{\times} \\
+        \midrule
+        $c{=}128$ & 16 & 3,987 & 7,550 & 7,411 & 14,675 & 14,740 & 29,006 \\
+        $c{=}64$ & & 1.08{\times} & 1.14{\times} & 1.18{\times} & 1.14{\times} & 1.12{\times} & 1.15{\times} \\
+        $c{=}127$ & & 1.12{\times} & 1.07{\times} & 1.09{\times} & 1.05{\times} & 1.05{\times} & 1.03{\times} \\
+        $c{=}256$ & & 1.17{\times} & 1.15{\times} & 1.19{\times} & 1.14{\times} & 1.15{\times} & 1.16{\times} \\
+        $c{=}257$ & & 1.15{\times} & 1.09{\times} & 1.10{\times} & 1.06{\times} & 1.05{\times} & 1.08{\times} \\
+        $c{=}512$ & & 1.28{\times} & 1.18{\times} & 1.21{\times} & 1.12{\times} & 1.12{\times} & 1.11{\times} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{%
+        \textbf{Cold} decode for mini-verl \emph{rollout} (IL$\,{=}\,$128 fixed; $c{=}128$ as absolute baseline, ms). Cold ${\approx}$ warm for decode (no recompilation).
+    }
+    \label{tab:rol-decode-cold}
+\end{table}
+
