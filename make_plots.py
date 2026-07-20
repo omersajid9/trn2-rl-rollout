@@ -3,13 +3,18 @@
 make_plots.py
 
 Scans logs/ for subdirectories that don't already have a plots/ subfolder.
-For each qualifying run, reads run.log and generates 4 PNG files into
+For each qualifying run, reads run.log and generates PNG files into
 logs/<run-id>/plots/:
 
-    memory.png   – host RAM + swap over time
-    cpu.png      – CPU user % + system % over time
-    hbm.png      – HBM (per-device) over time
-    unified.png  – all three stacked in one figure
+    memory.png        – host RAM + swap over time
+    cpu.png           – CPU user % + system % over time
+    hbm.png           – HBM (per-device) over time
+    neuroncore.png    – NeuronCore utilization (per-core) over time
+    hbm_breakdown.png – HBM breakdown (tensors/constants/model_code/
+                        model_shared_scratchpad/runtime_memory), one
+                        subplot per category, one line per device
+    unified.png       – memory/cpu/hbm/neuroncore stacked in one figure
+    latency.png       – per-size PREFILL/DECODE latency (COLD vs WARM)
 
 Run from /home/ubuntu/inf2/:
     python make_plots.py
@@ -179,6 +184,34 @@ def parse_log(log_path: Path):
                 hbm_times[dev].append(times_min[i])
                 hbm_series[dev].append(val)
 
+    # HBM breakdown: per-device sub-metrics (tensors, constants, model_code,
+    # model_shared_scratchpad, runtime_memory, ...) — only categories/devices
+    # that appear at least once
+    hbm_breakdown_devices = sorted(
+        {k for _, r in mem_records for k in r.get("hbm_breakdown", {})}, key=int
+    )
+    hbm_breakdown_categories = sorted({
+        cat
+        for _, r in mem_records
+        for dev_data in r.get("hbm_breakdown", {}).values()
+        for cat in dev_data
+    })
+    hbm_breakdown_times  = {cat: {d: [] for d in hbm_breakdown_devices}
+                            for cat in hbm_breakdown_categories}
+    hbm_breakdown_series = {cat: {d: [] for d in hbm_breakdown_devices}
+                            for cat in hbm_breakdown_categories}
+    for i, (_, r) in enumerate(mem_records):
+        breakdown = r.get("hbm_breakdown", {})
+        for dev in hbm_breakdown_devices:
+            dev_data = breakdown.get(dev)
+            if not dev_data:
+                continue
+            for cat in hbm_breakdown_categories:
+                val = dev_data.get(cat)
+                if val is not None:
+                    hbm_breakdown_times[cat][dev].append(times_min[i])
+                    hbm_breakdown_series[cat][dev].append(val)
+
     # NeuronCore utilization: only cores that appear at least once
     nc_devices = sorted(
         {k for _, r in mem_records for k in r.get("neuroncore_util_pct", {})}, key=int
@@ -212,6 +245,10 @@ def parse_log(log_path: Path):
         "hbm_devices":  hbm_devices,
         "hbm_times":    hbm_times,
         "hbm_series":   hbm_series,
+        "hbm_breakdown_devices":    hbm_breakdown_devices,
+        "hbm_breakdown_categories": hbm_breakdown_categories,
+        "hbm_breakdown_times":      hbm_breakdown_times,
+        "hbm_breakdown_series":     hbm_breakdown_series,
         "nc_devices":   nc_devices,
         "nc_times":     nc_times,
         "nc_series":    nc_series,
@@ -258,6 +295,23 @@ def draw_hbm(ax, data):
     ax.grid(axis="y", ls=":", alpha=0.4)
 
 
+def draw_hbm_breakdown_category(ax, data, category):
+    """Draw one HBM-breakdown category (e.g. 'tensors') — one line per device."""
+    devices = data["hbm_breakdown_devices"]
+    if devices:
+        for j, dev in enumerate(devices):
+            col = HBM_COLORS[j % len(HBM_COLORS)]
+            ax.plot(data["hbm_breakdown_times"][category][dev],
+                    data["hbm_breakdown_series"][category][dev],
+                    lw=1.4, color=col, label=f"Device {dev}")
+    else:
+        ax.text(0.5, 0.5, "No HBM breakdown data in log", transform=ax.transAxes,
+                ha="center", va="center", color="grey")
+    ax.set_ylabel(category.replace("_", " ").title(), fontsize=9)
+    ax.yaxis.set_major_formatter(ticker.FormatStrFormatter("%.2f"))
+    ax.grid(axis="y", ls=":", alpha=0.4)
+
+
 def draw_neuroncore(ax, data):
     if data["nc_devices"]:
         for j, dev in enumerate(data["nc_devices"]):
@@ -301,10 +355,17 @@ def format_xaxis(ax):
 
 
 def add_top_legend(fig, data_handles, data_labels, phase_handles, run_id):
-    """Place a single legend panel at the top of the figure."""
+    """
+    Place a single legend panel at the top of the figure.
+
+    The legend can grow to many rows (one per unique phase-marker label),
+    so instead of shrinking/overlapping the axes we grow the figure itself
+    by exactly the legend's rendered height, guaranteeing no overlap
+    regardless of how many entries end up in it.
+    """
     handles = data_handles + list(phase_handles.values())
     labels  = data_labels  + list(phase_handles.keys())
-    fig.legend(
+    legend = fig.legend(
         handles, labels,
         loc="upper center",
         bbox_to_anchor=(0.5, 1.0),
@@ -316,6 +377,21 @@ def add_top_legend(fig, data_handles, data_labels, phase_handles, run_id):
         title_fontsize=8,
         handlelength=1.8,
     )
+
+    # Measure the legend's actual rendered height, then grow the figure by
+    # that much (rather than shrinking the axes) and push the axes' top
+    # boundary down below the legend. Fractions used with bbox_to_anchor
+    # and subplots_adjust are resolution-independent, so this keeps the
+    # legend pinned to the new top edge without touching axes sizing.
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    legend_height_in = legend.get_window_extent(renderer).height / fig.dpi
+    pad_in = 0.15
+    width_in, height_in = fig.get_size_inches()
+    new_height_in = height_in + legend_height_in + pad_in
+    fig.set_size_inches(width_in, new_height_in)
+    new_top = 1.0 - (legend_height_in + pad_in) / new_height_in
+    fig.subplots_adjust(top=new_top)
 
 
 # ── plot builders ──────────────────────────────────────────────────────────────
@@ -347,6 +423,42 @@ def _save_unified(data, path, run_id):
     format_xaxis(ax_nc)
 
     # Deduplicate data handles across all three axes
+    seen_labels, all_dh, all_dl = set(), [], []
+    for ax in axes:
+        for h, l in zip(*ax.get_legend_handles_labels()):
+            if l not in seen_labels:
+                all_dh.append(h); all_dl.append(l)
+                seen_labels.add(l)
+
+    add_top_legend(fig, all_dh, all_dl, phase_handles, run_id)
+    fig.savefig(path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+def _save_hbm_breakdown(data, path, run_id):
+    """
+    One subplot per HBM-breakdown category (tensors, constants, model_code,
+    model_shared_scratchpad, runtime_memory, ...), each showing one line per
+    device, so that a category driving an HBM increase is easy to spot.
+    """
+    categories = data.get("hbm_breakdown_categories", [])
+    if not categories:
+        return
+
+    n = len(categories)
+    fig, axes = plt.subplots(
+        n, 1, figsize=(14, max(2.6, 13 / 4) * n), sharex=True,
+        gridspec_kw={"hspace": 0.08, "height_ratios": [1] * n},
+    )
+    axes = [axes] if n == 1 else list(axes)
+
+    for ax, cat in zip(axes, categories):
+        draw_hbm_breakdown_category(ax, data, cat)
+
+    phase_handles = draw_phase_markers(axes, data["phase_events"])
+    format_xaxis(axes[-1])
+
+    # Deduplicate data handles (device labels) across all category axes
     seen_labels, all_dh, all_dl = set(), [], []
     for ax in axes:
         for h, l in zip(*ax.get_legend_handles_labels()):
@@ -455,9 +567,10 @@ def process_log_folder(log_dir: Path):
     _save_single(draw_hbm,        data, plots_dir / "hbm.png",         run_id)
     _save_single(draw_neuroncore, data, plots_dir / "neuroncore.png",  run_id)
     _save_unified(data, plots_dir / "unified.png", run_id)
+    _save_hbm_breakdown(data, plots_dir / "hbm_breakdown.png", run_id)
     _save_latency(data, plots_dir / "latency.png", run_id)
 
-    print(f"    ✓ 6 plots saved → {plots_dir}")
+    print(f"    ✓ plots saved → {plots_dir}")
 
 
 # ── entry point ────────────────────────────────────────────────────────────────
