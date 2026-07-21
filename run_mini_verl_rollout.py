@@ -642,6 +642,141 @@ def decode_sweep(
     log(log_file, "DECODE_TEST DONE")
 
 
+# ─── GRAPH-CACHE MEMORY SWEEP ─────────────────────────────────────────────────
+# Experiment 2: with --prefill-chunk-size 0, every distinct input_len is a
+# genuinely distinct NEFF shape (no chunk-boundary reuse). Sweeping a wide
+# range of input_lens in ONE long-lived process therefore accumulates N
+# distinct compiled graphs, and a synchronous neuron-monitor snapshot taken
+# right after each shape's WARM run gives the marginal HBM cost of caching
+# that Nth graph (mainly the ``model_code`` category) — this is the direct
+# data for "how many graphs fit before HBM pressure".
+#
+# A REVISIT pass then re-runs every input_len from the forward pass ONE more
+# time, in the same order. If the runtime keeps all N NEFFs loaded,
+# ``recompiled_graphs`` stays 0 for every revisit. If it evicts under memory
+# pressure, an early shape will show ``recompiled_graphs=1`` again on revisit —
+# a real recompile forced by that NEFF having been unloaded. That is the
+# direct, falsifiable answer to "does it evict old NEFFs once too many
+# accumulate", rather than a guess about undocumented runtime internals.
+#
+# Label format ``GRAPHCACHE_{input_len}_{COLD|WARM}`` / ``GRAPHCACHE_REVISIT_{input_len}``.
+
+def _bytes_to_gb(n: float) -> float:
+    return round(n / 1_073_741_824, 3)
+
+
+def _graphcache_snapshot(
+    run_dir:   Path,
+    records:   list[dict],
+    input_len: int,
+    phase:     str,
+    m:         RunMetrics,
+) -> dict:
+    """Take one synchronous neuron-monitor snapshot, append + persist a record.
+
+    Uses ``log_memory_snapshot`` directly (not the 1s-period background
+    logger) so the reading is taken exactly when this shape's run just
+    finished — a deterministic point in time, not raced against a poll tick.
+    """
+    snap = log_memory_snapshot(f"graphcache_{phase}_il{input_len}", neuron_monitor=True)
+    nm = snap.neuron_monitor
+
+    if not nm or "error" in nm:
+        hbm_by_nc: dict            = {}
+        model_code_total_gb: float | None = None
+        device_used_gb:      float | None = None
+    else:
+        nc_data = nm.get("neuroncores", {})
+        hbm_by_nc = {
+            str(nc_idx): {k: _bytes_to_gb(v) for k, v in cats.items()}
+            for nc_idx, cats in nc_data.items()
+        }
+        model_code_total_gb = _bytes_to_gb(sum(cats.get("model_code", 0) for cats in nc_data.values()))
+        device_used_gb       = _bytes_to_gb(nm.get("neuron_device_used_bytes", 0))
+
+    record = {
+        "phase":                       phase,  # "cold" | "warm" | "revisit"
+        "input_len":                   input_len,
+        "total_time_ms":               round(m.total_time_ms, 2),
+        "recompiled_graphs":           m.recompiled_graphs,
+        "graphs_generated_cumulative": compiled_graph_count(),
+        "device_used_gb":              device_used_gb,
+        "model_code_total_gb":         model_code_total_gb,
+        "hbm_breakdown_gb":            hbm_by_nc,
+    }
+    records.append(record)
+    with open(run_dir / "graph_cache_sweep.json", "w", encoding="utf-8") as f:
+        json.dump(records, f, indent=2)
+    return record
+
+
+def graph_cache_sweep(
+    engine:       GenEngine,
+    cfg,
+    corpus:       list[int],
+    log_file:     Path,
+    run_dir:      Path,
+    eos_token_id: int,
+    pad_token_id: int,
+) -> None:
+    """Accumulate one distinct NEFF per input_len; track HBM growth + eviction.
+
+    Writes every record to ``run_dir / "graph_cache_sweep.json"`` (overwritten
+    after each shape, so a partial sweep is still usable) with one entry per
+    (input_len, phase) — the series to plot is ``model_code_total_gb`` vs
+    ``graphs_generated_cumulative``.
+    """
+    if cfg.prefill_chunk_size != 0:
+        log(log_file, (
+            f"WARNING GRAPHCACHE expects --prefill-chunk-size 0 "
+            f"(got {cfg.prefill_chunk_size}); shapes may collapse onto shared chunk graphs."
+        ))
+
+    log(log_file, "GRAPHCACHE_TEST START")
+    records: list[dict] = []
+
+    # Pass 1 — forward accumulation: visit each shape once, COLD (compiles if
+    # new) + WARM (should show recompiled_graphs=0 — the shape it JUST built).
+    for input_len in cfg.input_lens:
+        for run_idx, tag in ((1, "COLD"), (2, "WARM")):
+            label = f"GRAPHCACHE_{input_len}_{tag}"
+            log(log_file, f"{label} START")
+            m = _run_rollout(
+                engine, cfg, corpus, input_len, _PREFILL_OUTPUT_LEN, run_idx,
+                eos_token_id, pad_token_id,
+            )
+            log(log_file, f"{label} DONE")
+            rec = _graphcache_snapshot(run_dir, records, input_len, tag.lower(), m)
+            recompile_flag = f"  [RECOMPILE x{m.recompiled_graphs}]" if m.recompiled_graphs else ""
+            mc = rec["model_code_total_gb"]
+            mc_str = "n/a" if mc is None else f"{mc:.3f}GiB"
+            print(
+                f"  {label}  total_ms={m.total_time_ms:.1f}"
+                f"  model_code_total={mc_str}"
+                f"  graphs={rec['graphs_generated_cumulative']}{recompile_flag}"
+            )
+        time.sleep(1)
+
+    # Pass 2 — revisit every shape once more, now that N-1 OTHER shapes have
+    # been compiled in between. recompiled_graphs>0 here means eviction.
+    log(log_file, "GRAPHCACHE_REVISIT START")
+    for input_len in cfg.input_lens:
+        label = f"GRAPHCACHE_REVISIT_{input_len}"
+        log(log_file, f"{label} START")
+        m = _run_rollout(
+            engine, cfg, corpus, input_len, _PREFILL_OUTPUT_LEN, 3,
+            eos_token_id, pad_token_id,
+        )
+        log(log_file, f"{label} DONE")
+        rec = _graphcache_snapshot(run_dir, records, input_len, "revisit", m)
+        verdict = "EVICTED, recompiled" if m.recompiled_graphs else "still cached"
+        print(f"  {label}  total_ms={m.total_time_ms:.1f}  {verdict}")
+        time.sleep(1)
+    log(log_file, "GRAPHCACHE_REVISIT DONE")
+
+    log(log_file, "GRAPHCACHE_TEST DONE")
+
+
 # ─── TOP-LEVEL RUN ────────────────────────────────────────────────────────────
 
 def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
@@ -666,12 +801,12 @@ def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
     engine, eos_token_id, pad_token_id = build_engine(cfg, log_file)
     time.sleep(10)
 
-    log_memory_snapshot("after_engine_create", neuron_monitor=False)
+    log_memory_snapshot("after_engine_create", neuron_monitor=True)
 
     do_warmup(engine, cfg, corpus, log_file, eos_token_id, pad_token_id)
     time.sleep(10)
 
-    log_memory_snapshot("after_warmup", neuron_monitor=False)
+    log_memory_snapshot("after_warmup", neuron_monitor=True)
 
     warm_prefill_ms: dict[int, float] = {}
 
@@ -680,7 +815,7 @@ def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
             engine, cfg, corpus, log_file, run_dir, eos_token_id, pad_token_id,
         )
         time.sleep(10)
-        log_memory_snapshot("after_prefill_sweep", neuron_monitor=False)
+        log_memory_snapshot("after_prefill_sweep", neuron_monitor=True)
 
     if cfg.test in ("decode", "both"):
         # If the prefill sweep was skipped, measure a quick baseline for
@@ -697,7 +832,14 @@ def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
             eos_token_id, pad_token_id, warm_prefill_ms,
         )
         time.sleep(10)
-        log_memory_snapshot("after_decode_sweep", neuron_monitor=False)
+        log_memory_snapshot("after_decode_sweep", neuron_monitor=True)
+
+    if cfg.test == "graphcache":
+        graph_cache_sweep(
+            engine, cfg, corpus, log_file, run_dir, eos_token_id, pad_token_id,
+        )
+        time.sleep(10)
+        log_memory_snapshot("after_graphcache_sweep", neuron_monitor=True)
 
     drop_caches(log_file)
     time.sleep(10)
@@ -733,7 +875,10 @@ def parse_args():
                    help="Output lengths (max_new_tokens) for the decode sweep.")
     p.add_argument("--decode-input-len", type=int, default=DEFAULTS["decode_input_len"],
                    help="Fixed input length used throughout the decode sweep.")
-    p.add_argument("--test", choices=["prefill", "decode", "both"], default=DEFAULTS["test"])
+    p.add_argument("--test", choices=["prefill", "decode", "both", "graphcache"],
+                   default=DEFAULTS["test"],
+                   help="'graphcache' runs the graph-cache HBM-scaling sweep "
+                        "(see graph_cache_sweep()) instead of the prefill/decode benchmarks.")
     p.add_argument("--tp-size", type=int, default=DEFAULTS["tp_size"],
                    help="Tensor-parallel degree passed to GenEngine (1 = single replica).")
     # Rollout-specific parameters

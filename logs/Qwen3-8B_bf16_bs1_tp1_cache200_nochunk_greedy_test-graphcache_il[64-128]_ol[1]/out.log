@@ -1,0 +1,10 @@
+Run directory : logs/Qwen3-8B_bf16_bs1_tp1_cache200_nochunk_greedy_test-graphcache_il[64-128]_ol[1]
+Log file      : logs/Qwen3-8B_bf16_bs1_tp1_cache200_nochunk_greedy_test-graphcache_il[64-128]_ol[1]/run.log
+Config        : logs/Qwen3-8B_bf16_bs1_tp1_cache200_nochunk_greedy_test-graphcache_il[64-128]_ol[1]/config.json
+Sampling      : do_sample=False (greedy)
+TP size       : 1
+n_samples     : 1  (effective batch: 1)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-21 09:23:10,728:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   1%|1         | 5/399 [00:00<00:08, 49.23it/s]Loading weights:   3%|2         | 10/399 [00:00<00:10, 37.36it/s]Loading weights:  15%|#4        | 59/399 [00:00<00:01, 202.46it/s]Loading weights:  46%|####6     | 185/399 [00:00<00:00, 560.62it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 822.86it/s]

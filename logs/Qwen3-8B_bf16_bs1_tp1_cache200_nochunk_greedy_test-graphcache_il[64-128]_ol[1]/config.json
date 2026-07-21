@@ -1,0 +1,26 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "dtype": "bfloat16",
+  "batch_size": 1,
+  "n_samples": 1,
+  "effective_batch": 1,
+  "max_cache_len": 200,
+  "prefill_chunk_size": 0,
+  "input_lens": [
+    64,
+    128
+  ],
+  "output_lens": [
+    1
+  ],
+  "decode_input_len": 64,
+  "prefill_output_len": 1,
+  "tp_size": 1,
+  "test": "graphcache",
+  "do_sample": false,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "sampling_mode": "do_sample=False (greedy)",
+  "ignore_eos": false
+}
