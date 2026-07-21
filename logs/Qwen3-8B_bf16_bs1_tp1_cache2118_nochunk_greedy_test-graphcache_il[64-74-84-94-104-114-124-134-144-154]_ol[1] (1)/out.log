@@ -2445,3 +2445,74 @@ V0721 10:23:53.810000 56901 torch/_dynamo/guards.py:4760] [0/21] [__recompiles] 
 V0721 10:23:53.810000 56901 torch/_dynamo/guards.py:4760] [0/21] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 254
 V0721 10:23:53.810000 56901 torch/_dynamo/guards.py:4760] [0/21] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 254
 V0721 10:23:53.810000 56901 torch/_dynamo/guards.py:4760] [0/21] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 254
+[0m2026-Jul-21 10:24:52.334283 56901:63423  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:24:52.334340 56901:63423  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:24:52.334351 56901:63423  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:24:52.334347 56901:63424  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:24:52.334401 56901:63424  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:24:52.334414 56901:63424  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:24:52.495501 56901:63423  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 428829/428829 desc's, total tx/rx size: 675937996/675937996[0m
+[0m2026-Jul-21 10:24:52.496828 56901:63424  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 428829/428829 desc's, total tx/rx size: 675937996/675937996[0m
+[0m2026-Jul-21 10:24:52.513423 56901:63424  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 24044/12774 desc's, total tx/rx size: 183125792/91565904[0m
+[0m2026-Jul-21 10:24:52.518867 56901:63424  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 9006/9006 desc's, total tx/rx size: 18791544/18791544[0m
+[0m2026-Jul-21 10:24:52.545860 56901:63423  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 332220/167490 desc's, total tx/rx size: 196826848/99457296[0m
+[0m2026-Jul-21 10:24:52.553262 56901:63423  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 9006/9006 desc's, total tx/rx size: 18791544/18791544[0m
+[0m2026-Jul-21 10:24:52.582829 56901:63424  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 1.584GB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 35.564MB
+	* model code: 21.306MB
+	* model constants: 96.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.102KB
+	* dma rings io: 148.000KB
+	* dma rings spill: 13.669MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 10:24:52.620111 56901:63423  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 17.594GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 42.678MB
+	* model code: 21.357MB
+	* model constants: 96.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.102KB
+	* dma rings io: 148.000KB
+	* dma rings spill: 20.733MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 10:24:57] ===== memory snapshot [graphcache_cold_il254] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=19.2 GiB  host_used=11.4 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     9.7 MiB     3.5 GiB    64.0 MiB    15.2 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+=================================================================
+  GRAPHCACHE_254_COLD  total_ms=58929.5  model_code_total=3.467GiB  graphs=22  [RECOMPILE x1]
