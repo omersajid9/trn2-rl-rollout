@@ -1517,3 +1517,118 @@ V0721 10:13:28.495000 56901 torch/_dynamo/guards.py:4760] [0/13] [__recompiles] 
 V0721 10:13:28.495000 56901 torch/_dynamo/guards.py:4760] [0/13] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 174
 V0721 10:13:28.495000 56901 torch/_dynamo/guards.py:4760] [0/13] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 174
 V0721 10:13:28.495000 56901 torch/_dynamo/guards.py:4760] [0/13] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 174
+[0m2026-Jul-21 10:14:31.839468 56901:60883  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:14:31.839520 56901:60883  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:14:31.839530 56901:60883  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:14:31.839474 56901:60884  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:14:31.839666 56901:60884  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:14:31.839681 56901:60884  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 10:14:31.886032 56901:60884  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 117330/117330 desc's, total tx/rx size: 244435000/244435000[0m
+[0m2026-Jul-21 10:14:31.890912 56901:60883  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 135852/135852 desc's, total tx/rx size: 248404000/248404000[0m
+[0m2026-Jul-21 10:14:31.905717 56901:60884  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 34452/18314 desc's, total tx/rx size: 222386272/111197488[0m
+[0m2026-Jul-21 10:14:31.908850 56901:60884  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 4932/2626 desc's, total tx/rx size: 34213856/17107568[0m
+[0m2026-Jul-21 10:14:31.915776 56901:60883  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 42030/22565 desc's, total tx/rx size: 246378400/123430000[0m
+[0m2026-Jul-21 10:14:31.929957 56901:60884  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45094/45094 desc's, total tx/rx size: 25921336/25921336[0m
+[0m2026-Jul-21 10:14:31.952227 56901:60883  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 308852/154610 desc's, total tx/rx size: 35429536/17715504[0m
+[0m2026-Jul-21 10:14:31.952241 56901:60883  INFO  TDRV:drs_create_data_refill_rings            WARNING: Warning: detected memory copies with inefficient transfer size. Queue qSPSpillReload0_defId_2 has an average tx/rx size of 114/114. This can cause sub-optimal Neuron performance. Model module.neff[0m
+[0m2026-Jul-21 10:14:31.974173 56901:60883  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45094/45094 desc's, total tx/rx size: 25921336/25921336[0m
+[0m2026-Jul-21 10:14:31.980548 56901:60884  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 1.333GB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 22.952MB
+	* model code: 17.255MB
+	* model constants: 96.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.070KB
+	* dma rings io: 733.750KB
+	* dma rings spill: 4.537MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 10:14:32.030019 56901:60883  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 17.252GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 30.765MB
+	* model code: 17.366MB
+	* model constants: 96.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.070KB
+	* dma rings io: 733.750KB
+	* dma rings spill: 12.239MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 10:14:35] ===== memory snapshot [graphcache_cold_il174] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=18.6 GiB  host_used=8.6 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     8.2 MiB     2.9 GiB    64.0 MiB     9.6 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+=================================================================
+  GRAPHCACHE_174_COLD  total_ms=63673.2  model_code_total=2.881GiB  graphs=14  [RECOMPILE x1]
+[mini_verl.mem 10:14:39] ===== memory snapshot [graphcache_warm_il174] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=18.6 GiB  host_used=8.6 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     8.2 MiB     2.9 GiB    64.0 MiB     9.6 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+=================================================================
+  GRAPHCACHE_174_WARM  total_ms=110.2  model_code_total=2.881GiB  graphs=14
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     triggered by the following guard failure(s):
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/13: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 174, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/12: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 164, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/11: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 154, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/10: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 144, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/9: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 134, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/8: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 124, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/7: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 114, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/6: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 104, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/5: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 94, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/4: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 84, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/3: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 74, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 184
+V0721 10:14:40.115000 56901 torch/_dynamo/guards.py:4760] [0/14] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 184
