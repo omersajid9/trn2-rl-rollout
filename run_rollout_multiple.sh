@@ -18,12 +18,12 @@
 set -uo pipefail
 
 # ─── SWEEP PARAMETERS ─────────────────────────────────────────────────────────
-TP_SIZES=(1 2 4)
+TP_SIZES=(2 4)
 MODELS=(
     "Qwen/Qwen3-8B"
 )
 BATCH_SIZES=(1 4 8 16)
-N_SAMPLES=(1 4 8)          # extend to (1 4 8) to sweep GRPO group sizes
+N_SAMPLES=(1)          # extend to (1 4 8) to sweep GRPO group sizes
 
 # ─── PYTHON INTERPRETER ───────────────────────────────────────────────────────
 PYTHON_MINI_VERL="/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/bin/python3"
@@ -36,7 +36,7 @@ MAX_CACHE_LEN=1024
 DECODE_INPUT_LEN=128
 TEMPERATURE=1.0
 
-PREFILL_CHUNK_SIZES=(64 127 128 256 257 512)
+PREFILL_CHUNK_SIZES=(64)
 
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 cleanup() {

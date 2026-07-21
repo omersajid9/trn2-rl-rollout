@@ -16,8 +16,30 @@ from pathlib import Path
 import types
 
 import torch
+import torch._logging
 
 torch._dynamo.config.recompile_limit = 10000
+
+# ─── RECOMPILE OBSERVABILITY ──────────────────────────────────────────────────
+# One-line signal, native to torch (no vLLM involved): fires the moment a guard
+# on the compiled forward fails and Dynamo has to retrace, naming the guard that
+# broke, e.g. "tensor 'input_ids' stride mismatch at index 0. expected 8, actual
+# 16" — silent otherwise. Pairs with compiled_graph_count() below, which tells
+# you whether that retrace actually reached neuronx-cc and built a new NEFF.
+torch._logging.set_logs(recompiles=True)
+
+
+def compiled_graph_count() -> int:
+    """Total NEFFs the neuron torch.compile backend has built so far in this process.
+
+    Backed by torch_neuronx.neuron_dynamo_backend.metrics.record_compilation(), which
+    bumps counters["neuron"]["compiled_graphs"] exactly once per graph that reaches
+    neuronx-cc — i.e. once per Dynamo recompile NOT served by an already-compiled
+    graph. Always 0 on CPU (the backend module is never even loaded). Diffing this
+    before/after a call is a cheap way to prove a "WARM" run stayed warm.
+    """
+    return torch._dynamo.utils.counters["neuron"]["compiled_graphs"]
+
 
 # mini_verl.platform.__init__ imports ray_resources → verl, which is not
 # installed in every venv.  Stub it out before the package __init__ runs so
@@ -40,11 +62,12 @@ DEFAULTS = {
     "dtype": "bfloat16",
     "batch_size": 1,
     "max_cache_len": 1024,
-    "prefill_chunk_size": 0,
+    "prefill_chunk_size": 64,
     "input_lens": [64, 127, 128, 129, 255, 256, 257, 512],
-    "output_lens": [64, 127, 128, 129, 255, 256, 257, 512],
+    "output_lens": [0],
+    # "output_lens": [64, 127, 128, 129, 255, 256, 257, 512],
     "decode_input_len": 130,
-    "test": "both",
+    "test": "prefill",
     "tp_size": 1,
 }
 
@@ -74,6 +97,7 @@ class RunMetrics:
     total_time_ms: float = 0.0
     tps: float = 0.0
     tpt_ms: float = 0.0
+    recompiled_graphs: int = 0  # new NEFFs built by engine.generate() during this run; see compiled_graph_count()
 
 
 class Tee:
@@ -110,6 +134,7 @@ def save_metrics(path: Path, metrics: list[RunMetrics]) -> None:
                 "total_time_ms": round(m.total_time_ms, 2),
                 "tps": round(m.tps, 2),
                 "tpt_ms": round(m.tpt_ms, 3),
+                "recompiled_graphs": m.recompiled_graphs,
             }
             for m in metrics
         ],
@@ -142,7 +167,7 @@ def setup_run_dir(cfg) -> tuple[Path, Path, Path]:
         f"_test-{cfg.test}"
         f"_il[{il_vals}]_ol[{ol_vals}]"
     )
-    logs_dir  = Path("logs")
+    logs_dir  = Path("logs").resolve()
     candidate = logs_dir / base
     counter   = 1
     while candidate.exists():
@@ -392,6 +417,7 @@ def do_warmup(
         eos_token_id=eos_token_id, pad_token_id=pad_token_id,
     )
     log(log_file, "WARMUP DONE")
+    print(f"  graphs_generated={compiled_graph_count()}")
 
 
 # ─── SINGLE TIMED RUN ─────────────────────────────────────────────────────────
@@ -421,12 +447,14 @@ def _run_one(
         ignore_eos=True,    # always run full max_new_tokens for fair comparisons
     )
 
+    graphs_before = compiled_graph_count()
     t0 = device_time()
     engine.generate(
         input_ids, attention_mask, params,
         eos_token_id=eos_token_id, pad_token_id=pad_token_id,
     )
     t1 = device_time()
+    recompiled_graphs = compiled_graph_count() - graphs_before
 
     total_ms = (t1 - t0) * 1_000.0
     tokens   = cfg.batch_size * output_len
@@ -440,6 +468,7 @@ def _run_one(
         run_idx=run_idx,
         total_time_ms=total_ms,
         tps=tps,
+        recompiled_graphs=recompiled_graphs,
     )
 
 
@@ -475,7 +504,8 @@ def prefill_sweep(
                 eos_token_id, pad_token_id,
             )
             log(log_file, f"{label} DONE")
-            print(f"  {label}  total_ms={m.total_time_ms:.1f}  tps={m.tps:.1f}")
+            recompile_flag = f"  [RECOMPILE x{m.recompiled_graphs}]" if m.recompiled_graphs else ""
+            print(f"  {label}  total_ms={m.total_time_ms:.1f}  tps={m.tps:.1f}{recompile_flag}")
             batch.append(m)
 
         warm_prefill_ms[input_len] = batch[1].total_time_ms
@@ -524,9 +554,10 @@ def decode_sweep(
                 decode_only_ms = max(0.0, m.total_time_ms - prefill_baseline)
                 m.tpt_ms = decode_only_ms / (output_len - 1)
             log(log_file, f"{label} DONE")
+            recompile_flag = f"  [RECOMPILE x{m.recompiled_graphs}]" if m.recompiled_graphs else ""
             print(
                 f"  {label}  total_ms={m.total_time_ms:.1f}"
-                f"  tps={m.tps:.1f}  tpt_ms={m.tpt_ms:.3f}"
+                f"  tps={m.tps:.1f}  tpt_ms={m.tpt_ms:.3f}{recompile_flag}"
             )
             batch.append(m)
 
@@ -600,6 +631,7 @@ def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
     time.sleep(10)
 
     log(log_file, "PROGRAM ENDED")
+    print(f"DONE graphs_generated={compiled_graph_count()}")
 
 
 # ─── CLI ──────────────────────────────────────────────────────────────────────
@@ -634,6 +666,14 @@ def parse_args():
 def main():
     cfg = parse_args()
     run_dir, log_file, out_file = setup_run_dir(cfg)
+
+    # Ask torch_neuronx to dump a full per-graph compile ledger (graph_id/cache_key,
+    # graph_name, node count, timestamp, phase timings) into this run's directory at
+    # exit — one row per NEFF actually built, i.e. one row per recompile that wasn't
+    # served by an existing compiled graph. setdefault so an explicit env var (or a
+    # different metrics dir) from the caller always wins. No-op on CPU.
+    os.environ.setdefault("TORCH_NEURONX_ENABLED_METRIC_TABLES", "graph_stats")
+    os.environ.setdefault("TORCH_NEURONX_METRICS_DIR", str(run_dir))
 
     set_output_file(out_file)
 

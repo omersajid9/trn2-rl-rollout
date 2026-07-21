@@ -14,8 +14,30 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import torch
+import torch._logging
 
 torch._dynamo.config.recompile_limit = 10000
+
+# ─── RECOMPILE OBSERVABILITY ──────────────────────────────────────────────────
+# One-line signal, native to torch (no vLLM involved): fires the moment a guard
+# on the compiled forward fails and Dynamo has to retrace, naming the guard that
+# broke, e.g. "tensor 'input_ids' stride mismatch at index 0. expected 8, actual
+# 16" — silent otherwise. Pairs with compiled_graph_count() below, which tells
+# you whether that retrace actually reached neuronx-cc and built a new NEFF.
+torch._logging.set_logs(recompiles=True)
+
+
+def compiled_graph_count() -> int:
+    """Total NEFFs the neuron torch.compile backend has built so far in this process.
+
+    Backed by torch_neuronx.neuron_dynamo_backend.metrics.record_compilation(), which
+    bumps counters["neuron"]["compiled_graphs"] exactly once per graph that reaches
+    neuronx-cc — i.e. once per Dynamo recompile NOT served by an already-compiled
+    graph. Always 0 on CPU (the backend module is never even loaded). Diffing this
+    before/after a call is a cheap way to prove a "WARM" run stayed warm.
+    """
+    return torch._dynamo.utils.counters["neuron"]["compiled_graphs"]
+
 
 from mini_verl.workers.generation import GenEngine, GenerationParams
 from mini_verl.platform.mem_snapshot import log_memory_snapshot
@@ -72,6 +94,7 @@ class RunMetrics:
     tps:             float = 0.0
     tpt_ms:          float = 0.0
     response_tokens: float = 0.0  # mean effective tokens per sample (non-pad after first EOS)
+    recompiled_graphs: int = 0  # new NEFFs built by engine.generate() during this run; see compiled_graph_count()
 
 
 class Tee:
@@ -110,6 +133,7 @@ def save_metrics(path: Path, metrics: list[RunMetrics]) -> None:
                 "tps":             round(m.tps, 2),
                 "tpt_ms":          round(m.tpt_ms, 3),
                 "response_tokens": round(m.response_tokens, 2),
+                "recompiled_graphs": m.recompiled_graphs,
             }
             for m in metrics
         ],
@@ -424,6 +448,7 @@ def do_warmup(
         eos_token_id=eos_token_id, pad_token_id=pad_token_id,
     )
     log(log_file, "WARMUP DONE")
+    print(f"  graphs_generated={compiled_graph_count()}")
 
 
 # ─── SINGLE TIMED ROLLOUT ─────────────────────────────────────────────────────
@@ -468,6 +493,7 @@ def _run_rollout(
         cpu_multinomial=False,
     )
 
+    graphs_before = compiled_graph_count()
     t0 = device_time()
 
     # 1. Generation (prefill + decode loop on Neuron)
@@ -496,6 +522,7 @@ def _run_rollout(
     _seq = torch.cat([input_ids, response], dim=-1)
 
     t1 = device_time()
+    recompiled_graphs = compiled_graph_count() - graphs_before
 
     total_ms         = (t1 - t0) * 1_000.0
     effective_tokens = float(response_mask.sum().item())          # non-pad tokens across batch
@@ -512,6 +539,7 @@ def _run_rollout(
         total_time_ms=total_ms,
         tps=tps,
         response_tokens=mean_resp_tokens,
+        recompiled_graphs=recompiled_graphs,
     )
 
 
@@ -547,7 +575,8 @@ def prefill_sweep(
                 eos_token_id, pad_token_id,
             )
             log(log_file, f"{label} DONE")
-            print(f"  {label}  total_ms={m.total_time_ms:.1f}  tps={m.tps:.1f}")
+            recompile_flag = f"  [RECOMPILE x{m.recompiled_graphs}]" if m.recompiled_graphs else ""
+            print(f"  {label}  total_ms={m.total_time_ms:.1f}  tps={m.tps:.1f}{recompile_flag}")
             batch.append(m)
 
         warm_prefill_ms[input_len] = batch[1].total_time_ms
@@ -599,10 +628,11 @@ def decode_sweep(
                 decode_only_ms = max(0.0, m.total_time_ms - prefill_baseline)
                 m.tpt_ms = decode_only_ms / (m.response_tokens - 1)
             log(log_file, f"{label} DONE")
+            recompile_flag = f"  [RECOMPILE x{m.recompiled_graphs}]" if m.recompiled_graphs else ""
             print(
                 f"  {label}  total_ms={m.total_time_ms:.1f}"
                 f"  tps={m.tps:.1f}  tpt_ms={m.tpt_ms:.3f}"
-                f"  resp_tokens={m.response_tokens:.1f}/{output_len}"
+                f"  resp_tokens={m.response_tokens:.1f}/{output_len}{recompile_flag}"
             )
             batch.append(m)
 
@@ -673,6 +703,7 @@ def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
     time.sleep(10)
 
     log(log_file, "PROGRAM ENDED")
+    print(f"DONE graphs_generated={compiled_graph_count()}")
 
 
 # ─── CLI ──────────────────────────────────────────────────────────────────────
@@ -724,6 +755,9 @@ def parse_args():
 def main():
     cfg = parse_args()
     run_dir, log_file, out_file = setup_run_dir(cfg)
+
+    os.environ.setdefault("TORCH_NEURONX_ENABLED_METRIC_TABLES", "graph_stats")
+    os.environ.setdefault("TORCH_NEURONX_METRICS_DIR", str(run_dir))
 
     set_output_file(out_file)
 
