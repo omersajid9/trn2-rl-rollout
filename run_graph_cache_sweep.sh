@@ -68,6 +68,10 @@ cleanup() {
     pkill -f neuron-monitor 2>/dev/null || true
     rm -rf /tmp/nxd_model/ /tmp/neuronxcc-*/
     rm -rf ~/.cache/neuron/ /var/tmp/neuron-compile-cache/
+    # Clear stale NEFF OOM mem tables so a prior config's dump is not
+    # mis-attributed to the next run. The Python process snapshots its OWN
+    # tables into run_dir/neff_mem_tables/ before this post-run cleanup fires.
+    rm -f /tmp/neuron_mem_table_device_*_hbm_*.log
 }
 
 # ─── MAIN GRID ────────────────────────────────────────────────────────────────
