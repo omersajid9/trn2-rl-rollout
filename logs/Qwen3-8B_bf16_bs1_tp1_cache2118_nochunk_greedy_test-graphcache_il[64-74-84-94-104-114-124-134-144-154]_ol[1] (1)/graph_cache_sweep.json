@@ -1558,5 +1558,83 @@
         "runtime_memory": 0.0
       }
     }
+  },
+  {
+    "phase": "cold",
+    "input_len": 264,
+    "total_time_ms": 66679.18,
+    "recompiled_graphs": 1,
+    "graphs_generated_cumulative": 23,
+    "device_used_gb": 19.308,
+    "model_code_total_gb": 3.523,
+    "hbm_breakdown_gb": {
+      "0": {
+        "tensors": 0.0,
+        "constants": 0.0,
+        "model_code": 0.003,
+        "model_shared_scratchpad": 0.0,
+        "runtime_memory": 0.0
+      },
+      "1": {
+        "tensors": 0.0,
+        "constants": 0.0,
+        "model_code": 0.003,
+        "model_shared_scratchpad": 0.0,
+        "runtime_memory": 0.0
+      },
+      "2": {
+        "tensors": 15.635,
+        "constants": 0.01,
+        "model_code": 3.513,
+        "model_shared_scratchpad": 0.125,
+        "runtime_memory": 0.015
+      },
+      "3": {
+        "tensors": 0.0,
+        "constants": 0.0,
+        "model_code": 0.003,
+        "model_shared_scratchpad": 0.0,
+        "runtime_memory": 0.0
+      }
+    }
+  },
+  {
+    "phase": "warm",
+    "input_len": 264,
+    "total_time_ms": 124.48,
+    "recompiled_graphs": 0,
+    "graphs_generated_cumulative": 23,
+    "device_used_gb": 19.308,
+    "model_code_total_gb": 3.523,
+    "hbm_breakdown_gb": {
+      "0": {
+        "tensors": 0.0,
+        "constants": 0.0,
+        "model_code": 0.003,
+        "model_shared_scratchpad": 0.0,
+        "runtime_memory": 0.0
+      },
+      "1": {
+        "tensors": 0.0,
+        "constants": 0.0,
+        "model_code": 0.003,
+        "model_shared_scratchpad": 0.0,
+        "runtime_memory": 0.0
+      },
+      "2": {
+        "tensors": 15.635,
+        "constants": 0.01,
+        "model_code": 3.513,
+        "model_shared_scratchpad": 0.125,
+        "runtime_memory": 0.015
+      },
+      "3": {
+        "tensors": 0.0,
+        "constants": 0.0,
+        "model_code": 0.003,
+        "model_shared_scratchpad": 0.0,
+        "runtime_memory": 0.0
+      }
+    }
   }
 ]
