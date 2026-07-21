@@ -1,0 +1,34 @@
+
+>>> [MEM] 2026-07-07T09:27:05.888964+00:00 {"host_mem_used_gb": 5.84, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:06.890559+00:00 {"host_mem_used_gb": 5.82, "swap_used_gb": 0.0, "cpu_user_pct": 0.67, "cpu_system_pct": 0.75, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:07.889084+00:00 {"host_mem_used_gb": 5.8, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.42, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:08.889406+00:00 {"host_mem_used_gb": 5.79, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.33, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:09.889709+00:00 {"host_mem_used_gb": 5.78, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.5, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [POST] 2026-07-07T09:27:10.162451+00:00 PROGRAM STARTED <<<
+
+>>> [MEM] 2026-07-07T09:27:10.889653+00:00 {"host_mem_used_gb": 5.91, "swap_used_gb": 0.0, "cpu_user_pct": 9.45, "cpu_system_pct": 2.01, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:11.889548+00:00 {"host_mem_used_gb": 5.95, "swap_used_gb": 0.0, "cpu_user_pct": 11.65, "cpu_system_pct": 0.67, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:12.889117+00:00 {"host_mem_used_gb": 6.08, "swap_used_gb": 0.0, "cpu_user_pct": 23.45, "cpu_system_pct": 2.35, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:13.889387+00:00 {"host_mem_used_gb": 6.15, "swap_used_gb": 0.0, "cpu_user_pct": 6.11, "cpu_system_pct": 1.26, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [POST] 2026-07-07T09:27:14.059775+00:00 RUN EXCEPTION AttributeError("'Tee' object has no attribute 'fileno'") <<<
+
+>>> [POST] 2026-07-07T09:27:14.060090+00:00 PROGRAM ENDED status=failed:AttributeError elapsed=3.9s <<<
+
+>>> [MEM] 2026-07-07T09:27:14.889432+00:00 {"host_mem_used_gb": 6.15, "swap_used_gb": 0.0, "cpu_user_pct": 0.5, "cpu_system_pct": 0.58, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:15.888841+00:00 {"host_mem_used_gb": 6.15, "swap_used_gb": 0.0, "cpu_user_pct": 1.09, "cpu_system_pct": 1.59, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:16.889717+00:00 {"host_mem_used_gb": 6.15, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.25, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:17.889064+00:00 {"host_mem_used_gb": 6.14, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.42, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<
+
+>>> [MEM] 2026-07-07T09:27:18.889383+00:00 {"host_mem_used_gb": 6.14, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 0.92, "hbm_gb": {}, "hbm_breakdown": {}, "neuroncore_util_pct": {}} <<<

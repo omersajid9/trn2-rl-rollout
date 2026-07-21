@@ -1,0 +1,305 @@
+Run directory : logs/torch_Qwen2.5-1.5B-Instruct_bf16_openxla_test-both_ol[128-255-256-257-512]_il[64-127-128-129-256-257-512]Run directory : logs/torch_Qwen2.5-1.5B-Instruct_bf16_openxla_test-both_ol[128-255-256-257-512]_il[64-127-128-129-256-257-512]
+
+Log file      : logs/torch_Qwen2.5-1.5B-Instruct_bf16_openxla_test-both_ol[128-255-256-257-512]_il[64-127-128-129-256-257-512]/run.logLog file      : logs/torch_Qwen2.5-1.5B-Instruct_bf16_openxla_test-both_ol[128-255-256-257-512]_il[64-127-128-129-256-257-512]/run.log
+
+Config        : logs/torch_Qwen2.5-1.5B-Instruct_bf16_openxla_test-both_ol[128-255-256-257-512]_il[64-127-128-129-256-257-512]/config.jsonConfig        : logs/torch_Qwen2.5-1.5B-Instruct_bf16_openxla_test-both_ol[128-255-256-257-512]_il[64-127-128-129-256-257-512]/config.json
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-Jun-30 20:30:08.0722 55913:56174 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):232 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Jun-30 20:30:08.0725 55913:56174 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):376 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Jun-30 20:30:08.0726 55913:56174 [3] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Jun-30 20:30:08.0728 55913:56174 [3] net_plugin.cc:97 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 127]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 127]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 128]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 128]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 129]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 129]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 257]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 257]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 512]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 512]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1, 64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([151936, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([64]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([256]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([8960, 1536]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/torch_xla/_dynamo/dynamo_bridge.py:781: UserWarning: Found tensor with shape torch.Size([1536, 8960]) on cpu. Please move all tensors to xla device to execute on XLA device.
+  warnings.warn(
+W0630 20:31:44.901000 55913 torch/_dynamo/convert_frame.py:1358] [0/8] torch._dynamo hit config.recompile_limit (8)
+W0630 20:31:44.901000 55913 torch/_dynamo/convert_frame.py:1358] [0/8]    function: 'wrapper' (/opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/transformers/utils/generic.py:912)
+W0630 20:31:44.901000 55913 torch/_dynamo/convert_frame.py:1358] [0/8]    last reason: 0/7: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 1
+W0630 20:31:44.901000 55913 torch/_dynamo/convert_frame.py:1358] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0630 20:31:44.901000 55913 torch/_dynamo/convert_frame.py:1358] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html

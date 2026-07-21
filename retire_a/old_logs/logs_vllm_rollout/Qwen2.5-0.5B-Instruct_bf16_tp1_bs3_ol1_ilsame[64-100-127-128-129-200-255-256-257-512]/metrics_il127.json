@@ -1,0 +1,32 @@
+{
+  "batch_size": 3,
+  "prompts": [
+    {
+      "prompt_idx": 0,
+      "input_tokens": 127,
+      "output_tokens": 1,
+      "ttft_ms": 7.92,
+      "tpt_ms": 0.0,
+      "total_time_ms": 7.92,
+      "per_token_latencies_ms": []
+    },
+    {
+      "prompt_idx": 1,
+      "input_tokens": 127,
+      "output_tokens": 1,
+      "ttft_ms": 12.52,
+      "tpt_ms": 0.0,
+      "total_time_ms": 12.52,
+      "per_token_latencies_ms": []
+    },
+    {
+      "prompt_idx": 2,
+      "input_tokens": 127,
+      "output_tokens": 1,
+      "ttft_ms": 17.49,
+      "tpt_ms": 0.0,
+      "total_time_ms": 17.49,
+      "per_token_latencies_ms": []
+    }
+  ]
+}

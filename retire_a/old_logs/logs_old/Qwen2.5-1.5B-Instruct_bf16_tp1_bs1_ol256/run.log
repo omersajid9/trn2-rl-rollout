@@ -1,0 +1,578 @@
+
+>>> [MEM] 2026-06-29T04:32:04.041732+00:00 {"host_mem_used_gb": 4.09, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:05.042414+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:06.042802+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:07.041761+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:08.042470+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:09.042135+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:10.041738+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:11.043183+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:12.041792+00:00 {"host_mem_used_gb": 4.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [POST] 2026-06-29T04:32:12.527795+00:00 CACHE_DROP START <<<
+
+>>> [POST] 2026-06-29T04:32:12.629011+00:00 CACHE_DROP DONE <<<
+
+>>> [MEM] 2026-06-29T04:32:13.042521+00:00 {"host_mem_used_gb": 3.49, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 1.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:14.042138+00:00 {"host_mem_used_gb": 3.49, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:15.042607+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 1.09, "cpu_system_pct": 1.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:16.042802+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:17.042005+00:00 {"host_mem_used_gb": 3.49, "swap_used_gb": 0.0, "cpu_user_pct": 1.84, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:18.041717+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 1.42, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:19.042321+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:20.041694+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.83, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:21.042807+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:22.041774+00:00 {"host_mem_used_gb": 3.5, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [POST] 2026-06-29T04:32:22.629823+00:00 PROGRAM STARTED <<<
+
+>>> [POST] 2026-06-29T04:32:22.629878+00:00 VLLM_IMPORT START <<<
+
+>>> [MEM] 2026-06-29T04:32:23.042514+00:00 {"host_mem_used_gb": 3.52, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:24.042198+00:00 {"host_mem_used_gb": 3.62, "swap_used_gb": 0.0, "cpu_user_pct": 0.58, "cpu_system_pct": 1.09, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:25.041837+00:00 {"host_mem_used_gb": 3.7, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:26.042438+00:00 {"host_mem_used_gb": 3.75, "swap_used_gb": 0.0, "cpu_user_pct": 0.67, "cpu_system_pct": 1, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:27.043406+00:00 {"host_mem_used_gb": 3.87, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:28.041707+00:00 {"host_mem_used_gb": 3.96, "swap_used_gb": 0.0, "cpu_user_pct": 12.63, "cpu_system_pct": 1.34, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:29.041680+00:00 {"host_mem_used_gb": 4.02, "swap_used_gb": 0.0, "cpu_user_pct": 3.91, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:30.042368+00:00 {"host_mem_used_gb": 4.09, "swap_used_gb": 0.0, "cpu_user_pct": 2.59, "cpu_system_pct": 1.09, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:31.041998+00:00 {"host_mem_used_gb": 4.17, "swap_used_gb": 0.0, "cpu_user_pct": 2, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [POST] 2026-06-29T04:32:31.249797+00:00 VLLM_IMPORT DONE <<<
+
+>>> [POST] 2026-06-29T04:32:31.249851+00:00 COMPILATION START <<<
+
+>>> [MEM] 2026-06-29T04:32:32.042973+00:00 {"host_mem_used_gb": 4.22, "swap_used_gb": 0.0, "cpu_user_pct": 4.09, "cpu_system_pct": 1.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:33.041829+00:00 {"host_mem_used_gb": 4.26, "swap_used_gb": 0.0, "cpu_user_pct": 1.34, "cpu_system_pct": 0.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:34.042284+00:00 {"host_mem_used_gb": 4.29, "swap_used_gb": 0.0, "cpu_user_pct": 4.18, "cpu_system_pct": 1.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:35.042300+00:00 {"host_mem_used_gb": 4.35, "swap_used_gb": 0.0, "cpu_user_pct": 12.77, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:36.041687+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 4.34, "cpu_system_pct": 1.09, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:37.042527+00:00 {"host_mem_used_gb": 4.47, "swap_used_gb": 0.0, "cpu_user_pct": 5.76, "cpu_system_pct": 8.19, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:38.041775+00:00 {"host_mem_used_gb": 4.5, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:39.042360+00:00 {"host_mem_used_gb": 4.55, "swap_used_gb": 0.0, "cpu_user_pct": 3.67, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:40.041967+00:00 {"host_mem_used_gb": 4.59, "swap_used_gb": 0.0, "cpu_user_pct": 3.59, "cpu_system_pct": 1.34, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:41.042571+00:00 {"host_mem_used_gb": 4.59, "swap_used_gb": 0.0, "cpu_user_pct": 0.58, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:42.042184+00:00 {"host_mem_used_gb": 4.62, "swap_used_gb": 0.0, "cpu_user_pct": 2.93, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:43.042524+00:00 {"host_mem_used_gb": 4.74, "swap_used_gb": 0.0, "cpu_user_pct": 3.01, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:44.041852+00:00 {"host_mem_used_gb": 4.98, "swap_used_gb": 0.0, "cpu_user_pct": 17.95, "cpu_system_pct": 1.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:45.042442+00:00 {"host_mem_used_gb": 5.07, "swap_used_gb": 0.0, "cpu_user_pct": 7.58, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:46.042777+00:00 {"host_mem_used_gb": 5.1, "swap_used_gb": 0.0, "cpu_user_pct": 18.2, "cpu_system_pct": 1.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:47.042541+00:00 {"host_mem_used_gb": 5.17, "swap_used_gb": 0.0, "cpu_user_pct": 9.92, "cpu_system_pct": 8.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:48.043252+00:00 {"host_mem_used_gb": 5.19, "swap_used_gb": 0.0, "cpu_user_pct": 8.42, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:49.041787+00:00 {"host_mem_used_gb": 5.29, "swap_used_gb": 0.0, "cpu_user_pct": 4.34, "cpu_system_pct": 0.83, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:50.042057+00:00 {"host_mem_used_gb": 5.33, "swap_used_gb": 0.0, "cpu_user_pct": 3.83, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:51.042223+00:00 {"host_mem_used_gb": 5.42, "swap_used_gb": 0.0, "cpu_user_pct": 2.17, "cpu_system_pct": 1.34, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:52.042459+00:00 {"host_mem_used_gb": 5.51, "swap_used_gb": 0.0, "cpu_user_pct": 1.59, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:53.041699+00:00 {"host_mem_used_gb": 5.6, "swap_used_gb": 0.0, "cpu_user_pct": 5.27, "cpu_system_pct": 1.26, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:54.042627+00:00 {"host_mem_used_gb": 5.64, "swap_used_gb": 0.0, "cpu_user_pct": 5.34, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:55.041845+00:00 {"host_mem_used_gb": 5.66, "swap_used_gb": 0.0, "cpu_user_pct": 5.34, "cpu_system_pct": 1.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:56.042560+00:00 {"host_mem_used_gb": 6.1, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 1.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:57.041713+00:00 {"host_mem_used_gb": 6.44, "swap_used_gb": 0.0, "cpu_user_pct": 0.66, "cpu_system_pct": 2.24, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:58.042631+00:00 {"host_mem_used_gb": 6.81, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:32:59.042868+00:00 {"host_mem_used_gb": 7.17, "swap_used_gb": 0.0, "cpu_user_pct": 1.16, "cpu_system_pct": 1.74, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:00.041930+00:00 {"host_mem_used_gb": 7.54, "swap_used_gb": 0.0, "cpu_user_pct": 1.76, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:01.042238+00:00 {"host_mem_used_gb": 7.9, "swap_used_gb": 0.0, "cpu_user_pct": 1.84, "cpu_system_pct": 1.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:02.041866+00:00 {"host_mem_used_gb": 8.26, "swap_used_gb": 0.0, "cpu_user_pct": 2.25, "cpu_system_pct": 1.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:03.042484+00:00 {"host_mem_used_gb": 8.63, "swap_used_gb": 0.0, "cpu_user_pct": 1.5, "cpu_system_pct": 1.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:04.042773+00:00 {"host_mem_used_gb": 9.01, "swap_used_gb": 0.0, "cpu_user_pct": 1.51, "cpu_system_pct": 0.84, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:05.041770+00:00 {"host_mem_used_gb": 9.37, "swap_used_gb": 0.0, "cpu_user_pct": 2.41, "cpu_system_pct": 1.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:06.042639+00:00 {"host_mem_used_gb": 9.74, "swap_used_gb": 0.0, "cpu_user_pct": 1.42, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:07.042259+00:00 {"host_mem_used_gb": 10.1, "swap_used_gb": 0.0, "cpu_user_pct": 2.26, "cpu_system_pct": 1.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:08.041949+00:00 {"host_mem_used_gb": 10.47, "swap_used_gb": 0.0, "cpu_user_pct": 1.42, "cpu_system_pct": 1, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:09.042491+00:00 {"host_mem_used_gb": 10.84, "swap_used_gb": 0.0, "cpu_user_pct": 1.58, "cpu_system_pct": 1.99, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:10.042682+00:00 {"host_mem_used_gb": 11.21, "swap_used_gb": 0.0, "cpu_user_pct": 2.18, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:11.041724+00:00 {"host_mem_used_gb": 11.58, "swap_used_gb": 0.0, "cpu_user_pct": 2.5, "cpu_system_pct": 1.59, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:12.042093+00:00 {"host_mem_used_gb": 11.94, "swap_used_gb": 0.0, "cpu_user_pct": 1.91, "cpu_system_pct": 1.41, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:13.042563+00:00 {"host_mem_used_gb": 12.31, "swap_used_gb": 0.0, "cpu_user_pct": 1.59, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:14.042716+00:00 {"host_mem_used_gb": 12.68, "swap_used_gb": 0.0, "cpu_user_pct": 1.67, "cpu_system_pct": 1, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:15.042156+00:00 {"host_mem_used_gb": 13.04, "swap_used_gb": 0.0, "cpu_user_pct": 1.83, "cpu_system_pct": 1.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:16.042375+00:00 {"host_mem_used_gb": 13.4, "swap_used_gb": 0.0, "cpu_user_pct": 1.76, "cpu_system_pct": 1.26, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:17.042591+00:00 {"host_mem_used_gb": 13.77, "swap_used_gb": 0.0, "cpu_user_pct": 1.92, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:18.042903+00:00 {"host_mem_used_gb": 14.14, "swap_used_gb": 0.0, "cpu_user_pct": 1.67, "cpu_system_pct": 1.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:19.041718+00:00 {"host_mem_used_gb": 14.81, "swap_used_gb": 0.0, "cpu_user_pct": 2.16, "cpu_system_pct": 2.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:20.041675+00:00 {"host_mem_used_gb": 16.6, "swap_used_gb": 0.0, "cpu_user_pct": 1.92, "cpu_system_pct": 7.1, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:21.042282+00:00 {"host_mem_used_gb": 18.42, "swap_used_gb": 0.0, "cpu_user_pct": 1.75, "cpu_system_pct": 6.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:22.041686+00:00 {"host_mem_used_gb": 20.87, "swap_used_gb": 0.0, "cpu_user_pct": 0.67, "cpu_system_pct": 7.35, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:23.043360+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 4.67, "cpu_system_pct": 5.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:24.041666+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:25.042301+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:26.041979+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:27.042563+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:28.042526+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:29.041796+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:30.042489+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:31.041667+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:32.042483+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:33.042471+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:34.041696+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:35.042024+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:36.042714+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:37.042478+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:38.049274+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:39.041768+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:40.042038+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:41.042440+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:42.043065+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:43.041650+00:00 {"host_mem_used_gb": 23.08, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:44.042243+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:45.041815+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:46.041665+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:47.043072+00:00 {"host_mem_used_gb": 23.06, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:48.041703+00:00 {"host_mem_used_gb": 23.06, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:49.042303+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:50.041913+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:51.042529+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:52.042715+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:53.041770+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:54.042466+00:00 {"host_mem_used_gb": 23.07, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:55.042175+00:00 {"host_mem_used_gb": 23.75, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 2.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:56.041706+00:00 {"host_mem_used_gb": 23.75, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:57.042269+00:00 {"host_mem_used_gb": 23.75, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:58.042836+00:00 {"host_mem_used_gb": 23.75, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:33:59.041714+00:00 {"host_mem_used_gb": 23.75, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:00.042298+00:00 {"host_mem_used_gb": 19.59, "swap_used_gb": 0.0, "cpu_user_pct": 0.67, "cpu_system_pct": 1.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:01.041995+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 5.84, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:02.042579+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:03.042516+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:04.041684+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:05.041901+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:06.042131+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:07.042298+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:08.042846+00:00 {"host_mem_used_gb": 21.32, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:09.041714+00:00 {"host_mem_used_gb": 15.49, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 2.59, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:10.042031+00:00 {"host_mem_used_gb": 16.01, "swap_used_gb": 0.0, "cpu_user_pct": 6.6, "cpu_system_pct": 3.43, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:11.042288+00:00 {"host_mem_used_gb": 16.09, "swap_used_gb": 0.0, "cpu_user_pct": 6.92, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:12.042726+00:00 {"host_mem_used_gb": 16.08, "swap_used_gb": 0.0, "cpu_user_pct": 8.1, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:13.041680+00:00 {"host_mem_used_gb": 16.11, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:14.042885+00:00 {"host_mem_used_gb": 16.13, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:15.041842+00:00 {"host_mem_used_gb": 16.13, "swap_used_gb": 0.0, "cpu_user_pct": 8.59, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:16.042731+00:00 {"host_mem_used_gb": 16.61, "swap_used_gb": 0.0, "cpu_user_pct": 8.7, "cpu_system_pct": 3.34, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:17.042737+00:00 {"host_mem_used_gb": 16.68, "swap_used_gb": 0.0, "cpu_user_pct": 8.18, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:18.042448+00:00 {"host_mem_used_gb": 16.68, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:19.041965+00:00 {"host_mem_used_gb": 16.71, "swap_used_gb": 0.0, "cpu_user_pct": 8.27, "cpu_system_pct": 0.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:20.041911+00:00 {"host_mem_used_gb": 16.73, "swap_used_gb": 0.0, "cpu_user_pct": 8.67, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:21.042193+00:00 {"host_mem_used_gb": 16.77, "swap_used_gb": 0.0, "cpu_user_pct": 8.26, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:22.041800+00:00 {"host_mem_used_gb": 16.99, "swap_used_gb": 0.0, "cpu_user_pct": 3.43, "cpu_system_pct": 1.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:23.042379+00:00 {"host_mem_used_gb": 17.11, "swap_used_gb": 0.0, "cpu_user_pct": 8.02, "cpu_system_pct": 1.34, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:24.042382+00:00 {"host_mem_used_gb": 17.25, "swap_used_gb": 0.0, "cpu_user_pct": 25.56, "cpu_system_pct": 2.26, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:25.041791+00:00 {"host_mem_used_gb": 17.36, "swap_used_gb": 0.0, "cpu_user_pct": 3.68, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:26.042635+00:00 {"host_mem_used_gb": 17.52, "swap_used_gb": 0.0, "cpu_user_pct": 28.7, "cpu_system_pct": 2.09, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:27.042577+00:00 {"host_mem_used_gb": 17.56, "swap_used_gb": 0.0, "cpu_user_pct": 19, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:28.042491+00:00 {"host_mem_used_gb": 17.55, "swap_used_gb": 0.0, "cpu_user_pct": 8.53, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:29.042532+00:00 {"host_mem_used_gb": 17.55, "swap_used_gb": 0.0, "cpu_user_pct": 8.44, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:30.041686+00:00 {"host_mem_used_gb": 17.54, "swap_used_gb": 0.0, "cpu_user_pct": 8.59, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:31.042387+00:00 {"host_mem_used_gb": 17.52, "swap_used_gb": 0.0, "cpu_user_pct": 8.33, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:32.041884+00:00 {"host_mem_used_gb": 17.51, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:33.042480+00:00 {"host_mem_used_gb": 17.51, "swap_used_gb": 0.0, "cpu_user_pct": 7.84, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:34.042698+00:00 {"host_mem_used_gb": 17.51, "swap_used_gb": 0.0, "cpu_user_pct": 8.36, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:35.041798+00:00 {"host_mem_used_gb": 17.52, "swap_used_gb": 0.0, "cpu_user_pct": 8.18, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:36.042523+00:00 {"host_mem_used_gb": 17.52, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:37.042480+00:00 {"host_mem_used_gb": 17.56, "swap_used_gb": 0.0, "cpu_user_pct": 13.43, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:38.042163+00:00 {"host_mem_used_gb": 17.56, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:39.042850+00:00 {"host_mem_used_gb": 17.58, "swap_used_gb": 0.0, "cpu_user_pct": 8.35, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:40.041710+00:00 {"host_mem_used_gb": 17.58, "swap_used_gb": 0.0, "cpu_user_pct": 8.52, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:41.042489+00:00 {"host_mem_used_gb": 17.59, "swap_used_gb": 0.0, "cpu_user_pct": 8.51, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:42.042198+00:00 {"host_mem_used_gb": 17.51, "swap_used_gb": 0.0, "cpu_user_pct": 11.27, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:43.042773+00:00 {"host_mem_used_gb": 17.5, "swap_used_gb": 0.0, "cpu_user_pct": 12.59, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:44.042663+00:00 {"host_mem_used_gb": 17.66, "swap_used_gb": 0.0, "cpu_user_pct": 8.21, "cpu_system_pct": 1.09, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:45.041941+00:00 {"host_mem_used_gb": 17.86, "swap_used_gb": 0.0, "cpu_user_pct": 16.19, "cpu_system_pct": 0.83, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:46.042601+00:00 {"host_mem_used_gb": 18.06, "swap_used_gb": 0.0, "cpu_user_pct": 16.26, "cpu_system_pct": 0.83, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:47.041864+00:00 {"host_mem_used_gb": 18.25, "swap_used_gb": 0.0, "cpu_user_pct": 15.64, "cpu_system_pct": 1, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:48.042174+00:00 {"host_mem_used_gb": 18.57, "swap_used_gb": 0.0, "cpu_user_pct": 16.53, "cpu_system_pct": 1.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:49.043485+00:00 {"host_mem_used_gb": 18.58, "swap_used_gb": 0.0, "cpu_user_pct": 16.29, "cpu_system_pct": 2.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:50.042080+00:00 {"host_mem_used_gb": 18.59, "swap_used_gb": 0.0, "cpu_user_pct": 81.57, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:51.041956+00:00 {"host_mem_used_gb": 18.56, "swap_used_gb": 0.0, "cpu_user_pct": 28.93, "cpu_system_pct": 0.84, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:52.042902+00:00 {"host_mem_used_gb": 18.59, "swap_used_gb": 0.0, "cpu_user_pct": 23.62, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:53.042570+00:00 {"host_mem_used_gb": 18.59, "swap_used_gb": 0.0, "cpu_user_pct": 22.43, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:54.043139+00:00 {"host_mem_used_gb": 18.7, "swap_used_gb": 0.0, "cpu_user_pct": 33.64, "cpu_system_pct": 1.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:55.041778+00:00 {"host_mem_used_gb": 18.75, "swap_used_gb": 0.0, "cpu_user_pct": 19.98, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:56.042312+00:00 {"host_mem_used_gb": 18.78, "swap_used_gb": 0.0, "cpu_user_pct": 50.54, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:57.042156+00:00 {"host_mem_used_gb": 18.78, "swap_used_gb": 0.0, "cpu_user_pct": 68.98, "cpu_system_pct": 1.76, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:58.041741+00:00 {"host_mem_used_gb": 18.79, "swap_used_gb": 0.0, "cpu_user_pct": 14.45, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:34:59.042722+00:00 {"host_mem_used_gb": 18.81, "swap_used_gb": 0.0, "cpu_user_pct": 26.19, "cpu_system_pct": 0.58, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:00.043263+00:00 {"host_mem_used_gb": 18.82, "swap_used_gb": 0.0, "cpu_user_pct": 32.44, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:01.041815+00:00 {"host_mem_used_gb": 18.83, "swap_used_gb": 0.0, "cpu_user_pct": 48.08, "cpu_system_pct": 0.59, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:02.042151+00:00 {"host_mem_used_gb": 18.83, "swap_used_gb": 0.0, "cpu_user_pct": 15.96, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:03.041813+00:00 {"host_mem_used_gb": 18.78, "swap_used_gb": 0.0, "cpu_user_pct": 15.89, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:04.042682+00:00 {"host_mem_used_gb": 18.78, "swap_used_gb": 0.0, "cpu_user_pct": 21.85, "cpu_system_pct": 0.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:05.043013+00:00 {"host_mem_used_gb": 18.79, "swap_used_gb": 0.0, "cpu_user_pct": 14.33, "cpu_system_pct": 1.93, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:06.042559+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 3.68, "cpu_system_pct": 1.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:07.042619+00:00 {"host_mem_used_gb": 17.21, "swap_used_gb": 0.0, "cpu_user_pct": 3.93, "cpu_system_pct": 2.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:08.041809+00:00 {"host_mem_used_gb": 17.42, "swap_used_gb": 0.0, "cpu_user_pct": 22.89, "cpu_system_pct": 1.59, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:09.041719+00:00 {"host_mem_used_gb": 17.54, "swap_used_gb": 0.0, "cpu_user_pct": 3.19, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:10.043073+00:00 {"host_mem_used_gb": 17.65, "swap_used_gb": 0.0, "cpu_user_pct": 1.75, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:11.041803+00:00 {"host_mem_used_gb": 17.79, "swap_used_gb": 0.0, "cpu_user_pct": 2.43, "cpu_system_pct": 1.68, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:12.042467+00:00 {"host_mem_used_gb": 17.91, "swap_used_gb": 0.0, "cpu_user_pct": 1.42, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:13.042515+00:00 {"host_mem_used_gb": 18.02, "swap_used_gb": 0.0, "cpu_user_pct": 1.92, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:14.041643+00:00 {"host_mem_used_gb": 18.13, "swap_used_gb": 0.0, "cpu_user_pct": 2.09, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:15.042862+00:00 {"host_mem_used_gb": 18.25, "swap_used_gb": 0.0, "cpu_user_pct": 1.59, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:16.041843+00:00 {"host_mem_used_gb": 18.43, "swap_used_gb": 0.0, "cpu_user_pct": 1.42, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:17.042528+00:00 {"host_mem_used_gb": 18.66, "swap_used_gb": 0.0, "cpu_user_pct": 1.5, "cpu_system_pct": 0.92, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:18.042174+00:00 {"host_mem_used_gb": 18.91, "swap_used_gb": 0.0, "cpu_user_pct": 1.92, "cpu_system_pct": 1.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:19.041794+00:00 {"host_mem_used_gb": 19.15, "swap_used_gb": 0.0, "cpu_user_pct": 1.68, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:20.043348+00:00 {"host_mem_used_gb": 19.4, "swap_used_gb": 0.0, "cpu_user_pct": 1.41, "cpu_system_pct": 1.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:21.041711+00:00 {"host_mem_used_gb": 19.64, "swap_used_gb": 0.0, "cpu_user_pct": 1.67, "cpu_system_pct": 0.84, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:22.042389+00:00 {"host_mem_used_gb": 19.87, "swap_used_gb": 0.0, "cpu_user_pct": 1.67, "cpu_system_pct": 1, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:23.042099+00:00 {"host_mem_used_gb": 20.11, "swap_used_gb": 0.0, "cpu_user_pct": 1.51, "cpu_system_pct": 1.01, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:24.041703+00:00 {"host_mem_used_gb": 20.34, "swap_used_gb": 0.0, "cpu_user_pct": 2.17, "cpu_system_pct": 1.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:25.043142+00:00 {"host_mem_used_gb": 20.52, "swap_used_gb": 0.0, "cpu_user_pct": 5, "cpu_system_pct": 1.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:26.041838+00:00 {"host_mem_used_gb": 20.71, "swap_used_gb": 0.0, "cpu_user_pct": 6.27, "cpu_system_pct": 1.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:27.042110+00:00 {"host_mem_used_gb": 20.93, "swap_used_gb": 0.0, "cpu_user_pct": 1.34, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:28.042535+00:00 {"host_mem_used_gb": 21.17, "swap_used_gb": 0.0, "cpu_user_pct": 2, "cpu_system_pct": 1.25, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:29.042540+00:00 {"host_mem_used_gb": 21.41, "swap_used_gb": 0.0, "cpu_user_pct": 1.58, "cpu_system_pct": 0.75, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:30.042605+00:00 {"host_mem_used_gb": 21.5, "swap_used_gb": 0.0, "cpu_user_pct": 6.34, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:35:31.046714+00:00 {"host_mem_used_gb": 21.66, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 7.65, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:32.042692+00:00 {"host_mem_used_gb": 21.66, "swap_used_gb": 0.0, "cpu_user_pct": 0.34, "cpu_system_pct": 8.81, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:33.042401+00:00 {"host_mem_used_gb": 21.66, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 8.36, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:34.042861+00:00 {"host_mem_used_gb": 21.67, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 8.79, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:35.041848+00:00 {"host_mem_used_gb": 21.67, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 8.44, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:36.042662+00:00 {"host_mem_used_gb": 21.67, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 8.78, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:37.041896+00:00 {"host_mem_used_gb": 21.67, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 8.37, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:38.042253+00:00 {"host_mem_used_gb": 21.67, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 8.86, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 0.0, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:39.042274+00:00 {"host_mem_used_gb": 21.74, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 8.18, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 2.26, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:40.043178+00:00 {"host_mem_used_gb": 21.93, "swap_used_gb": 0.0, "cpu_user_pct": 9.96, "cpu_system_pct": 2.34, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:41.042804+00:00 {"host_mem_used_gb": 21.96, "swap_used_gb": 0.0, "cpu_user_pct": 3.43, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [POST] 2026-06-29T04:35:41.880038+00:00 COMPILATION DONE <<<
+
+>>> [MEM] 2026-06-29T04:35:42.042715+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 3.76, "cpu_system_pct": 0.67, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:43.043094+00:00 {"host_mem_used_gb": 21.97, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:44.042771+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:45.043393+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:46.043077+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:47.043612+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:48.043222+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:49.043083+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.59, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:50.043275+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:51.042768+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [POST] 2026-06-29T04:35:51.889714+00:00 WARMUP START <<<
+
+>>> [MEM] 2026-06-29T04:35:52.043705+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.84, "cpu_system_pct": 0.33, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [POST] 2026-06-29T04:35:52.219343+00:00 WARMUP DONE <<<
+
+>>> [MEM] 2026-06-29T04:35:53.043524+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 1.34, "cpu_system_pct": 0.92, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:54.043080+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:55.042707+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.42, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:56.043462+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:57.043207+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.42, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:58.042827+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:35:59.043622+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:36:00.043093+00:00 {"host_mem_used_gb": 21.98, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:36:01.042734+00:00 {"host_mem_used_gb": 21.99, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.5, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:36:02.043444+00:00 {"host_mem_used_gb": 21.99, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [POST] 2026-06-29T04:36:02.228022+00:00 GENERATION START <<<
+
+>>> [MEM] 2026-06-29T04:36:03.043674+00:00 {"host_mem_used_gb": 21.99, "swap_used_gb": 0.0, "cpu_user_pct": 5.1, "cpu_system_pct": 2.51, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [MEM] 2026-06-29T04:36:04.043574+00:00 {"host_mem_used_gb": 21.99, "swap_used_gb": 0.0, "cpu_user_pct": 6.11, "cpu_system_pct": 2.59, "hbm_gb": {"0": 0.0, "1": 0.0, "2": 4.45, "3": 0.0}} <<<
+
+>>> [POST] 2026-06-29T04:36:04.307033+00:00 GENERATION DONE <<<
+
+>>> [MEM] 2026-06-29T04:36:05.042506+00:00 {"host_mem_used_gb": 21.77, "swap_used_gb": 0.0, "cpu_user_pct": 2.68, "cpu_system_pct": 4.36, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:06.041768+00:00 {"host_mem_used_gb": 21.83, "swap_used_gb": 0.0, "cpu_user_pct": 0.75, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:07.041679+00:00 {"host_mem_used_gb": 21.89, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.67, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:08.042271+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 1.84, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:09.041662+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:10.041646+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:11.041639+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.33, "cpu_system_pct": 0.5, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:12.042192+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:13.041640+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:14.042254+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:15.041841+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:16.041627+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:17.041575+00:00 {"host_mem_used_gb": 17.38, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [POST] 2026-06-29T04:36:17.771109+00:00 CACHE_DROP START <<<
+
+>>> [MEM] 2026-06-29T04:36:18.042573+00:00 {"host_mem_used_gb": 11.19, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 2.51, "hbm_gb": {}} <<<
+
+>>> [POST] 2026-06-29T04:36:18.265903+00:00 CACHE_DROP DONE <<<
+
+>>> [MEM] 2026-06-29T04:36:19.042195+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 1.83, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:20.041688+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:21.041649+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:22.041665+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:23.042243+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:24.041657+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:25.041613+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:26.042172+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:27.041623+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:28.041667+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [POST] 2026-06-29T04:36:28.276135+00:00 PROGRAM ENDED <<<
+
+>>> [MEM] 2026-06-29T04:36:29.042234+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:30.041663+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:31.041645+00:00 {"host_mem_used_gb": 4.4, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:32.042234+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:33.041651+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0.08, "cpu_system_pct": 0.08, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:34.042267+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.33, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:35.041673+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.17, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:36.041628+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0.25, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:37.042182+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0, "cpu_system_pct": 0, "hbm_gb": {}} <<<
+
+>>> [MEM] 2026-06-29T04:36:38.041659+00:00 {"host_mem_used_gb": 4.41, "swap_used_gb": 0.0, "cpu_user_pct": 0.17, "cpu_system_pct": 0.42, "hbm_gb": {}} <<<

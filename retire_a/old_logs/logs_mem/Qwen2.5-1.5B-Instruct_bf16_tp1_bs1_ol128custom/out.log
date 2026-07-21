@@ -1,0 +1,78 @@
+Run directory : logs/Qwen2.5-1.5B-Instruct_bf16_tp1_bs1_ol128customRun directory : logs/Qwen2.5-1.5B-Instruct_bf16_tp1_bs1_ol128custom
+
+Log file : logs/Qwen2.5-1.5B-Instruct_bf16_tp1_bs1_ol128custom/run.logLog file : logs/Qwen2.5-1.5B-Instruct_bf16_tp1_bs1_ol128custom/run.log
+
+Config : logs/Qwen2.5-1.5B-Instruct_bf16_tp1_bs1_ol128custom/config.jsonConfig : logs/Qwen2.5-1.5B-Instruct_bf16_tp1_bs1_ol128custom/config.json
+
+INFO 06-29 10:33:10 [__init__.py:43] Available plugins for group vllm.platform_plugins:
+INFO 06-29 10:33:10 [__init__.py:43] Available plugins for group vllm.platform_plugins:
+INFO 06-29 10:33:10 [__init__.py:45] - neuron -> vllm_neuron:register
+INFO 06-29 10:33:10 [__init__.py:45] - neuron -> vllm_neuron:register
+INFO 06-29 10:33:10 [__init__.py:48] All plugins in this group will be loaded. Set `VLLM_PLUGINS` to control which plugins to load.
+INFO 06-29 10:33:10 [__init__.py:48] All plugins in this group will be loaded. Set `VLLM_PLUGINS` to control which plugins to load.
+INFO 06-29 10:33:10 [__init__.py:212] Platform plugin neuron is activated
+INFO 06-29 10:33:10 [__init__.py:212] Platform plugin neuron is activated
+INFO 06-29 10:33:17 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 06-29 10:33:17 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 06-29 10:33:17 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+INFO 06-29 10:33:17 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+[2026-06-29 10:33:18] INFO platform.py:111: Applying Neuron config overrides
+[2026-06-29 10:33:18] INFO platform.py:111: Applying Neuron config overrides
+[2026-06-29 10:33:18] INFO platform.py:127: Neuron config overrides applied successfully
+[2026-06-29 10:33:18] INFO platform.py:127: Neuron config overrides applied successfully
+INFO 06-29 10:33:19 [model.py:529] Resolved architecture: Qwen2ForCausalLM
+INFO 06-29 10:33:19 [model.py:529] Resolved architecture: Qwen2ForCausalLM
+WARNING 06-29 10:33:19 [arg_utils.py:1949] This model does not officially support disabling chunked prefill. Disabling this manually may cause the engine to crash or produce incorrect outputs.
+WARNING 06-29 10:33:19 [arg_utils.py:1949] This model does not officially support disabling chunked prefill. Disabling this manually may cause the engine to crash or produce incorrect outputs.
+[2026-06-29 10:33:20] INFO platform_overrides.py:22: Skipping attention head divisibility check for Neuron platform
+[2026-06-29 10:33:20] INFO platform_overrides.py:22: Skipping attention head divisibility check for Neuron platform
+INFO 06-29 10:33:20 [vllm.py:689] Asynchronous scheduling is enabled.
+INFO 06-29 10:33:20 [vllm.py:689] Asynchronous scheduling is enabled.
+[2026-06-29 10:33:20] WARNING platform.py:172: Could not import OpenAI serving modules for overrides: No module named 'vllm.entrypoints.openai.serving_engine'
+[2026-06-29 10:33:20] WARNING platform.py:172: Could not import OpenAI serving modules for overrides: No module named 'vllm.entrypoints.openai.serving_engine'
+[2026-06-29 10:33:20] INFO platform.py:268: Neuron engine client override applied successfully
+[2026-06-29 10:33:20] INFO platform.py:268: Neuron engine client override applied successfully
+[2026-06-29 10:33:20] INFO platform.py:390: The custom Neuron scheduler will disable chunked prefill and schedule requests using the continuous batching mechanism, prioritizing prefill over decode.
+[2026-06-29 10:33:20] INFO platform.py:390: The custom Neuron scheduler will disable chunked prefill and schedule requests using the continuous batching mechanism, prioritizing prefill over decode.
+[2026-06-29 10:33:20] INFO platform.py:403: Neuron custom scheduler default: max_num_batched_tokens set to 131072. Override with --max-num-batched-tokens if needed.
+[2026-06-29 10:33:20] INFO platform.py:403: Neuron custom scheduler default: max_num_batched_tokens set to 131072. Override with --max-num-batched-tokens if needed.
+[2026-06-29 10:33:21] WARNING platform.py:430: Pin memory is not supported on Neuron.
+[2026-06-29 10:33:21] WARNING platform.py:430: Pin memory is not supported on Neuron.
+INFO 06-29 10:33:23 [__init__.py:43] Available plugins for group vllm.platform_plugins:
+INFO 06-29 10:33:23 [__init__.py:45] - neuron -> vllm_neuron:register
+INFO 06-29 10:33:23 [__init__.py:48] All plugins in this group will be loaded. Set `VLLM_PLUGINS` to control which plugins to load.
+INFO 06-29 10:33:23 [__init__.py:212] Platform plugin neuron is activated
+INFO 06-29 10:33:26 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 06-29 10:33:26 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+(EngineCore_DP0 pid=476205) INFO 06-29 10:33:27 [core.py:97] Initializing a V1 LLM engine (v0.16.0) with config: model='Qwen/Qwen2.5-1.5B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-1.5B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=640, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cpu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=Qwen/Qwen2.5-1.5B-Instruct, enable_prefix_caching=False, enable_chunked_prefill=False, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': None, 'compile_ranges_split_points': [640], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': None, 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': None, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:27] INFO platform.py:111: Applying Neuron config overrides
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:27] INFO platform.py:127: Neuron config overrides applied successfully
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:30] INFO initializer.py:82: PJRT_DEVICE not set in environment, defaulting to NEURON device
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed/modules/moe/blockwise.py:100: DeprecationWarning: torch_neuronx.nki_jit is deprecated, use nki.jit instead.
+(EngineCore_DP0 pid=476205)   component, error = import_nki(config)
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed/modules/moe/blockwise.py:102: UserWarning: Warning: Failed to import blockwise_mm_baseline_shard_hidden: No module named 'neuronxcc.nki._private.blockwise_mm'
+(EngineCore_DP0 pid=476205)   warnings.warn(f"Warning: {error}")
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed/modules/moe/blockwise.py:102: UserWarning: Warning: Failed to import blockwise_mm_bwd: No module named 'neuronxcc.nki._private.blockwise_mm_bwd'
+(EngineCore_DP0 pid=476205)   warnings.warn(f"Warning: {error}")
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed/modules/moe/blockwise.py:102: UserWarning: Warning: Failed to import blockwise_mm_bwd_baseline_shard_hidden: No module named 'neuronxcc.nki._private.blockwise_mm_bwd'
+(EngineCore_DP0 pid=476205)   warnings.warn(f"Warning: {error}")
+(EngineCore_DP0 pid=476205) WARNING 06-29 10:33:33 [interface.py:225] Failed to import from vllm._C: ImportError('libcuda.so.1: cannot open shared object file: No such file or directory')
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:33] WARNING platform.py:430: Pin memory is not supported on Neuron.
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed_inference/utils/constants.py:1: DeprecationWarning: torch_neuronx.nki_jit is deprecated, use nki.jit instead.
+(EngineCore_DP0 pid=476205)   from neuronx_distributed_inference.models.dbrx.modeling_dbrx import NeuronDbrxForCausalLM
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed_inference/utils/constants.py:6: DeprecationWarning: torch_neuronx.nki_jit is deprecated, use nki.jit instead.
+(EngineCore_DP0 pid=476205)   from neuronx_distributed_inference.models.mixtral.modeling_mixtral import NeuronMixtralForCausalLM
+(EngineCore_DP0 pid=476205) /opt/aws_neuronx_venv_pytorch_inference_vllm_0_16/lib/python3.12/site-packages/neuronx_distributed_inference/utils/constants.py:14: DeprecationWarning: torch_neuronx.nki_jit is deprecated, use nki.jit instead.
+(EngineCore_DP0 pid=476205)   from neuronx_distributed_inference.models.qwen3_moe.modeling_qwen3_moe import NeuronQwen3MoeForCausalLM
+(EngineCore_DP0 pid=476205) INFO 06-29 10:33:34 [parallel_state.py:1234] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.31.19.107:49301 backend=gloo
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+(EngineCore_DP0 pid=476205) INFO 06-29 10:33:34 [parallel_state.py:1445] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:34] INFO neuronx_distributed_model_loader.py:1057: No neuron overrides are passed via additional_config: {}. Proceeding with defaults.
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:34] WARNING neuronx_distributed_model_loader.py:214: Exception: [Errno 2] No such file or directory: 'local-models/Qwen/Qwen2.5-1.5B-Instruct/neuron-compiled-artifacts/8d1efcabb3c7272d9d3eede67b0167da/neuron_config.json'
+(EngineCore_DP0 pid=476205) [2026-06-29 10:33:34] WARNING neuronx_distributed_model_loader.py:215: Unable to find precompiled artifacts from local-models/Qwen/Qwen2.5-1.5B-Instruct/neuron-compiled-artifacts/8d1efcabb3c7272d9d3eede67b0167da. Recompiling...

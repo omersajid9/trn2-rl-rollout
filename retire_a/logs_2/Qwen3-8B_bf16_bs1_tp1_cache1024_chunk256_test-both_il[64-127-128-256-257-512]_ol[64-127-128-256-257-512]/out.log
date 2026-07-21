@@ -1,0 +1,303 @@
+Run directory : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk256_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]
+Log file      : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk256_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/run.log
+Config        : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk256_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/config.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-11 04:27:48,489:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-11 04:27:58,748	INFO worker.py:2012 -- Started a local Ray instance.
+/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(pid=406233)[0m [W711 04:28:09.857699451 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=406233)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=406233)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=406233)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=406233)[0m   dispatch key: PrivateUse1
+[36m(pid=406233)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=406233)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(ActorWorker pid=406232)[0m 2026-Jul-11 04:28:21.0646 406232:406232 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=406232)[0m 2026-Jul-11 04:28:21.0646 406232:406232 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=406232)[0m 2026-Jul-11 04:28:21.0650 406232:406232 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=406232)[0m 2026-Jul-11 04:28:21.0654 406232:406232 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=406232)[0m [mini_verl.actor 04:28:21] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:28:21] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:28:21] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(RolloutWorker pid=406233)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=406233)[0m WARNING:2026-07-11 04:28:21,963:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=406232)[0m [W711 04:28:09.854952030 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=406232)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=406232)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=406232)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=406232)[0m   dispatch key: PrivateUse1
+[36m(pid=406232)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=406232)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:30:31] rank=0 init_model done (129.55s, params=399, tp_size=1)
+[36m(RolloutWorker pid=406233)[0m 2026-Jul-11 04:28:21.0646 406233:406233 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=406233)[0m 2026-Jul-11 04:28:21.0648 406233:406233 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=406233)[0m 2026-Jul-11 04:28:21.0652 406233:406233 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=406233)[0m 2026-Jul-11 04:28:21.0656 406233:406233 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 04:30:36] ===== memory snapshot [after_prefill_pool_create] device=neuron =====
+  live tensors: 0 allocations, 0.0 B total
+    by category: (none)
+    by dtype: (none)
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+  pytorch allocator:  allocated=0.0 B  reserved=0.0 B  peak=0.0 B
+  neuron-monitor: n/a (cpu / binary missing)
+=====================================================================
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:31:38] rank=0 generate_sequences done (62.28s)
+[mini_verl.mem 04:31:44] ===== memory snapshot [after_prefill_warmup] device=neuron =====
+  live tensors: 0 allocations, 0.0 B total
+    by category: (none)
+    by dtype: (none)
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+  pytorch allocator:  allocated=0.0 B  reserved=0.0 B  peak=0.0 B
+  neuron-monitor: n/a (cpu / binary missing)
+================================================================
+  PREFILL_64_COLD  total_ms=12661.6  tps=0.1
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:31:56] rank=0 generate_sequences done (12.65s)
+  PREFILL_64_WARM  total_ms=102.1  tps=9.8
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:31:57] rank=0 generate_sequences done (0.10s)
+  PREFILL_127_COLD  total_ms=100.3  tps=10.0
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:31:59] rank=0 generate_sequences done (0.09s)
+  PREFILL_127_WARM  total_ms=101.6  tps=9.8
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:31:59] rank=0 generate_sequences done (0.10s)
+  PREFILL_128_COLD  total_ms=104.9  tps=9.5
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:01] rank=0 generate_sequences done (0.10s)
+  PREFILL_128_WARM  total_ms=106.4  tps=9.4
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:01] rank=0 generate_sequences done (0.10s)
+  PREFILL_256_COLD  total_ms=105.9  tps=9.4
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:03] rank=0 generate_sequences done (0.10s)
+  PREFILL_256_WARM  total_ms=103.8  tps=9.6
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:03] rank=0 generate_sequences done (0.10s)
+  PREFILL_257_COLD  total_ms=11814.5  tps=0.1
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:17] rank=0 generate_sequences done (11.81s)
+  PREFILL_257_WARM  total_ms=177.0  tps=5.7
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:17] rank=0 generate_sequences done (0.17s)
+  PREFILL_512_COLD  total_ms=174.1  tps=5.7
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:19] rank=0 generate_sequences done (0.17s)
+  PREFILL_512_WARM  total_ms=180.8  tps=5.5
+[36m(RolloutWorker pid=406233)[0m [mini_verl.rollout 04:32:20] rank=0 generate_sequences done (0.17s)
+[mini_verl.mem 04:32:22] ===== memory snapshot [after_prefill_sweep] device=neuron =====
+  live tensors: 0 allocations, 0.0 B total
+    by category: (none)
+    by dtype: (none)
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+  pytorch allocator:  allocated=0.0 B  reserved=0.0 B  peak=0.0 B
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+2026-07-11 04:32:37,598	INFO worker.py:2012 -- Started a local Ray instance.
+[36m(pid=409342)[0m [W711 04:32:46.116856690 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=409342)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=409342)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=409342)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=409342)[0m   dispatch key: PrivateUse1
+[36m(pid=409342)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=409342)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=409344)[0m 2026-Jul-11 04:32:53.0963 409344:409344 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=409344)[0m 2026-Jul-11 04:32:53.0966 409344:409344 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=409344)[0m 2026-Jul-11 04:32:53.0969 409344:409344 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=409344)[0m 2026-Jul-11 04:32:53.0971 409344:409344 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=409342)[0m 2026-Jul-11 04:33:02.0126 409342:409342 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=409342)[0m 2026-Jul-11 04:33:02.0129 409342:409342 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=409342)[0m 2026-Jul-11 04:33:02.0131 409342:409342 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=409342)[0m 2026-Jul-11 04:33:02.0134 409342:409342 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=409342)[0m [mini_verl.actor 04:33:02] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=409344)[0m [mini_verl.rollout 04:33:02] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=409344)[0m [mini_verl.rollout 04:33:02] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(RolloutWorker pid=409344)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=409344)[0m WARNING:2026-07-11 04:33:02,658:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=409344)[0m [W711 04:32:46.126885113 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=409344)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=409344)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=409344)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=409344)[0m   dispatch key: PrivateUse1
+[36m(pid=409344)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=409344)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=409344)[0m [mini_verl.rollout 04:33:08] rank=0 init_model done (6.59s, params=399, tp_size=1)
+[36m(RolloutWorker pid=409344)[0m [mini_verl.rollout 04:33:45] rank=0 generate_sequences done (31.98s)
+  DECODE_64_COLD  total_ms=15189.2  tps=4.2  tpt_ms=239.410
+[36m(RolloutWorker pid=409344)[0m [mini_verl.rollout 04:34:06] rank=0 generate_sequences done (15.18s)
+  DECODE_64_WARM  total_ms=2530.5  tps=25.3  tpt_ms=38.478
+[36m(RolloutWorker pid=409344)[0m [mini_verl.rollout 04:34:08] rank=0 generate_sequences done (2.52s)
+2026-07-11 04:34:15,763	INFO worker.py:2012 -- Started a local Ray instance.
+[36m(pid=411126)[0m [W711 04:34:24.090918065 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=411126)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=411126)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=411126)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=411126)[0m   dispatch key: PrivateUse1
+[36m(pid=411126)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=411126)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(ActorWorker pid=411125)[0m 2026-Jul-11 04:34:33.0595 411125:411125 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=411125)[0m 2026-Jul-11 04:34:33.0597 411125:411125 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=411125)[0m 2026-Jul-11 04:34:33.0599 411125:411125 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=411125)[0m 2026-Jul-11 04:34:33.0602 411125:411125 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=411125)[0m [mini_verl.actor 04:34:33] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=411126)[0m [mini_verl.rollout 04:34:33] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=411126)[0m [mini_verl.rollout 04:34:33] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(RolloutWorker pid=411126)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=411126)[0m WARNING:2026-07-11 04:34:33,987:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=411125)[0m [W711 04:34:24.088984787 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=411125)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=411125)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=411125)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=411125)[0m   dispatch key: PrivateUse1
+[36m(pid=411125)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=411125)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=411126)[0m [mini_verl.rollout 04:34:40] rank=0 init_model done (6.44s, params=399, tp_size=1)
+[36m(RolloutWorker pid=411126)[0m 2026-Jul-11 04:34:33.0534 411126:411126 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=411126)[0m 2026-Jul-11 04:34:33.0537 411126:411126 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=411126)[0m 2026-Jul-11 04:34:33.0540 411126:411126 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=411126)[0m 2026-Jul-11 04:34:33.0543 411126:411126 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(RolloutWorker pid=411126)[0m [mini_verl.rollout 04:35:19] rank=0 generate_sequences done (34.39s)
+  DECODE_127_COLD  total_ms=17385.9  tps=7.3  tpt_ms=137.139
+[36m(RolloutWorker pid=411126)[0m [mini_verl.rollout 04:35:41] rank=0 generate_sequences done (17.38s)
+  DECODE_127_WARM  total_ms=5071.1  tps=25.0  tpt_ms=39.402
+[36m(RolloutWorker pid=411126)[0m [mini_verl.rollout 04:35:47] rank=0 generate_sequences done (5.06s)
+2026-07-11 04:35:54,281	INFO worker.py:2012 -- Started a local Ray instance.
+[36m(pid=412932)[0m [W711 04:36:02.698053697 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=412932)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=412932)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=412932)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=412932)[0m   dispatch key: PrivateUse1
+[36m(pid=412932)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=412932)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(ActorWorker pid=412932)[0m 2026-Jul-11 04:36:10.0757 412932:412932 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=412932)[0m 2026-Jul-11 04:36:10.0759 412932:412932 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=412932)[0m 2026-Jul-11 04:36:10.0762 412932:412932 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=412932)[0m 2026-Jul-11 04:36:10.0764 412932:412932 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=412932)[0m [mini_verl.actor 04:36:10] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=412933)[0m [mini_verl.rollout 04:36:10] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=412933)[0m [mini_verl.rollout 04:36:10] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(RolloutWorker pid=412933)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=412933)[0m WARNING:2026-07-11 04:36:11,124:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=412933)[0m [W711 04:36:02.720035866 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=412933)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=412933)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=412933)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=412933)[0m   dispatch key: PrivateUse1
+[36m(pid=412933)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=412933)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=412933)[0m [mini_verl.rollout 04:36:17] rank=0 init_model done (6.67s, params=399, tp_size=1)
+[36m(RolloutWorker pid=412933)[0m 2026-Jul-11 04:36:10.0806 412933:412933 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=412933)[0m 2026-Jul-11 04:36:10.0809 412933:412933 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=412933)[0m 2026-Jul-11 04:36:10.0811 412933:412933 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=412933)[0m 2026-Jul-11 04:36:10.0813 412933:412933 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(RolloutWorker pid=412933)[0m [mini_verl.rollout 04:36:56] rank=0 generate_sequences done (33.95s)
+  DECODE_128_COLD  total_ms=17225.1  tps=7.4  tpt_ms=134.793
+[36m(RolloutWorker pid=412933)[0m [mini_verl.rollout 04:37:18] rank=0 generate_sequences done (17.22s)
+  DECODE_128_WARM  total_ms=4863.9  tps=26.3  tpt_ms=37.461
+[36m(RolloutWorker pid=412933)[0m [mini_verl.rollout 04:37:23] rank=0 generate_sequences done (4.86s)
+2026-07-11 04:37:30,962	INFO worker.py:2012 -- Started a local Ray instance.
+[36m(pid=414729)[0m [W711 04:37:39.178188860 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=414729)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=414729)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=414729)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=414729)[0m   dispatch key: PrivateUse1
+[36m(pid=414729)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=414729)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=414730)[0m 2026-Jul-11 04:37:46.0847 414730:414730 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=414730)[0m 2026-Jul-11 04:37:46.0849 414730:414730 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=414730)[0m 2026-Jul-11 04:37:46.0852 414730:414730 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=414730)[0m 2026-Jul-11 04:37:46.0854 414730:414730 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=414729)[0m 2026-Jul-11 04:37:55.0538 414729:414729 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=414729)[0m 2026-Jul-11 04:37:55.0541 414729:414729 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=414729)[0m 2026-Jul-11 04:37:55.0544 414729:414729 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=414729)[0m 2026-Jul-11 04:37:55.0546 414729:414729 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=414729)[0m [mini_verl.actor 04:37:55] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=414730)[0m [mini_verl.rollout 04:37:55] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=414730)[0m [mini_verl.rollout 04:37:55] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(RolloutWorker pid=414730)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=414730)[0m WARNING:2026-07-11 04:37:55,857:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=414730)[0m [W711 04:37:39.176586937 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=414730)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=414730)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=414730)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=414730)[0m   dispatch key: PrivateUse1
+[36m(pid=414730)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=414730)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=414730)[0m [mini_verl.rollout 04:38:02] rank=0 init_model done (6.46s, params=399, tp_size=1)
+[36m(RolloutWorker pid=414730)[0m [mini_verl.rollout 04:38:45] rank=0 generate_sequences done (38.88s)
+  DECODE_256_COLD  total_ms=22113.7  tps=11.6  tpt_ms=86.303
+[36m(RolloutWorker pid=414730)[0m [mini_verl.rollout 04:39:13] rank=0 generate_sequences done (22.11s)
+  DECODE_256_WARM  total_ms=9694.3  tps=26.4  tpt_ms=37.600
+[36m(RolloutWorker pid=414730)[0m [mini_verl.rollout 04:39:22] rank=0 generate_sequences done (9.69s)
+2026-07-11 04:39:29,979	INFO worker.py:2012 -- Started a local Ray instance.
+[36m(pid=416693)[0m [W711 04:39:38.200061229 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=416693)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=416693)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=416693)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=416693)[0m   dispatch key: PrivateUse1
+[36m(pid=416693)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=416693)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=416694)[0m 2026-Jul-11 04:39:45.0000 416694:416694 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=416694)[0m 2026-Jul-11 04:39:45.0003 416694:416694 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=416694)[0m 2026-Jul-11 04:39:45.0006 416694:416694 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=416694)[0m 2026-Jul-11 04:39:45.0008 416694:416694 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(ActorWorker pid=416693)[0m 2026-Jul-11 04:39:51.0810 416693:416693 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=416693)[0m 2026-Jul-11 04:39:51.0813 416693:416693 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=416693)[0m 2026-Jul-11 04:39:51.0815 416693:416693 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=416693)[0m 2026-Jul-11 04:39:51.0817 416693:416693 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(RolloutWorker pid=416694)[0m [mini_verl.rollout 04:39:51] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=416694)[0m [mini_verl.rollout 04:39:51] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(ActorWorker pid=416693)[0m [mini_verl.actor 04:39:51] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=416694)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=416694)[0m WARNING:2026-07-11 04:39:52,107:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=416694)[0m [W711 04:39:38.255477151 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=416694)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=416694)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=416694)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=416694)[0m   dispatch key: PrivateUse1
+[36m(pid=416694)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=416694)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=416694)[0m [mini_verl.rollout 04:39:58] rank=0 init_model done (6.52s, params=399, tp_size=1)
+[36m(RolloutWorker pid=416694)[0m [mini_verl.rollout 04:40:41] rank=0 generate_sequences done (38.54s)
+  DECODE_257_COLD  total_ms=22506.1  tps=11.4  tpt_ms=87.499
+[36m(RolloutWorker pid=416694)[0m [mini_verl.rollout 04:41:09] rank=0 generate_sequences done (22.50s)
+  DECODE_257_WARM  total_ms=10173.5  tps=25.3  tpt_ms=39.325
+[36m(RolloutWorker pid=416694)[0m [mini_verl.rollout 04:41:19] rank=0 generate_sequences done (10.17s)
+2026-07-11 04:41:26,831	INFO worker.py:2012 -- Started a local Ray instance.
+[36m(pid=418565)[0m [W711 04:41:35.636536712 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=418565)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=418565)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=418565)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=418565)[0m   dispatch key: PrivateUse1
+[36m(pid=418565)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=418565)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=418566)[0m 2026-Jul-11 04:41:43.0971 418566:418566 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(RolloutWorker pid=418566)[0m 2026-Jul-11 04:41:43.0974 418566:418566 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(RolloutWorker pid=418566)[0m 2026-Jul-11 04:41:43.0977 418566:418566 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(RolloutWorker pid=418566)[0m 2026-Jul-11 04:41:43.0979 418566:418566 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(RolloutWorker pid=418566)[0m [mini_verl.rollout 04:41:44] rank=0 joined shared world as global_rank=1 (role=rollout)
+[36m(RolloutWorker pid=418566)[0m [mini_verl.rollout 04:41:44] rank=0 init_model (model=Qwen/Qwen3-8B)
+[36m(ActorWorker pid=418565)[0m [mini_verl.actor 04:41:44] rank=0 joined shared world as global_rank=0 (role=trainer)
+[36m(RolloutWorker pid=418566)[0m Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(RolloutWorker pid=418566)[0m WARNING:2026-07-11 04:41:44,427:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[36m(pid=418566)[0m [W711 04:41:35.652366151 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+[36m(pid=418566)[0m   Overriding a previously registered kernel for the same operator and the same dispatch key
+[36m(pid=418566)[0m   operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+[36m(pid=418566)[0m     registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+[36m(pid=418566)[0m   dispatch key: PrivateUse1
+[36m(pid=418566)[0m   previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+[36m(pid=418566)[0m        new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[36m(RolloutWorker pid=418566)[0m [mini_verl.rollout 04:41:50] rank=0 init_model done (6.40s, params=399, tp_size=1)
+[36m(ActorWorker pid=418565)[0m 2026-Jul-11 04:41:44.0023 418565:418565 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+[36m(ActorWorker pid=418565)[0m 2026-Jul-11 04:41:44.0025 418565:418565 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+[36m(ActorWorker pid=418565)[0m 2026-Jul-11 04:41:44.0028 418565:418565 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+[36m(ActorWorker pid=418565)[0m 2026-Jul-11 04:41:44.0030 418565:418565 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+[36m(RolloutWorker pid=418566)[0m [mini_verl.rollout 04:42:45] rank=0 generate_sequences done (49.44s)
+  DECODE_512_COLD  total_ms=31789.5  tps=16.1  tpt_ms=62.002
+[36m(RolloutWorker pid=418566)[0m [mini_verl.rollout 04:43:21] rank=0 generate_sequences done (31.78s)
+  DECODE_512_WARM  total_ms=19471.0  tps=26.3  tpt_ms=37.896
+[36m(RolloutWorker pid=418566)[0m [mini_verl.rollout 04:43:41] rank=0 generate_sequences done (19.46s)
+[mini_verl.mem 04:43:44] ===== memory snapshot [after_decode_sweep] device=neuron =====
+  live tensors: 0 allocations, 0.0 B total
+    by category: (none)
+    by dtype: (none)
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+  pytorch allocator:  allocated=0.0 B  reserved=0.0 B  peak=0.0 B
+  neuron-monitor: n/a (cpu / binary missing)
+==============================================================

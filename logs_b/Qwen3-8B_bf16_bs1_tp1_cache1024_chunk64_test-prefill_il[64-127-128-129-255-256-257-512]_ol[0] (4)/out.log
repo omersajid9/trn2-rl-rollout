@@ -1,0 +1,66 @@
+Run directory : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk64_test-prefill_il[64-127-128-129-255-256-257-512]_ol[0] (4)
+Log file      : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk64_test-prefill_il[64-127-128-129-255-256-257-512]_ol[0] (4)/run.log
+Config        : logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk64_test-prefill_il[64-127-128-129-255-256-257-512]_ol[0] (4)/config.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-21 05:20:14,758:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   0%|          | 1/399 [00:00<00:55,  7.21it/s]Loading weights:  18%|#8        | 73/399 [00:00<00:00, 334.43it/s]Loading weights:  27%|##7       | 109/399 [00:00<00:00, 307.45it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 818.19it/s]
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 05:22:40] ===== memory snapshot [after_engine_create] device=neuron =====
+  live tensors: 401 allocations, 15.3 GiB total
+    by category: param=15.3 GiB (399)  other=512.0 B (2)
+    by dtype: bfloat16=15.3 GiB  float32=512.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+  pytorch allocator:  allocated=15.3 GiB  reserved=15.3 GiB  peak=15.3 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+V0721 05:22:59.397000 24431 torch/_dynamo/guards.py:4760] [0/1] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 05:22:59.397000 24431 torch/_dynamo/guards.py:4760] [0/1] [__recompiles]     triggered by the following guard failure(s):
+V0721 05:22:59.397000 24431 torch/_dynamo/guards.py:4760] [0/1] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 1
+  graphs_generated=2
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 05:23:26] ===== memory snapshot [after_warmup] device=neuron =====
+  live tensors: 509 allocations, 15.4 GiB total
+    by category: param=15.3 GiB (399)  other=144.0 MiB (110)
+    by dtype: bfloat16=15.4 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       144.0 MiB      72  bfloat16    other   (1, 8, 1024, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.4 GiB  reserved=15.4 GiB  peak=15.4 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+========================================================
+Traceback (most recent call last):
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_generation.py", line 710, in <module>
+    main()
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_generation.py", line 703, in main
+    mini_verl_run(cfg, log_file, run_dir)
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_generation.py", line 607, in mini_verl_run
+    warm_prefill_ms = prefill_sweep(
+                      ^^^^^^^^^^^^^^
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_generation.py", line 491, in prefill_sweep
+    log(log_file, "PREFILL_TEST START")
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_generation.py", line 120, in log
+    with open(log_file, "a", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk64_test-prefill_il[64-127-128-129-255-256-257-512]_ol[0] (4)/run.log'
+WARNING:2026-07-21 05:23:26,337:Failed to write metrics CSV to logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk64_test-prefill_il[64-127-128-129-255-256-257-512]_ol[0] (4)/metric_table_graph_stats_rank0.csv: [Errno 2] No such file or directory: 'logs/Qwen3-8B_bf16_bs1_tp1_cache1024_chunk64_test-prefill_il[64-127-128-129-255-256-257-512]_ol[0] (4)/metric_table_graph_stats_rank0.csv'

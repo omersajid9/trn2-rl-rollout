@@ -1,0 +1,11 @@
+{
+  "input_tokens": 512,
+  "output_tokens": 257,
+  "ttft_ms": 13.2,
+  "tpt_ms": 5.25,
+  "total_time_ms": 1356.14,
+  "compile_ms": 33438.1,
+  "total_compile_delta": 0,
+  "per_token_latencies_ms": [],
+  "per_step_compile_deltas": []
+}

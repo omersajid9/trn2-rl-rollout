@@ -1,0 +1,28 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dtype": "bfloat16",
+  "backend": "nxdi",
+  "output_lens": [
+    64,
+    127,
+    128,
+    129,
+    255,
+    256,
+    257,
+    512
+  ],
+  "input_lens": [
+    64,
+    127,
+    128,
+    129,
+    255,
+    256,
+    257,
+    512
+  ],
+  "test": "both",
+  "prefill_output_len": 1,
+  "decode_input_len": 512
+}

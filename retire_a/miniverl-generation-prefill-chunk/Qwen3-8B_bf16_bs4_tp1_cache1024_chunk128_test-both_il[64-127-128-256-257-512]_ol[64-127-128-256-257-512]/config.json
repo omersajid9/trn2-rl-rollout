@@ -1,0 +1,27 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "dtype": "bfloat16",
+  "batch_size": 4,
+  "max_cache_len": 1024,
+  "prefill_chunk_size": 128,
+  "input_lens": [
+    64,
+    127,
+    128,
+    256,
+    257,
+    512
+  ],
+  "output_lens": [
+    64,
+    127,
+    128,
+    256,
+    257,
+    512
+  ],
+  "decode_input_len": 128,
+  "prefill_output_len": 1,
+  "tp_size": 1,
+  "test": "both"
+}

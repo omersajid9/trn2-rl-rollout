@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dtype": "bfloat16",
+  "compile_backend": "openxla",
+  "output_len": 256,
+  "input_lens": [
+    64,
+    127,
+    128,
+    129,
+    256,
+    257,
+    512
+  ],
+  "test": "both"
+}

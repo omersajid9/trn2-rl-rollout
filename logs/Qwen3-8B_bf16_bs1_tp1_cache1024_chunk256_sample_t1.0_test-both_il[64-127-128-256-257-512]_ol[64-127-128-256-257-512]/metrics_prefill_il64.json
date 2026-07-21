@@ -8,8 +8,8 @@
       "input_len": 64,
       "prompt_len": 256,
       "output_len": 1,
-      "total_time_ms": 12043.77,
-      "tps": 0.08,
+      "total_time_ms": 50043.62,
+      "tps": 0.02,
       "tpt_ms": 0.0,
       "response_tokens": 1.0
     },
@@ -19,8 +19,8 @@
       "input_len": 64,
       "prompt_len": 256,
       "output_len": 1,
-      "total_time_ms": 99.4,
-      "tps": 10.06,
+      "total_time_ms": 99.99,
+      "tps": 10.0,
       "tpt_ms": 0.0,
       "response_tokens": 1.0
     }

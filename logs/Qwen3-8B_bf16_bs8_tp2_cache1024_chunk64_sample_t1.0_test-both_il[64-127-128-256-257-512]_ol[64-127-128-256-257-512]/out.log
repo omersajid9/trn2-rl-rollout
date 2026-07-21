@@ -1,0 +1,142 @@
+Run directory : logs/Qwen3-8B_bf16_bs8_tp2_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]
+Log file      : logs/Qwen3-8B_bf16_bs8_tp2_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/run.log
+Config        : logs/Qwen3-8B_bf16_bs8_tp2_cache1024_chunk64_sample_t1.0_test-both_il[64-127-128-256-257-512]_ol[64-127-128-256-257-512]/config.json
+Sampling      : do_sample=True temperature=1.0 top_p=1.0 top_k=0
+TP size       : 2
+n_samples     : 1  (effective batch: 8)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-21 07:24:28,930:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 6389.22it/s]
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 07:26:55] ===== memory snapshot [after_engine_create] device=neuron =====
+  live tensors: 401 allocations, 15.3 GiB total
+    by category: param=15.3 GiB (399)  other=512.0 B (2)
+    by dtype: bfloat16=15.3 GiB  float32=512.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+  pytorch allocator:  allocated=15.3 GiB  reserved=15.3 GiB  peak=15.3 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+V0721 07:27:42.219000 38372 torch/_dynamo/guards.py:4760] [0/1] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 07:27:42.219000 38372 torch/_dynamo/guards.py:4760] [0/1] [__recompiles]     triggered by the following guard failure(s):
+V0721 07:27:42.219000 38372 torch/_dynamo/guards.py:4760] [0/1] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 1
+  graphs_generated=2
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 07:31:53] ===== memory snapshot [after_warmup] device=neuron =====
+  live tensors: 509 allocations, 16.4 GiB total
+    by category: param=15.3 GiB (399)  other=1.1 GiB (110)
+    by dtype: bfloat16=16.4 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+         1.1 GiB      72  bfloat16    other   (8, 8, 1024, 128)     =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=16.4 GiB  reserved=16.4 GiB  peak=16.4 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+========================================================
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     triggered by the following guard failure(s):
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 64
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     - 0/0: kwargs['past_key_values'].layers[0].is_initialized == False  # return self.cumulative_length if self.is_initialized else 0  # transformers/cache_utils.py:466 in get_seq_length
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     - User stack trace:
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py", line 907, in wrapper
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     output = func(self, *args, **kwargs)
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 492, in forward
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     outputs: BaseModelOutputWithPast = self.model(
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py", line 1036, in wrapper
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     output = func(self, *args, **kwargs)
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     outputs = func(self, *args, **kwargs)
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 414, in forward
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     "full_attention": create_causal_mask(**mask_kwargs),
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/masking_utils.py", line 953, in create_causal_mask
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     _preprocess_mask_arguments(config, inputs_embeds, attention_mask, past_key_values, position_ids, layer_idx)
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/masking_utils.py", line 858, in _preprocess_mask_arguments
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     q_offset = past_key_values.get_seq_length()
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/cache_utils.py", line 1271, in get_seq_length
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     return self.layers[layer_idx].get_seq_length()
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/cache_utils.py", line 466, in get_seq_length
+V0721 07:31:55.242000 38372 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     return self.cumulative_length if self.is_initialized else 0
+  PREFILL_64_COLD  total_ms=38465.5  tps=0.2  [RECOMPILE x1]
+  PREFILL_64_WARM  total_ms=152.6  tps=52.4
+  PREFILL_127_COLD  total_ms=265.7  tps=30.1
+  PREFILL_127_WARM  total_ms=266.8  tps=30.0
+  PREFILL_128_COLD  total_ms=286.1  tps=28.0
+  PREFILL_128_WARM  total_ms=271.8  tps=29.4
+  PREFILL_256_COLD  total_ms=469.8  tps=17.0
+  PREFILL_256_WARM  total_ms=483.0  tps=16.6
+  PREFILL_257_COLD  total_ms=600.1  tps=13.3
+  PREFILL_257_WARM  total_ms=587.0  tps=13.6
+  PREFILL_512_COLD  total_ms=897.8  tps=8.9
+  PREFILL_512_WARM  total_ms=908.5  tps=8.8
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 07:33:00] ===== memory snapshot [after_prefill_sweep] device=neuron =====
+  live tensors: 509 allocations, 16.4 GiB total
+    by category: param=15.3 GiB (399)  other=1.1 GiB (110)
+    by dtype: bfloat16=16.4 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+         1.1 GiB      72  bfloat16    other   (8, 8, 1024, 128)     =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=16.4 GiB  reserved=16.4 GiB  peak=16.4 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+===============================================================
+  DECODE_64_COLD  total_ms=3203.0  tps=159.8  tpt_ms=46.528  resp_tokens=64.0/64
+  DECODE_64_WARM  total_ms=3134.8  tps=163.3  tpt_ms=45.445  resp_tokens=64.0/64
+  DECODE_127_COLD  total_ms=6007.8  tps=169.1  tpt_ms=45.524  resp_tokens=127.0/127
+  DECODE_127_WARM  total_ms=5901.4  tps=172.2  tpt_ms=44.680  resp_tokens=127.0/127
+  DECODE_128_COLD  total_ms=5982.6  tps=171.2  tpt_ms=44.967  resp_tokens=128.0/128
+  DECODE_128_WARM  total_ms=6034.8  tps=169.7  tpt_ms=45.378  resp_tokens=128.0/128
+  DECODE_256_COLD  total_ms=11993.1  tps=170.8  tpt_ms=45.966  resp_tokens=256.0/256
+  DECODE_256_WARM  total_ms=11995.0  tps=170.7  tpt_ms=45.973  resp_tokens=256.0/256
+  DECODE_257_COLD  total_ms=12125.7  tps=169.6  tpt_ms=46.304  resp_tokens=257.0/257
+  DECODE_257_WARM  total_ms=11848.0  tps=173.5  tpt_ms=45.220  resp_tokens=257.0/257
+  DECODE_512_COLD  total_ms=23275.8  tps=176.0  tpt_ms=45.018  resp_tokens=512.0/512
+  DECODE_512_WARM  total_ms=24566.4  tps=166.7  tpt_ms=47.543  resp_tokens=512.0/512
+[mini_verl.mem 07:35:29] ===== memory snapshot [after_decode_sweep] device=neuron =====
+  live tensors: 509 allocations, 16.4 GiB total
+    by category: param=15.3 GiB (399)  other=1.1 GiB (110)
+    by dtype: bfloat16=16.4 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+         1.1 GiB      72  bfloat16    other   (8, 8, 1024, 128)     =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=16.4 GiB  reserved=16.4 GiB  peak=16.4 GiB
+  neuron-monitor: n/a (cpu / binary missing)
+==============================================================
+DONE graphs_generated=3
