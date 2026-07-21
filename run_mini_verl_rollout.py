@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import threading
@@ -152,13 +153,40 @@ def drop_caches(log_file: Path) -> None:
     log(log_file, "CACHE_DROP DONE")
 
 
+def collect_neff_mem_tables(run_dir: Path, log_file: Path | None = None) -> int:
+    """Copy the runtime's on-disk NEFF memory tables into the run dir.
+
+    On OOM the Neuron Runtime writes the full per-NEFF memory-usage table to
+    ``/tmp/neuron_mem_table_device_<device_id>_hbm_<hbm_idx>.log`` (the same
+    breakdown it prints to stderr, but not truncated). Those files live in
+    ``/tmp``, which the sweep launcher's ``cleanup()`` wipes between configs,
+    so snapshot them into ``run_dir/neff_mem_tables/`` while they still exist.
+    Returns the number of files copied. Never raises.
+    """
+    copied = 0
+    try:
+        dest = run_dir / "neff_mem_tables"
+        for src in Path("/tmp").glob("neuron_mem_table_device_*_hbm_*.log"):
+            try:
+                dest.mkdir(exist_ok=True)
+                shutil.copy2(src, dest / src.name)
+                copied += 1
+            except Exception:
+                continue
+    except Exception:
+        pass
+    if log_file is not None:
+        log(log_file, f"NEFF_MEM_TABLES collected={copied}")
+    return copied
+
+
 def setup_run_dir(cfg) -> tuple[Path, Path, Path]:
     model_short = cfg.model.split("/")[-1]
     chunk_tag   = f"chunk{cfg.prefill_chunk_size}" if cfg.prefill_chunk_size > 0 else "nochunk"
     sample_tag  = f"sample_t{cfg.temperature}" if cfg.do_sample else "greedy"
     ns_tag      = f"_ns{cfg.n_samples}" if cfg.n_samples > 1 else ""
-    il_vals     = "-".join(str(x) for x in cfg.input_lens)
-    ol_vals     = "-".join(str(x) for x in cfg.output_lens)
+    il_vals     = "-".join(str(x) for x in cfg.input_lens[:10])
+    ol_vals     = "-".join(str(x) for x in cfg.output_lens[:10])
     base = (
         f"{model_short}_{_DTYPE_ABBREV.get(cfg.dtype, cfg.dtype)}"
         f"_bs{cfg.batch_size}{ns_tag}"
@@ -841,6 +869,8 @@ def mini_verl_run(cfg, log_file: Path, run_dir: Path) -> None:
         time.sleep(10)
         log_memory_snapshot("after_graphcache_sweep", neuron_monitor=True)
 
+    collect_neff_mem_tables(run_dir, log_file)
+
     drop_caches(log_file)
     time.sleep(10)
 
@@ -904,6 +934,19 @@ def main():
     os.environ.setdefault("TORCH_NEURONX_ENABLED_METRIC_TABLES", "graph_stats")
     os.environ.setdefault("TORCH_NEURONX_METRICS_DIR", str(run_dir))
 
+    # ─── NEFF MEMORY OBSERVABILITY ────────────────────────────────────────────
+    # NEURON_RT_LOG_LEVEL_TDRV=info makes the runtime emit a per-NEFF memory
+    # breakdown on EVERY model load (TDRV:dml_log_dev_neff_mem): model code,
+    # model constants, scratchpad, runtime, and the four DMA-ring categories —
+    # exactly the per-graph HBM split that neuron-monitor's aggregate
+    # hbm_breakdown cannot attribute to an individual NEFF. On OOM the runtime
+    # additionally dumps the full log_dev_mem_usage_table (per-NEFF rows + the
+    # NEFF-id→name mapping). All of this goes to stderr, which set_output_file()
+    # below redirects (fd 2) into out.log, so it is captured with zero extra
+    # plumbing. setdefault so the launcher can override the verbosity.
+    # See: https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-runtime/explore/device-memory.html
+    os.environ.setdefault("NEURON_RT_LOG_LEVEL_TDRV", "info")
+
     set_output_file(out_file)
 
     sample_mode = (
@@ -944,10 +987,19 @@ def main():
     monitor, thread, stop = start_mem_logger(log_file)
     time.sleep(10)
 
-    mini_verl_run(cfg, log_file, run_dir)
-
-    time.sleep(10)
-    stop_mem_logger(monitor, thread, stop)
+    try:
+        mini_verl_run(cfg, log_file, run_dir)
+    except Exception:
+        # An OOM in the stress sweep raises here (or hard-aborts in C++). If we
+        # got a Python-level exception, the runtime already dumped its NEFF mem
+        # tables to /tmp — snapshot them before cleanup wipes /tmp, then
+        # re-raise so the failure is still visible / non-zero exit.
+        log(log_file, "RUN_FAILED collecting NEFF mem tables before re-raise")
+        collect_neff_mem_tables(run_dir, log_file)
+        raise
+    finally:
+        time.sleep(10)
+        stop_mem_logger(monitor, thread, stop)
 
 
 if __name__ == "__main__":

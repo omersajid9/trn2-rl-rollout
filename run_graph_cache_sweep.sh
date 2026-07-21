@@ -23,6 +23,15 @@
 
 set -uo pipefail
 
+# ─── NEFF MEMORY LOGGING ──────────────────────────────────────────────────────
+# Per-NEFF memory breakdown on every model load (TDRV:dml_log_dev_neff_mem):
+# model code / constants / scratchpad / runtime / dma-rings, plus the full
+# per-NEFF OOM table + NEFF-id->name mapping on OOM. Captured into each run's
+# out.log (stderr is redirected there). run_mini_verl_rollout.py also sets this
+# via setdefault; exporting here makes it explicit and overridable.
+#   https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-runtime/explore/device-memory.html
+export NEURON_RT_LOG_LEVEL_TDRV="${NEURON_RT_LOG_LEVEL_TDRV:-info}"
+
 # ─── SWEEP PARAMETERS ─────────────────────────────────────────────────────────
 TP_SIZES=(1)              # extend to (1 2 4) to see if HBM headroom differs by TP
 MODEL="Qwen/Qwen3-8B"
