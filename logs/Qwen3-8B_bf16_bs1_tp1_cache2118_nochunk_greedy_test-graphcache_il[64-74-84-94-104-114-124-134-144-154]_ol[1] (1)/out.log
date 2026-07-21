@@ -1,0 +1,517 @@
+Run directory : logs/Qwen3-8B_bf16_bs1_tp1_cache2118_nochunk_greedy_test-graphcache_il[64-74-84-94-104-114-124-134-144-154]_ol[1] (1)
+Log file      : logs/Qwen3-8B_bf16_bs1_tp1_cache2118_nochunk_greedy_test-graphcache_il[64-74-84-94-104-114-124-134-144-154]_ol[1] (1)/run.log
+Config        : logs/Qwen3-8B_bf16_bs1_tp1_cache2118_nochunk_greedy_test-graphcache_il[64-74-84-94-104-114-124-134-144-154]_ol[1] (1)/config.json
+Sampling      : do_sample=False (greedy)
+TP size       : 1
+n_samples     : 1  (effective batch: 1)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:2026-07-21 09:55:51,263:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   5%|5         | 21/399 [00:00<00:02, 142.10it/s]Loading weights:   9%|9         | 36/399 [00:00<00:03, 115.01it/s]Loading weights: 100%|##########| 399/399 [00:00<00:00, 1110.91it/s]
+[0m2026-Jul-21 09:55:56.090347 56901:56901  INFO  TDRV:hwdecode_load_tables_generic            Loading hwdecode tables for v3 architecture[0m
+[0m2026-Jul-21 09:55:56.093544 56901:56901  INFO  TDRV:hwdecode_load_tables_generic            HW Decode PE CAM - md5hash: 0xd19ca34344033a642e25338ebda7741c[0m
+[0m2026-Jul-21 09:55:56.093573 56901:56901  INFO  TDRV:hwdecode_load_tables_generic            HW Decode PE PROFILE - md5hash: 0x8afa88d9cfdf4d0d5e793c876583a6ec[0m
+[0m2026-Jul-21 09:55:56.093579 56901:56901  INFO  TDRV:hwdecode_load_tables_generic            HW Decode ACT CAM - md5hash: 0xd19ca34344033a642e25338ebda7741c[0m
+[0m2026-Jul-21 09:55:56.093593 56901:56901  INFO  TDRV:hwdecode_load_tables_generic            HW Decode ACT PROFILE - md5hash: 0x8afa88d9cfdf4d0d5e793c876583a6ec[0m
+[0m2026-Jul-21 09:55:56.128205 56901:56901  INFO  TDRV:tdrv_init                               TDRV UltraServer information server_type:0 reservation_id:0x0 pod_sz:0 election_state:4 node_id:-1[0m
+[0m2026-Jul-21 09:56:01.991771 56901:56901  INFO  TDRV:tdrv_hbm_scrub_start                    Initializing nd0 HBM 0 with value 0[0m
+[0m2026-Jul-21 09:56:02.012516 56901:56901  INFO  TDRV:tdrv_hbm_scrub_start                    Initializing nd0 HBM 1 with value 0[0m
+[0m2026-Jul-21 09:56:02.031568 56901:56901  INFO  TDRV:tdrv_hbm_scrub_start                    Initializing nd0 HBM 2 with value 0[0m
+[0m2026-Jul-21 09:56:02.052039 56901:56901  INFO  TDRV:tdrv_hbm_scrub_start                    Initializing nd0 HBM 3 with value 0[0m
+[0m2026-Jul-21 09:56:02.108665 56901:56901  INFO  TDRV:tdrv_hbm_scrub_wait                     Finished initialization/scrubbing for nd0 HBM 0[0m
+[0m2026-Jul-21 09:56:02.129269 56901:56901  INFO  TDRV:tdrv_hbm_scrub_wait                     Finished initialization/scrubbing for nd0 HBM 1[0m
+[0m2026-Jul-21 09:56:02.148506 56901:56901  INFO  TDRV:tdrv_hbm_scrub_wait                     Finished initialization/scrubbing for nd0 HBM 2[0m
+[0m2026-Jul-21 09:56:02.168689 56901:56901  INFO  TDRV:tdrv_hbm_scrub_wait                     Finished initialization/scrubbing for nd0 HBM 3[0m
+[0m2026-Jul-21 09:56:02.180347 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.181471 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.183009 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.183228 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.184715 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.188394 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.200003 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.200185 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.200355 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.200512 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.200683 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.200886 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.212913 56901:56901  INFO  TDRV:tdrv_init_one_mla_phase2                Initialized vcore: 0[0m
+[0m2026-Jul-21 09:56:02.217935 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.218084 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.218267 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.218429 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.218625 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.218825 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.221118 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.221282 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.221456 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.221613 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.221783 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.221984 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.232975 56901:56901  INFO  TDRV:tdrv_init_one_mla_phase2                Initialized vcore: 1[0m
+[0m2026-Jul-21 09:56:02.236205 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.236354 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.236521 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.236678 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.236848 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.237049 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.239290 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.239440 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.239609 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.239765 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.239936 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.240136 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.250058 56901:56901  INFO  TDRV:tdrv_init_one_mla_phase2                Initialized vcore: 2[0m
+[0m2026-Jul-21 09:56:02.252836 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.252985 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.253165 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.253322 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.253493 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.253694 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.255955 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pe, iram md5hash: 0xa366eb4b3806010ba9461e930c277e1a, dram md5hash: 0x4770a401ba1958f2bcd1a0ea1f9b8b2f[0m
+[0m2026-Jul-21 09:56:02.256105 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: act, iram md5hash: 0xf1df6720ada84bc316d15cd825f83dc7, dram md5hash: 0xc402ace4d575f96e5dec17c3ea6fab3c[0m
+[0m2026-Jul-21 09:56:02.256288 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: pool, iram md5hash: 0x46b4268e1b2802c6b5316dc06a481458, dram md5hash: 0xfd08551093e90f10abaa868358df1f9d[0m
+[0m2026-Jul-21 09:56:02.256445 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: dve, iram md5hash: 0x86ff22d2d1d9d081bb08c52a736a0d3d, dram md5hash: 0xc7c843aab44034aa128cd44cec4b305e[0m
+[0m2026-Jul-21 09:56:02.256616 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: sp, iram md5hash: 0x247159a4fea19774308c1fdd8ee6afb4, dram md5hash: 0xd50623f8f2d2dd6f485584ffd3a351e9[0m
+[0m2026-Jul-21 09:56:02.256817 56901:56901  INFO  TDRV:ucode_print_hash                        SEQ UCODE IMGs from ucode lib - ENG: Q7, iram md5hash: 0xe36fe2fd546b9489012b50a22678ee53, dram md5hash: 0x635e3008060a52591b2c82cc969e1d66[0m
+[0m2026-Jul-21 09:56:02.267402 56901:56901  INFO  TDRV:tdrv_init_one_mla_phase2                Initialized vcore: 3[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:58:18] ===== memory snapshot [after_engine_create] device=neuron =====
+  live tensors: 401 allocations, 15.3 GiB total
+    by category: param=15.3 GiB (399)  other=512.0 B (2)
+    by dtype: bfloat16=15.3 GiB  float32=512.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+  pytorch allocator:  allocated=15.3 GiB  reserved=15.3 GiB  peak=15.3 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=15.3 GiB  host_used=1.2 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.3 GiB       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+===============================================================
+[0m2026-Jul-21 09:58:37.276986 56901:57274  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:37.276987 56901:57275  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:37.277041 56901:57274  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:37.277056 56901:57275  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:37.277063 56901:57274  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:37.277068 56901:57275  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:37.277584 56901:57274  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 705/705 desc's, total tx/rx size: 144995/144995[0m
+[0m2026-Jul-21 09:58:37.277636 56901:57275  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 705/705 desc's, total tx/rx size: 144995/144995[0m
+[0m2026-Jul-21 09:58:37.303186 56901:57275  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 46040/31804 desc's, total tx/rx size: 235832000/119432896[0m
+[0m2026-Jul-21 09:58:37.307067 56901:57274  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 53928/35980 desc's, total tx/rx size: 252611072/127823360[0m
+[0m2026-Jul-21 09:58:37.316975 56901:57275  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 24824/16872 desc's, total tx/rx size: 131549056/66533248[0m
+[0m2026-Jul-21 09:58:37.320979 56901:57275  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 6528/6528 desc's, total tx/rx size: 18358272/18358272[0m
+[0m2026-Jul-21 09:58:37.358547 56901:57274  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 332552/170872 desc's, total tx/rx size: 140105664/70812096[0m
+[0m2026-Jul-21 09:58:37.363284 56901:57274  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 6528/6528 desc's, total tx/rx size: 18358272/18358272[0m
+[0m2026-Jul-21 09:58:37.454955 56901:57275  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 46.917MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 45.190MB
+	* model code: 42.568MB
+	* model constants: 272.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 124.000KB
+	* dma rings spill: 1.886MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:58:37.492785 56901:57274  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.750GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 52.650MB
+	* model code: 42.800MB
+	* model constants: 272.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 124.000KB
+	* dma rings spill: 9.114MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+V0721 09:58:37.549000 56901 torch/_dynamo/guards.py:4760] [0/1] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 09:58:37.549000 56901 torch/_dynamo/guards.py:4760] [0/1] [__recompiles]     triggered by the following guard failure(s):
+V0721 09:58:37.549000 56901 torch/_dynamo/guards.py:4760] [0/1] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 1
+[0m2026-Jul-21 09:58:52.422137 56901:57300  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:52.422183 56901:57300  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:52.422185 56901:57299  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:52.422195 56901:57300  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:52.422225 56901:57299  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:52.422239 56901:57299  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:58:52.460071 56901:57300  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0 has 60752/32976 desc's, total tx/rx size: 11968064/7212096[0m
+[0m2026-Jul-21 09:58:52.481128 56901:57300  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 35955/35955 desc's, total tx/rx size: 23556300/23556300[0m
+[0m2026-Jul-21 09:58:52.506426 56901:57299  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0 has 384128/195264 desc's, total tx/rx size: 13778176/8119552[0m
+[0m2026-Jul-21 09:58:52.506443 56901:57299  INFO  TDRV:drs_create_data_refill_rings            WARNING: Warning: detected memory copies with inefficient transfer size. Queue qSPSpillReload0 has an average tx/rx size of 35/41. This can cause sub-optimal Neuron performance. Model module.neff[0m
+[0m2026-Jul-21 09:58:52.527984 56901:57299  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 35973/35973 desc's, total tx/rx size: 23556620/23556620[0m
+[0m2026-Jul-21 09:58:52.654975 56901:57300  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 113.197MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 66.194MB
+	* model code: 62.681MB
+	* model constants: 1.156MB
+	* scratchpad: 0.000B
+	* runtime: 272.008KB
+	* dma rings io: 661.000KB
+	* dma rings spill: 1.441MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:58:52.706359 56901:57299  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.824GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 74.939MB
+	* model code: 62.922MB
+	* model constants: 2.250MB
+	* scratchpad: 0.000B
+	* runtime: 272.008KB
+	* dma rings io: 661.000KB
+	* dma rings spill: 8.852MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+  graphs_generated=2
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:59:04] ===== memory snapshot [after_warmup] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=15.9 GiB  host_used=4.1 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     3.9 MiB   238.3 MiB    64.0 MiB     1.2 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+========================================================
+[0m2026-Jul-21 09:59:04.978834 56901:57335  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:04.980809 56901:57335  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.824GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 52.258KB
+	* model code: 24.250KB
+	* model constants: 0.000B
+	* scratchpad: 0.000B
+	* runtime: 26.008KB
+	* dma rings io: 0.000B
+	* dma rings spill: 0.000B
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 2.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:59:04.980820 56901:57336  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 113.712MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 50.250KB
+	* model code: 22.250KB
+	* model constants: 0.000B
+	* scratchpad: 0.000B
+	* runtime: 26.000KB
+	* dma rings io: 0.000B
+	* dma rings spill: 0.000B
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 2.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:59:04.985281 56901:57337  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:04.986615 56901:57338  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 113.761MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 50.250KB
+	* model code: 22.250KB
+	* model constants: 0.000B
+	* scratchpad: 0.000B
+	* runtime: 26.000KB
+	* dma rings io: 0.000B
+	* dma rings spill: 0.000B
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 2.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:59:04.986645 56901:57337  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.824GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 50.699KB
+	* model code: 22.688KB
+	* model constants: 4.000B
+	* scratchpad: 0.000B
+	* runtime: 26.008KB
+	* dma rings io: 0.000B
+	* dma rings spill: 0.000B
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 2.000KB
+	* collectives: 0.000B
+[0m
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     triggered by the following guard failure(s):
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 64
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     - 0/0: kwargs['past_key_values'].layers[0].is_initialized == False  # return self.cumulative_length if self.is_initialized else 0  # transformers/cache_utils.py:466 in get_seq_length
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     - User stack trace:
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py", line 907, in wrapper
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     output = func(self, *args, **kwargs)
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 492, in forward
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     outputs: BaseModelOutputWithPast = self.model(
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py", line 1036, in wrapper
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     output = func(self, *args, **kwargs)
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     outputs = func(self, *args, **kwargs)
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 414, in forward
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     "full_attention": create_causal_mask(**mask_kwargs),
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/masking_utils.py", line 953, in create_causal_mask
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     _preprocess_mask_arguments(config, inputs_embeds, attention_mask, past_key_values, position_ids, layer_idx)
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/masking_utils.py", line 858, in _preprocess_mask_arguments
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     q_offset = past_key_values.get_seq_length()
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/cache_utils.py", line 1271, in get_seq_length
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     return self.layers[layer_idx].get_seq_length()
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/cache_utils.py", line 466, in get_seq_length
+V0721 09:59:05.003000 56901 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     return self.cumulative_length if self.is_initialized else 0
+[0m2026-Jul-21 09:59:17.941677 56901:57357  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:17.941719 56901:57357  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:17.941741 56901:57357  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:17.941741 56901:57356  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:17.941768 56901:57356  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:17.941777 56901:57356  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:17.941896 56901:57356  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 80/80 desc's, total tx/rx size: 135616/135616[0m
+[0m2026-Jul-21 09:59:17.941943 56901:57357  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 80/80 desc's, total tx/rx size: 135616/135616[0m
+[0m2026-Jul-21 09:59:17.961191 56901:57357  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 30696/16460 desc's, total tx/rx size: 232807104/116408000[0m
+[0m2026-Jul-21 09:59:17.965798 56901:57356  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 38584/20636 desc's, total tx/rx size: 249586176/124798464[0m
+[0m2026-Jul-21 09:59:17.972315 56901:57357  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 17152/9200 desc's, total tx/rx size: 130036608/65020800[0m
+[0m2026-Jul-21 09:59:17.994282 56901:57357  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45576/45576 desc's, total tx/rx size: 26064384/26064384[0m
+[0m2026-Jul-21 09:59:18.012056 56901:57356  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 324880/163200 desc's, total tx/rx size: 138593216/69299648[0m
+[0m2026-Jul-21 09:59:18.034734 56901:57356  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45576/45576 desc's, total tx/rx size: 26064384/26064384[0m
+[0m2026-Jul-21 09:59:18.114137 56901:57357  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 158.803MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 45.042MB
+	* model code: 42.464MB
+	* model constants: 272.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 808.000KB
+	* dma rings spill: 1.174MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:59:18.155162 56901:57356  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.875GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 52.452MB
+	* model code: 42.646MB
+	* model constants: 272.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 808.000KB
+	* dma rings spill: 8.402MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:59:19] ===== memory snapshot [graphcache_cold_il64] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=16.0 GiB  host_used=4.2 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.5 MiB   335.9 MiB    64.0 MiB     2.0 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_64_COLD  total_ms=13238.0  model_code_total=0.338GiB  graphs=3  [RECOMPILE x1]
+[mini_verl.mem 09:59:20] ===== memory snapshot [graphcache_warm_il64] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=16.0 GiB  host_used=4.2 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.5 MiB   335.9 MiB    64.0 MiB     2.0 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_64_WARM  total_ms=64.5  model_code_total=0.338GiB  graphs=3
+V0721 09:59:21.893000 56901 torch/_dynamo/guards.py:4760] [0/3] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 09:59:21.893000 56901 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     triggered by the following guard failure(s):
+V0721 09:59:21.893000 56901 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 74
+V0721 09:59:21.893000 56901 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 74
+V0721 09:59:21.893000 56901 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 74
+[0m2026-Jul-21 09:59:35.778362 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:35.778414 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:35.778437 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:35.778533 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:35.778565 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:35.778574 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:59:35.843480 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 123084/123084 desc's, total tx/rx size: 362385192/362385192[0m
+[0m2026-Jul-21 09:59:35.844333 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 180/180 desc's, total tx/rx size: 157156/157156[0m
+[0m2026-Jul-21 09:59:35.847016 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 139604/134868 desc's, total tx/rx size: 366339232/365126816[0m
+[0m2026-Jul-21 09:59:35.848049 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 360/360 desc's, total tx/rx size: 157876/157876[0m
+[0m2026-Jul-21 09:59:35.868922 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 39056/20856 desc's, total tx/rx size: 230383872/115197248[0m
+[0m2026-Jul-21 09:59:35.887180 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 70560/38388 desc's, total tx/rx size: 247371936/123698400[0m
+[0m2026-Jul-21 09:59:35.893548 56901:57415  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 38512/20568 desc's, total tx/rx size: 227958912/113984704[0m
+[0m2026-Jul-21 09:59:35.915539 56901:57415  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45756/45756 desc's, total tx/rx size: 26065104/26065104[0m
+[0m2026-Jul-21 09:59:35.964065 56901:57414  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 371160/188608 desc's, total tx/rx size: 242524704/121274464[0m
+[0m2026-Jul-21 09:59:35.987323 56901:57414  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45756/45756 desc's, total tx/rx size: 26065104/26065104[0m
+[0m2026-Jul-21 09:59:36.058914 56901:57415  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 214.610MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 55.194MB
+	* model code: 48.225MB
+	* model constants: 224.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 777.000KB
+	* dma rings spill: 5.641MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:59:36.128944 56901:57414  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.939GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 64.278MB
+	* model code: 48.494MB
+	* model constants: 224.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 777.000KB
+	* dma rings spill: 14.457MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:59:37] ===== memory snapshot [graphcache_cold_il74] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=16.2 GiB  host_used=5.0 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.9 MiB   455.6 MiB    64.0 MiB     2.7 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_74_COLD  total_ms=14336.7  model_code_total=0.455GiB  graphs=4  [RECOMPILE x1]
+[mini_verl.mem 09:59:39] ===== memory snapshot [graphcache_warm_il74] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=56901, runtime=56901): device_used=16.2 GiB  host_used=5.0 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.9 MiB   455.6 MiB    64.0 MiB     2.7 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_74_WARM  total_ms=84.4  model_code_total=0.455GiB  graphs=4
+V0721 09:59:40.289000 56901 torch/_dynamo/guards.py:4760] [0/4] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 09:59:40.289000 56901 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     triggered by the following guard failure(s):
+V0721 09:59:40.289000 56901 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/3: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 74, actual 84
+V0721 09:59:40.289000 56901 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 84
+V0721 09:59:40.289000 56901 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 84
+V0721 09:59:40.289000 56901 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 84

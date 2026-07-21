@@ -306,3 +306,276 @@ V0721 09:49:22.350000 54243 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]  
 V0721 09:49:22.350000 54243 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     return self.layers[layer_idx].get_seq_length()
 V0721 09:49:22.350000 54243 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -   File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/cache_utils.py", line 466, in get_seq_length
 V0721 09:49:22.350000 54243 torch/_dynamo/guards.py:4760] [0/2] [__recompiles]     -     return self.cumulative_length if self.is_initialized else 0
+[0m2026-Jul-21 09:51:09.290633 54243:56238  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:51:09.290683 54243:56237  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:51:09.290702 54243:56238  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:51:09.290713 54243:56237  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:51:09.290717 54243:56238  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:51:09.290726 54243:56237  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:51:09.291062 54243:56238  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 80/80 desc's, total tx/rx size: 135616/135616[0m
+[0m2026-Jul-21 09:51:09.291069 54243:56237  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 80/80 desc's, total tx/rx size: 135616/135616[0m
+[0m2026-Jul-21 09:51:09.308530 54243:56238  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 30696/16460 desc's, total tx/rx size: 232807104/116408000[0m
+[0m2026-Jul-21 09:51:09.312879 54243:56237  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 38584/20636 desc's, total tx/rx size: 249586176/124798464[0m
+[0m2026-Jul-21 09:51:09.318696 54243:56238  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 17152/9200 desc's, total tx/rx size: 130036608/65020800[0m
+[0m2026-Jul-21 09:51:09.340666 54243:56238  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45576/45576 desc's, total tx/rx size: 26064384/26064384[0m
+[0m2026-Jul-21 09:51:09.359924 54243:56237  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 324880/163200 desc's, total tx/rx size: 138593216/69299648[0m
+[0m2026-Jul-21 09:51:09.382325 54243:56237  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45576/45576 desc's, total tx/rx size: 26064384/26064384[0m
+[0m2026-Jul-21 09:51:09.475235 54243:56238  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 158.803MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 45.042MB
+	* model code: 42.464MB
+	* model constants: 272.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 808.000KB
+	* dma rings spill: 1.174MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:51:09.514288 54243:56237  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.875GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 52.452MB
+	* model code: 42.646MB
+	* model constants: 272.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 808.000KB
+	* dma rings spill: 8.402MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:51:10] ===== memory snapshot [graphcache_cold_il64] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=54243, runtime=54243): device_used=16.0 GiB  host_used=4.4 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.5 MiB   335.9 MiB    64.0 MiB     2.0 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_64_COLD  total_ms=109159.3  model_code_total=0.338GiB  graphs=3  [RECOMPILE x1]
+[mini_verl.mem 09:51:12] ===== memory snapshot [graphcache_warm_il64] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=54243, runtime=54243): device_used=16.0 GiB  host_used=4.4 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.5 MiB   335.9 MiB    64.0 MiB     2.0 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_64_WARM  total_ms=67.1  model_code_total=0.338GiB  graphs=3
+V0721 09:51:13.281000 54243 torch/_dynamo/guards.py:4760] [0/3] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 09:51:13.281000 54243 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     triggered by the following guard failure(s):
+V0721 09:51:13.281000 54243 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 74
+V0721 09:51:13.281000 54243 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 74
+V0721 09:51:13.281000 54243 torch/_dynamo/guards.py:4760] [0/3] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 74
+[0m2026-Jul-21 09:53:27.203045 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:53:27.203090 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:53:27.203112 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:53:27.203324 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qActDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:53:27.203361 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qPoolDynamic has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:53:27.203372 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPDynamicHW has 0/0 desc's, total tx/rx size: 0/0[0m
+[0m2026-Jul-21 09:53:27.269518 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 123084/123084 desc's, total tx/rx size: 362385192/362385192[0m
+[0m2026-Jul-21 09:53:27.270712 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 180/180 desc's, total tx/rx size: 157156/157156[0m
+[0m2026-Jul-21 09:53:27.273768 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPPIOParam0 has 139604/134868 desc's, total tx/rx size: 366339232/365126816[0m
+[0m2026-Jul-21 09:53:27.275117 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_0 has 360/360 desc's, total tx/rx size: 157876/157876[0m
+[0m2026-Jul-21 09:53:27.295745 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 39056/20856 desc's, total tx/rx size: 230383872/115197248[0m
+[0m2026-Jul-21 09:53:27.320032 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_1 has 70560/38388 desc's, total tx/rx size: 247371936/123698400[0m
+[0m2026-Jul-21 09:53:27.320228 54243:56562  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 38512/20568 desc's, total tx/rx size: 227958912/113984704[0m
+[0m2026-Jul-21 09:53:27.342548 54243:56562  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45756/45756 desc's, total tx/rx size: 26065104/26065104[0m
+[0m2026-Jul-21 09:53:27.397310 54243:56561  INFO  TDRV:drs_create_data_refill_rings            Rank: 0, Vring: qSPSpillReload0_defId_2 has 371160/188608 desc's, total tx/rx size: 242524704/121274464[0m
+[0m2026-Jul-21 09:53:27.420676 54243:56561  INFO  TDRV:io_create_queues                        Rank: 0, Vring: qSPIO0 has 45756/45756 desc's, total tx/rx size: 26065104/26065104[0m
+[0m2026-Jul-21 09:53:27.489201 54243:56562  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 5] Current Usage Total: 214.610MB
+	Shared Scratchpad: 0.000B
+	Tensors: 0.000B
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 55.194MB
+	* model code: 48.225MB
+	* model constants: 224.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 777.000KB
+	* dma rings spill: 5.641MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+[0m2026-Jul-21 09:53:27.564258 54243:56561  INFO  TDRV:dml_log_dev_neff_mem                    
+[ND 0:NC 4] Current Usage Total: 15.939GB
+	Shared Scratchpad: 64.000MB
+	Tensors: 15.635GB
+Per NEFF memory usage breakdown for [module.neff]:
+	Total: 64.278MB
+	* model code: 48.494MB
+	* model constants: 224.000KB
+	* scratchpad: 0.000B
+	* runtime: 354.031KB
+	* dma rings io: 777.000KB
+	* dma rings spill: 14.457MB
+	* dma rings collectives: 0.000B
+	* dma rings runtime: 4.000KB
+	* collectives: 0.000B
+[0m
+/home/ubuntu/mini-verl/mini_verl/platform/mem_snapshot.py:76: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  if isinstance(obj, torch.Tensor):
+[mini_verl.mem 09:53:29] ===== memory snapshot [graphcache_cold_il74] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=54243, runtime=54243): device_used=16.2 GiB  host_used=5.3 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.9 MiB   455.6 MiB    64.0 MiB     2.7 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_74_COLD  total_ms=134385.4  model_code_total=0.455GiB  graphs=4  [RECOMPILE x1]
+[mini_verl.mem 09:53:30] ===== memory snapshot [graphcache_warm_il74] device=neuron =====
+  live tensors: 509 allocations, 15.5 GiB total
+    by category: param=15.3 GiB (399)  other=297.8 MiB (110)
+    by dtype: bfloat16=15.5 GiB  float32=512.0 B  int64=288.0 B
+  top 10 (shape, local shape, dtype, category) groups by bytes:
+           bytes   count  dtype       cat     shape                 local shape
+         6.8 GiB      72  bfloat16    param   (12288, 4096)         =
+         3.4 GiB      36  bfloat16    param   (4096, 12288)         =
+         2.3 GiB       2  bfloat16    param   (151936, 4096)        =
+         2.2 GiB      72  bfloat16    param   (4096, 4096)          =
+       576.0 MiB      72  bfloat16    param   (1024, 4096)          =
+       297.8 MiB      72  bfloat16    other   (1, 8, 2118, 128)     =
+       584.0 KiB      73  bfloat16    param   (4096)                =
+        18.0 KiB      72  bfloat16    param   (128)                 =
+         512.0 B       2  float32     other   (64)                  =
+         288.0 B      36  int64       other   (1)                   =
+  pytorch allocator:  allocated=15.6 GiB  reserved=15.6 GiB  peak=15.6 GiB
+  neuron-monitor (pid=54243, runtime=54243): device_used=16.2 GiB  host_used=5.3 GiB
+     NC     tensors   constants        NEFF  scratchpad     runtime
+      0       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      1       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+      2    15.6 GiB     4.9 MiB   455.6 MiB    64.0 MiB     2.7 MiB
+      3       0.0 B       0.0 B     3.4 MiB       0.0 B    26.1 KiB
+================================================================
+  GRAPHCACHE_74_WARM  total_ms=79.1  model_code_total=0.455GiB  graphs=4
+V0721 09:53:31.710000 54243 torch/_dynamo/guards.py:4760] [0/4] [__recompiles] Recompiling function wrapper in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/transformers/utils/generic.py:901
+V0721 09:53:31.710000 54243 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     triggered by the following guard failure(s):
+V0721 09:53:31.710000 54243 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/3: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 74, actual 84
+V0721 09:53:31.710000 54243 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/2: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 84
+V0721 09:53:31.710000 54243 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/1: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 1, actual 84
+V0721 09:53:31.710000 54243 torch/_dynamo/guards.py:4760] [0/4] [__recompiles]     - 0/0: tensor 'kwargs['input_ids']' size mismatch at index 1. expected 64, actual 84
+[W721 09:54:58.806997047 NeuronLogging.h:103] Warning: [Neuron] [ERROR] [torch_neuronx/csrc/core/utils/CPUFallbackExecutor.cpp:56] CPU fallback failed for 'torch_compile' failed: vector::reserve  (function log)
+[W721 09:54:58.807164840 NeuronLogging.h:103] Warning: [Neuron] [ERROR] [torch_neuronx/csrc/core/utils/CPUFallbackExecutor.cpp:56] CPU fallback failed for 'torch_compile' failed: std::bad_alloc  (function log)
+[W721 09:54:58.837126036 NeuronLogging.h:103] Warning: [Neuron] [ERROR] [torch_neuronx/csrc/core/utils/CPUFallbackExecutor.cpp:56] CPU fallback failed for 'model_default' failed: No CPU implementation found for operation: model_default
+Exception raised from ExecuteOperationOnCpu at torch_neuronx/csrc/core/utils/CPUFallbackExecutor.cpp:107 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x793fe9d7305d in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xc3 (0x793fe9d076fd in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #2: at::neuron::CPUFallbackExecutor::ExecuteOperationOnCpu(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<at::Tensor, std::allocator<at::Tensor> > const&, std::vector<at::Tensor, std::allocator<at::Tensor> > const&, at::neuron::OperationContext const*) + 0xd1e (0x793eb13d63fe in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #3: at::neuron::CPUFallbackExecutor::ExecuteCpuFallbackImpl(at::neuron::OperationContext*) + 0x267 (0x793eb13d6a37 in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #4: at::neuron::CPUFallbackExecutor::ExecuteCpuFallback(at::neuron::OperationContext*) + 0x1e5 (0x793eb13d6f75 in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #5: at::neuron::ErrorRecovery::ExecuteCpuFallback(at::neuron::OperationContext*) + 0x1a (0x793eb13cb78a in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #6: at::neuron::ErrorRecovery::AttemptCompilableRecovery(at::neuron::OperationContext*) + 0x1be (0x793eb13cbf7e in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #7: at::neuron::ErrorRecovery::AttemptRecovery(at::neuron::OperationContext*, torch_neuronx::CompilationRuntimeException const&) + 0x4f (0x793eb13cc00f in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #8: at::neuron::ErrorHandler::HandleOperationError(at::neuron::OperationContext*, torch_neuronx::CompilationRuntimeException const&) + 0x49a (0x793eb13c6b5a in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #9: void at::neuron::StreamImpl::HandleErrorWithCleanup<torch_neuronx::CompilationRuntimeException>(at::neuron::OperationContext*, torch_neuronx::CompilationRuntimeException const&) + 0x6b (0x793eb13bfe5b in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #10: at::neuron::OperationExecutionEngine::DispatchAsyncExecutionTask(at::neuron::OperationContext*) + 0x2c4 (0x793eb13dbdc4 in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #11: <unknown function> + 0x53dbf78 (0x793eb13dbf78 in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #12: at::neuron::ForEachStreamImpl(signed char, std::function<bool (at::neuron::StreamImpl*)> const&) + 0x3b (0x793eb13b465b in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #13: at::neuron::OperationExecutionEngine::RuntimeWorker() + 0xdd (0x793eb13dac6d in /opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch_neuronx/_C.so)
+frame #14: <unknown function> + 0xecdb4 (0x793fafcecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #15: <unknown function> + 0x9caa4 (0x793feac9caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #16: <unknown function> + 0x129c6c (0x793fead29c6c in /lib/x86_64-linux-gnu/libc.so.6)
+  (function log)
+Traceback (most recent call last):
+  File "/home/ubuntu/mini-verl/mini_verl/workers/generation.py", line 262, in generate
+    return self._generate_impl(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/mini-verl/mini_verl/workers/generation.py", line 331, in _generate_impl
+    next_tokens = torch.argmax(last_logits.to("cpu").float(), dim=-1)
+                               ^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Compilation error occurred on Neuron for operation=torch_compile;
+error message="COMPILATION FAILED: Failed to read file: /tmp/neuron_backend/neuronx-cc/6879ede0511f6ede01d102742244590c/module.neff"
+neff cache key=fd582e55f908588d2e3614969a32487cc25d35be3e0a6140b333cd29f96b7ec9:0b27af42825a4bfbc12b51e7be3acab1abc854bf2295f2994d3b243ad4ff5ac4
+Note: Neuron errors are reported asynchronously. The Python traceback shows where the
+error was detected (synchronization point), not necessarily where the failing operation
+was dispatched. For synchronous error reporting, set NEURON_LAUNCH_BLOCKING=1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 991, in main
+    mini_verl_run(cfg, log_file, run_dir)
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 866, in mini_verl_run
+    graph_cache_sweep(
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 772, in graph_cache_sweep
+    m = _run_rollout(
+        ^^^^^^^^^^^^^
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 528, in _run_rollout
+    response = engine.generate(
+               ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/mini-verl/mini_verl/workers/generation.py", line 261, in generate
+    with self._infer_ctx():
+  File "/opt/aws_neuronx_venv_pytorch_2_9_nxd_inference/lib/python3.12/site-packages/torch/autograd/grad_mode.py", line 293, in __exit__
+    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
+
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 1006, in <module>
+    main()
+  File "/home/ubuntu/trn2-rl-rollout/run_mini_verl_rollout.py", line 1001, in main
+    time.sleep(10)
+KeyboardInterrupt
